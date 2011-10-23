@@ -102,7 +102,7 @@
 
       var results = obj.query.results,
         ev = results.json.events,
-        latest;
+        latest, mapUrl;
 
       ev = $.isArray(ev) ? ev : [ev];
 
@@ -118,27 +118,15 @@
       desc.html(latest.description);
 
       // move to template or something
+      map = 'http://maps.google.com/maps?q=' + latest.venue.latitude + ', ' + latest.venue.longitude  + '&z=15';
+      console.log(map);
       nextEvent.html([
-        '<h2>Prochaine session</h2>',
-        '<p>' + latest.start_date  + '</p>',
-        '<p>' + latest.title  + '</p>',
-        '<p>' + latest.venue.latitude+ '</p>',
-        '<a href="http://maps.google.com/maps?q=:event.venue.latitude,{{html event.venue.longitude}}&z=15">hosted by {{html event.venue.name}}</a>'
-        '<p>' + latest.start_date  + '</p>',
-        '<p>' + latest.start_date  + '</p>',
-        '<p></p>'
+        '<p>',
+        '<em>' + latest.title  + '</em>',
+        '<a href="'+ map +'">hébergé par ' + latest.venue.name + '</a>, le ' + latest.start_date,
+        '</p>',
+        '<p>' + latest.organizer.description + '</p>'
       ].join('\n'));
-/*
-            <h2>NEXT MEETUP</h2>
-            <p class="dtstart date" title="${event.start_date}">${Utils.formatDate(event.start_date)}</p>
-            <p class="titre">{{html event.title}}</p>
-            <p class="where">
-                <a href="http://maps.google.com/maps?q={{html event.venue.latitude}},{{html event.venue.longitude}}&z=15">hosted by {{html event.venue.name}}</a>
-            </p>
-            <div class="summary">{{html event.description}}</div>
-            <a class="inscription" href="${event.url}">INSCRIPTION</a>
-      */
-      // console.log(results);
     }
   });
 
