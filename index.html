@@ -603,29 +603,29 @@
         // draw the svg 
         var paper = new Raphael($('#logo')[0], 800, 600);
         var anim = anims[Math.floor(Math.random() * anims.length)];
-        var hover = hovers[Math.floor(Math.random() * hovers.length)];
+        var hover = /yay/.test(location.hash) ? hovers[hovers.length - 1] : hovers[Math.floor(Math.random() * hovers.length)];
         svg.forEach(function(node) {
           node.attr.stroke = 'transparent';
           var p = paper.path(node.path).attr(node.attr)
             .hover(function() {
               if(this._animated) return;
               this._animated = true;
-              
+
               var path = hover[0].path;
-              
+
               if(path) {
                 path = path
                   .replace(/m (\d+\.\d+),(\d+\.\d+)/g, function() {
                     return 'm ' + (128 + rd()) + '.' + rd()  + ',' + (100 + rd()) + '.' + rd();
                   });
-                
+
                 return this.animate.call(this, {path: path}, hover[1], animated);
               }
-              
+
               this.animate.apply(this, hover.concat(animated));
             });
         });
-        
+
         // draw icons
         for(var c in icons) {
           new Raphael($('#' + c)[0], 26, 27).path(icons[c]).attr({
@@ -635,17 +635,17 @@
             scale: 0.8
           });
         }
-        
+
         function rd() {return Math.floor(Math.random() * 600)};
         function animated() {this._animated = false};
       };
-      
+
       exports.$ = $;
-      
-      
+
+
     })(this.Raphael, this);
   </script>
-  
-  
+
+
 </body>
 </html>
