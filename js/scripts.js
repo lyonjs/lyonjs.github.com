@@ -114,12 +114,10 @@
 
       // Update main header with latest event
       latest = ev[0];
-      console.log(latest);
       desc.html(latest.description);
 
       // move to template or something
       map = 'http://maps.google.com/maps?q=' + latest.venue.latitude + ', ' + latest.venue.longitude  + '&z=15';
-      console.log(map);
       nextEvent.html([
         '<p>',
         '<em>' + latest.title  + '</em>',
