@@ -1,0 +1,70 @@
+{
+  "dir": {
+    "source": ".",
+    "intermediate": "intermediate",
+    "publish": "publish",
+    "build": "build",
+    "test": "test",
+    "demo": "demo",
+    "js": {
+      "main": "js",
+      "libs": "js/libs",
+      "mylibs": "js/mylibs"
+    },
+    "css": "css",
+    "images": "img"
+  },
+  "file": {
+    "pages": {
+      "default": {
+        "include": "index.html"
+      }
+    },
+    "default": {
+      "js": {
+        "bypass": ""
+      },
+      "exclude": ".gitignore .project .settings README.markdown, README.md, **/.git/**, **/.svn/**, test/**, demo/**, intermediate/**, publish/**, build/**, **/nbproject/**, *.komodoproject, **/.komodotools/**, **/dwsync.xml, **_notes, **/.hg/**, **/.idea/**",
+      "stylesheets": ""
+    },
+    "root": {
+      "script": "scripts.js",
+      "stylesheet": "style.css"
+    },
+    "serverconfig": ".htaccess"
+  },
+  "build": {
+    "concat": {
+      "scripts": true
+    },
+    "version": {
+      "info": "buildinfo.properties"
+    },
+    "scripts": {
+      "dir": "build/build-scripts"
+    }
+  },
+  "tool": {
+    "yuicompressor": "yuicompressor-2.4.5.jar",
+    "htmlcompressor": "htmlcompressor-1.4.3.jar",
+    "csscompressor": "css-compressor/cli.php",
+    "rhino": "rhino.jar",
+    "jslint": "fulljslint.js",
+    "jshint": "fulljshint.js",
+    "csslint": "csslint-rhino.js"
+  },
+  "script": {
+    "compilation": {
+      "level": "SIMPLE_OPTIMIZATIONS",
+      "warninglevel": "QUIET"
+    }
+  },
+  "images": {
+    "strip": {
+      "metadata": true
+    }
+  },
+  "hash": {
+    "length": 7
+  }
+}
