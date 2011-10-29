@@ -24,7 +24,7 @@
       "js": {
         "bypass": ""
       },
-      "exclude": ".* _.* CNAME bs/** README.markdown readme.md README.md **/.git/** intermediate/** publish/** build/**",
+      "exclude": ".* _.* CNAME bs/** README.markdown readme.md README.md **/.git/** intermediate/** publish/** build/** tasks/",
       "stylesheets": ""
     },
     "root": {
