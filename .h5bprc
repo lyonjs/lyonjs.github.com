@@ -24,7 +24,7 @@
       "js": {
         "bypass": ""
       },
-      "exclude": ".gitignore .project .settings README.markdown, README.md, **/.git/**, **/.svn/**, test/**, demo/**, intermediate/**, publish/**, build/**, **/nbproject/**, *.komodoproject, **/.komodotools/**, **/dwsync.xml, **_notes, **/.hg/**, **/.idea/**",
+      "exclude": ".* _.* CNAME bs/** README.markdown readme.md README.md **/.git/** intermediate/** publish/** build/**",
       "stylesheets": ""
     },
     "root": {

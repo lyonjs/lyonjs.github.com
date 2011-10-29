@@ -1,5 +1,5 @@
 // todo: it's a mess, clean this.
-// also, it'll probably break on non ES5 browser
+// also, it'll probably break on non ES5 browser too
 (function($, Raphael, location, exports) {
   var anims = [
     [{rotation: 360}, 2000],
