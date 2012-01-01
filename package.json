@@ -14,6 +14,7 @@
   "scripts": {
     "less": "cp ./assets/css/app.css ./assets/css/style.css && ./node_modules/.bin/lessc ./assets/less/bootstrap.less --compress >> ./assets/css/style.css",
     "serve": "./node_modules/.bin/serve",
-    "wikify": "./scripts/wikify.sh"
+    "wikify": "./scripts/wikify.sh",
+    "deploy": "./scripts/deploy.sh"
   }
 }
