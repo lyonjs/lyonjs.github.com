@@ -11,11 +11,11 @@ npm i && npm run-script wikify --baseurl "/"
 # add the out dir before cleaning
 git add out/ .gitignore -f
 
-# then, move generated files to root
-git mv out/* .
-
 # clean up non-tracked files
 git clean -fdx
+
+# then, move generated files to root
+git mv out/* .
 
 # commit our new build
 git commit -m "build: $(date +%F)"
