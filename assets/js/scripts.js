@@ -38,6 +38,8 @@
       desc = $('.eb-description'),
       nextEvent = $('.eb-next-event');
 
+    if(!logoSvg) return;
+
     // grab the main svg document from html (within script tag with unknown type, wont render)
     // then parse its content and get an array of path hash object, with path/attr property
     // that we could script later on.
@@ -92,6 +94,10 @@
         });
     });
 
+  });
+
+  $(function() {
+
     // draw icons
     $.each(icons, function(c) {
       new Raphael($('.' + c)[0], 26, 27).path(icons[c]).attr({
@@ -107,6 +113,19 @@
       url: 'http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20json%20where%20url%3D%22https%3A%2F%2Fwww.eventbrite.com%2Fjson%2Forganizer_list_events%3Fid%3D1579862160%26app_key%3DNWDSCROJY7KOYQ7TDS%22&format=json&diagnostics=true',
       jsonp: 'callback'
     }).success(renderEventBrite);
+
+    // ## twitter stream.
+    // add a slight timeout delay, mainly because I luv that spinning css3 stuff
+    setTimeout(function() {
+      $(".twitter-stream").lifestream({
+        limit: 5,
+        list:[{
+          service: "twitter",
+          user: "lyonjs"
+        }]
+      });
+    }, 1000);
+
 
 
     function renderEventBrite(obj, state, xhr) {
@@ -146,15 +165,4 @@
     }
   });
 
-  // ## twitter stream.
-  // add a slight timeout delay, mainly because I luv that spinning css3 stuff
-  setTimeout(function() {
-    $(".twitter-stream").lifestream({
-      limit: 5,
-      list:[{
-        service: "twitter",
-        user: "lyonjs"
-      }]
-    });
-  }, 1000);
 })(this.jQuery, this.Raphael, this.location, this);

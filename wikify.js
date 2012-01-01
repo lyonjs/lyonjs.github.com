@@ -1,7 +1,7 @@
 // 
 // Configuration file for the wiki build.
 //
-// This is meant to be run using `npm run-script wikify` and uses 
+// This is meant to be run using `npm run-script wikify` and uses
 // [h5bp-docs](https://github.com/mklabs/h5bp-docs)
 
 exports = module.exports = {
@@ -15,7 +15,7 @@ exports = module.exports = {
   dest: "./out/",
 
   // a single layout files with a {{ content }} placeholder.
-  layout: "./layout.html",
+  layout: "./layouts/page.html",
 
   // assets folder
   // - putting a false value will prevent the assets copy.
