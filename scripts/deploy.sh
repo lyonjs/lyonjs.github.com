@@ -9,7 +9,7 @@ rm .git/index
 npm i && npm run-script wikify --baseurl "/"
 
 # add the out dir before cleaning
-git add out/ .gitignore CNAME favicon.ico -f
+git add out/ .gitignore CNAME readme.md favicon.ico -f
 
 # clean up non-tracked files
 git clean -fdx
