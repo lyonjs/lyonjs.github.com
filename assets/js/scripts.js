@@ -108,12 +108,6 @@
       });
     });
 
-    // grab eventbrite stuff
-    $.ajax({
-      url: 'http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20json%20where%20url%3D%22https%3A%2F%2Fwww.eventbrite.com%2Fjson%2Forganizer_list_events%3Fid%3D1579862160%26app_key%3DNWDSCROJY7KOYQ7TDS%22&format=json&diagnostics=true',
-      jsonp: 'callback'
-    }).success(renderEventBrite);
-
     // ## twitter stream.
     // add a slight timeout delay, mainly because I luv that spinning css3 stuff
     setTimeout(function() {
@@ -125,44 +119,6 @@
         }]
       });
     }, 1000);
-
-
-
-    function renderEventBrite(obj, state, xhr) {
-      if(!obj) return;
-
-      obj = typeof obj === 'string' ? JSON.parse(obj) : obj;
-
-      var results = obj.query.results,
-        ev = results.json.events,
-        latest, mapUrl;
-
-      ev = $.isArray(ev) ? ev : [ev];
-      ev = ev.filter(function(val) {
-        // todo: deal with these status, and that there's not a lot of evbrite stuff yet
-        return val.event.status === 'Completed';
-      }).map(function(val) {
-        return val.event;
-      });
-
-      // Update main header with latest event
-      latest = ev[0];
-
-      // failsafe return here, probably not needeed (needs to rewrite the whole stuff anyway)
-      if(!latest) return;
-
-      desc.html(latest.description);
-
-      // todo: move to template or something
-      map = 'http://maps.google.com/maps?q=' + latest.venue.latitude + ', ' + latest.venue.longitude  + '&z=15';
-      nextEvent.html([
-        '<p>',
-        '<em>' + latest.title  + '</em>',
-        '<a href="'+ map +'">hébergé par ' + latest.venue.name + '</a>, le ' + latest.start_date,
-        '</p>',
-        '<p>' + latest.organizer.description + '</p>'
-      ].join('\n'));
-    }
   });
 
 })(this.jQuery, this.Raphael, this.location, this);
