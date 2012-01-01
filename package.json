@@ -6,10 +6,11 @@
     "type": "git",
     "url": "git://github.com/lyonjs/lyonjs.github.com.git"
   },
-  "engines": {
-    "node": "~v0.4.8"
-  },
   "dependencies": {
     "less": "~1.1.4"
+  },
+
+  "scripts": {
+    "less": "cp ./assets/css/app.css ./assets/css/style.css && ./node_modules/.bin/lessc ./assets/less/bootstrap.less --compress >> ./assets/css/style.css"
   }
 }
