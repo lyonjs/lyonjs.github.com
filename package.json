@@ -12,6 +12,7 @@
     "h5bp-docs": "http://nodeload.github.com/mklabs/h5bp-docs/tarball/master"
   },
   "scripts": {
+    "postinstall": "git clone git://github.com/lyonjs/lyonjs.github.com.wiki.git"
     "less": "cp ./assets/css/app.css ./assets/css/style.css && ./node_modules/.bin/lessc ./assets/less/bootstrap.less --compress >> ./assets/css/style.css",
     "serve": "./node_modules/.bin/serve",
     "wikify": "./scripts/wikify.sh",

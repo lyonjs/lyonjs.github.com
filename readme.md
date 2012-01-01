@@ -3,29 +3,40 @@
 
 Source of the [lyonjs.org](http://lyonjs.org) website.
 
+### Install
 
-### Compiling Less
+    git clone git://github.com/lyonjs/lyonjs.github.com.git
+    cd lyonjs.github.com
+    npm install
 
-After modifying the `.less` files in /lib/, you'll need to recompile them in order to regenerate the bootstrap.css file.
+Or
 
-Install the less command line compiler with npm by running the following command:
+    npm install http://github.com/lyonjs/lyonjs.github.com/tarball/master
 
-    $ npm install less
+On install, the wiki content is cloned to lyonjs.github.com.wiki and is
+used to generate the site's content.
 
+### Usage
 
-then run:
+The package.json defines a set of npm-script you may use through the `npm run-script <script>` command.
 
-    lessc ./bs/less/bootstrap.less --compress > ./css/style.css
+    "scripts": {
+      "less": "cp ./assets/css/app.css ./assets/css/style.css && ./node_modules/.bin/lessc ./assets/less/bootstrap.less --compress >> ./assets/css/style.css",
+      "serve": "./node_modules/.bin/serve",
+      "wikify": "./scripts/wikify.sh",
+      "deploy": "./scripts/deploy.sh"
+    }
 
+* **less**: rebuild the site's css. The `assets/css/app.css` is copied
+  over `style.css` where the bootstrap's less compiled files are
+  concat'd.
 
-### Running the build script
+* **serve**: utility script to spawn a local http server.
 
-From the root of the repo, just run:
+* **wikify**: used the gollum wiki content to generate static webpages.
+  Template files in `layouts/` are used during the generation process.
+  Destination folder defaults to `out/` dir.
 
-    h5bp-cake -l silly build
-
-Type `h5bp-cake` to print the list of available tasks, Type `h5bp-cake -h <topic> help` to get help on a command, type `h5bp-cake help` if you're starting at it.
-
-You can edit the local configuration by tweaking the `.h5bprc` file.
-
-Build script output defaults to `publish/` dir.
+* **deploy**: This script will create an empty branch, trigger the
+  wikify command while moving out/ files over to root, add / commit
+  files to finally automatically push over the gh-pages remote branch.

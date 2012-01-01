@@ -7,10 +7,10 @@ npm run-script less
 mkdir .tmp
 
 # first run, build from wiki using page.html layout
-./node_modules/.bin/h5bp-docs --config wikify.js --layout layouts/page.html --dest .tmp/pages/
+./node_modules/.bin/h5bp-docs --config wikify.js --layout layouts/page.html --dest .tmp/pages/  --baseurl $npm_config_baseurl
 
 # second and last, build using index.html layout
-./node_modules/.bin/h5bp-docs --config wikify.js --layout layouts/index.html --dest .tmp/index/
+./node_modules/.bin/h5bp-docs --config wikify.js --layout layouts/index.html --dest .tmp/index/ --baseurl $npm_config_baseurl
 
 # merge the two (into pages, picking up just out/index/index.html)
 cp .tmp/index/index.html .tmp/pages/index.html

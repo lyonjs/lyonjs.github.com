@@ -1,13 +1,25 @@
 
 # simple deploy script
 
-# first checkout the correct branch, no matter if we're already on it
-git checkout gh-pages
+# first, let's start our gh-pages branch, with no ancestor
+git symbolic-ref HEAD refs/heads/gh-pages
+rm .git/index
 
-# optionnally, merge in any changes from master
-git merge master
+# then, install needed deps and generate site's content
+npm i && npm run-script wikify --baseurl "/"
 
-# if ok, then push on the live site
-# git push origin gh-pages
+# add the out dir before cleaning
+git add out/ .gitignore -f
 
-echo "push it push it"
+# then, move generated files to root
+git mv out/* .
+
+# clean up non-tracked files
+git clean -fdx
+
+# commit our new build
+git commit -m "build: $(date +%F)"
+
+# finally, push to remote
+git push origin gh-pages
+
