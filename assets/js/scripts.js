@@ -150,8 +150,7 @@
   // add a slight timeout delay, mainly because I luv that spinning css3 stuff
   setTimeout(function() {
     $(".twitter-stream").lifestream({
-      classname: "bounceIn animate",
-      limit: 30,
+      limit: 5,
       list:[{
         service: "twitter",
         user: "lyonjs"
