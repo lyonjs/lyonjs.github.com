@@ -15,7 +15,7 @@ config.init({
     // template is either default or bootstrap
     // Or, it might be a relative path from cwd.
     // template value is known to be a path if it has some `/` in it.
-    template: 'default'
+    template: './layouts'
   },
 
   generate: {
