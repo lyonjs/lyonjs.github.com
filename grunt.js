@@ -55,7 +55,7 @@ config.init({
   },
 
   deploy: {
-    'gh-pages': 'no config, the only used config data is the task name subprop (gh-pages)'
+    'gh-pages': '<config:defaults>'
   }
 });
 
