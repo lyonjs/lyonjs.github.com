@@ -9,7 +9,8 @@
   "dependencies": {
     "less": "~1.1.4",
     "serve": "~1.0.2",
-    "h5bp-docs": "http://nodeload.github.com/mklabs/h5bp-docs/tarball/master"
+    "h5bp-docs": "http://nodeload.github.com/mklabs/h5bp-docs/tarball/master",
+    "rimraf": "~1.0.9"
   },
   "scripts": {
     "postinstall": "git clone git://github.com/lyonjs/lyonjs.github.com.wiki.git || exit 0",
