@@ -7,7 +7,8 @@ config.init({
     // the output generation folder
     dest: './out',
 
-    baseurl: '/dest',
+    // destination files would be at the root of the live site
+    baseurl: '',
     verbose: true,
 
     repo: 'lyonjs/lyonjs.github.com',

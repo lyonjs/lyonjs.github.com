@@ -1,6 +1,5 @@
 
-var exec = require('child_process').exec,
-  rimraf = require('rimraf');
+var exec = require('child_process').exec;
 
 // Grunt tasks
 task.registerBasicTask('deploy', 'Simple deploy script, prepares the gh-pages branch for push', function(data, name) {

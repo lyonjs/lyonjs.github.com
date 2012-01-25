@@ -7,16 +7,11 @@
     "url": "git://github.com/lyonjs/lyonjs.github.com.git"
   },
   "dependencies": {
-    "less": "~1.1.4",
-    "serve": "~1.0.2",
-    "h5bp-docs": "http://nodeload.github.com/mklabs/h5bp-docs/tarball/master",
-    "rimraf": "~1.0.9"
+    "h5bp-docs": "http://nodeload.github.com/mklabs/h5bp-docs/tarball/dev",
+    "ini": "~1.0.2"
   },
   "scripts": {
-    "postinstall": "git clone git://github.com/lyonjs/lyonjs.github.com.wiki.git || exit 0",
-    "less": "cp ./assets/css/app.css ./assets/css/style.css && ./node_modules/.bin/lessc ./assets/less/bootstrap.less --compress >> ./assets/css/style.css",
-    "serve": "./node_modules/.bin/serve",
-    "wikify": "./scripts/wikify.sh",
-    "deploy": "./scripts/deploy.sh"
+    "generate": "node bin/generate --config grunt.js --tasks scripts",
+    "deploy": "node bin/generate --config grunt.js --tasks scripts deploy"
   }
 }

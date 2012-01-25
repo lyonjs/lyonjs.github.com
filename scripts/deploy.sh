@@ -12,7 +12,7 @@ npm i && npm run-script wikify --baseurl "/"
 git add out/ .gitignore CNAME readme.md favicon.ico -f
 
 # clean up non-tracked files
-git clean -fdx
+git clean -fdx -e node_modules
 
 # then, move generated files to root
 git mv out/* .
