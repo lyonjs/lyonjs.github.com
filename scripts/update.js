@@ -6,20 +6,23 @@ var fs = require('fs'),
 
 // Grunt tasks
 
+task.registerTask('log', 'loooog', console.log.bind(console));
+
 task.registerBasicTask('update', 'Init the wiki repo, update if needed', function(data, name) {
   // guess the remote origin wiki url
   var origin = task.helper('remote-wiki', name),
     dir = path.basename(origin).replace(/\.git$/, ''),
+    exists = path.existsSync(dir),
     cb = this.async();
 
   log.writeln('clone the wiki repo, if already there, pull instead');
 
-  var cmd = (path.existsSync(dir) ? 'git pull ' : 'git clone ') + origin;
+  var cmd = (exists ? 'git pull ' : 'git clone ') + origin;
 
   log.writeln('executing: ' + cmd);
 
   // clone the wiki repo, if already there, pull instead
-  exec(cmd, function(err, stdout) {
+  exec(cmd, { cwd: exists ? path.resolve(dir) : process.cwd() }, function(err, stdout) {
     if(err) return fail.warn(err, 3);
 
     log.writeln(stdout);
