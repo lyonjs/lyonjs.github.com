@@ -34,22 +34,34 @@ The package.json defines a couple of npm-script you may use through the `npm run
 
     "scripts": {
       "generate": "node bin/generate --config grunt.js --tasks scripts",
-      "deploy": "node bin/generate --config grunt.js --tasks scripts deploy"
+      "deploy": "node bin/generate --config grunt.js --tasks scripts deploy",
+      "watch": "node bin/generate --config grunt.js --tasks scripts reload",
+      "reload": "node bin/generate --config grunt.js --tasks scripts reload"
     }
 
 * `generate`: That script will:
-  * Guess the correct location of repo's wiki from git config
-  * performs a first clone of wiki's repo, or pull from origin master if it exists.
-  * generates the site's content in `out/`
+  * guess the correct location of repo's wiki from git config
+  * perform a first clone of wiki's repo, or pull from origin master if it exists.
+  * generate the site's content in `out/`
 
-* `deploy`: Prepare the gh-branch
+* `deploy`: Prepares the gh-branch
   * switch to gh-pages or create an empty branch if it not exists yet.
-  * generates site's content in `out`
+  * generates site's content in `out/`
   * performs the necessary git commands to move, add and commit files accordingly.
+
+* `watch`: (*alias reload*)
+  * perfrom a first build
+  * spawn a local http server on top of `out/` dir
+  * Watch for file changes in wiki content, or layout templates / assets.
+  * retrigger a build and send an event through socket.io to reload (last) connected client.
+
+In any case, you may want to run the command directly instead of running an npm script. The command should include the path the the local config file and the path to the custom tasks dir, followed by the task(s) to run.
+
+    node bin/generate --config grunt.js --tasks scripts/ <task>
 
 **Note**: The generation process and scripts should work on windows too. The deploy script deploy may experience some issue on windows though, but should work well on osx / unix systems.
 
-On windows, you may need to run manually the the necessary git commands of the deploy script. That is:
+On windows, you may need to run manually the necessary git commands of the deploy script. That is:
 
     git symbolic-ref HEAD refs/heads/gh-pages
     node bin/generate --config grunt.js --tasks scripts
@@ -59,7 +71,7 @@ On windows, you may need to run manually the the necessary git commands of the d
     git mv out/* .
     git commit -m "the commit msg"
 
-And then push go origin upstream to reflect changes on the live sites, you'll need necessary github permissions to be able to do so.
+And then push to origin upstream to reflect changes on the live sites, you'll need necessary github permissions to be able to do so.
 
 ## How to contribute
 

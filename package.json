@@ -12,6 +12,8 @@
   },
   "scripts": {
     "generate": "node bin/generate --config grunt.js --tasks scripts",
-    "deploy": "node bin/generate --config grunt.js --tasks scripts deploy"
+    "deploy": "node bin/generate --config grunt.js --tasks scripts deploy",
+    "watch": "node bin/generate --config grunt.js --tasks scripts reload",
+    "reload": "node bin/generate --config grunt.js --tasks scripts reload"
   }
 }
