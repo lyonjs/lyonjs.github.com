@@ -24,7 +24,7 @@ config.init({
   },
 
   watch: {
-    files: '**/*.md',
+    files: ['<config:defaults.source>', 'layouts/public/js/*.js', 'layouts/public/css/**', 'layouts/*.html'],
     tasks: 'generate:site',
 
     reload: {
@@ -40,7 +40,7 @@ config.init({
       port: 3001,
       logs: 'default',
       dirs: true,
-      path: './'
+      path: './out'
     }
   },
 
