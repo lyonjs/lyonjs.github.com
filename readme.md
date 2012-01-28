@@ -1,4 +1,3 @@
-
 lyonjs.org
 ----------
 
@@ -64,6 +63,7 @@ In any case, you may want to run the command directly instead of running an npm 
 On windows, you may need to run manually the necessary git commands of the deploy script. That is:
 
     git symbolic-ref HEAD refs/heads/gh-pages
+    rm .git/index
     node bin/generate --config grunt.js --tasks scripts
     # or npm run-script generate
     git add out/ .gitignore CNAME favicon.ico -f
