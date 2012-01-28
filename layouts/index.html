@@ -12,27 +12,26 @@
 
   <body>
 
-    <div class="topbar">
-      <div class="fill">
+    <header class="subhead">
+      <div class="subnav">
         <div class="container">
-          <a class="brand" href="#">LyonJS</a>
-          <ul class="nav">
-            {{#files}}
-              <li><a href="{{ href }}">{{ title }}</a></li>
-            {{/files}}
+          <ul class="nav pills">
+          {{#files}}
+            <li><a href="{{ href }}">{{ title }}</a></li>
+          {{/files}}
           </ul>
         </div>
       </div>
-    </div>
+    </header>
 
     <div class="container">
 
       <!-- Main hero unit for a primary marketing message or call to action -->
-      <div class="hero-unit">
+      <div class="well row">
         <div id="logo" class="logo bounceIn"></div>
-        <div class="lead span9">
+        <div class="lead span7">
           <p>
-            L'association LyonJS, supporté par l'Epitech vous propose de vous retrouver 
+            L'association LyonJS, supporté par l'Epitech vous propose de vous retrouver
             chaque mois pour parler du JavaScript et tout ce qui l'entoure !
           </p>
 
@@ -55,12 +54,12 @@
 
       <!-- Example row of columns -->
       <div class="row">
-        <div class="span11">
+        <div class="span8">
 
           {{{ content }}}
 
        </div>
-       <div class="span5 menu-rg">
+       <div class="span4 menu-rg">
           <h3>On twitter</h3>
           <div class="twitter-stream">
             <span class="spinner"></span>

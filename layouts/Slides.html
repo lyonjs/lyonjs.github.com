@@ -12,22 +12,18 @@
       /* Override some defaults */
       html, body {
         background-color: #eee;
+        padding: 0;
       }
-      body {
-        padding-top: 40px; /* 40px to make the container go all the way to the bottom of the topbar */
-      }
+
       .container > footer p {
         text-align: center; /* center align it with the container */
-      }
-      .container {
-        width: 820px; /* downsize our container to make the content feel a bit tighter and more cohesive. NOTE: this removes two full columns from the grid, meaning you only go to 14 columns and not 16. */
       }
 
       /* The white background content wrapper */
       .content {
         background-color: #fff;
+        margin-top: 40px;
         padding: 20px;
-        margin: 0 -20px; /* negative indent the amount of the padding to maintain the grid system */
         -webkit-border-radius: 0 0 6px 6px;
            -moz-border-radius: 0 0 6px 6px;
                 border-radius: 0 0 6px 6px;
@@ -43,13 +39,8 @@
         margin: -20px -20px 20px;
       }
 
-      /* Styles you shouldn't keep as they are for displaying this base example only */
-      .content .span10,
-      .content .span4 {
-        min-height: 500px;
-      }
       /* Give a quick and non-cross-browser friendly divider */
-      .content .span4 {
+      .content .menu-rg {
         margin-left: 0;
         padding-left: 19px;
         border-left: 1px solid #eee;
@@ -63,31 +54,29 @@
   </head>
 
   <body>
-
-    <div class="topbar">
-      <div class="fill">
+    <header class="subhead">
+      <div class="subnav">
         <div class="container">
-          <a class="brand" href="#">LyonJS</a>
-          <ul class="nav">
-            {{#files}}
-              <li><a href="{{ href }}">{{ title }}</a></li>
-            {{/files}}
+          <ul class="nav pills">
+          {{#files}}
+            <li><a href="{{ href }}">{{ title }}</a></li>
+          {{/files}}
           </ul>
         </div>
       </div>
-    </div>
-
+    </header>
     <div class="container">
+
 
       <div class="content">
         <div class="page-header">
           <h1>LyonJS <small>{{ title }}</small></h1>
         </div>
         <div class="row">
-          <div class="span10">
+          <div class="span8">
             {{{ content }}}
           </div>
-          <div class="span4 menu-rg">
+          <div class="span3 menu-rg">
             <h3>On twitter</h3>
 
             <div class="twitter-stream">
