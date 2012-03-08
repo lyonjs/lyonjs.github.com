@@ -17,7 +17,7 @@ task.registerBasicTask('update', 'Init the wiki repo, update if needed', functio
 
   log.writeln('clone the wiki repo, if already there, pull instead');
 
-  var cmd = (exists ? 'git pull ' : 'git clone ') + origin;
+  var cmd = exists ? 'git pull ' + origin + ' master' : 'git clone ' + origin;
 
   log.writeln('executing: ' + cmd);
 
