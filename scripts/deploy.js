@@ -19,8 +19,11 @@ task.registerBasicTask('deploy', 'Simple deploy script, prepares the gh-pages br
     // out/* to the repo's root and commit.
     var cmds = [
       'git checkout ' + name,
-      'git add out/ .gitignore CNAME favicon.ico -f',
-      'git mv out/* .',
+      'cp -r out/ node_modules/out',
+      'cp CNAME favicon.icon node_modules/out'
+      'git rm -r *',
+      'mv node_modules/out/* .'
+      'git add .',
       'git commit -m "' + msg + '"'
     ].join(' && ');
 
