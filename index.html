@@ -7,31 +7,24 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-
-  <title>LyonJS :: {{ title }}</title>
+  <title>LyonJS :: Home</title>
   <meta name="description" content="LyonJS Meetup">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <link rel="stylesheet" href="{{ baseurl }}/public/css/style.css" >
+  <link rel="stylesheet" href="/public/css/style.css" >
 </head>
-
 <body>
-
   <header class="subhead">
     <div class="subnav">
       <div class="container">
         <ul class="nav pills">
-        {{#files}}
-          <li><a href="{{ href }}">{{ title }}</a></li>
-        {{/files}}
+                  <li><a href="/">Home</a></li>
+                  <li><a href="/Slides/">Slides</a></li>
         </ul>
       </div>
     </div>
   </header>
-
   <div class="container">
-
     <!-- Main hero unit for a primary marketing message or call to action -->
     <div class="well row">
       <div id="logo" class="logo bounceIn"></div>
@@ -40,13 +33,9 @@
           L'association LyonJS, supporté par l'Epitech vous propose de vous retrouver
           chaque mois pour parler du JavaScript et tout ce qui l'entoure !
         </p>
-
-
         <h3>Où ?</h3>
         <p><a href="http://www.epitech.eu/">Epitech Lyon</a>, <a href="http://maps.google.fr/maps/place?q=Epitech+Lyon&hl=fr&cid=2934105339601756812">86 Boulevard Marius Vivier Merle, 69003 Lyon</a></p>
-
         <p>Plus d'infos: par <a href="https://groups.google.com/forum/#!forum/lyonjs">ici</a></p>
-
         <p class="buttons bounceIn animate">
            <a href="https://groups.google.com/forum/#!forum/lyonjs" class="btn">Mailing-list</a>
           <a href="http://twitter/#!/lyonjs" class="btn">Twitter</a>
@@ -54,13 +43,26 @@
         </p>
       </div>
     </div>
-
     <!-- Example row of columns -->
     <div class="row">
       <div class="span8">
-
-        {{{ content }}}
-
+        <h2>Bienvenue sur le site de LyonJS !</h2>
+<p>Ce site a pour but de rassembler les utilisateurs JavaScript de la ville de Lyon et de ses alentours. Ainsi nous orgnisons des réunions d'informations mensuelles ouvertes <strong>à tous</strong> et <strong>gratuites</strong>.</p>
+<p>Le but est de se retrouver afin d'assister à des conférences dont le thème porte sur les technologies web et JavaScript en particulier. </p>
+<p>Nous nous retrouvons ensuite autour d'un buffet en vue d'échanger nos impressions et de poursuivre la discussion.</p>
+<h3>Où ?</h3>
+<p><a href="http://epitech.eu">Epitech Lyon</a>, <a href="http://maps.google.fr/maps/place?q=Epitech+Lyon&amp;hl=fr&amp;cid=2934105339601756812">86 Boulevard Marius Vivier Merle, 69003 Lyon</a></p>
+<h3>Quand?</h3>
+<p><strong>Prochaine session:</strong> Mardi 13 Mars - 19:00.</p>
+<p>Au programme :</p>
+<ul>
+<li>Création de mashup cartographique par @fnicollet avec LeafletJS et CartoDB sur iPad Wééééééé</li>
+<li>La légende du navigateur sans tête, par @naholyr, avec PhantomJS et CasperJS</li>
+</ul>
+<p>Plus d'infos peuvent être trouvé sur la <a href="https://groups.google.com/forum/#!topic/lyonjs/hmzTSWj5-0M">mailing-list</a>.</p>
+<h3>Slides</h3>
+<p>Vous pourrez retrouver la liste des précédentes sessions et un lien vers les différentes présentations en vous rendant sur <a href="Slides">ce lien</a>.</p>
+<p>Ce site est généré à partir du <a href="https://github.com/lyonjs/lyonjs.github.com/wiki">wiki github</a>, où vous pouvez également retrouver chacune de ces informations.</p>
      </div>
      <div class="span4 menu-rg">
         <h3>On twitter</h3>
@@ -69,7 +71,6 @@
         </div>
       </div>
     </div>
-
     <footer>
       <p class="twt"></p>
       <p class="buttons">
@@ -77,10 +78,7 @@
         <a href="http://github.com/lyonjs" class="twitter-follow-button github"></a>
       </p>
     </footer>
-
   </div>
-
-
   <script type="text/raphaelsvg" id="logo-svg">
     <svg
        xmlns:dc="http://purl.org/dc/elements/1.1/"
@@ -242,12 +240,10 @@
         </g>
       </g>
     </svg>
-
   </script>
-
-  <script src="{{baseurl}}/public/js/libs/jquery.min.js"></script>
-  <script src="{{baseurl}}/public/js/libs/raphael-min.js"></script>
-  <script src="{{baseurl}}/public/js/libs/jquery.lifestream.min.js"></script>
-  <script src="{{baseurl}}/public/js/scripts.js"></script>
+  <script src="/public/js/libs/jquery.min.js"></script>
+  <script src="/public/js/libs/raphael-min.js"></script>
+  <script src="/public/js/libs/jquery.lifestream.min.js"></script>
+  <script src="/public/js/scripts.js"></script>
 </body>
 </html>
