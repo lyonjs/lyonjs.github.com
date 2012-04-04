@@ -14,7 +14,6 @@
     "install": "git clone git://github.com/lyonjs/lyonjs.github.com.wiki.git",
     "generate": "node node_modules/h5bp-docs/bin/generate --src lyonjs.github.com.wiki/ --template ../layout/template.html",
     "postgenerate": "rm -rf _site && mv lyonjs.github.com.wiki/_site . && cp -r public/ _site/",
-    "serve": "cd _site/ && serve",
-    "serve": "cd _site/ && serve"
+    "serve": "npm run-script generate && cd _site/ && serve"
   }
 }
