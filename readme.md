@@ -41,9 +41,10 @@ The package.json defines a couple of npm-script you may use through the `npm run
 
 ```js
 "scripts": {
-  "install": "git clone git://github.com/lyonjs/lyonjs.github.com.wiki.git"
-  "generate": "node node_modules/h5bp-docs/bin/generate --src lyonjs.github.com.wiki/ --dest out/ --template layout/template.html",
-  "serve": "cd out/ && serve"
+  "install": "git clone git://github.com/lyonjs/lyonjs.github.com.wiki.git",
+  "generate": "node node_modules/h5bp-docs/bin/generate --src lyonjs.github.com.wiki/ --template ../layout/template.html",
+  "postgenerate": "cp -r lyonjs.github.com.wiki/_site/* .",
+  "serve": "npm run-script generate && serve"
 }
 ```
 
@@ -56,10 +57,9 @@ you'll need to do these few steps:
     cd lyonjs.github.com.wiki/
     git pull origin master
     cd ..
-    npm run-script docs
+    npm run-script generate
 
-To preview the generated output, simply cd into `out/` and start a local
-http server like so:
+To preview the generated output, run this.
 
   npm run-script serve
 
@@ -68,21 +68,9 @@ globally, run `npm install serve -g` if that's not the case**
 
 ## Deploy
 
-Once the site is generated and you're happy with the results, run the following commands.
-
-    git symbolic-ref HEAD refs/heads/gh-pages
-    rm .git/index
-    npm run-script generate
-    # or npm run-script generate
-    git add out/ .gitignore CNAME favicon.ico -f
-    git clean -fdx -e node_modules
-    git mv out/* .
-    git commit -m "the commit msg"
-
-For the lazy one out there, you may want to run `./deploy`
-
-And then push to origin upstream to reflect changes on the live sites,
-you'll need necessary github permissions to be able to do so.
+Once the site is generated and you're happy with the results, you may push to
+origin upstream to reflect changes on the live site, you'll need necessary
+github permissions to be able to do so.
 
 ## How to contribute
 
