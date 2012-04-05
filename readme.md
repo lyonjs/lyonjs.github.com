@@ -92,4 +92,3 @@ As of now, the live site is hosted on github. Ideally, we'll move to custom
 server and may automate the process a bit further (like generating the site on a
 regular basis via a cron job).
 
-
