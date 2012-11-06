@@ -107,18 +107,6 @@
         scale: 0.8
       });
     });
-
-    // ## twitter stream.
-    // add a slight timeout delay, mainly because I luv that spinning css3 stuff
-    setTimeout(function() {
-      $(".twitter-stream").lifestream({
-        limit: 5,
-        list:[{
-          service: "twitter",
-          user: "lyonjs"
-        }]
-      });
-    }, 1000);
   });
 
 })(this.jQuery, this.Raphael, this.location, this);
