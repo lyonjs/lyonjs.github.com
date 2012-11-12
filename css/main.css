@@ -4,7 +4,7 @@
 
 body,
 article.next,
-article.next h2
+article h2
 {
   background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAHklEQVQIW2P4//+/MBQzgDAICEMxXAAMYCoRIlCVANL6FYTYi5d+AAAAAElFTkSuQmCC);
 }
