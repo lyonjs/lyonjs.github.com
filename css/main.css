@@ -1,9 +1,12 @@
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
+body {
+  padding-top: 40px;
+}
 
 body,
-article.next,
+article#next,
 article h2
 {
   background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAHklEQVQIW2P4//+/MBQzgDAICEMxXAAMYCoRIlCVANL6FYTYi5d+AAAAAElFTkSuQmCC);
@@ -11,6 +14,10 @@ article h2
 
 * {
   font-family: 'Inconsolata', sans-serif;
+}
+
+#navbar {
+  background-color: white;
 }
 
 
@@ -34,96 +41,67 @@ article h2 a {
   color: inherit;
 }
 
-article.next h2 {
+article#next h2 {
   background-color: #0058c5;
 }
 
-article.where h2 {
+article#where h2 {
   background-color: #de2917;
 }
 
-article.previous h2 {
+article#previous h2 {
   background-color: #7C920F;
 }
 
-article.speakers h2 {
+article#speakers h2 {
   background-color: #0C3C78;
 }
 
-article.beers h2 {
+article#beers h2 {
   background-color: #657806;
 }
 
-article.next {
+article#next {
   background-color: whitesmoke;
   margin: 0;
   text-align: justify;
 }
 
-article.next h2,
-article.where h2
+article#next h2,
+article#where h2
 {
   margin-top: 0 !important;
 }
 
-article.next .avatar {
-  width: 210px;
+article#next .avatar {
+  width: 131px;
   margin: auto;
   display: block;
-  margin-top: 15%;
+  margin-top: 20%;
   border: solid 1px #CCC;
   background: white;
 }
 
-article.next .eventbrite {
+article#next .eventbrite {
   float: right;
 }
 
-.next p {
+#next p {
   padding-right: 25px;
 }
 
 
-article.where > iframe {
+article#where > iframe {
   margin: 0;
 }
 
-article.speakers ul {
-  list-style-type: none;
-  margin: 0 25px;
-}
-
-article.speakers li {
-  clear: both;
-  margin-top: 25px;
-  margin-bottom: 25px;
-}
-
-article.speakers li > img {
-  float: left;
+article#speakers img {
   padding-left: 0px;
   display: inline-block;
   width: 210px;
 }
 
-article.speakers li > * {
-  padding-left: 235px;
-}
-
-.beers p {
+#beers p {
   padding: 0 25px;
 }
-
-article.love h2 {
-  background-color: #fe57a1;
-  margin-bottom: 0;
-}
-
-
-
-
-
-
-
-
 
