@@ -17,7 +17,7 @@ article h2
 }
 
 #navbar {
-  background-color: white;
+  background-color: black;
 }
 
 
@@ -40,25 +40,79 @@ article h2 {
 article h2 a {
   color: inherit;
 }
+@-moz-keyframes charlieeee {
+  from { background-position:top left; } 
+  to {background-position:top right; }
+}
+@-webkit-keyframes charlieeee { 
+  from { background-position:top left; }  
+  to { background-position:top right; }  
+}
+@-o-keyframes charlieeee { 
+  from { background-position:top left; }  
+  to { background-position:top right; }  
+}
+@-ms-keyframes charlieeee { 
+  from { background-position:top left; }  
+  to { background-position:top right; }  
+}
+@-khtml-keyframes charlieeee { 
+  from { background-position:top left; }  
+  to { background-position:top right; }  
+}
+@keyframes charlieeee { 
+  from { background-position:top left; }  
+  to { background-position:top right; }  
+}
+
+article h2 {
+  background-image:-webkit-linear-gradient( left, red, orange, yellow, green,
+                                          blue, indigo, violet, indigo, blue,
+                                          green, yellow, orange, red );
+  background-image:-moz-linear-gradient( left, red, orange, yellow, green,
+                                         blue,indigo, violet, indigo, blue,
+                                         green, yellow, orange,red );
+  background-image:-o-linear-gradient( left, red, orange, yellow, green,
+                                         blue,indigo, violet, indigo, blue,
+                                         green, yellow, orange,red );
+  background-image:-ms-linear-gradient( left, red, orange, yellow, green,
+                                         blue,indigo, violet, indigo, blue,
+                                         green, yellow, orange,red );
+  background-image:-khtml-linear-gradient( left, red, orange, yellow, green,
+                                         blue,indigo, violet, indigo, blue,
+                                         green, yellow, orange,red );
+  background-image:linear-gradient( left, red, orange, yellow, green,
+                                         blue,indigo, violet, indigo, blue,
+                                         green, yellow, orange,red );
+  -moz-animation:charlieeee 25s forwards linear infinite;
+  -webkit-animation:charlieeee 25s forwards linear infinite;
+  -o-animation:charlieeee 25s forwards linear infinite;
+  -khtml-animation:charlieeee 25s forwards linear infinite;
+  -ms-animation:charlieeee 25s forwards linear infinite;
+  -lynx-animation:charlieeee 25s forwards linear infinite;
+  animation:charlieeee 25s forwards linear infinite;
+  background-size:50% auto;
+  text-shadow: 0 -1px 0 rgba(0,0,0,0.25);
+}
 
 article#next h2 {
-  background-color: #0058c5;
+  /*background-color: #0058c5;*/
 }
 
 article#where h2 {
-  background-color: #de2917;
+  /*background-color: #de2917;*/
 }
 
 article#previous h2 {
-  background-color: #7C920F;
+  /*background-color: #7C920F;*/
 }
 
 article#speakers h2 {
-  background-color: #0C3C78;
+  /*background-color: #0C3C78;*/
 }
 
 article#beers h2 {
-  background-color: #657806;
+  /*background-color: #657806;*/
 }
 
 article#next {
