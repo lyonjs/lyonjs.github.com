@@ -1,10 +1,6 @@
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
-body {
-  padding-top: 40px;
-}
-
 body,
 article#next,
 article h2
@@ -16,7 +12,8 @@ article h2
   font-family: 'Inconsolata', sans-serif;
 }
 
-#navbar {
+#navbar,
+#navbar .nav {
   background-color: black;
 }
 
@@ -161,5 +158,11 @@ article#speakers img {
 
 #beers p {
   padding: 0 25px;
+}
+
+@media (max-width: 850px) {
+  .ribbon {
+    display: none;
+  }
 }
 
