@@ -20,10 +20,6 @@ header {
   text-align: center;
 }
 
-article > *{
-  margin: 0 25px;
-}
-
 article h2 {
   color: white;
   margin: 0;
@@ -32,6 +28,10 @@ article h2 {
   text-align: center;
   margin-top: 25px;
   margin-bottom: 25px;
+}
+
+article h2 a {
+  color: inherit;
 }
 
 article.next h2 {
@@ -79,6 +79,11 @@ article.next .eventbrite {
   float: right;
 }
 
+.next p {
+  padding-right: 25px;
+}
+
+
 article.where > iframe {
   margin: 0;
 }
@@ -105,6 +110,9 @@ article.speakers li > * {
   padding-left: 235px;
 }
 
+.beers p {
+  padding: 0 25px;
+}
 
 article.love h2 {
   background-color: #fe57a1;
