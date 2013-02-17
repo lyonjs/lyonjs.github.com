@@ -149,6 +149,10 @@ article#where > iframe {
   margin: 0;
 }
 
+article#speakers .row-fluid {
+  padding: 2px 0;
+}
+
 article#speakers img {
   padding-left: 0px;
   display: inline-block;
