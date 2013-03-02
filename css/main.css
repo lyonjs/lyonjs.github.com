@@ -2,10 +2,14 @@
    Author's custom styles
    ========================================================================== */
 body,
-article#next,
-article h2
+
 {
   background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAHklEQVQIW2P4//+/MBQzgDAICEMxXAAMYCoRIlCVANL6FYTYi5d+AAAAAElFTkSuQmCC);
+}
+
+
+article #next , article h2{
+   background-color:rgba(1,1,1,.1);
 }
 
 * {
