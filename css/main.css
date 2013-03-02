@@ -5,7 +5,10 @@ body,
 article#next,
 article h2
 {
-  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAHklEQVQIW2P4//+/MBQzgDAICEMxXAAMYCoRIlCVANL6FYTYi5d+AAAAAElFTkSuQmCC);
+  background-color:grey;
+  border-radius:3px;
+
+  
 }
 
 * {
