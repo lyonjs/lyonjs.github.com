@@ -92,6 +92,18 @@ article#next .eventbrite {
   float: right;
 }
 
+article#next .logo {
+  width: 131px;
+  margin: auto;
+  display: block;
+  border: solid 1px #CCC;
+  background: white;
+}
+
+article#next .description {
+  padding-right: 50px;
+}
+
 #next p {
   padding-right: 25px;
 }
@@ -121,3 +133,7 @@ article#speakers img {
   }
 }
 
+.centered {
+  text-align: center;
+  display: block;
+}
