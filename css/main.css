@@ -137,3 +137,15 @@ article#speakers img {
   text-align: center;
   display: block;
 }
+
+.contacts {
+  line-height: 32px;
+  padding-top: 4px;
+  padding-right: 20px;
+}
+
+.contacts a {
+  font-size: 32px;
+  color: #999;
+  text-decoration: none;
+}
