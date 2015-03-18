@@ -149,3 +149,7 @@ article#speakers img {
   color: #999;
   text-decoration: none;
 }
+
+.notloaded{
+  display:none;
+}
