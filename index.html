@@ -66,7 +66,7 @@
     <h2 class="title"></h2>
     <div class="row-fluid">
       <div class="span4" style="text-align:center">
-  <a class="link">    
+  <a class="link">
   <h1>Register on</h1>
 
       <img src="img/meetup.png" alt="LyonJS" >
@@ -93,22 +93,8 @@
     <h2>Les sessions précédentes</h2>
     <ul>
       <li>
-        <h3>Lundi 21 Septembre 2015</h3>
-        ApéroJS / AG LyonJS
-      </li>
-      <li>
-        <h3>Mardi 28 Avril 2015</h3>
-        WebGL par Benjamin Guignabert (<a href="https://twitter.com/euphoben">@euphoben</a>)
-        <br>
-        Treeline.io - Ta grand mère fait des APIs par Calig0ne (<a href="https://twitter.com/Calig0ne">@Calig0ne</a>)
-      </li>
-      <li>
-        <h3>Mardi 24 Mars 2015</h3>
-        Live coding React / Flux Isomorphique par Nicolas Cuillery (<a href="https://twitter.com/ncuillery">@ncuillery</a>)
-      </li>
-      <li>
-        <h3>Lundi 23 Février 2015</h3>
-        LumX par <a href="https://twitter.com/thagou">@thagou</a>
+        <h3>Date</h3>
+        topic || talks
       </li>
       <li>
         <h3>Lundi 26 Janvier 2015</h3>
@@ -584,34 +570,5 @@
   <script type="text/javascript" src="js/vendor/konami.js"></script>
   <script type="text/javascript" src="js/vendor/cornify.js"></script>
   <script type="text/javascript" src="js/main.js"></script>
-  <!--<script>
-    var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
-    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-      g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-      s.parentNode.insertBefore(g,s)}(document,'script'));
-    </script>-->
-    <script type="text/javascript">
-    var Days = [ "Dimanche" , "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi" ];
-    var Months = [ "janvier" , "février", "mars", "avril", "mai", "juin","juillet", "aout","septembre", "octobre", "novembre", "décembre" ];
-    var url = "https://api.meetup.com/2/events?group_urlname=LyonJS&page=1&sig_id=145819132&sig=5611252fcbd2a6255354102b4d26041a9e5a6f41&_=1426671317683&callback=?";
-    $.ajax( { dataType:"json" , url : url , success: function(data, status, req){
-        if(data && data.results && data.results[0] ) {
-        var event = data.results[0];
-        var d = new Date(event.time);
-        var dateString = Days[d.getDay()] + ' '+ d.getDate() + ' ' + Months[d.getMonth()] + ' ' +  (1900+d.getYear()) +  ' à ' + d.getHours() +':' +d.getMinutes();
-        $("#event .date").html( dateString);
-        $("#next .title").html( event.name);
-        $("#next .link").attr('href' ,  event.event_url);
-        $("#next .description").html( event.description);
-        $("#where .name").html( "Le lieu : " + event.venue.name);
-
-        $(".notloaded").removeClass('notloaded');
-        var mapurl = "http://maps.google.fr/maps?f=q&source=s_q&hl=fr&ie=UTF8&z=14&output=embed";
-        mapurl += "&q="+ event.venue.address_1 +','+event.venue.city;
-        $("#where .map").attr("src", mapurl);
-
-        }} });
-
-</script>
 </body>
 </html>
