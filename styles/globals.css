@@ -1,5 +1,28 @@
 :root {
-  --grey-0: #333;
+  --grey-0: #323330;
+  --yellow-0: #efda4e;
+  --yellow-1: #B5A53C;
+  --white-0: #FFFFFF;
+  --white-1: #b2b2b2;
 
   --background-color: var(--grey-0);
+  --main-color: var(--yellow-0);
+  --secondary-color: var(--yellow-1);
+  --foreground-color: var(--white-0);
+  --border-color: var(--white-1);;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(/fonts/Roboto-Regulart.ttf) format('truetype');
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--background-color);
+
+  color: var(--white-0);
 }

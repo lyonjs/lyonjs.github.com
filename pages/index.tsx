@@ -1,72 +1,104 @@
-import type { NextPage } from 'next'
-import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
+import type { NextPage } from 'next';
+import { LyonJSHead } from '../modules/header/LyonJSHead';
+import { Header } from '../modules/header/Header';
+import { GraphQLClient, gql } from 'graphql-request';
 
-const Home: NextPage = () => {
+type Event = {
+  title: string;
+  shortDescription: string;
+  description: string;
+  eventUrl: string;
+  dateTime: string;
+};
+const Home: NextPage<{ nextEvent: Event; lastVideos: any[] }> = ({ nextEvent, lastVideos }) => {
   return (
-    <div className={styles.container}>
-      <Head>
-        <title>LyonJS - Communauté lyonnaise des utilisateurs de JavaScript</title>
-        <meta name="description" content="Communauté lyonnaise des utilisateurs de JavaScript" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+    <>
+      <LyonJSHead />
+      <Header />
+      <main>
+        {nextEvent ? (
+          <>
+            <h1>Prochain LyonJS</h1>
+            <p>{nextEvent.dateTime}</p>
+            <h2>{nextEvent.title}</h2>
+            <p>{nextEvent.description}</p>
+            <a href={nextEvent.eventUrl}>S&apos;inscrire</a>
+          </>
+        ) : null}
 
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.tsx</code>
-        </p>
-
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h2>Documentation &rarr;</h2>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h2>Learn &rarr;</h2>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/canary/examples"
-            className={styles.card}
-          >
-            <h2>Examples &rarr;</h2>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h2>Deploy &rarr;</h2>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
+        {lastVideos ? (
+          <>
+            <h1>Précédentes sessions</h1>
+            {lastVideos.map((video) => (
+              <>
+                <h2>{video.snippet.title}</h2>
+                <p>{video.snippet.description}</p>
+                <iframe
+                  width="560"
+                  height="315"
+                  src={`https://www.youtube.com/embed/${video.id.videoId}`}
+                  title="YouTube video player"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                ></iframe>
+              </>
+            ))}
+          </>
+        ) : null}
       </main>
+    </>
+  );
+};
 
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <span className={styles.logo}>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-          </span>
-        </a>
-      </footer>
-    </div>
-  )
+export async function getStaticProps() {
+  return { props: {} };
+  // const client = new GraphQLClient('https://www.meetup.com/gql');
+  // const query = gql`
+  //   query getGroupTopicCategory($id: ID!) {
+  //     group(id: $id) {
+  //       id
+  //       name
+  //       upcomingEvents(input: {}) {
+  //         edges {
+  //           node {
+  //             title
+  //             description
+  //             eventUrl
+  //             dateTime
+  //           }
+  //         }
+  //       }
+  //     }
+  //   }
+  // `;
+  //
+  // const nextEventPromise = client.request(query, { id: 18305583 });
+  //
+  // const lastVideoSearchParam = new URLSearchParams();
+  // lastVideoSearchParam.append('part', 'snippet,id');
+  // lastVideoSearchParam.append('channelId', 'UCGTVc5PnIgAUoA2D2_6nJLg');
+  // lastVideoSearchParam.append('maxResults', '10');
+  // lastVideoSearchParam.append('order', 'date');
+  // lastVideoSearchParam.append('key', 'AIzaSyBqsYMTSYzA2-TJRwR2lNCDToh7R4ONbHY');
+  //
+  // const lastVideosPromise = fetch(
+  //   'https://youtube.googleapis.com/youtube/v3/search?' + lastVideoSearchParam.toString(),
+  //   {
+  //     headers: {
+  //       Accept: 'application/json',
+  //     },
+  //   },
+  // ).then((it) => it.json());
+  //
+  // const [nextEvent, lastVideos] = await Promise.all([nextEventPromise, lastVideosPromise]);
+  //
+  // return {
+  //   props: {
+  //     nextEvent: nextEvent?.group?.upcomingEvents?.edges?.[0]?.node || null,
+  //     lastVideos: lastVideos?.items,
+  //   },
+  // };
 }
 
-export default Home
+export default Home;
