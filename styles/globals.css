@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
   --grey-0: #323330;
   --yellow-0: #efda4e;
@@ -9,20 +13,17 @@
   --main-color: var(--yellow-0);
   --secondary-color: var(--yellow-1);
   --foreground-color: var(--white-0);
-  --border-color: var(--white-1);;
-}
-
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url(/fonts/Roboto-Regulart.ttf) format('truetype');
+  --border-color: var(--white-1);
 }
 
 body {
-  font-family: 'Roboto', sans-serif;
   background-color: var(--background-color);
 
   color: var(--white-0);
+}
+
+main {
+  padding: 8px 20px;
+  max-width: 1200px;
+  margin: auto;
 }

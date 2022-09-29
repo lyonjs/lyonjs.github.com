@@ -1,36 +1,25 @@
-import type { NextPage } from 'next';
+import type { NextPage, GetStaticProps } from 'next';
+import { GraphQLClient, gql } from 'graphql-request';
+import React from 'react';
+import type { Event } from '../modules/event/types';
 import { LyonJSHead } from '../modules/header/LyonJSHead';
 import { Header } from '../modules/header/Header';
-import { GraphQLClient, gql } from 'graphql-request';
+import { EventCard } from '../modules/event/EventCard';
 
-type Event = {
-  title: string;
-  shortDescription: string;
-  description: string;
-  eventUrl: string;
-  dateTime: string;
-};
-const Home: NextPage<{ nextEvent: Event; lastVideos: any[] }> = ({ nextEvent, lastVideos }) => {
+type Props = { nextEvent: Event; lastVideos: any[] };
+const Home: NextPage<Props> = ({ nextEvent, lastVideos }) => {
   return (
     <>
       <LyonJSHead />
       <Header />
       <main>
-        {nextEvent ? (
-          <>
-            <h1>Prochain LyonJS</h1>
-            <p>{nextEvent.dateTime}</p>
-            <h2>{nextEvent.title}</h2>
-            <p>{nextEvent.description}</p>
-            <a href={nextEvent.eventUrl}>S&apos;inscrire</a>
-          </>
-        ) : null}
+        {nextEvent ? <EventCard event={nextEvent} /> : <p>Pas de prochain LyonJS de trouvé !</p>}
 
         {lastVideos ? (
           <>
             <h1>Précédentes sessions</h1>
             {lastVideos.map((video) => (
-              <>
+              <React.Fragment key={video.id}>
                 <h2>{video.snippet.title}</h2>
                 <p>{video.snippet.description}</p>
                 <iframe
@@ -42,7 +31,7 @@ const Home: NextPage<{ nextEvent: Event; lastVideos: any[] }> = ({ nextEvent, la
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
                 ></iframe>
-              </>
+              </React.Fragment>
             ))}
           </>
         ) : null}
@@ -51,54 +40,86 @@ const Home: NextPage<{ nextEvent: Event; lastVideos: any[] }> = ({ nextEvent, la
   );
 };
 
-export async function getStaticProps() {
-  return { props: {} };
-  // const client = new GraphQLClient('https://www.meetup.com/gql');
-  // const query = gql`
-  //   query getGroupTopicCategory($id: ID!) {
-  //     group(id: $id) {
-  //       id
-  //       name
-  //       upcomingEvents(input: {}) {
-  //         edges {
-  //           node {
-  //             title
-  //             description
-  //             eventUrl
-  //             dateTime
-  //           }
-  //         }
-  //       }
-  //     }
-  //   }
-  // `;
-  //
-  // const nextEventPromise = client.request(query, { id: 18305583 });
-  //
-  // const lastVideoSearchParam = new URLSearchParams();
-  // lastVideoSearchParam.append('part', 'snippet,id');
-  // lastVideoSearchParam.append('channelId', 'UCGTVc5PnIgAUoA2D2_6nJLg');
-  // lastVideoSearchParam.append('maxResults', '10');
-  // lastVideoSearchParam.append('order', 'date');
-  // lastVideoSearchParam.append('key', 'AIzaSyBqsYMTSYzA2-TJRwR2lNCDToh7R4ONbHY');
-  //
-  // const lastVideosPromise = fetch(
-  //   'https://youtube.googleapis.com/youtube/v3/search?' + lastVideoSearchParam.toString(),
-  //   {
-  //     headers: {
-  //       Accept: 'application/json',
-  //     },
-  //   },
-  // ).then((it) => it.json());
-  //
-  // const [nextEvent, lastVideos] = await Promise.all([nextEventPromise, lastVideosPromise]);
-  //
-  // return {
-  //   props: {
-  //     nextEvent: nextEvent?.group?.upcomingEvents?.edges?.[0]?.node || null,
-  //     lastVideos: lastVideos?.items,
-  //   },
-  // };
-}
+export const getStaticProps: GetStaticProps<Props> = async () => {
+  const client = new GraphQLClient('https://www.meetup.com/gql');
+  const query = gql`
+    query nextEvents($id: ID!) {
+      group(id: $id) {
+        id
+        name
+        pastEvents(input: { first: 5000 }) {
+          edges {
+            node {
+              title
+              description
+              eventUrl
+              dateTime
+              imageUrl
+              venue {
+                name
+                address
+                city
+                postalCode
+                lat
+                lng
+              }
+            }
+          }
+        }
+        upcomingEvents(input: {}) {
+          edges {
+            node {
+              title
+              description
+              eventUrl
+              dateTime
+            }
+          }
+        }
+      }
+    }
+  `;
+
+  type Edges<T> = {
+    edges: Array<{
+      node: T;
+    }>;
+  };
+
+  type ResponseType = {
+    group: {
+      id: string;
+      name: string;
+      upcomingEvents: Edges<Event>;
+      pastEvents: Edges<Event>;
+    };
+  };
+  const nextEventPromise = client.request<ResponseType>(query, { id: 18305583 });
+
+  const lastVideoSearchParam = new URLSearchParams();
+  lastVideoSearchParam.append('part', 'snippet,id');
+  lastVideoSearchParam.append('channelId', 'UCGTVc5PnIgAUoA2D2_6nJLg');
+  lastVideoSearchParam.append('maxResults', '10');
+  lastVideoSearchParam.append('order', 'date');
+  lastVideoSearchParam.append('key', process.env.YOUTUBE_API_KEY || '');
+
+  const lastVideosPromise = fetch(
+    'https://youtube.googleapis.com/youtube/v3/search?' + lastVideoSearchParam.toString(),
+    {
+      headers: {
+        Accept: 'application/json',
+      },
+    },
+  ).then((it) => it.json());
+
+  const [nextEvent, lastVideos] = await Promise.all([nextEventPromise, lastVideosPromise]);
+
+  return {
+    props: {
+      nextEvent: nextEvent?.group?.upcomingEvents?.edges?.[0]?.node || null,
+      lastVideos: lastVideos?.items,
+    },
+  };
+};
 
 export default Home;
