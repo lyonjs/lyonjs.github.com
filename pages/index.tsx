@@ -13,28 +13,32 @@ const Home: NextPage<Props> = ({ nextEvent, lastVideos }) => {
       <LyonJSHead />
       <Header />
       <main>
+        <h1 className="text-sm text-gray-400 my-4">
+          Bienvenue au Lyon JS : la communauté lyonnaise des utilisateurs de JavaScript
+        </h1>
+        <h2 className="text-xl my-4">Prochain évènement</h2>
         {nextEvent ? <EventCard event={nextEvent} /> : <p>Pas de prochain LyonJS de trouvé !</p>}
 
-        {lastVideos ? (
-          <>
-            <h1>Précédentes sessions</h1>
-            {lastVideos.map((video) => (
-              <React.Fragment key={video.id}>
-                <h2>{video.snippet.title}</h2>
-                <p>{video.snippet.description}</p>
-                <iframe
-                  width="560"
-                  height="315"
-                  src={`https://www.youtube.com/embed/${video.id.videoId}`}
-                  title="YouTube video player"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                ></iframe>
-              </React.Fragment>
-            ))}
-          </>
-        ) : null}
+        {/*{lastVideos ? (*/}
+        {/*  <>*/}
+        {/*    <h1>Précédentes sessions</h1>*/}
+        {/*    {lastVideos.map((video) => (*/}
+        {/*      <React.Fragment key={video.id}>*/}
+        {/*        <h2>{video.snippet.title}</h2>*/}
+        {/*        <p>{video.snippet.description}</p>*/}
+        {/*        <iframe*/}
+        {/*          width="560"*/}
+        {/*          height="315"*/}
+        {/*          src={`https://www.youtube.com/embed/${video.id.videoId}`}*/}
+        {/*          title="YouTube video player"*/}
+        {/*          frameBorder="0"*/}
+        {/*          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"*/}
+        {/*          allowFullScreen*/}
+        {/*        ></iframe>*/}
+        {/*      </React.Fragment>*/}
+        {/*    ))}*/}
+        {/*  </>*/}
+        {/*) : null}*/}
       </main>
     </>
   );
@@ -73,6 +77,15 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
               description
               eventUrl
               dateTime
+              imageUrl
+              venue {
+                name
+                address
+                city
+                postalCode
+                lat
+                lng
+              }
             }
           }
         }

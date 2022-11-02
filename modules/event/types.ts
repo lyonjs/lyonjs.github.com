@@ -5,4 +5,12 @@ export type Event = {
   eventUrl: string;
   dateTime: string;
   imageUrl: string;
+  venue: {
+    name: string;
+    address: string;
+    city: string;
+    postalCode: string;
+    lat: string;
+    lng: string;
+  };
 };

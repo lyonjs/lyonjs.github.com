@@ -27,3 +27,11 @@ main {
   max-width: 1200px;
   margin: auto;
 }
+
+.highlight {
+  display: inline;
+  padding: .25em 0;
+  background: var(--main-color);
+  color: var(--background-color);
+  box-shadow: .5em 0 0 var(--main-color), -.5em 0 0 var(--main-color);
+}
