@@ -116,7 +116,7 @@ export const Header = () => {
             <li>
               <a
                 className={styles.buttonPrimary}
-                href="https://conference-hall.io/invite/MlN1F0O8ITlfciMnuRui"
+                href="https://bit.ly/lyonjs-cfp"
                 target="_blank"
                 rel="noreferrer noopener"
               >

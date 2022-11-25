@@ -1,13 +1,33 @@
 import type { NextPage, GetStaticProps } from 'next';
-import { GraphQLClient, gql } from 'graphql-request';
-import React from 'react';
+import React, { useState } from 'react';
+import dayjs from 'dayjs';
+import _merge from 'lodash/merge';
+
+import { dataOverride } from '../data/data-override';
+import * as sponsors from '../data/sponsors';
+
 import type { Event } from '../modules/event/types';
 import { LyonJSHead } from '../modules/header/LyonJSHead';
 import { Header } from '../modules/header/Header';
 import { EventCard } from '../modules/event/EventCard';
+import { TitleHighlight } from '../modules/atoms/TitleHighlight';
+import { ButtonPrimary, LinkPrimary } from '../modules/atoms/ButtonPrimary';
+import { PastEventCard } from '../modules/event/PastEventCard';
+import { fetchMeetupEvents } from '../modules/meetup/api';
 
-type Props = { nextEvent: Event; lastVideos: any[] };
-const Home: NextPage<Props> = ({ nextEvent, lastVideos }) => {
+const Article: React.FC<{ children: any }> = ({ children }) => (
+  <article className="min-h-[400px] mb-28">{children}</article>
+);
+
+type Props = { nextEvent: Event; pastEvents: Event[] };
+const thisYear = dayjs().year();
+const Home: NextPage<Props> = ({ nextEvent, pastEvents }) => {
+  const [displayedYearEvents, setDisplayedYearEvents] = useState(thisYear);
+  const displayedLastEvents = pastEvents.filter((event) => dayjs(event.dateTime).year() >= displayedYearEvents);
+  const displayPreviousYearEvents = () => {
+    setDisplayedYearEvents(displayedYearEvents - 1);
+  };
+
   return (
     <>
       <LyonJSHead />
@@ -16,121 +36,61 @@ const Home: NextPage<Props> = ({ nextEvent, lastVideos }) => {
         <h1 className="text-sm text-gray-400 my-4">
           Bienvenue au Lyon JS : la communauté lyonnaise des utilisateurs de JavaScript
         </h1>
-        <h2 className="text-xl my-4">Prochain évènement</h2>
-        {nextEvent ? <EventCard event={nextEvent} /> : <p>Pas de prochain LyonJS de trouvé !</p>}
-
-        {/*{lastVideos ? (*/}
-        {/*  <>*/}
-        {/*    <h1>Précédentes sessions</h1>*/}
-        {/*    {lastVideos.map((video) => (*/}
-        {/*      <React.Fragment key={video.id}>*/}
-        {/*        <h2>{video.snippet.title}</h2>*/}
-        {/*        <p>{video.snippet.description}</p>*/}
-        {/*        <iframe*/}
-        {/*          width="560"*/}
-        {/*          height="315"*/}
-        {/*          src={`https://www.youtube.com/embed/${video.id.videoId}`}*/}
-        {/*          title="YouTube video player"*/}
-        {/*          frameBorder="0"*/}
-        {/*          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"*/}
-        {/*          allowFullScreen*/}
-        {/*        ></iframe>*/}
-        {/*      </React.Fragment>*/}
-        {/*    ))}*/}
-        {/*  </>*/}
-        {/*) : null}*/}
+        <Article>
+          <h2 className="text-xl my-4">Prochain évènement</h2>
+          {nextEvent ? <EventCard event={nextEvent} /> : <p>Pas de prochain LyonJS de trouvé !</p>}
+        </Article>
+        <Article>
+          <TitleHighlight Component="h2">Sponsors</TitleHighlight>
+          <div className="grid grid-cols-5 gap-12 mb-4">
+            {Object.values(sponsors).map((sponsor) => (
+              <a
+                key={sponsor.logo}
+                href={sponsor.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={sponsor.logoLight ? 'flex items-center bg-white' : 'flex items-center'}
+              >
+                <img src={sponsor.logo} alt={sponsor.name} title={sponsor.name} className="object-cover" />
+              </a>
+            ))}
+          </div>
+          <div className="flex justify-center">
+            <ButtonPrimary>Devenir sponsor</ButtonPrimary>
+          </div>
+        </Article>
+        <Article>
+          <TitleHighlight Component="h2">Evènements passés</TitleHighlight>
+          {displayedLastEvents?.map((it) => (
+            <PastEventCard event={it} key={it.eventUrl} />
+          ))}
+          {displayedLastEvents.length !== pastEvents.length && (
+            <div className="flex justify-center">
+              <ButtonPrimary onClick={displayPreviousYearEvents}>
+                Afficher les évènements de {displayedYearEvents - 1}
+              </ButtonPrimary>
+            </div>
+          )}
+        </Article>
       </main>
     </>
   );
 };
 
+const overrideEvent = (event: Event): Event => {
+  if (dataOverride[event.eventUrl]) {
+    return _merge(event, dataOverride[event.eventUrl]);
+  }
+  return event;
+};
+
 export const getStaticProps: GetStaticProps<Props> = async () => {
-  const client = new GraphQLClient('https://www.meetup.com/gql');
-  const query = gql`
-    query nextEvents($id: ID!) {
-      group(id: $id) {
-        id
-        name
-        pastEvents(input: { first: 5000 }) {
-          edges {
-            node {
-              title
-              description
-              eventUrl
-              dateTime
-              imageUrl
-              venue {
-                name
-                address
-                city
-                postalCode
-                lat
-                lng
-              }
-            }
-          }
-        }
-        upcomingEvents(input: {}) {
-          edges {
-            node {
-              title
-              description
-              eventUrl
-              dateTime
-              imageUrl
-              venue {
-                name
-                address
-                city
-                postalCode
-                lat
-                lng
-              }
-            }
-          }
-        }
-      }
-    }
-  `;
-
-  type Edges<T> = {
-    edges: Array<{
-      node: T;
-    }>;
-  };
-
-  type ResponseType = {
-    group: {
-      id: string;
-      name: string;
-      upcomingEvents: Edges<Event>;
-      pastEvents: Edges<Event>;
-    };
-  };
-  const nextEventPromise = client.request<ResponseType>(query, { id: 18305583 });
-
-  const lastVideoSearchParam = new URLSearchParams();
-  lastVideoSearchParam.append('part', 'snippet,id');
-  lastVideoSearchParam.append('channelId', 'UCGTVc5PnIgAUoA2D2_6nJLg');
-  lastVideoSearchParam.append('maxResults', '10');
-  lastVideoSearchParam.append('order', 'date');
-  lastVideoSearchParam.append('key', process.env.YOUTUBE_API_KEY || '');
-
-  const lastVideosPromise = fetch(
-    'https://youtube.googleapis.com/youtube/v3/search?' + lastVideoSearchParam.toString(),
-    {
-      headers: {
-        Accept: 'application/json',
-      },
-    },
-  ).then((it) => it.json());
-
-  const [nextEvent, lastVideos] = await Promise.all([nextEventPromise, lastVideosPromise]);
+  const { nextEvent, pastEvents } = await fetchMeetupEvents();
 
   return {
     props: {
-      nextEvent: nextEvent?.group?.upcomingEvents?.edges?.[0]?.node || null,
-      lastVideos: lastVideos?.items,
+      nextEvent: overrideEvent(nextEvent),
+      pastEvents: pastEvents.map(overrideEvent),
     },
   };
 };

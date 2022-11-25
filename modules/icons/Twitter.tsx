@@ -1,13 +1,14 @@
 import React from 'react';
 import { IconProps } from './types';
 
-export const Twitter: React.FC<IconProps> = ({ color, size }) => (
+export const Twitter: React.FC<IconProps> = ({ color, size, className }) => (
   <svg
     aria-hidden="true"
     focusable="false"
     role="img"
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 512 512"
+    className={className}
     width={size}
     height={size}
   >
