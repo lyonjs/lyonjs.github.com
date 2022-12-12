@@ -104,7 +104,7 @@ export const Header = () => {
               </Link>
             </li>
             <li>
-              <Link href="/">
+              <Link href="/about">
                 <a className={styles.link}>A&nbsp;propos</a>
               </Link>
             </li>

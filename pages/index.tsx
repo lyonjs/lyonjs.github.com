@@ -42,7 +42,7 @@ const Home: NextPage<Props> = ({ nextEvent, pastEvents }) => {
         </Article>
         <Article>
           <TitleHighlight Component="h2">Sponsors</TitleHighlight>
-          <div className="grid grid-cols-5 gap-12 mb-4">
+          <div className="grid md:grid-cols-5 grid-cols-2 gap-12 mb-4">
             {Object.values(sponsors).map((sponsor) => (
               <a
                 key={sponsor.logo}
@@ -51,12 +51,9 @@ const Home: NextPage<Props> = ({ nextEvent, pastEvents }) => {
                 rel="noopener noreferrer"
                 className={sponsor.logoLight ? 'flex items-center bg-white' : 'flex items-center'}
               >
-                <img src={sponsor.logo} alt={sponsor.name} title={sponsor.name} className="object-cover" />
+                <img src={sponsor.logo} alt={sponsor.name} title={sponsor.name} className="object-cover h-auto" />
               </a>
             ))}
-          </div>
-          <div className="flex justify-center">
-            <ButtonPrimary>Devenir sponsor</ButtonPrimary>
           </div>
         </Article>
         <Article>
