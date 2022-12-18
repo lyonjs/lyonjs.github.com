@@ -52,7 +52,7 @@ const Home: NextPage = () => {
           </li>
           <li>
             <a
-              href="http://bit.ly/lyonjs-slack"
+              href="https://bit.ly/lyonjs-slack"
               target="_blank"
               rel="noreferrer noopener"
               title="Rejoindre le Slack du LyonJS"
