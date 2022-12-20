@@ -15,8 +15,8 @@ import { ButtonPrimary, LinkPrimary } from '../modules/atoms/ButtonPrimary';
 import { PastEventCard } from '../modules/event/PastEventCard';
 import { fetchMeetupEvents } from '../modules/meetup/api';
 
-const Article: React.FC<{ children: any }> = ({ children }) => (
-  <article className="min-h-[400px] mb-28">{children}</article>
+const Article: React.FC<{ children: any; className?: string }> = ({ children, className }) => (
+  <article className={`min-h-[400px] mb-28 ${className || ''}`}>{children}</article>
 );
 
 type Props = { nextEvent: Event; pastEvents: Event[] };
@@ -36,9 +36,16 @@ const Home: NextPage<Props> = ({ nextEvent, pastEvents }) => {
         <h1 className="text-sm text-gray-400 my-4">
           Bienvenue au Lyon JS : la communauté lyonnaise des utilisateurs de JavaScript
         </h1>
-        <Article>
+        <Article className="flex flex-col">
           <h2 className="text-xl my-4">Prochain évènement</h2>
-          {nextEvent ? <EventCard event={nextEvent} /> : <p>Pas de prochain LyonJS de trouvé !</p>}
+          {nextEvent ? (
+            <EventCard event={nextEvent} />
+          ) : (
+            <div className="flex flex-col grow justify-center">
+              <p className="text-center">Pas de prochain LyonJS de trouvé !</p>
+              <p className="text-center">Reviens dans quelques jours, le prochain évènement ne saurait tarder.</p>
+            </div>
+          )}
         </Article>
         <Article>
           <TitleHighlight Component="h2">Sponsors</TitleHighlight>
@@ -75,7 +82,7 @@ const Home: NextPage<Props> = ({ nextEvent, pastEvents }) => {
 };
 
 const overrideEvent = (event: Event): Event => {
-  if (dataOverride[event.eventUrl]) {
+  if (event && dataOverride[event.eventUrl]) {
     return _merge(event, dataOverride[event.eventUrl]);
   }
   return event;

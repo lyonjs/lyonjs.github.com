@@ -29,14 +29,12 @@ export const Header = () => {
         </div>
         <nav className={styles.leftNav}>
           <Link href="/">
-            <a>
-              <LogoWithText
-                color="var(--foreground-color)"
-                width="151px"
-                height="104px"
-                backgroundColor="var(--background-color)"
-              />
-            </a>
+            <LogoWithText
+              color="var(--foreground-color)"
+              width="151px"
+              height="104px"
+              backgroundColor="var(--background-color)"
+            />
           </Link>
         </nav>
         <nav className={styles.rightNav} style={isMenuOpen ? { transform: 'translateX(0)' } : {}} onClick={closeMenu}>
@@ -99,18 +97,18 @@ export const Header = () => {
           </ul>
           <ul className={styles.links}>
             <li>
-              <Link href="/">
-                <a className={styles.link}>Evènements</a>
+              <Link href="/" className={styles.link}>
+                Evènements
               </Link>
             </li>
             <li>
-              <Link href="/about">
-                <a className={styles.link}>A&nbsp;propos</a>
+              <Link href="/about" className={styles.link}>
+                A&nbsp;propos
               </Link>
             </li>
             <li>
-              <Link href="/contact">
-                <a className={styles.link}>Contact</a>
+              <Link href="/contact" className={styles.link}>
+                Contact
               </Link>
             </li>
             <li>
