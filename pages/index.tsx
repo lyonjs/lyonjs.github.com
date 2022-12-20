@@ -11,7 +11,7 @@ import { LyonJSHead } from '../modules/header/LyonJSHead';
 import { Header } from '../modules/header/Header';
 import { EventCard } from '../modules/event/EventCard';
 import { TitleHighlight } from '../modules/atoms/TitleHighlight';
-import { ButtonPrimary, LinkPrimary } from '../modules/atoms/ButtonPrimary';
+import { ButtonPrimary } from '../modules/atoms/ButtonPrimary';
 import { PastEventCard } from '../modules/event/PastEventCard';
 import { fetchMeetupEvents } from '../modules/meetup/api';
 

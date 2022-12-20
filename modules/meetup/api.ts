@@ -1,6 +1,5 @@
 import { gql, GraphQLClient } from 'graphql-request';
 import { Event } from '../event/types';
-import { dataOverride } from '../../data/data-override';
 
 const client = new GraphQLClient('https://www.meetup.com/gql');
 const query = gql`
