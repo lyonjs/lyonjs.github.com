@@ -11,7 +11,7 @@ export const PastEventCard: React.FC<{ event: Event }> = ({ event }) => {
 
   return (
     <article className="mb-12">
-      <div className="flex mb-4 justify-between items-center">
+      <div className="flex mb-4 justify-between items-center flex-wrap gap-2">
         <p className="text-base text-right text-lyonjs-yellow bg-zinc-800 inline-block py-2 px-4 rounded-full border-2 border-gray-400 -mr-4">
           <span className="mr-3 uppercase" aria-hidden>
             📅
