@@ -1,5 +1,6 @@
 import type { NextPage } from 'next';
 import React from 'react';
+import Image from "next/image";
 import { LyonJSHead } from '../modules/header/LyonJSHead';
 import { Header } from '../modules/header/Header';
 import { TitleHighlight } from '../modules/atoms/TitleHighlight';
@@ -36,7 +37,7 @@ const Home: NextPage = () => {
         <div className="grid md:grid-cols-5 grid-cols-2 gap-12 mb-4">
           {orgas.map((orga) => (
             <figure key={orga.name}>
-              <img src={orga.avatarUrl} alt={orga.name} title={orga.name} className="object-cover drop-shadow-md" />
+              <Image src={orga.avatarUrl} alt={orga.name} width="200" height="200" title={orga.name} className="object-cover drop-shadow-md" />
               <figcaption className="flex justify-center mt-4">
                 {orga.name}
                 {orga.social.twitter && (
