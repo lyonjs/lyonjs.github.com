@@ -53,7 +53,7 @@ const Home: NextPage = () => {
                 )}
                 {orga.social.linkedin && (
                   <a
-                    href={`https://twitter.com/${orga.social.linkedin}`}
+                    href={`https://www.linkedin.com/in/${orga.social.linkedin}`}
                     target="_blank"
                     rel="noreferrer noopener"
                     className="text-lyonjs-yellow"
