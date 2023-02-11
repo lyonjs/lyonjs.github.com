@@ -30,7 +30,7 @@ export const orgas: Array<Orga> = [
   },
   {
     name: 'Antoine Caron',
-    avatarUrl: '/orgas/antoine.jpeg',
+    avatarUrl: '/orgas/antoine.jpg',
     description:
       'Web Maker @Bedrock_Tec , internet trublion and despote teacher @PolytechLyon #LyonJS #React #Node co-organiser of @LyonJ meetup',
     social: {
