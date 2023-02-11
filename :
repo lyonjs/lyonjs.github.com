@@ -1,0 +1,14 @@
+chore: fix eslint warning
+
+# Veuillez saisir le message de validation pour vos modifications. Les lignes
+# commençant par '#' seront ignorées, et un message vide abandonne la validation.
+#
+# Sur la branche fix-lint-issues
+# Modifications qui seront validées :
+#	modifié :         next.config.js
+#	modifié :         pages/about.tsx
+#	modifié :         pages/index.tsx
+#
+# Modifications qui ne seront pas validées :
+#	modifié :         pnpm-lock.yaml
+#
