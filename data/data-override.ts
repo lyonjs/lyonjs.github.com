@@ -2,6 +2,23 @@ import type { Event } from '../modules/event/types';
 import { bedrock, indy, smile, zenika } from './sponsors';
 
 export const dataOverride: { [key: string]: Partial<Event> } = {
+  'https://www.meetup.com/lyonjs/events/290762638': {
+    sponsor: zenika,
+    talks: [
+      {
+        title: 'Projet XState',
+        speakers: [
+          { name: 'Maxime Blanc', socialLink: 'https://twitter.com/jeansmaug' },
+        ],
+      },
+      {
+        title: 'gRPC-web - Connecter son front en grpc',
+        speakers: [
+          { name: 'Mohammad-Amine Banaei', socialLink: 'https://www.linkedin.com/in/mbnei/' },
+        ],
+      },
+    ],
+  },
   'https://www.meetup.com/lyonjs/events/289494397': {
     sponsor: indy,
     talks: [
