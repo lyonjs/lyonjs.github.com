@@ -7,15 +7,11 @@ export const dataOverride: { [key: string]: Partial<Event> } = {
     talks: [
       {
         title: 'Projet XState',
-        speakers: [
-          { name: 'Maxime Blanc', socialLink: 'https://twitter.com/jeansmaug' },
-        ],
+        speakers: [{ name: 'Maxime Blanc', socialLink: 'https://twitter.com/jeansmaug' }],
       },
       {
         title: 'gRPC-web - Connecter son front en grpc',
-        speakers: [
-          { name: 'Mohammad-Amine Banaei', socialLink: 'https://www.linkedin.com/in/mbnei/' },
-        ],
+        speakers: [{ name: 'Mohammad-Amine Banaei', socialLink: 'https://www.linkedin.com/in/mbnei/' }],
       },
     ],
   },
