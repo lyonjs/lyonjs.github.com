@@ -24,7 +24,7 @@ const Home: NextPage = () => {
         <TitleHighlight Component="h2">Qu&apos;est ce que le LyonJS ?</TitleHighlight>
         <p className="my-4">
           Le LyonJS est un groupe de lyonnais·es qui a pour but de rassembler les utilisateur·rice·s web et JavaScript de la ville de Lyon et de ses alentours.
-          Ainsi, nous organisons des réunions d'informations mensuelles ouvertes à tou·te·s et gratuites afin de favoriser les échanges et
+          Ainsi, nous organisons des réunions d&apos;informations mensuelles ouvertes à tou·te·s et gratuites afin de favoriser les échanges et
           les rencontres des utilisateur·rice·s/développeur·euse·s autour de cette technologie, de ses possibilités, de son avenir.
         </p>
         <p className="my-4">
@@ -41,7 +41,7 @@ const Home: NextPage = () => {
           leurs bureaux et financent généralement le buffet qui suit les conférences.
         </p>
         <p className="my-4">
-          Nous organisons également de manière régulière des ApérosJS, qui n'ont pour unique but que de rassembler la communauté dans un lieu lyonnais.
+          Nous organisons également de manière régulière des ApérosJS, qui n&apos;ont pour unique but que de rassembler la communauté dans un lieu lyonnais.
         </p>
         <TitleHighlight Component="h2">Les orgas</TitleHighlight>
         <div className="grid md:grid-cols-5 grid-cols-2 gap-12 mb-4">
@@ -90,7 +90,7 @@ const Home: NextPage = () => {
         </p>
         <p className="my-4">
           Nous accueillons très régulièrement des étudiant·e·s lyonnais·es qui viennent rencontrer les « professionnels·le·s » de notre communauté.
-          Si votre école souhaite venir ou participer, n'hésitez pas à vous inscrire aux différents meetup.
+          Si votre école souhaite venir ou participer, n&apos;hésitez pas à vous inscrire aux différents meetup.
         </p>
         <TitleHighlight Component="h2">Comment nous rejoindre ?</TitleHighlight>
         <p className="my-4">
