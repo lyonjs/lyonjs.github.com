@@ -5,6 +5,7 @@ type Props = Omit<IconProps, 'size'> & { width: string; height: string };
 
 export const LogoWithText: React.FC<Props> = ({ width, height, color, backgroundColor }) => (
   <svg width={width} height={height} viewBox="0 0 1548 793" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <title>LyonJS</title>
     <path
       fillRule="evenodd"
       clipRule="evenodd"

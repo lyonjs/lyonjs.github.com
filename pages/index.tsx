@@ -64,7 +64,6 @@ const Home: NextPage<Props> = ({ nextEvent, pastEvents }) => {
                   alt={sponsor.name}
                   width="200"
                   height="200"
-                  title={sponsor.name}
                   className="object-cover h-auto"
                 />
               </a>
