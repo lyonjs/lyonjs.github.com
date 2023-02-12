@@ -2,6 +2,7 @@ import Head from 'next/head';
 
 export const LyonJSHead = () => (
   <Head>
+    <html lang="fr-FR"/>
     <title>LyonJS - Communauté lyonnaise des utilisateurs de JavaScript</title>
     <meta name="description" content="Communauté lyonnaise des utilisateurs de JavaScript" />
     <link rel="icon" href="/favicon.ico" />
