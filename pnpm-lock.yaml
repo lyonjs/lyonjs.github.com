@@ -9,7 +9,7 @@ specifiers:
   dayjs: ^1.11.6
   eslint: 8.34.0
   eslint-config-next: 13.1.6
-  eslint-config-prettier: 8.5.0
+  eslint-config-prettier: 8.6.0
   graphql: ^16.6.0
   graphql-request: ^5.0.0
   lodash: ^4.17.21
@@ -40,7 +40,7 @@ devDependencies:
   autoprefixer: 10.4.13_postcss@8.4.20
   eslint: 8.34.0
   eslint-config-next: 13.1.6_eslint@8.34.0+typescript@4.9.5
-  eslint-config-prettier: 8.5.0_eslint@8.34.0
+  eslint-config-prettier: 8.6.0_eslint@8.34.0
   graphql: 16.6.0
   graphql-request: 5.0.0_graphql@16.6.0
   postcss: 8.4.20
@@ -921,8 +921,8 @@ packages:
       - supports-color
     dev: true
 
-  /eslint-config-prettier/8.5.0_eslint@8.34.0:
-    resolution: {integrity: sha512-obmWKLUNCnhtQRKc+tmnYuQl0pFU1ibYJQ5BGhTVB08bHe9wC8qUeG7c08dj9XX+AuPj1YSGSQIHl1pnDHZR0Q==}
+  /eslint-config-prettier/8.6.0_eslint@8.34.0:
+    resolution: {integrity: sha512-bAF0eLpLVqP5oEVUFKpMA+NnRFICwn9X8B5jrR9FcqnYBuPbqWEjTEspPWMj5ye6czoSLDweCzSo3Ko7gGrZaA==}
     hasBin: true
     peerDependencies:
       eslint: '>=7.0.0'
