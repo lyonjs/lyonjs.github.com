@@ -28,7 +28,7 @@
     "autoprefixer": "^10.4.13",
     "eslint": "8.34.0",
     "eslint-config-next": "13.1.6",
-    "eslint-config-prettier": "8.5.0",
+    "eslint-config-prettier": "8.6.0",
     "graphql": "^16.6.0",
     "graphql-request": "^5.0.0",
     "postcss": "^8.4.18",
