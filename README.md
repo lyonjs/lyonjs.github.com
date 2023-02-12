@@ -1,4 +1,3 @@
-lyonjs.github.com
-=================
+# lyonjs.github.com
 
 Pull Requests are accepted :)

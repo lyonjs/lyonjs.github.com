@@ -5,8 +5,8 @@
 :root {
   --grey-0: #323330;
   --yellow-0: #efda4e;
-  --yellow-1: #B5A53C;
-  --white-0: #FFFFFF;
+  --yellow-1: #b5a53c;
+  --white-0: #ffffff;
   --white-1: #b2b2b2;
 
   --background-color: var(--grey-0);
@@ -30,8 +30,8 @@ main {
 
 .highlight {
   display: inline;
-  padding: .25em 0;
+  padding: 0.25em 0;
   background: var(--main-color);
   color: var(--background-color);
-  box-shadow: .5em 0 0 var(--main-color), -.5em 0 0 var(--main-color);
+  box-shadow: 0.5em 0 0 var(--main-color), -0.5em 0 0 var(--main-color);
 }

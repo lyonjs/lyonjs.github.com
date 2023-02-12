@@ -1,8 +1,8 @@
 .article {
-    display: flex;
-    border: solid 1px;
+  display: flex;
+  border: solid 1px;
 }
 
 .date {
-    background-color: var(--main-color);
+  background-color: var(--main-color);
 }

@@ -1,0 +1,33 @@
+name: 🚧 Integration
+on:
+  pull_request:
+  push:
+    branches:
+      - 'main'
+
+jobs:
+  format:
+    name: 💅 Check format
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@main
+      - uses: actions/setup-node@main
+      - uses: pnpm/action-setup@v2.2.4
+        name: Install pnpm
+        with:
+          version: 7
+          run_install: true
+      - run: pnpm prettier --check .
+
+  nextjs:
+    name: ⚛️ NextJS application
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@main
+      - uses: actions/setup-node@main
+      - uses: pnpm/action-setup@v2.2.4
+        name: Install pnpm
+        with:
+          version: 7
+          run_install: true
+      - run: pnpm build

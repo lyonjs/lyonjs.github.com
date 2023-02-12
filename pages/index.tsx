@@ -2,7 +2,7 @@ import type { NextPage, GetStaticProps } from 'next';
 import React, { useState } from 'react';
 import dayjs from 'dayjs';
 import _merge from 'lodash/merge';
-import Image from "next/image";
+import Image from 'next/image';
 
 import { dataOverride } from '../data/data-override';
 import * as sponsors from '../data/sponsors';
@@ -59,7 +59,14 @@ const Home: NextPage<Props> = ({ nextEvent, pastEvents }) => {
                 rel="noopener noreferrer"
                 className={sponsor.logoLight ? 'flex items-center bg-white' : 'flex items-center'}
               >
-                <Image src={sponsor.logo} alt={sponsor.name} width="200" height="200" title={sponsor.name} className="object-cover h-auto" />
+                <Image
+                  src={sponsor.logo}
+                  alt={sponsor.name}
+                  width="200"
+                  height="200"
+                  title={sponsor.name}
+                  className="object-cover h-auto"
+                />
               </a>
             ))}
           </div>
