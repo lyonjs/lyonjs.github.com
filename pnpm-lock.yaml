@@ -2,7 +2,7 @@ lockfileVersion: 5.3
 
 specifiers:
   '@types/lodash': ^4.14.187
-  '@types/node': 18.11.15
+  '@types/node': 18.13.0
   '@types/react': 18.0.28
   '@types/react-dom': 18.0.9
   autoprefixer: ^10.4.13
@@ -34,7 +34,7 @@ dependencies:
 
 devDependencies:
   '@types/lodash': 4.14.191
-  '@types/node': 18.11.15
+  '@types/node': 18.13.0
   '@types/react': 18.0.28
   '@types/react-dom': 18.0.9
   autoprefixer: 10.4.13_postcss@8.4.20
@@ -310,8 +310,8 @@ packages:
     resolution: {integrity: sha512-iiUgKzV9AuaEkZqkOLDIvlQiL6ltuZd9tGcW3gwpnX8JbuiuhFlEGmmFXEXkN50Cvq7Os88IY2v0dkDqXYWVgA==}
     dev: false
 
-  /@types/node/18.11.15:
-    resolution: {integrity: sha512-VkhBbVo2+2oozlkdHXLrb3zjsRkpdnaU2bXmX8Wgle3PUi569eLRaHGlgETQHR7lLL1w7GiG3h9SnePhxNDecw==}
+  /@types/node/18.13.0:
+    resolution: {integrity: sha512-gC3TazRzGoOnoKAhUx+Q0t8S9Tzs74z7m0ipwGpSqQrleP14hKxP4/JUeEQcD3W1/aIpnWl8pHowI7WokuZpXg==}
     dev: true
 
   /@types/prop-types/15.7.5:
