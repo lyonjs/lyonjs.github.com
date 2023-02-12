@@ -59,13 +59,7 @@ const Home: NextPage<Props> = ({ nextEvent, pastEvents }) => {
                 rel="noopener noreferrer"
                 className={sponsor.logoLight ? 'flex items-center bg-white' : 'flex items-center'}
               >
-                <Image
-                  src={sponsor.logo}
-                  alt={sponsor.name}
-                  width="200"
-                  height="200"
-                  className="object-cover h-auto"
-                />
+                <Image src={sponsor.logo} alt={sponsor.name} width="200" height="200" className="object-cover h-auto" />
               </a>
             ))}
           </div>
