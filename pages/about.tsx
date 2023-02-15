@@ -7,10 +7,10 @@ import { TitleHighlight } from '../modules/atoms/TitleHighlight';
 import { orgas } from '../data/orgas';
 import { Twitter } from '../modules/icons/Twitter';
 import { Linkedin } from '../modules/icons/Linkedin';
-import {Meetup} from "../modules/icons/Meetup";
-import {Slack} from "../modules/icons/Slack";
-import {Youtube} from "../modules/icons/Youtube";
-import {Reddit} from "../modules/icons/Reddit";
+import { Meetup } from '../modules/icons/Meetup';
+import { Slack } from '../modules/icons/Slack';
+import { Youtube } from '../modules/icons/Youtube';
+import { Reddit } from '../modules/icons/Reddit';
 
 const Home: NextPage = () => {
   return (
@@ -23,9 +23,10 @@ const Home: NextPage = () => {
         </h1>
         <TitleHighlight Component="h2">Qu&apos;est ce que le LyonJS ?</TitleHighlight>
         <p className="my-4">
-          Le LyonJS est un groupe de lyonnais·es qui a pour but de rassembler les utilisateur·rice·s web et JavaScript de la ville de Lyon et de ses alentours.
-          Ainsi, nous organisons des réunions d&apos;informations mensuelles ouvertes à tou·te·s et gratuites afin de favoriser les échanges et
-          les rencontres des utilisateur·rice·s/développeur·euse·s autour de cette technologie, de ses possibilités, de son avenir.
+          Le LyonJS est un groupe de lyonnais·es qui a pour but de rassembler les utilisateur·rice·s web et JavaScript
+          de la ville de Lyon et de ses alentours. Ainsi, nous organisons des réunions d&apos;informations mensuelles
+          ouvertes à tou·te·s et gratuites afin de favoriser les échanges et les rencontres des
+          utilisateur·rice·s/développeur·euse·s autour de cette technologie, de ses possibilités, de son avenir.
         </p>
         <p className="my-4">
           La première rencontre a eu lieu le 25 octobre 2011. Depuis cette date, les rencontres se sont faites sur une
@@ -41,7 +42,8 @@ const Home: NextPage = () => {
           leurs bureaux et financent généralement le buffet qui suit les conférences.
         </p>
         <p className="my-4">
-          Nous organisons également de manière régulière des ApérosJS, qui n&apos;ont pour unique but que de rassembler la communauté dans un lieu lyonnais.
+          Nous organisons également de manière régulière des ApérosJS, qui n&apos;ont pour unique but que de rassembler
+          la communauté dans un lieu lyonnais.
         </p>
         <TitleHighlight Component="h2">Les orgas</TitleHighlight>
         <div className="grid md:grid-cols-5 grid-cols-2 gap-12 mb-4">
@@ -85,22 +87,29 @@ const Home: NextPage = () => {
         </div>
         <TitleHighlight Component="h2">Qui peut rejoindre ?</TitleHighlight>
         <p className="my-4">
-          LyonJS est ouvert <strong>à toutes et tous</strong>, que vous soyez débutant·e, en apprentissage, ou bien encore expert·e dans le domaine, vous êtes la·le bienvenu·e.
-          Les évènements sont gratuits, sur inscriptions et parfois en places limitées.
+          LyonJS est ouvert <strong>à toutes et tous</strong>, que vous soyez débutant·e, en apprentissage, ou bien
+          encore expert·e dans le domaine, vous êtes la·le bienvenu·e. Les évènements sont gratuits, sur inscriptions et
+          parfois en places limitées.
         </p>
         <p className="my-4">
-          Nous accueillons très régulièrement des étudiant·e·s lyonnais·es qui viennent rencontrer les « professionnels·le·s » de notre communauté.
-          Si votre école souhaite venir ou participer, n&apos;hésitez pas à vous inscrire aux différents meetup.
+          Nous accueillons très régulièrement des étudiant·e·s lyonnais·es qui viennent rencontrer les «
+          professionnels·le·s » de notre communauté. Si votre école souhaite venir ou participer, n&apos;hésitez pas à
+          vous inscrire aux différents meetup.
         </p>
         <TitleHighlight Component="h2">Comment nous rejoindre ?</TitleHighlight>
-        <p className="my-4">
-          Vous avez plein de possibilités pour rejoindre la communauté:
-        </p>
+        <p className="my-4">Vous avez plein de possibilités pour rejoindre la communauté:</p>
         <ul className="list-disc list-inside pl-4 my-4">
-          <li><a href="https://www.meetup.com/fr-FR/LyonJS/">Vous inscrire sur notre groupe metup</a></li>
+          <li>
+            <a href="https://www.meetup.com/fr-FR/LyonJS/">Vous inscrire sur notre groupe meetup</a>
+          </li>
           <li>Vous inscrire en spectateur à un de nos prochains évènements</li>
-          <li>Rejoindre la team organisatrice de la communauté en <a href="mailto:contact@lyonjs.org">vous signalant par mail</a></li>
-          <li>Proposer un sujet de conférence dans notre <a href="https://bit.ly/lyonjs-cfp">Call for paper</a></li>
+          <li>
+            Rejoindre la team organisatrice de la communauté en{' '}
+            <a href="mailto:contact@lyonjs.org">vous signalant par mail</a>
+          </li>
+          <li>
+            Proposer un sujet de conférence dans notre <a href="https://bit.ly/lyonjs-cfp">Call for paper</a>
+          </li>
           <li>Parler de nos actions dans votre entreprise pour nous aider à trouver plus de Sponsors</li>
           <li>Convaincre vos collègues de venir participer à un de nos évènements</li>
           <li>En parler autour de vous !</li>
@@ -113,11 +122,11 @@ const Home: NextPage = () => {
         <ul className="grid md:grid-cols-5 grid-cols-2 gap-12 mb-4 mt-12">
           <li>
             <a
-                href="https://www.meetup.com/fr-FR/LyonJS/"
-                target="_blank"
-                rel="noreferrer noopener"
-                title="La page Meetup du LyonJS"
-                className="flex gap-[1ch] text-lyonjs-yellow text-xl"
+              href="https://www.meetup.com/fr-FR/LyonJS/"
+              target="_blank"
+              rel="noreferrer noopener"
+              title="La page Meetup du LyonJS"
+              className="flex gap-[1ch] text-lyonjs-yellow text-xl"
             >
               <Meetup color="currentColor" size={32} />
               Meetup
@@ -125,11 +134,11 @@ const Home: NextPage = () => {
           </li>
           <li>
             <a
-                href="https://twitter.com/lyonjs"
-                target="_blank"
-                rel="noreferrer noopener"
-                title="Compte Twitter du LyonJS"
-                className="flex gap-[1ch] text-lyonjs-yellow text-xl"
+              href="https://twitter.com/lyonjs"
+              target="_blank"
+              rel="noreferrer noopener"
+              title="Compte Twitter du LyonJS"
+              className="flex gap-[1ch] text-lyonjs-yellow text-xl"
             >
               <Twitter color="currentColor" size={32} />
               Twitter
@@ -137,11 +146,11 @@ const Home: NextPage = () => {
           </li>
           <li>
             <a
-                href="https://bit.ly/lyonjs-slack"
-                target="_blank"
-                rel="noreferrer noopener"
-                title="Rejoindre le Slack du LyonJS"
-                className="flex gap-[1ch] text-lyonjs-yellow text-xl"
+              href="https://bit.ly/lyonjs-slack"
+              target="_blank"
+              rel="noreferrer noopener"
+              title="Rejoindre le Slack du LyonJS"
+              className="flex gap-[1ch] text-lyonjs-yellow text-xl"
             >
               <Slack color="currentColor" size={32} />
               Slack
@@ -149,11 +158,11 @@ const Home: NextPage = () => {
           </li>
           <li>
             <a
-                href="https://www.youtube.com/channel/UCGTVc5PnIgAUoA2D2_6nJLg"
-                target="_blank"
-                rel="noreferrer noopener"
-                title="La chaîne Youtube du LyonJS"
-                className="flex gap-[1ch] text-lyonjs-yellow text-xl"
+              href="https://www.youtube.com/channel/UCGTVc5PnIgAUoA2D2_6nJLg"
+              target="_blank"
+              rel="noreferrer noopener"
+              title="La chaîne Youtube du LyonJS"
+              className="flex gap-[1ch] text-lyonjs-yellow text-xl"
             >
               <Youtube color="currentColor" size={32} />
               Youtube
@@ -161,11 +170,11 @@ const Home: NextPage = () => {
           </li>
           <li>
             <a
-                href="https://www.reddit.com/r/LyonJS/"
-                target="_blank"
-                rel="noreferrer noopener"
-                title="Groupe Reddit LyonJS"
-                className="flex gap-[1ch] text-lyonjs-yellow text-xl"
+              href="https://www.reddit.com/r/LyonJS/"
+              target="_blank"
+              rel="noreferrer noopener"
+              title="Groupe Reddit LyonJS"
+              className="flex gap-[1ch] text-lyonjs-yellow text-xl"
             >
               <Reddit color="currentColor" size={32} />
               Reddit
