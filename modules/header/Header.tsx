@@ -112,11 +112,6 @@ export const Header = () => {
               </Link>
             </li>
             <li>
-              <Link href="/contact" className={styles.link}>
-                Contact
-              </Link>
-            </li>
-            <li>
               <a
                 className={styles.buttonPrimary}
                 href="https://bit.ly/lyonjs-cfp"
