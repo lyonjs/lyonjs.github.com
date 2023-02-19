@@ -22,7 +22,8 @@ body {
   color: var(--white-0);
 }
 
-main {
+main,
+footer {
   padding: 8px 20px;
   max-width: 1200px;
   margin: auto;

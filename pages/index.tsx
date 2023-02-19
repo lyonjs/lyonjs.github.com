@@ -32,7 +32,6 @@ const Home: NextPage<Props> = ({ nextEvent, pastEvents }) => {
   return (
     <>
       <LyonJSHead />
-      <Header />
       <main>
         <h1 className="text-sm text-gray-400 my-4">
           Bienvenue au Lyon JS : la communauté lyonnaise des utilisateurs de JavaScript
