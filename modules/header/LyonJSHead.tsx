@@ -1,11 +1,11 @@
 import Head from 'next/head';
 
-const title = 'LyonJS - Communauté lyonnaise des utilisateurs de JavaScript';
+const defaultTitle = 'LyonJS - Communauté lyonnaise des utilisateurs de JavaScript';
 const description =
   'Communauté lyonnaise des utilisateurs de JavaScript, vous retrouverez ici le replay de nos derniers meetups ainsi que les dates des prochains évènements, conférences, soirées, partage, connaissance, talk, speakers';
 const url = 'http://lyonjs.org';
 const image = `${url}/lyonjs.webp`;
-export const LyonJSHead = () => (
+export const LyonJSHead: React.FC<{ title?: string }> = ({ title = defaultTitle }) => (
   <Head>
     <title>{title}</title>
     <meta name="title" content={title} />
