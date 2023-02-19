@@ -31,3 +31,5 @@ jobs:
           version: 7
           run_install: true
       - run: pnpm build
+      - run: pnpm export
+        name: NextJs static export
