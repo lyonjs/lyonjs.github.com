@@ -108,7 +108,12 @@ export const Header = () => {
             </li>
             <li>
               <Link href="/about" className={styles.link}>
-                A&nbsp;propos
+                À&nbsp;propos
+              </Link>
+            </li>
+            <li>
+              <Link href="/code-de-conduite" className={styles.link}>
+                Code&nbsp;de&nbsp;conduite
               </Link>
             </li>
             <li>
