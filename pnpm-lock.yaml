@@ -1,9 +1,9 @@
 lockfileVersion: 5.4
 
 specifiers:
-  '@mdx-js/loader': ^2.3.0
-  '@mdx-js/react': ^2.3.0
-  '@next/mdx': ^13.1.6
+  '@mdx-js/loader': 2.3.0
+  '@mdx-js/react': 2.3.0
+  '@next/mdx': 13.1.6
   '@types/lodash': ^4.14.187
   '@types/node': 18.13.0
   '@types/react': 18.0.28
