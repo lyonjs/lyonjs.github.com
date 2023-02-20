@@ -7,6 +7,8 @@ import React from 'react';
 import { H1, H2 } from '../modules/atoms/remark/titles';
 import { A, Li, P, Ul } from '../modules/atoms/remark/text';
 import { ResponsiveImage } from '../modules/atoms/remark/image';
+import { Header } from '../modules/header/Header';
+import { Footer } from '../modules/Footer';
 
 dayjs.locale('fr');
 
@@ -21,7 +23,13 @@ const components = {
 };
 
 function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} components={components} />;
+  return (
+    <>
+      <Header />
+      <Component {...pageProps} components={components} />
+      <Footer />
+    </>
+  );
 }
 
 export default MyApp;
