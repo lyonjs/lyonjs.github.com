@@ -10,7 +10,8 @@
     "lint": "next lint",
     "fmt": "prettier --write './**/*.js' './**/*.ts' './**/*.tsx'",
     "fmt:check": "prettier --check './**/*.js' './**/*.ts' './**/*.tsx'",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "e2e": "playwright test"
   },
   "dependencies": {
     "@next/mdx": "13.2.0",
