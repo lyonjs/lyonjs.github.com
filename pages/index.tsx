@@ -1,5 +1,5 @@
-import type { NextPage, GetStaticProps, Metadata } from 'next';
-import React, { useState } from 'react';
+import type { NextPage, GetStaticProps } from 'next';
+import React, { FC, PropsWithChildren, useState } from 'react';
 import dayjs from 'dayjs';
 import _merge from 'lodash/merge';
 import Image from 'next/image';
@@ -10,13 +10,18 @@ import * as sponsors from '../data/sponsors';
 import type { Event } from '../modules/event/types';
 import { LyonJSHead } from '../modules/header/LyonJSHead';
 import { EventCard } from '../modules/event/EventCard';
-import { TitleHighlight } from '../modules/atoms/TitleHighlight';
 import { ButtonPrimary } from '../modules/atoms/ButtonPrimary';
 import { PastEventCard } from '../modules/event/PastEventCard';
 import { fetchMeetupEvents } from '../modules/meetup/api';
+import { H1, H2 as Heading2 } from '../modules/atoms/remark/titles';
+import styles from '../modules/home/Home.module.css';
 
-const Article: React.FC<{ children: any; className?: string }> = ({ children, className }) => (
-  <article className={`min-h-[400px] mb-28 ${className || ''}`}>{children}</article>
+const Article: FC<PropsWithChildren> = ({ children }) => <article className={styles.article}>{children}</article>;
+
+const H2: FC<PropsWithChildren> = ({ children }) => (
+  <Heading2 appearance="h1" centered className={styles.secondaryTitle}>
+    {children}
+  </Heading2>
 );
 
 type Props = { nextEvent: Event; pastEvents: Event[] };
@@ -32,11 +37,11 @@ const Home: NextPage<Props> = ({ nextEvent, pastEvents }) => {
     <>
       <LyonJSHead />
       <main>
-        <h1 className="text-sm text-gray-400 my-4">
+        <H1 className={styles.mainTitle}>
           Bienvenue au Lyon JS : la communauté lyonnaise des utilisateurs de JavaScript
-        </h1>
-        <Article className="flex flex-col">
-          <h2 className="text-xl my-4">Prochain évènement</h2>
+        </H1>
+        <Article>
+          <H2>Prochain évènement</H2>
           {nextEvent ? (
             <EventCard event={nextEvent} />
           ) : (
@@ -47,8 +52,8 @@ const Home: NextPage<Props> = ({ nextEvent, pastEvents }) => {
           )}
         </Article>
         <Article>
-          <TitleHighlight Component="h2">Sponsors</TitleHighlight>
-          <div className="grid md:grid-cols-5 grid-cols-2 gap-12 mb-4">
+          <H2>Sponsors</H2>
+          <div className="grid md:grid-cols-4 grid-cols-2 gap-12 mb-4">
             {Object.values(sponsors).map((sponsor) => (
               <a
                 key={sponsor.logo}
@@ -63,7 +68,7 @@ const Home: NextPage<Props> = ({ nextEvent, pastEvents }) => {
           </div>
         </Article>
         <Article>
-          <TitleHighlight Component="h2">Evènements passés</TitleHighlight>
+          <H2>Evènements passés</H2>
           {displayedLastEvents?.map((it) => (
             <PastEventCard event={it} key={it.eventUrl} />
           ))}

@@ -1,0 +1,14 @@
+.article {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.mainTitle::after {
+  content: none;
+}
+
+.secondaryTitle {
+  margin-block: 100px 50px;
+}

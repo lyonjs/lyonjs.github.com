@@ -5,7 +5,7 @@ import type { Event } from './types';
 import { LinkPrimary } from '../atoms/ButtonPrimary';
 import { Pin } from '../icons/Pin';
 import ReactMarkdown from 'react-markdown';
-import { TitleHighlight } from '../atoms/TitleHighlight';
+import { H3 } from '../atoms/remark/titles';
 
 export const EventCard: React.FC<{ event: Event }> = ({ event }) => {
   const dateParsed = dayjs(event.dateTime);
@@ -28,7 +28,7 @@ export const EventCard: React.FC<{ event: Event }> = ({ event }) => {
           </p>
         ) : null}
       </div>
-      <TitleHighlight>{event.title}</TitleHighlight>
+      <H3>{event.title}</H3>
       <div className="flex flex-col md:flex-row md:gap-4">
         <img src={event.imageUrl} alt={event.title} className="object-cover md:w-1/2 md:flex-1" />
         <a
