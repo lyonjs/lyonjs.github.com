@@ -13,12 +13,10 @@
     "prepare": "husky install"
   },
   "dependencies": {
-    "@mdx-js/loader": "2.3.0",
-    "@mdx-js/react": "2.3.0",
-    "@next/mdx": "13.1.6",
+    "@next/mdx": "13.2.0",
     "dayjs": "^1.11.6",
     "lodash": "^4.17.21",
-    "next": "13.1.6",
+    "next": "13.2.0",
     "normalize.css": "8.0.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
@@ -31,7 +29,7 @@
     "@types/react-dom": "18.0.11",
     "autoprefixer": "^10.4.13",
     "eslint": "8.34.0",
-    "eslint-config-next": "13.1.6",
+    "eslint-config-next": "13.2.0",
     "eslint-config-prettier": "8.6.0",
     "graphql": "^16.6.0",
     "graphql-request": "^5.0.0",

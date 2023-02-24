@@ -1,4 +1,4 @@
-import type { NextPage, GetStaticProps } from 'next';
+import type { NextPage, GetStaticProps, Metadata } from 'next';
 import React, { useState } from 'react';
 import dayjs from 'dayjs';
 import _merge from 'lodash/merge';
@@ -9,7 +9,6 @@ import * as sponsors from '../data/sponsors';
 
 import type { Event } from '../modules/event/types';
 import { LyonJSHead } from '../modules/header/LyonJSHead';
-import { Header } from '../modules/header/Header';
 import { EventCard } from '../modules/event/EventCard';
 import { TitleHighlight } from '../modules/atoms/TitleHighlight';
 import { ButtonPrimary } from '../modules/atoms/ButtonPrimary';
