@@ -29,15 +29,13 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      - name: Setup Node
-        uses: actions/setup-node@v3
+      - uses: pnpm/action-setup@v2.2.4
+        name: Install pnpm
         with:
-          node-version: '18'
-          cache: ${{ steps.detect-package-manager.outputs.manager }}
-      - name: Setup PNPM
-        uses: pnpm/action-setup@v2
+          version: 7
+      - uses: actions/setup-node@main
         with:
-          version: 6.0.2
+          cache: pnpm
       - name: Setup Pages
         uses: actions/configure-pages@v3
         with:
@@ -57,7 +55,7 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json', '**/yarn.lock') }}-
       - name: Install dependencies
-        run: pnpm install
+        run: pnpm install --frozen-lockfile --prefer-offline
       - name: Build with Next.js
         run: pnpm build
       - name: Static HTML export with Next.js
