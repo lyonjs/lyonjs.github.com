@@ -2,6 +2,7 @@ lockfileVersion: 5.4
 
 specifiers:
   '@next/mdx': 13.2.0
+  '@playwright/test': ^1.31.1
   '@types/lodash': ^4.14.187
   '@types/node': 18.14.1
   '@types/react': 18.0.28
@@ -37,6 +38,7 @@ dependencies:
   react-markdown: 8.0.4_pmekkgnqduwlme35zpnqhenc34
 
 devDependencies:
+  '@playwright/test': 1.31.1
   '@types/lodash': 4.14.191
   '@types/node': 18.14.1
   '@types/react': 18.0.28
@@ -288,6 +290,17 @@ packages:
       picocolors: 1.0.0
       tiny-glob: 0.2.9
       tslib: 2.4.1
+    dev: true
+
+  /@playwright/test/1.31.1:
+    resolution: {integrity: sha512-IsytVZ+0QLDh1Hj83XatGp/GsI1CDJWbyDaBGbainsh0p2zC7F4toUocqowmjS6sQff2NGT3D9WbDj/3K2CJiA==}
+    engines: {node: '>=14'}
+    hasBin: true
+    dependencies:
+      '@types/node': 18.14.1
+      playwright-core: 1.31.1
+    optionalDependencies:
+      fsevents: 2.3.2
     dev: true
 
   /@rushstack/eslint-patch/1.2.0:
@@ -2389,6 +2402,12 @@ packages:
   /pify/2.3.0:
     resolution: {integrity: sha512-udgsAY+fTnvv7kI7aaxbqwWNb0AHiB0qBO89PZKPkoTmGOgdbrHDKD+0B2X4uTfJ/FT1R09r9gTsjUjNJotuog==}
     engines: {node: '>=0.10.0'}
+    dev: true
+
+  /playwright-core/1.31.1:
+    resolution: {integrity: sha512-JTyX4kV3/LXsvpHkLzL2I36aCdml4zeE35x+G5aPc4bkLsiRiQshU5lWeVpHFAuC8xAcbI6FDcw/8z3q2xtJSQ==}
+    engines: {node: '>=14'}
+    hasBin: true
     dev: true
 
   /postcss-import/14.1.0_postcss@8.4.20:
