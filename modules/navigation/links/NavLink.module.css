@@ -1,0 +1,22 @@
+.link {
+  font-size: 1em;
+  font-weight: 400;
+  padding: 0.5em 1em;
+  border-radius: 0.375em;
+  color: var(--font-color-strong);
+  transition: background-color 100ms;
+}
+
+@media (hover: hover) {
+  .link:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+  }
+}
+
+.link:focus-visible {
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+.link[aria-current='page'] {
+  background-color: rgba(255, 255, 255, 0.15);
+}

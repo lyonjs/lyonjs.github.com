@@ -1,160 +1,17 @@
-.header {
-  background-color: var(--background-color);
-  padding: 8px 20px;
-  font-size: 1.2rem;
-}
-
 .headerContainer {
   display: flex;
-  margin: auto;
-  max-width: 1200px;
-  width: 100%;
-  padding-bottom: 20px;
-  border-bottom: solid 1px var(--border-color);
-}
-
-.leftNav {
-  flex: 1 0 auto;
-}
-
-.rightNav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: var(--background-color);
-  overflow: hidden;
-  transform: translateX(-100%);
-  transition: transform 0.3s;
-}
-
-.rightNav.open {
-  transform: translate(0);
-}
-
-.socialsLinks {
   justify-content: space-between;
-  margin: 32px auto;
-  list-style: none;
-  padding: 0 24px;
-  display: flex;
-  gap: 20px;
-  max-width: 500px;
-}
-
-.socialsLinks a {
-  color: var(--main-color);
-  text-decoration: none;
-  display: flex;
   align-items: center;
-  transition: transform 100ms, color 100ms;
-}
-.socialsLinks a:hover {
-  transform: translateY(-4px);
-  color: var(--secondary-color);
+  margin: auto;
 }
 
-.links {
-  padding: 0;
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  margin: 15px 0 0 0;
-  align-items: center;
-  gap: 20px;
-}
-
-.links li {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-}
-
-.links .link {
-  color: var(--main-color);
-  text-decoration: none;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 24px 0;
-  width: 100%;
-  transition: transform 100ms, color 100ms;
-}
-
-.links .link:hover {
-  transform: translateY(-4px);
-  color: var(--secondary-color);
-}
-
-.buttonPrimary {
-  display: flex;
-  text-decoration: none;
-  padding: 10px 20px;
-  margin-top: 12px;
-  color: var(--background-color);
-  background-color: var(--main-color);
-}
-.buttonPrimary:hover {
-  background-color: var(--secondary-color);
-}
-
-.burgerMenuContainer,
-.closeMenuContainer {
-  display: flex;
-  flex: 1 0 auto;
-}
-
-.closeMenuContainer {
-  transform: translate(12px, 12px);
-}
-
-.burgerMenu,
-.closeMenu {
-  color: var(--main-color);
-  background-color: transparent;
-  cursor: pointer;
-  border: none;
-  padding: 0;
-}
-
-@media (min-width: 1024px) {
-  .burgerMenuContainer {
-    display: none;
+@media (max-width: 900px) {
+  .navbar,
+  .socialLinks {
+    display: none !important;
   }
 
-  .closeMenuContainer {
-    display: none;
-  }
-
-  .rightNav {
-    position: inherit;
-    flex: 1 0 50%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
+  .headerContainer {
     justify-content: center;
-    overflow: visible;
-    transform: none;
-    transition: none;
-  }
-
-  .socialsLinks {
-    margin: 0;
-    gap: 20px;
-    justify-content: flex-start;
-  }
-
-  .links {
-    flex-direction: row;
-  }
-
-  .links .link {
-    padding: 0 10px;
-  }
-
-  .buttonPrimary {
-    margin-top: 0;
   }
 }
