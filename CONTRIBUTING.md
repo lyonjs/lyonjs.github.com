@@ -21,6 +21,7 @@ pnpm intall
 - `pnpm fmt:check`, check format all files with prettier
 - `pnpm dev`, start a local dev server on port 3000
 - `pnpm export`, export the website as static html file
+- `pnpm e2e`, run e2e test with Playwright
 
 ## Husky git hooks
 
