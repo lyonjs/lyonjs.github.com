@@ -13,7 +13,7 @@ import { EventCard } from '../modules/event/EventCard';
 import { ButtonPrimary } from '../modules/atoms/ButtonPrimary';
 import { PastEventCard } from '../modules/event/PastEventCard';
 import { fetchMeetupEvents } from '../modules/meetup/api';
-import { H1, H2 as Heading2 } from '../modules/atoms/remark/titles';
+import { H1, H2 as Heading2 } from '../modules/atoms/remark/Titles';
 import styles from '../modules/home/Home.module.css';
 
 const Article: FC<PropsWithChildren> = ({ children }) => <article className={styles.article}>{children}</article>;

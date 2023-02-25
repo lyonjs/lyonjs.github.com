@@ -1,0 +1,13 @@
+.socialsContainer {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  padding-top: 4rem;
+}
+
+.socialsContainer li {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}

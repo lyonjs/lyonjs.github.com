@@ -1,6 +1,6 @@
-import { ResponsiveImage } from './modules/atoms/remark/image';
-import { H1, H2 } from './modules/atoms/remark/titles';
-import { A, Li, P, Ul } from './modules/atoms/remark/text';
+import { ResponsiveImage } from './modules/atoms/remark/Image';
+import { H1, H2 } from './modules/atoms/remark/Titles';
+import { A, Li, P, Ul } from './modules/atoms/remark/Text';
 
 export function useMDXComponents(components: any) {
   return {

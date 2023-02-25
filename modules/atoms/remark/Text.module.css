@@ -1,0 +1,16 @@
+.list {
+  list-style: square;
+  color: var(--foreground-color);
+  padding: 1rem 2rem;
+}
+
+.paragraph {
+  font-size: 16px;
+  color: var(--foreground-color);
+  line-height: 1.5rem;
+}
+
+.link {
+  color: var(--main-color);
+  text-decoration: none;
+}

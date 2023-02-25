@@ -29,7 +29,7 @@
   font-weight: bold;
   color: var(--font-color-strong);
   text-decoration: underline;
-  text-underline-offset: 0.3rem;
+  text-underline-offset: 0.6rem;
   text-decoration-color: var(--main-color);
   margin-block: 3rem 1.5rem;
 }
