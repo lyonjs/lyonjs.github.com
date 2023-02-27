@@ -1,0 +1,42 @@
+.eventTile {
+  display: flex;
+  background: #141415;
+  margin-bottom: 32px;
+  padding: 12px;
+  border-radius: 12px;
+  align-items: center;
+  gap: 24px;
+}
+
+.eventTile img {
+  display: block;
+  width: 160px;
+  height: auto;
+  border-radius: 4px;
+}
+
+.eventTile h2 {
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.eventTile .content {
+  display: flex;
+  flex-direction: column;
+}
+
+.eventTile .time {
+  font-size: 14px;
+  line-height: 17px;
+  font-weight: 400;
+  color: #cccccc;
+  margin-bottom: 6px;
+}
+
+.eventTile .sponsor {
+  font-size: 14px;
+  line-height: 21px;
+  font-weight: 700;
+}

@@ -1,6 +1,5 @@
 import type { NextPage, GetStaticProps } from 'next';
-import React, { FC, PropsWithChildren, useState } from 'react';
-import dayjs from 'dayjs';
+import React, { FC, PropsWithChildren } from 'react';
 import _merge from 'lodash/merge';
 import Image from 'next/image';
 
@@ -10,10 +9,8 @@ import * as sponsors from '../data/sponsors';
 import type { Event } from '../modules/event/types';
 import { LyonJSHead } from '../modules/header/LyonJSHead';
 import { EventCard } from '../modules/event/EventCard';
-import { Button } from '../modules/atoms/button/Button';
-import { PastEventCard } from '../modules/event/PastEventCard';
 import { fetchMeetupEvents } from '../modules/meetup/api';
-import { H1, H2 as Heading2 } from '../modules/atoms/remark/Titles';
+import { H2 } from '../modules/atoms/remark/Titles';
 import styles from '../modules/home/Home.module.css';
 import { Hero } from '../modules/home/Hero';
 
@@ -25,15 +22,8 @@ const H2: FC<PropsWithChildren> = ({ children }) => (
   </Heading2>
 );
 
-type Props = { nextEvent: Event; pastEvents: Event[] };
-const thisYear = dayjs().year();
-const Home: NextPage<Props> = ({ nextEvent, pastEvents }) => {
-  const [displayedYearEvents, setDisplayedYearEvents] = useState(thisYear);
-  const displayedLastEvents = pastEvents.filter((event) => dayjs(event.dateTime).year() >= displayedYearEvents);
-  const displayPreviousYearEvents = () => {
-    setDisplayedYearEvents(displayedYearEvents - 1);
-  };
-
+type Props = { nextEvent: Event };
+const Home: NextPage<Props> = ({ nextEvent }) => {
   return (
     <>
       <LyonJSHead />
@@ -67,17 +57,6 @@ const Home: NextPage<Props> = ({ nextEvent, pastEvents }) => {
             ))}
           </div>
         </Article>
-        <Article>
-          <H2>Evènements passés</H2>
-          {displayedLastEvents?.map((it) => (
-            <PastEventCard event={it} key={it.eventUrl} />
-          ))}
-          {displayedLastEvents.length !== pastEvents.length && (
-            <div className="flex justify-center">
-              <Button onClick={displayPreviousYearEvents}>Afficher les évènements de {displayedYearEvents - 1}</Button>
-            </div>
-          )}
-        </Article>
       </main>
     </>
   );
@@ -91,12 +70,11 @@ const overrideEvent = (event: Event): Event => {
 };
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
-  const { nextEvent, pastEvents } = await fetchMeetupEvents();
+  const { nextEvent } = await fetchMeetupEvents();
 
   return {
     props: {
       nextEvent: overrideEvent(nextEvent),
-      pastEvents: pastEvents.map(overrideEvent),
     },
   };
 };

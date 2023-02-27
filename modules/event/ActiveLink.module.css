@@ -1,0 +1,3 @@
+.link[aria-current='page'] {
+  color: var(--main-color);
+}

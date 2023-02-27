@@ -10,6 +10,9 @@ export const Navbar: FC<HTMLAttributes<HTMLElement>> = ({ className }) => (
         <NavLink href="/">Accueil</NavLink>
       </li>
       <li>
+        <NavLink href={`/evenements-precedents/${new Date().getFullYear()}`}>Évènements</NavLink>
+      </li>
+      <li>
         <NavLink href="/about">À&nbsp;propos</NavLink>
       </li>
       <li>
