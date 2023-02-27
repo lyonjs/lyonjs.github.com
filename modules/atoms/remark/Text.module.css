@@ -1,12 +1,12 @@
 .list {
   list-style: square;
-  color: var(--foreground-color);
+  color: var(--font-color-default);
   padding: 1rem 2rem;
 }
 
 .paragraph {
   font-size: 16px;
-  color: var(--foreground-color);
+  color: var(--font-color-default);
   line-height: 1.5rem;
 }
 

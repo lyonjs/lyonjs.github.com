@@ -12,7 +12,7 @@ export const Orgas: React.FC = () => (
       <figure key={orga.name} className={styles.member}>
         <Image src={orga.avatarUrl} alt={orga.name} width="120" height="120" title={orga.name} />
         {orga.name}
-        <figcaption>
+        <div className={styles.socialsOrgas}>
           {orga.social.twitter && (
             <IconLink
               href={`https://twitter.com/${orga.social.twitter}`}
@@ -33,7 +33,7 @@ export const Orgas: React.FC = () => (
               <Linkedin color="currentColor" size={24} />
             </IconLink>
           )}
-        </figcaption>
+        </div>
       </figure>
     ))}
   </div>
