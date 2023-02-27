@@ -1,10 +1,10 @@
 import React from 'react';
 import { IconProps } from './types';
 
-type Props = Omit<IconProps, 'size'> & { width: string; height: string };
+type Props = Omit<IconProps, 'size'> & { width: string };
 
-export const LogoWithText: React.FC<Props> = ({ width, height, color, backgroundColor }) => (
-  <svg width={width} height={height} viewBox="0 0 1548 793" fill="none" xmlns="http://www.w3.org/2000/svg">
+export const LogoWithText: React.FC<Props> = ({ width, color, backgroundColor }) => (
+  <svg width={width} viewBox="0 0 1548 793" fill="none" xmlns="http://www.w3.org/2000/svg">
     <title>LyonJS</title>
     <path
       fillRule="evenodd"

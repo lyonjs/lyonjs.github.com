@@ -10,11 +10,12 @@ import * as sponsors from '../data/sponsors';
 import type { Event } from '../modules/event/types';
 import { LyonJSHead } from '../modules/header/LyonJSHead';
 import { EventCard } from '../modules/event/EventCard';
-import { ButtonPrimary } from '../modules/atoms/ButtonPrimary';
+import { Button } from '../modules/atoms/button/Button';
 import { PastEventCard } from '../modules/event/PastEventCard';
 import { fetchMeetupEvents } from '../modules/meetup/api';
 import { H1, H2 as Heading2 } from '../modules/atoms/remark/Titles';
 import styles from '../modules/home/Home.module.css';
+import { Hero } from '../modules/home/Hero';
 
 const Article: FC<PropsWithChildren> = ({ children }) => <article className={styles.article}>{children}</article>;
 
@@ -37,9 +38,8 @@ const Home: NextPage<Props> = ({ nextEvent, pastEvents }) => {
     <>
       <LyonJSHead />
       <main>
-        <H1 className={styles.mainTitle}>
-          Bienvenue au Lyon JS : la communauté lyonnaise des utilisateurs de JavaScript
-        </H1>
+        <Hero />
+
         <Article>
           <H2>Prochain évènement</H2>
           {nextEvent ? (
@@ -74,9 +74,7 @@ const Home: NextPage<Props> = ({ nextEvent, pastEvents }) => {
           ))}
           {displayedLastEvents.length !== pastEvents.length && (
             <div className="flex justify-center">
-              <ButtonPrimary onClick={displayPreviousYearEvents}>
-                Afficher les évènements de {displayedYearEvents - 1}
-              </ButtonPrimary>
+              <Button onClick={displayPreviousYearEvents}>Afficher les évènements de {displayedYearEvents - 1}</Button>
             </div>
           )}
         </Article>
