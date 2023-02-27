@@ -5,7 +5,7 @@ import dayjs from 'dayjs';
 import type { AppProps } from 'next/app';
 import React from 'react';
 import { Header } from '../modules/header/Header';
-import { Footer } from '../modules/Footer';
+import { Footer } from '../modules/footer/Footer';
 
 dayjs.locale('fr');
 
