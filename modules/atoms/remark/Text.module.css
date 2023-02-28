@@ -5,9 +5,10 @@
 }
 
 .paragraph {
-  font-size: 16px;
+  font-size: 1rem;
   color: var(--font-color-default);
   line-height: 1.5rem;
+  margin-block: 1rem;
 }
 
 .link {
