@@ -5,7 +5,7 @@ import type { Event } from './types';
 import { LinkPrimary } from '../atoms/ButtonPrimary';
 import { Pin } from '../icons/Pin';
 import ReactMarkdown from 'react-markdown';
-import { H3 } from '../atoms/remark/titles';
+import { H3 } from '../atoms/remark/Titles';
 
 export const EventCard: React.FC<{ event: Event }> = ({ event }) => {
   const dateParsed = dayjs(event.dateTime);

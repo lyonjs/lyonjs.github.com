@@ -1,0 +1,8 @@
+.socialsContainer {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  padding-top: 4rem;
+  width: fit-content;
+  gap: 24px;
+  margin: auto;
+}

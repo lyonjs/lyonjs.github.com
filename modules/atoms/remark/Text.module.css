@@ -1,0 +1,17 @@
+.list {
+  list-style: square;
+  color: var(--font-color-default);
+  padding: 1rem 2rem;
+}
+
+.paragraph {
+  font-size: 1rem;
+  color: var(--font-color-default);
+  line-height: 1.5rem;
+  margin-block: 1rem;
+}
+
+.link {
+  color: var(--main-color);
+  text-decoration: none;
+}

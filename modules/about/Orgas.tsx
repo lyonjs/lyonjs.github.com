@@ -1,46 +1,39 @@
 import React from 'react';
 import Image from 'next/image';
+import styles from './Orgas.module.css';
 import { Twitter } from '../icons/Twitter';
 import { Linkedin } from '../icons/Linkedin';
 import { orgas } from '../../data/orgas';
+import { IconLink } from '../navigation/links/IconLink';
 
 export const Orgas: React.FC = () => (
-  <div className="grid md:grid-cols-5 grid-cols-2 gap-12 mb-4">
+  <div className={styles.listOrgasContainer}>
     {orgas.map((orga) => (
-      <figure key={orga.name}>
-        <Image
-          src={orga.avatarUrl}
-          alt={orga.name}
-          width="200"
-          height="200"
-          title={orga.name}
-          className="object-cover drop-shadow-md"
-        />
-        <figcaption className="flex justify-center mt-4">
-          {orga.name}
+      <figure key={orga.name} className={styles.member}>
+        <Image src={orga.avatarUrl} alt={orga.name} width="120" height="120" title={orga.name} />
+        {orga.name}
+        <div className={styles.socialsOrgas}>
           {orga.social.twitter && (
-            <a
+            <IconLink
               href={`https://twitter.com/${orga.social.twitter}`}
               target="_blank"
               rel="noreferrer noopener"
-              className="text-lyonjs-yellow mx-[1ch]"
               title={`Compte Twitter de ${orga.name}`}
             >
               <Twitter color="currentColor" size={24} />
-            </a>
+            </IconLink>
           )}
           {orga.social.linkedin && (
-            <a
+            <IconLink
               href={`https://www.linkedin.com/in/${orga.social.linkedin}`}
               target="_blank"
               rel="noreferrer noopener"
-              className="text-lyonjs-yellow"
               title={`Compte Linkedin de ${orga.name}`}
             >
               <Linkedin color="currentColor" size={24} />
-            </a>
+            </IconLink>
           )}
-        </figcaption>
+        </div>
       </figure>
     ))}
   </div>
