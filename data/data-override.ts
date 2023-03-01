@@ -2,6 +2,19 @@ import type { Event } from '../modules/event/types';
 import { bedrock, indy, smile, zenika } from './sponsors';
 
 export const dataOverride: { [key: string]: Partial<Event> } = {
+  'https://www.meetup.com/lyonjs/events/291728436': {
+    sponsor: indy,
+    talks: [
+      {
+        title: "Comment on n'a (toujours) pas codé de back-end après 9 mois en production ?",
+        speakers: [{ name: 'Marc Gavanier', socialLink: 'https://twitter.com/MGavanier' }],
+      },
+      {
+        title: 'Mob Programming : ensemble on va plus loin',
+        speakers: [{ name: 'Nicolas Poirier', socialLink: 'https://twitter.com/NicolasPoir' }],
+      },
+    ],
+  },
   'https://www.meetup.com/lyonjs/events/290762638': {
     sponsor: zenika,
     talks: [
