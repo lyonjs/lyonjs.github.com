@@ -10,7 +10,7 @@ import type { Event } from '../modules/event/types';
 import { LyonJSHead } from '../modules/header/LyonJSHead';
 import { EventCard } from '../modules/event/EventCard';
 import { fetchMeetupEvents } from '../modules/meetup/api';
-import { H2 } from '../modules/atoms/remark/Titles';
+import { H2 as Heading2 } from '../modules/atoms/remark/Titles';
 import styles from '../modules/home/Home.module.css';
 import { Hero } from '../modules/home/Hero';
 
