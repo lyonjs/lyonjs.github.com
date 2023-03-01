@@ -4,7 +4,7 @@ import styles from './EventTile.module.css';
 import _capitalize from 'lodash/capitalize';
 export const EventTile: React.FC<{ event: Event }> = ({ event }) => {
   const dateParsed = dayjs(event.dateTime);
-  const formattedDayAndMonth = _capitalize(dateParsed.format('dddd MMMM D YYYY à H:mm'));
+  const formattedDayAndMonth = _capitalize(dateParsed.format('dddd D MMMM YYYY à H:mm'));
 
   return (
     <article className={styles.eventTile}>

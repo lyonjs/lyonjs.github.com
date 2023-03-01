@@ -10,7 +10,14 @@
   margin-top: 56px;
   font-size: 16px;
   font-weight: 700;
-  flex-wrap: wrap;
+  list-style: disc outside;
+  gap: 20px;
+  overflow: auto;
+  scroll-snap-type: x proximity;
+}
+
+.list li:first-child {
+  list-style: none;
 }
 
 .separator {

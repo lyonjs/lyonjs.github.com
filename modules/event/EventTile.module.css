@@ -1,7 +1,7 @@
 .eventTile {
   display: flex;
-  background: #141415;
-  margin-bottom: 32px;
+  background: var(--background-card);
+  margin-bottom: min(4vw, 32px);
   padding: 12px;
   border-radius: 12px;
   align-items: center;
@@ -9,16 +9,24 @@
 }
 
 .eventTile img {
-  display: block;
+  display: none;
   width: 160px;
-  height: auto;
+  height: 90px;
+  object-fit: cover;
   border-radius: 4px;
 }
 
+@media (min-width: 600px) {
+  .eventTile img {
+    display: block;
+  }
+}
+
 .eventTile h2 {
-  font-size: 20px;
-  line-height: 24px;
+  font-size: 1.25rem;
+  line-height: 1.2;
   font-weight: 700;
+  color: var(--font-color-strong);
   margin-bottom: 6px;
 }
 
@@ -28,8 +36,8 @@
 }
 
 .eventTile .time {
-  font-size: 14px;
-  line-height: 17px;
+  font-size: 0.875rem;
+  line-height: 1.2;
   font-weight: 400;
   color: #cccccc;
   margin-bottom: 6px;
