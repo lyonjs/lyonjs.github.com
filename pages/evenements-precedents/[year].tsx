@@ -7,7 +7,7 @@ import _merge from 'lodash/merge';
 import _uniq from 'lodash/uniq';
 import { fetchMeetupEvents } from '../../modules/meetup/api';
 import { ParsedUrlQuery } from 'querystring';
-import { H1 } from '../../modules/atoms/remark/titles';
+import { H1 } from '../../modules/atoms/remark/Titles';
 import { YearNavigation } from '../../modules/event/YearNaviation';
 import { EventTile } from '../../modules/event/EventTile';
 import Link from 'next/link';
