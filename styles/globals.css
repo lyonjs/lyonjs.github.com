@@ -4,16 +4,16 @@
 
 :root {
   --grey-0: #0c0c0d;
-  --yellow-0: #efda4e;
-  --yellow-1: #b5a53c;
+  --yellow-0: hsl(var(--yellow-0-hsl));
+  --yellow-0-hsl: 52 83% 62%;
+  --yellow-1: hsl(52, 100%, 42%);
   --white-0: #ffffff;
   --white-1: #cccccc;
   --white-2: #b2b2b2;
 
   --background-color: var(--grey-0);
   --main-color: var(--yellow-0);
-  --secondary-color: var(--yellow-1);
-  --foreground-color: var(--white-0);
+  --main-color-dark: var(--yellow-1);
   --font-color-strong: var(--white-0);
   --font-color-default: var(--white-1);
   --border-color: var(--white-2);

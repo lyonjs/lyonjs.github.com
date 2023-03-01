@@ -9,12 +9,7 @@ export const Header = () => (
   <header className={styles.header}>
     <div className={styles.headerContainer}>
       <Link href="/">
-        <LogoWithText
-          color="var(--foreground-color)"
-          width="151px"
-          height="104px"
-          backgroundColor="var(--background-color)"
-        />
+        <LogoWithText color="var(--font-color-strong)" width="100px" backgroundColor="var(--background-color)" />
       </Link>
 
       <MobileNavigation />

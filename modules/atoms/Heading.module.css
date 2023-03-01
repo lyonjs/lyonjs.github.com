@@ -19,6 +19,10 @@
   background-color: var(--main-color);
 }
 
+.centered {
+  text-align: center;
+}
+
 .h1.centered::after {
   left: 50%;
   transform: translateX(-50%);

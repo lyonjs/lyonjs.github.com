@@ -2,7 +2,7 @@ import React from 'react';
 import dayjs from 'dayjs';
 import _capitalize from 'lodash/capitalize';
 import type { Event } from './types';
-import { LinkPrimary } from '../atoms/ButtonPrimary';
+import { ButtonLink } from '../atoms/button/Button';
 import { Pin } from '../icons/Pin';
 import ReactMarkdown from 'react-markdown';
 import { H3 } from '../atoms/remark/Titles';
@@ -59,9 +59,9 @@ export const EventCard: React.FC<{ event: Event }> = ({ event }) => {
       </div>
 
       <div className="flex justify-center">
-        <LinkPrimary href={event.eventUrl} target="_blank" rel="noreferrer noopener">
+        <ButtonLink href={event.eventUrl} target="_blank" rel="noreferrer noopener">
           Réservez votre place
-        </LinkPrimary>
+        </ButtonLink>
       </div>
     </article>
   );
