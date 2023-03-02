@@ -1,0 +1,48 @@
+.eventTile {
+  display: flex;
+  background: var(--background-card);
+  margin-bottom: min(4vw, 32px);
+  padding: 12px;
+  border-radius: 12px;
+  align-items: center;
+  gap: 24px;
+}
+
+.eventTile img {
+  display: none;
+  width: 160px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+@media (min-width: 600px) {
+  .eventTile img {
+    display: block;
+  }
+}
+
+.eventTile h2 {
+  font-size: 1.25rem;
+  line-height: 1.2;
+  font-weight: 700;
+  color: var(--font-color-strong);
+  margin-bottom: 6px;
+}
+
+.eventTile .content {
+  display: flex;
+  flex-direction: column;
+}
+
+.eventTile .time {
+  font-size: 0.875rem;
+  line-height: 1.2;
+  margin-bottom: 6px;
+}
+
+.eventTile .sponsor {
+  font-size: 0.875rem;
+  line-height: 1.2;
+  font-weight: 700;
+}
