@@ -8,12 +8,15 @@
 .list {
   display: flex;
   margin-top: 56px;
-  font-size: 16px;
   font-weight: 700;
   list-style: disc outside;
   gap: 20px;
   overflow: auto;
   scroll-snap-type: x proximity;
+}
+
+.list li {
+  scroll-snap-align: start;
 }
 
 .list li:first-child {
