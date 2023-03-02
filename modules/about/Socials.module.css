@@ -3,6 +3,12 @@
   grid-template-columns: repeat(5, 1fr);
   padding-top: 4rem;
   width: fit-content;
-  gap: 24px;
+  gap: 0;
   margin: auto;
+}
+
+@media screen and (min-width: 600px) {
+  .socialsContainer {
+    gap: 24px;
+  }
 }
