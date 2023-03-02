@@ -1,14 +1,14 @@
 .socialsContainer {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   padding-top: 4rem;
   width: fit-content;
-  gap: 24px;
+  gap: 0;
   margin: auto;
 }
 
 @media screen and (min-width: 600px) {
   .socialsContainer {
-    grid-template-columns: repeat(5, 1fr);
+    gap: 24px;
   }
 }
