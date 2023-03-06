@@ -15,6 +15,7 @@
   },
   "dependencies": {
     "@next/mdx": "13.2.3",
+    "@vercel/analytics": "^0.1.11",
     "dayjs": "^1.11.6",
     "lodash": "^4.17.21",
     "next": "13.2.3",

@@ -4,6 +4,7 @@ import 'dayjs/locale/fr';
 import dayjs from 'dayjs';
 import type { AppProps } from 'next/app';
 import React from 'react';
+import { Analytics } from '@vercel/analytics/react';
 import { Header } from '../modules/header/Header';
 import { Footer } from '../modules/footer/Footer';
 
@@ -15,6 +16,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       <Header />
       <Component {...pageProps} />
       <Footer />
+      <Analytics />
     </>
   );
 }

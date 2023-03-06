@@ -7,6 +7,7 @@ specifiers:
   '@types/node': 18.14.4
   '@types/react': 18.0.28
   '@types/react-dom': 18.0.11
+  '@vercel/analytics': ^0.1.11
   autoprefixer: ^10.4.13
   classnames: 2.3.2
   dayjs: ^1.11.6
@@ -30,6 +31,7 @@ specifiers:
 
 dependencies:
   '@next/mdx': 13.2.3
+  '@vercel/analytics': 0.1.11_react@18.2.0
   dayjs: 1.11.7
   lodash: 4.17.21
   next: 13.2.3_biqbaboplfbrettd7655fr4n2y
@@ -442,6 +444,14 @@ packages:
       '@typescript-eslint/types': 5.46.1
       eslint-visitor-keys: 3.3.0
     dev: true
+
+  /@vercel/analytics/0.1.11_react@18.2.0:
+    resolution: {integrity: sha512-mj5CPR02y0BRs1tN3oZcBNAX9a8NxsIUl9vElDPcqxnMfP0RbRc9fI9Ud7+QDg/1Izvt5uMumsr+6YsmVHcyuw==}
+    peerDependencies:
+      react: ^16.8||^17||^18
+    dependencies:
+      react: 18.2.0
+    dev: false
 
   /acorn-jsx/5.3.2_acorn@8.8.1:
     resolution: {integrity: sha512-rq9s+JNhf0IChjtDXxllJ7g41oZk5SlXtp0LHwyA5cejwn7vKmKp4pPri6YEePv2PU65sAsegbXtIinmDFDXgQ==}
