@@ -1,12 +1,27 @@
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { orgas } from '../../data/orgas';
+import { JsonLD } from '../seo/JsonLD';
 
 const DEFAULT_TITLE = 'LyonJS - Communauté lyonnaise des utilisateurs de JavaScript';
 const DEFAULT_DESCRIPTION =
   'Communauté lyonnaise des utilisateurs de JavaScript, vous retrouverez ici le replay de nos derniers meetups ainsi que les dates des prochains évènements, conférences, soirées, partage, connaissance, talk, speakers';
 const BASE_URL = 'https://lyonjs.org';
 const SOCIAL_IMAGE = `${BASE_URL}/lyonjs.webp`;
+
+export const ORGANISATION_MARKUP = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  url: BASE_URL,
+  name: 'LyonJS',
+  logo: `${BASE_URL}/android-chrome-512x512.png`,
+  member: orgas.map(({ name, avatarUrl }) => ({
+    '@type': 'Person',
+    name,
+    image: `${BASE_URL}${avatarUrl}`,
+  })),
+};
+
 export const LyonJSHead: React.FC<{ title?: string; description?: string; socialImage?: string }> = ({
   title = DEFAULT_TITLE,
   description = DEFAULT_DESCRIPTION,
@@ -45,17 +60,7 @@ export const LyonJSHead: React.FC<{ title?: string; description?: string; social
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'Organization',
-            url: BASE_URL,
-            logo: `${BASE_URL}/android-chrome-512x512.png`,
-            member: orgas.map(({ name, avatarUrl }) => ({
-              '@type': 'Person',
-              name,
-              image: `${BASE_URL}${avatarUrl}`,
-            })),
-          }),
+          __html: JSON.stringify(ORGANISATION_MARKUP),
         }}
       />
       <meta name="robots" content="index, follow" />
