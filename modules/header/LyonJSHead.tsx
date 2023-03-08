@@ -4,7 +4,7 @@ import { orgas } from '../../data/orgas';
 
 const DEFAULT_TITLE = 'LyonJS - Communauté lyonnaise des utilisateurs de JavaScript';
 const DEFAULT_DESCRIPTION =
-  'Communauté lyonnaise des utilisateurs de JavaScript, vous retrouverez ici le replay de nos derniers meetups ainsi que les dates des prochains évènements, conférences, soirées, partage, connaissance, talk, speakers';
+  'Communauté lyonnaise des utilisateurs de JavaScript, vous retrouverez ici les replays de nos derniers meetups ainsi que les dates des prochains évènements, conférences, soirées, partage, connaissance, talk, speakers';
 const BASE_URL = 'https://lyonjs.org';
 const SOCIAL_IMAGE = `${BASE_URL}/lyonjs.webp`;
 export const LyonJSHead: React.FC<{ title?: string; description?: string; socialImage?: string }> = ({
