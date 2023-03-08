@@ -14,8 +14,14 @@
 }
 
 .seePastEvents {
-  margin-top: 50px;
+  margin-top: 70px;
   display: flex;
   width: fit-content;
   margin-inline: auto;
+}
+
+@media (min-width: 900px) {
+  .seePastEvents {
+    margin-top: 50px;
+  }
 }

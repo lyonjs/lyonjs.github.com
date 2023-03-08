@@ -1,7 +1,6 @@
 .container {
   display: grid;
-  grid-template-columns: 1fr 230px;
-  gap: 24px;
+  gap: 0.75rem;
   max-width: 800px;
 }
 
@@ -12,9 +11,18 @@
 .date {
   display: flex;
   align-items: center;
-  font-size: 0.875rem;
   line-height: 1.2;
   gap: 6px;
+}
+
+.date,
+.location {
+  font-size: 0.875rem;
+}
+
+.date svg,
+.location svg {
+  width: 1.2em;
 }
 
 .title {
@@ -23,16 +31,23 @@
   line-height: 1.3;
 }
 
-.title + .sponsor {
+.sponsoredBy {
   font-style: italic;
 }
 
 .description {
-  margin-block: 1.5rem 0.5rem;
+  margin-top: 1rem;
+}
+
+.description:not(.expanded) {
   display: -webkit-box;
   -webkit-line-clamp: 4;
   -webkit-box-orient: vertical;
   overflow: hidden;
+}
+
+.description:not(.expanded) p:nth-child(n + 3) a {
+  visibility: hidden; /* prevent from focusing hidden links with the keyboard */
 }
 
 .description p:not(:first-child) {
@@ -46,30 +61,70 @@
   margin-bottom: 2rem;
   text-decoration: underline;
   text-underline-offset: 0.12em;
+  justify-self: start;
+}
+
+.participate {
+  justify-self: center;
 }
 
 .picture {
-  border-radius: 4px;
+  display: none;
 }
 
 .location {
-  margin-top: 1rem;
-  display: grid;
+  display: flex;
   align-items: flex-start;
-  grid-template-columns: auto 1fr;
-  gap: 0.3em 0.5em;
+  gap: 0.5em;
   line-height: 1;
-}
-
-.location .sponsor,
-.location svg {
-  color: var(--font-color-strong);
 }
 
 .location .sponsor {
   font-weight: bold;
+  margin-bottom: 0.5em;
 }
 
-.location svg {
-  grid-row: span 2;
+.city {
+  margin-left: 0.2em;
+}
+
+@media (min-width: 900px) {
+  .container {
+    grid-template-columns: 1fr 230px;
+    gap: 0 24px;
+  }
+
+  .date {
+    grid-row: 1;
+  }
+
+  .description {
+    margin-block: 1.5rem 0.5rem;
+  }
+
+  .venue {
+    grid-column: 2;
+    grid-row: 1 / 6;
+  }
+
+  .participate {
+    justify-self: start;
+  }
+
+  .picture {
+    display: block;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+  }
+
+  .city {
+    display: block;
+    margin-left: 0;
+    line-height: 1.5;
+  }
+
+  .location .sponsor,
+  .location svg {
+    color: var(--font-color-strong);
+  }
 }
