@@ -15,7 +15,10 @@ import Link from 'next/link';
 const Event: NextPage<{ pastEvents: Event[]; years: string[]; year: string }> = ({ pastEvents, years, year }) => {
   return (
     <>
-      <LyonJSHead title={`LyonJS | Évènements ${year}`} />
+      <LyonJSHead
+        title={`LyonJS | Évènements ${year}`}
+        description={`Liste des évènements LyonJS de l'année ${year}, meetup, apéros, conférences et rassemblement, retrouver tous les liens depuis notre création.`}
+      />
       <main>
         <H1>Évènements</H1>
 
