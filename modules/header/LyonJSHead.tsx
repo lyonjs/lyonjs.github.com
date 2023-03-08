@@ -58,6 +58,7 @@ export const LyonJSHead: React.FC<{ title?: string; description?: string; social
           }),
         }}
       />
+      <meta name="robots" content="index, follow" />
     </Head>
   );
 };
