@@ -1,0 +1,75 @@
+.container {
+  display: grid;
+  grid-template-columns: 1fr 230px;
+  gap: 24px;
+  max-width: 800px;
+}
+
+.container svg {
+  height: 1em;
+}
+
+.date {
+  display: flex;
+  align-items: center;
+  font-size: 0.875rem;
+  line-height: 1.2;
+  gap: 6px;
+}
+
+.title {
+  font-size: 1.5rem;
+  margin-top: 0.5rem;
+  line-height: 1.3;
+}
+
+.title + .sponsor {
+  font-style: italic;
+}
+
+.description {
+  margin-block: 1.5rem 0.5rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.description p:not(:first-child) {
+  margin-top: 1rem;
+}
+
+.seeMore {
+  display: block;
+  font-weight: bold;
+  color: var(--font-color-strong);
+  margin-bottom: 2rem;
+  text-decoration: underline;
+  text-underline-offset: 0.12em;
+}
+
+.picture {
+  border-radius: 4px;
+}
+
+.location {
+  margin-top: 1rem;
+  display: grid;
+  align-items: flex-start;
+  grid-template-columns: auto 1fr;
+  gap: 0.3em 0.5em;
+  line-height: 1;
+}
+
+.location .sponsor,
+.location svg {
+  color: var(--font-color-strong);
+}
+
+.location .sponsor {
+  font-weight: bold;
+}
+
+.location svg {
+  grid-row: span 2;
+}
