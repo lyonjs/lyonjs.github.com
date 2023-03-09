@@ -1,7 +1,7 @@
 import React from 'react';
 import { IconProps } from './types';
 
-export const Meetup: React.FC<IconProps> = ({ color, size }) => (
+export const Meetup: React.FC<IconProps> = ({ color = 'currentColor', size }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 100 100"

@@ -1,9 +1,10 @@
 import classNames from 'classnames';
-import type { FC, DetailedHTMLProps, ButtonHTMLAttributes, AnchorHTMLAttributes } from 'react';
+import Link from 'next/link';
+import type { FC, DetailedHTMLProps, ButtonHTMLAttributes, ComponentPropsWithRef } from 'react';
 import styles from './Button.module.css';
 
 type ButtonProps = DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>;
-type AnchorProps = DetailedHTMLProps<AnchorHTMLAttributes<HTMLAnchorElement>, HTMLAnchorElement>;
+type AnchorProps = ComponentPropsWithRef<typeof Link>;
 
 type CustomProps = {
   variant?: 'primary' | 'secondary';
@@ -16,7 +17,7 @@ export const Button: FC<ButtonProps & CustomProps> = ({ children, className, var
 );
 
 export const ButtonLink: FC<AnchorProps & CustomProps> = ({ children, className, variant = 'primary', ...props }) => (
-  <a className={classNames(styles.button, styles[variant], className)} {...props}>
+  <Link className={classNames(styles.button, styles[variant], className)} {...props}>
     {children}
-  </a>
+  </Link>
 );

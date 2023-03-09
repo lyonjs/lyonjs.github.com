@@ -1,8 +1,0 @@
-.article {
-  display: flex;
-  border: solid 1px;
-}
-
-.date {
-  background-color: var(--main-color);
-}
