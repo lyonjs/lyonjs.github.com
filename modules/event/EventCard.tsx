@@ -6,6 +6,7 @@ import { ButtonLink } from '../atoms/button/Button';
 import { Pin } from '../icons/Pin';
 import ReactMarkdown from 'react-markdown';
 import { H3 } from '../atoms/remark/Titles';
+import { EventMarkup } from './EventMarkup';
 
 export const EventCard: React.FC<{ event: Event }> = ({ event }) => {
   const dateParsed = dayjs(event.dateTime);
@@ -63,6 +64,8 @@ export const EventCard: React.FC<{ event: Event }> = ({ event }) => {
           Réservez votre place
         </ButtonLink>
       </div>
+
+      <EventMarkup event={event} />
     </article>
   );
 };
