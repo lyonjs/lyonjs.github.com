@@ -17,6 +17,7 @@ export type Talk = {
 };
 
 export type Event = {
+  id: string;
   title: string;
   shortDescription: string;
   description: string;
