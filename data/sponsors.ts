@@ -2,7 +2,7 @@ import { Sponsor } from '../modules/event/types';
 
 export const bedrock: Sponsor = {
   name: 'Bedrock Streaming',
-  logo: '/sponsors/bedrock.png',
+  logo: '/sponsors/bedrock.svg',
   url: 'https://bedrockstreaming.com/',
 };
 
@@ -15,7 +15,6 @@ export const zenika: Sponsor = {
 export const indy: Sponsor = {
   name: 'Indy',
   logo: '/sponsors/indy.svg',
-  logoLight: true,
   url: 'https://www.indy.fr/',
 };
 
@@ -23,4 +22,10 @@ export const smile: Sponsor = {
   name: 'Smile',
   logo: '/sponsors/smile.png',
   url: 'https://www.smile.eu/fr',
+};
+
+export const vercel: Sponsor = {
+  name: 'Vercel',
+  logo: '/sponsors/vercel.svg',
+  url: 'https://vercel.com/',
 };
