@@ -20,7 +20,7 @@ export const Orgas: React.FC = () => (
               rel="noreferrer noopener"
               title={`Compte Twitter de ${orga.name}`}
             >
-              <Twitter color="currentColor" size={24} />
+              <Twitter color="currentColor" size={20} />
             </IconLink>
           )}
           {orga.social.linkedin && (
@@ -30,7 +30,7 @@ export const Orgas: React.FC = () => (
               rel="noreferrer noopener"
               title={`Compte Linkedin de ${orga.name}`}
             >
-              <Linkedin color="currentColor" size={24} />
+              <Linkedin color="currentColor" size={20} />
             </IconLink>
           )}
         </div>

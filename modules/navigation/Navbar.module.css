@@ -1,6 +1,6 @@
 .navbar ul {
   display: flex;
-  gap: 1rem;
+  gap: 0.5rem;
 }
 
 .navbar li {

@@ -1,8 +1,8 @@
-.headerContainer {
+.header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 10px;
+  padding-top: 20px;
 }
 
 @media (max-width: 900px) {
@@ -11,7 +11,7 @@
     display: none !important;
   }
 
-  .headerContainer {
+  .header {
     justify-content: center;
   }
 }

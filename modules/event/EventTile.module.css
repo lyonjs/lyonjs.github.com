@@ -2,10 +2,17 @@
   display: flex;
   background: var(--background-card);
   margin-bottom: min(4vw, 32px);
-  padding: 12px;
+  padding: 16px;
   border-radius: 12px;
   align-items: center;
   gap: 24px;
+  transition: background-color 100ms, border-color 100ms;
+  border: 1px solid transparent;
+}
+
+.eventTile:hover {
+  background-color: var(--background-card-hover);
+  border-color: #2e2e33;
 }
 
 .eventTile img {
@@ -17,6 +24,10 @@
 }
 
 @media (min-width: 600px) {
+  .eventTile {
+    padding: 12px;
+  }
+
   .eventTile img {
     display: block;
   }
