@@ -1,5 +1,5 @@
 .navigation {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+  border-bottom: 1px solid var(--border-strong);
   margin-bottom: 24px;
 }
 

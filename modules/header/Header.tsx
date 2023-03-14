@@ -8,7 +8,7 @@ import { MobileNavigation } from '../navigation/mobile/MobileNavigation';
 export const Header = () => (
   <header className={styles.header}>
     <Link href="/">
-      <LogoWithText color="var(--font-color-strong)" width="100px" backgroundColor="var(--background-color)" />
+      <LogoWithText color="var(--font-color-strong)" width="100px" backgroundColor="var(--background-page)" />
     </Link>
 
     <MobileNavigation />

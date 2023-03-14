@@ -11,7 +11,7 @@
 
 .primary {
   background-color: var(--main-color);
-  color: var(--background-color);
+  color: var(--background-page);
 }
 
 .primary:hover {
@@ -20,9 +20,13 @@
 
 .secondary {
   color: var(--font-color-strong);
-  background-color: rgba(255, 255, 255, 0.08);
+  background-color: var(--background-button);
 }
 
 .secondary:hover {
-  background-color: rgba(255, 255, 255, 0.15);
+  background-color: var(--background-button-hover);
+}
+
+.secondary:active {
+  background-color: var(--background-button-active);
 }
