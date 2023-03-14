@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { Article, H2 } from '../../../pages';
+import { Article, H2 } from '../../home/Home.components';
 import { EventCard } from './EventCard';
 import { NoNextEvent } from './NoNextEvent';
 import { Event } from '../types';

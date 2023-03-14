@@ -1,4 +1,4 @@
-import type { Event } from './types';
+import type { Event } from '../types';
 import dayjs from 'dayjs';
 import styles from './EventTile.module.css';
 import _capitalize from 'lodash/capitalize';

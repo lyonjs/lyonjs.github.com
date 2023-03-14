@@ -1,7 +1,7 @@
 import * as sponsors from '../../data/sponsors';
 import Image from 'next/image';
 import React from 'react';
-import { Article, H2 } from '../../pages';
+import { Article, H2 } from '../home/Home.components';
 import styles from './Sponsors.module.css';
 
 export const Sponsors = () => (

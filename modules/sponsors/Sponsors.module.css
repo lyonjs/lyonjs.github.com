@@ -3,7 +3,7 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  max-width: 1200px;
+  max-width: 800px;
   gap: 16px;
 }
 
@@ -24,6 +24,6 @@
   border-color: var(--border-light);
 }
 
-.sponsors a img {
+.sponsors img {
   max-height: 80px;
 }
