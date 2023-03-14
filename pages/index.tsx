@@ -1,10 +1,8 @@
 import type { NextPage, GetStaticProps } from 'next';
 import React, { FC, PropsWithChildren } from 'react';
 import _merge from 'lodash/merge';
-import Image from 'next/image';
 
 import { dataOverride } from '../data/data-override';
-import * as sponsors from '../data/sponsors';
 
 import type { Event } from '../modules/event/types';
 import { LyonJSHead } from '../modules/header/LyonJSHead';
@@ -15,10 +13,13 @@ import styles from '../modules/home/Home.module.css';
 import { Hero } from '../modules/home/Hero';
 import { NoNextEvent } from '../modules/event/NoNextEvent';
 import { ButtonLink } from '../modules/atoms/button/Button';
+import { Sponsors } from '../modules/sponsors/Sponsors';
 
-const Article: FC<PropsWithChildren> = ({ children }) => <article className={styles.article}>{children}</article>;
+export const Article: FC<PropsWithChildren> = ({ children }) => (
+  <article className={styles.article}>{children}</article>
+);
 
-const H2: FC<PropsWithChildren> = ({ children }) => (
+export const H2: FC<PropsWithChildren> = ({ children }) => (
   <Heading2 appearance="h1" centered className={styles.secondaryTitle}>
     {children}
   </Heading2>
@@ -49,22 +50,7 @@ const Home: NextPage<Props> = ({ nextEvent }) => (
 
       <SeePastEvents />
 
-      <Article>
-        <H2>Sponsors</H2>
-        <div className="grid md:grid-cols-4 grid-cols-2 gap-12 mb-4">
-          {Object.values(sponsors).map((sponsor) => (
-            <a
-              key={sponsor.logo}
-              href={sponsor.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={sponsor.logoLight ? 'flex items-center bg-white' : 'flex items-center'}
-            >
-              <Image src={sponsor.logo} alt={sponsor.name} width="200" height="200" className="object-cover h-auto" />
-            </a>
-          ))}
-        </div>
-      </Article>
+      <Sponsors />
     </main>
   </>
 );

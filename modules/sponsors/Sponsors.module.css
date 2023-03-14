@@ -1,0 +1,23 @@
+.sponsors {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  max-width: 1200px;
+  gap: 16px;
+}
+
+.sponsors a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 150px;
+  width: 250px;
+  background-color: var(--background-card);
+  border-radius: 12px;
+}
+
+.sponsors a img {
+  max-height: 80px;
+  aspect-ratio: auto;
+}
