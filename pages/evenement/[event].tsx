@@ -1,6 +1,6 @@
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next';
 import { fetchMeetupEvents, fetchSingleMeetup } from '../../modules/meetup/api';
-import _uniq from 'lodash/uniq';
+import ReactMarkdown from 'react-markdown';
 import { ParsedUrlQuery } from 'querystring';
 import { dataOverride } from '../../data/data-override';
 import _merge from 'lodash/merge';
@@ -18,7 +18,7 @@ const EventPage: NextPage<{ event: Event }> = ({ event }) => {
       />
       <main>
         <H1>{event.title}</H1>
-        <p>{event.description}</p>
+        <ReactMarkdown>{event.description}</ReactMarkdown>
       </main>
     </>
   );
