@@ -9,14 +9,14 @@
 
 @media (hover: hover) {
   .link:hover {
-    background-color: rgba(255, 255, 255, 0.08);
+    background-color: var(--background-button-hover);
   }
 }
 
 .link:focus-visible {
-  background-color: rgba(255, 255, 255, 0.08);
+  background-color: var(--background-button-hover);
 }
 
 .link[aria-current='page'] {
-  background-color: rgba(255, 255, 255, 0.15);
+  background-color: var(--background-button-active);
 }

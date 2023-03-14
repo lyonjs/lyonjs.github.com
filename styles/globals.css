@@ -3,22 +3,28 @@
 @tailwind utilities;
 
 :root {
-  --grey-0: #0c0c0d;
+  --grey-0: hsl(240, 4%, 5%);
   --yellow-0: hsl(var(--yellow-0-hsl));
   --yellow-0-hsl: 52 83% 62%;
   --yellow-1: hsl(52, 100%, 42%);
   --white-0: #ffffff;
   --white-1: #cccccc;
-  --white-2: #b2b2b2;
 
-  --background-color: var(--grey-0);
-  --background-card: #141415;
-  --background-card-hover: #18181b;
+  --background-page: var(--grey-0);
   --main-color: var(--yellow-0);
   --main-color-dark: var(--yellow-1);
   --font-color-strong: var(--white-0);
   --font-color-default: var(--white-1);
-  --border-color: var(--white-2);
+
+  --border-light: rgb(255 255 255 / 0.12);
+  --border-strong: rgb(255 255 255 / 0.3);
+
+  --background-card: hsl(240, 4%, 10%);
+  --background-card-hover: hsl(240, 6%, 12%);
+
+  --background-button: hsl(52 20% 90% / 0.08);
+  --background-button-hover: hsl(52 20% 90% / 0.1);
+  --background-button-active: hsl(52 20% 90% / 0.15);
 }
 
 html {
@@ -32,7 +38,7 @@ body,
 }
 
 body {
-  background-color: var(--background-color);
+  background-color: var(--background-page);
   color: var(--font-color-default);
   overflow-y: scroll; /* avoid layout shift on pages that don't scroll */
 }

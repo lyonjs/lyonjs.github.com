@@ -8,7 +8,7 @@
   justify-content: space-between;
   align-items: center;
   padding: min(20vh, 10rem) 2rem 2rem;
-  background-color: var(--background-color);
+  background-color: var(--background-page);
   opacity: 0;
   transition: opacity 300ms;
   pointer-events: none;

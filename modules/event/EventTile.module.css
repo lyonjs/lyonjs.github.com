@@ -12,7 +12,7 @@
 
 .eventTile:hover {
   background-color: var(--background-card-hover);
-  border-color: #2e2e33;
+  border-color: var(--border-light);
 }
 
 .eventTile img {
