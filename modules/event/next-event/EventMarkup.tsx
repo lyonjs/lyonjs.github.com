@@ -1,8 +1,8 @@
 import React from 'react';
 import dayjs from 'dayjs';
-import { ORGANISATION_MARKUP } from '../header/LyonJSHead';
-import { JsonLD } from '../seo/JsonLD';
-import type { Event } from './types';
+import { ORGANISATION_MARKUP } from '../../header/LyonJSHead';
+import { JsonLD } from '../../seo/JsonLD';
+import type { Event } from '../types';
 
 export const EventMarkup: React.FC<{ event: Event }> = ({ event }) => (
   <JsonLD

@@ -8,8 +8,8 @@ import _uniq from 'lodash/uniq';
 import { fetchMeetupEvents } from '../../modules/meetup/api';
 import { ParsedUrlQuery } from 'querystring';
 import { H1 } from '../../modules/atoms/remark/Titles';
-import { YearNavigation } from '../../modules/event/YearNaviation';
-import { EventTile } from '../../modules/event/EventTile';
+import { YearNavigation } from '../../modules/event/past-events/YearNaviation';
+import { EventTile } from '../../modules/event/past-events/EventTile';
 import Link from 'next/link';
 
 const Event: NextPage<{ pastEvents: Event[]; years: string[]; year: string }> = ({ pastEvents, years, year }) => {

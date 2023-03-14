@@ -16,8 +16,7 @@
 .seePastEvents {
   margin-top: 70px;
   display: flex;
-  width: fit-content;
-  margin-inline: auto;
+  justify-content: center;
 }
 
 @media (min-width: 900px) {
