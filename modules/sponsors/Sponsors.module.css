@@ -4,17 +4,17 @@
   justify-content: center;
   align-items: center;
   max-width: 800px;
-  gap: 16px;
+  gap: min(2vw, 16px);
 }
 
 .sponsors a {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 150px;
-  width: 250px;
+  width: min(40vw, 250px);
+  aspect-ratio: 250 / 150;
   background-color: var(--background-card);
-  border-radius: 12px;
+  border-radius: min(2vw, 12px);
   transition: background-color 100ms, border-color 100ms;
   border: 1px solid transparent;
 }
@@ -25,5 +25,6 @@
 }
 
 .sponsors img {
-  max-height: 80px;
+  max-height: min(14vw, 80px);
+  max-width: 75%;
 }
