@@ -6,7 +6,7 @@
   gap: 16px;
   color: var(--font-color-strong);
   font-weight: bold;
-  margin-top: 3rem;
+  margin-top: 5rem;
   padding: 2rem;
   border-top: 1px solid transparent;
   border-image: linear-gradient(0.25turn, transparent, var(--border-color), transparent) 1;

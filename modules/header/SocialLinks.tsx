@@ -18,7 +18,7 @@ export const SocialLinks: FC<HTMLAttributes<HTMLElement>> = ({ className }) => (
         title="La page Meetup du LyonJS"
         aria-label="La page Meetup du LyonJS"
       >
-        <Meetup color="currentColor" size={24} />
+        <Meetup color="currentColor" size={20} />
       </IconLink>
     </li>
     <li>
@@ -29,7 +29,7 @@ export const SocialLinks: FC<HTMLAttributes<HTMLElement>> = ({ className }) => (
         title="Compte Twitter du LyonJS"
         aria-label="Compte Twitter du LyonJS"
       >
-        <Twitter color="currentColor" size={24} />
+        <Twitter color="currentColor" size={20} />
       </IconLink>
     </li>
     <li>
@@ -40,7 +40,7 @@ export const SocialLinks: FC<HTMLAttributes<HTMLElement>> = ({ className }) => (
         title="Rejoindre le Slack du LyonJS"
         aria-label="Rejoindre le Slack du LyonJS"
       >
-        <Slack color="currentColor" size={24} />
+        <Slack color="currentColor" size={20} />
       </IconLink>
     </li>
     <li>
@@ -51,7 +51,7 @@ export const SocialLinks: FC<HTMLAttributes<HTMLElement>> = ({ className }) => (
         title="La chaîne Youtube du LyonJS"
         aria-label="La chaîne Youtube du LyonJS"
       >
-        <Youtube color="currentColor" size={24} />
+        <Youtube color="currentColor" size={20} />
       </IconLink>
     </li>
     <li>
@@ -62,7 +62,7 @@ export const SocialLinks: FC<HTMLAttributes<HTMLElement>> = ({ className }) => (
         title="Groupe Reddit LyonJS"
         aria-label="Groupe Reddit LyonJS"
       >
-        <Reddit color="currentColor" size={24} />
+        <Reddit color="currentColor" size={20} />
       </IconLink>
     </li>
   </ul>

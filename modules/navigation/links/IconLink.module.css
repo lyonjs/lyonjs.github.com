@@ -1,5 +1,5 @@
 .link {
-  padding: 1em;
+  padding: 0.75em;
   display: inline-flex;
   border-radius: 50%;
   color: var(--font-color-default);
