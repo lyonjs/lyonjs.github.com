@@ -10,7 +10,7 @@ export const Sponsors = () => (
     <div className={styles.sponsors}>
       {Object.values(sponsors).map((sponsor) => (
         <a key={sponsor.logo} href={sponsor.url} target="_blank" rel="noopener noreferrer">
-          <Image src={sponsor.logo} alt={sponsor.name} height="100" width="150" />
+          <Image src={sponsor.logo} alt={sponsor.name} height="100" width="170" />
         </a>
       ))}
     </div>
