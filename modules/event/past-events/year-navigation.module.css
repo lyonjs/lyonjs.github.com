@@ -1,18 +1,18 @@
 .navigation {
-  width: 100%;
-  padding-bottom: 10px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
-  margin-bottom: 20px;
+  border-bottom: 1px solid var(--border-strong);
+  margin-bottom: 24px;
 }
 
 .list {
   display: flex;
   margin-top: 56px;
+  padding-bottom: 12px;
   font-weight: 700;
   list-style: disc outside;
   gap: 20px;
   overflow: auto;
   scroll-snap-type: x proximity;
+  color: var(--font-color-strong);
 }
 
 .list li {

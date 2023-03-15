@@ -1,7 +1,6 @@
 export type Sponsor = {
   name: string;
   logo: string;
-  logoLight?: boolean;
   url: string;
 };
 

@@ -7,15 +7,13 @@ import { MobileNavigation } from '../navigation/mobile/MobileNavigation';
 
 export const Header = () => (
   <header className={styles.header}>
-    <div className={styles.headerContainer}>
-      <Link href="/">
-        <LogoWithText color="var(--font-color-strong)" width="100px" backgroundColor="var(--background-color)" />
-      </Link>
+    <Link href="/">
+      <LogoWithText color="var(--font-color-strong)" width="100px" backgroundColor="var(--background-page)" />
+    </Link>
 
-      <MobileNavigation />
+    <MobileNavigation />
 
-      <Navbar className={styles.navbar} />
-      <SocialLinks className={styles.socialLinks} />
-    </div>
+    <Navbar className={styles.navbar} />
+    <SocialLinks className={styles.socialLinks} />
   </header>
 );

@@ -1,14 +1,14 @@
 import React, { FC, useState } from 'react';
 import dayjs from 'dayjs';
 import _capitalize from 'lodash/capitalize';
-import type { Event } from './types';
-import { ButtonLink } from '../atoms/button/Button';
-import { Pin } from '../icons/Pin';
+import type { Event } from '../types';
+import { ButtonLink } from '../../atoms/button/Button';
+import { Pin } from '../../icons/Pin';
 import ReactMarkdown from 'react-markdown';
-import { H3 } from '../atoms/remark/Titles';
+import { H3 } from '../../atoms/remark/Titles';
 import styles from './EventCard.module.css';
-import { Calendar } from '../icons/Calendar';
-import { Meetup } from '../icons/Meetup';
+import { Calendar } from '../../icons/Calendar';
+import { Meetup } from '../../icons/Meetup';
 import { EventMarkup } from './EventMarkup';
 import classNames from 'classnames';
 
