@@ -1,5 +1,5 @@
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next';
-import { fetchMeetupEvents } from '../../modules/meetup/api';
+import { fetchMeetupEvents, fetchSingleMeetup } from '../../modules/meetup/api';
 import _uniq from 'lodash/uniq';
 import { ParsedUrlQuery } from 'querystring';
 import { dataOverride } from '../../data/data-override';
@@ -44,12 +44,12 @@ interface Params extends ParsedUrlQuery {
 }
 
 export const getStaticProps: GetStaticProps = async (context) => {
-  const { pastEvents } = await fetchMeetupEvents();
   const { event } = context.params as Params;
+  const fetchedEvent = await fetchSingleMeetup(event);
 
   return {
     props: {
-      event: pastEvents.find((e) => e.id === event),
+      event: fetchedEvent,
     },
   };
 };

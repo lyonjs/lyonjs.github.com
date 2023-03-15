@@ -50,6 +50,31 @@ const query = gql`
   }
 `;
 
+const eventQuery = gql`
+  query meetupEvent($id: ID!) {
+    event(id: $id) {
+      id
+      title
+      description
+      eventUrl
+      dateTime
+      imageUrl
+      venue {
+        name
+        address
+        city
+        postalCode
+        lat
+        lng
+      }
+    }
+  }
+`;
+
+type SingleEventResponseType = {
+  event: Event;
+};
+
 type Edges<T> = {
   edges: Array<{
     node: T;
@@ -71,4 +96,10 @@ export const fetchMeetupEvents = async (): Promise<{ nextEvent: Event; pastEvent
   const pastEvents = meetupEventsResponse?.group?.pastEvents?.edges.map((it) => it.node).reverse() || [];
 
   return { nextEvent, pastEvents };
+};
+
+export const fetchSingleMeetup = async (meetupId: string): Promise<Event> => {
+  const meetupEventsResponse = await client.request<SingleEventResponseType>(eventQuery, { id: meetupId });
+
+  return meetupEventsResponse?.event;
 };
