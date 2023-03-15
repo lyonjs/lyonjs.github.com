@@ -31,30 +31,12 @@
   gap: 6px;
 }
 
-.date,
-.location {
+.date {
   font-size: 0.875rem;
 }
 
-.date svg,
-.location svg {
+.date svg {
   width: 1.2em;
-}
-
-.location {
-  display: flex;
-  align-items: flex-start;
-  gap: 0.5em;
-  line-height: 1;
-}
-
-.location .sponsor {
-  font-weight: bold;
-  margin-bottom: 0.5em;
-}
-
-.city {
-  margin-left: 0.2em;
 }
 
 @media screen and (min-width: 768px) {
