@@ -11,7 +11,7 @@ Make sure to have installed:
 ```bash
 git clone git@github.com:lyonjs/lyonjs.github.com.git
 
-pnpm intall
+pnpm install
 ```
 
 ## Some useful commands
