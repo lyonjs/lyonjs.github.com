@@ -11,6 +11,7 @@ import { H1 } from '../../modules/atoms/remark/Titles';
 import { YearNavigation } from '../../modules/event/past-events/YearNaviation';
 import { EventTile } from '../../modules/event/past-events/EventTile';
 import Link from 'next/link';
+import { slugify } from '../../modules/seo/slugify';
 
 const Event: NextPage<{ pastEvents: Event[]; years: string[]; year: string }> = ({ pastEvents, years, year }) => {
   return (
@@ -25,7 +26,7 @@ const Event: NextPage<{ pastEvents: Event[]; years: string[]; year: string }> = 
         <YearNavigation years={years} />
 
         {pastEvents.map((event) => (
-          <Link key={event.eventUrl} href={`/evenement/${event.id}`}>
+          <Link key={event.eventUrl} href={`/evenement/${slugify(event.title)}-e_${event.id}`}>
             <EventTile event={event} />
           </Link>
         ))}

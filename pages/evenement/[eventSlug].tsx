@@ -2,12 +2,11 @@ import { GetStaticPaths, GetStaticProps, NextPage } from 'next';
 import { fetchMeetupEvents } from '../../modules/meetup/api';
 import _uniq from 'lodash/uniq';
 import { ParsedUrlQuery } from 'querystring';
-import { dataOverride } from '../../data/data-override';
-import _merge from 'lodash/merge';
 import { LyonJSHead } from '../../modules/header/LyonJSHead';
 import { Event } from '../../modules/event/types';
 import { H1 } from '../../modules/atoms/remark/Titles';
 import React from 'react';
+import { slugify } from '../../modules/seo/slugify';
 
 const EventPage: NextPage<{ event: Event }> = ({ event }) => {
   return (
@@ -23,33 +22,26 @@ const EventPage: NextPage<{ event: Event }> = ({ event }) => {
     </>
   );
 };
-
-const overrideEvent = (event: Event): Event => {
-  if (event && dataOverride[event.eventUrl]) {
-    return _merge(event, dataOverride[event.eventUrl]);
-  }
-  return event;
-};
 export const getStaticPaths: GetStaticPaths = async () => {
   const { pastEvents } = await fetchMeetupEvents();
 
   return {
-    paths: pastEvents.map((event) => ({ params: { event: event.id } })),
+    paths: pastEvents.map((event) => ({ params: { eventSlug: `${slugify(event.title)}-e_${event.id}` } })),
     fallback: false,
   };
 };
 
 interface Params extends ParsedUrlQuery {
-  event: string;
+  eventSlug: string;
 }
 
 export const getStaticProps: GetStaticProps = async (context) => {
   const { pastEvents } = await fetchMeetupEvents();
-  const { event } = context.params as Params;
+  const { eventSlug } = context.params as Params;
 
   return {
     props: {
-      event: pastEvents.find((e) => e.id === event),
+      event: pastEvents.find((e) => e.id === eventSlug.split('-e_')[1]),
     },
   };
 };
