@@ -5,23 +5,12 @@
 .container {
   display: flex;
   flex-direction: column-reverse;
-  margin-top: 90px;
+  margin-top: 60px;
   gap: 24px;
-}
-
-.description {
-  font-size: 1rem;
-  font-weight: 400;
 }
 
 .description p:not(:first-child) {
   margin-top: 1rem;
-}
-
-.image {
-  display: block;
-  height: auto;
-  aspect-ratio: 16 / 9;
 }
 
 .date {
