@@ -1,10 +1,11 @@
+import React from 'react';
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next';
 import { fetchMeetupEvents } from '../../modules/meetup/api';
 import { ParsedUrlQuery } from 'querystring';
 import { LyonJSHead } from '../../modules/header/LyonJSHead';
 import { Event } from '../../modules/event/types';
-import { H1 } from '../../modules/atoms/remark/Titles';
-import React from 'react';
+import { EventDetail } from '../../modules/event/event-detail/EventDetail';
+import { EventMarkup } from '../../modules/event/next-event/EventMarkup';
 import { parserEventIdFromSlug, slugEventTitle } from '../../modules/event/eventSlug';
 
 const EventPage: NextPage<{ event: Event }> = ({ event }) => {
@@ -15,8 +16,8 @@ const EventPage: NextPage<{ event: Event }> = ({ event }) => {
         description={`Évènement LyonJS: ${event.shortDescription || event.description.slice(0, 250)}...`}
       />
       <main>
-        <H1>{event.title}</H1>
-        <p>{event.description}</p>
+        <EventDetail event={event} />
+        <EventMarkup event={event} />
       </main>
     </>
   );
@@ -37,7 +38,6 @@ interface Params extends ParsedUrlQuery {
 export const getStaticProps: GetStaticProps = async (context) => {
   const { pastEvents } = await fetchMeetupEvents();
   const { eventSlug } = context.params as Params;
-  console.log(parserEventIdFromSlug(eventSlug));
 
   return {
     props: {
