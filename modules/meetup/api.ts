@@ -71,3 +71,29 @@ export const fetchMeetupEvents = async (): Promise<{ nextEvent: Event; pastEvent
 
   return { nextEvent, pastEvents };
 };
+
+const queryForYears = gql`
+  query meetupYears($id: ID!) {
+    group(id: $id) {
+      id
+      name
+      pastEvents(input: { first: 5000 }) {
+        edges {
+          node {
+            dateTime
+          }
+        }
+      }
+    }
+  }
+`;
+
+export const fetchYearsWithMeetups = async (): Promise<Set<string>> => {
+  const meetupEventsResponse = await client.request<ResponseType>(queryForYears, { id: 18305583 });
+  const years = new Set<string>();
+  meetupEventsResponse?.group?.pastEvents?.edges.forEach((it) => {
+    years.add(new Date(it.node.dateTime).getFullYear().toString());
+  });
+
+  return years;
+};

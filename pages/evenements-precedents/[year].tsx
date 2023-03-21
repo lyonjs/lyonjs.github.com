@@ -5,7 +5,7 @@ import { Event } from '../../modules/event/types';
 import { dataOverride } from '../../data/data-override';
 import _merge from 'lodash/merge';
 import _uniq from 'lodash/uniq';
-import { fetchMeetupEvents } from '../../modules/meetup/api';
+import { fetchMeetupEvents, fetchYearsWithMeetups } from '../../modules/meetup/api';
 import { ParsedUrlQuery } from 'querystring';
 import { H1 } from '../../modules/atoms/remark/Titles';
 import { YearNavigation } from '../../modules/event/past-events/YearNaviation';
@@ -42,14 +42,10 @@ const overrideEvent = (event: Event): Event => {
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const { pastEvents } = await fetchMeetupEvents();
-  const yearsFromEvents: string[] = pastEvents
-    .map((event) => new Date(event.dateTime).getFullYear())
-    .map((year) => year.toString());
-  const years = _uniq(yearsFromEvents);
+  const years = await fetchYearsWithMeetups();
 
   return {
-    paths: years.map((year) => ({ params: { year } })),
+    paths: Array.from(years).map((year) => ({ params: { year } })),
     fallback: false,
   };
 };
