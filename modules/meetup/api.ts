@@ -98,3 +98,27 @@ export const fetchYearsWithMeetups = async (): Promise<Set<string>> => {
 
   return years;
 };
+
+const queryForEvent = gql`
+  query meetup($id: ID!) {
+    event(id: $id) {
+      title
+      description
+      eventUrl
+      dateTime
+      imageUrl
+      venue {
+        name
+        address
+        city
+        postalCode
+        lat
+        lng
+      }
+    }
+  }
+`;
+export const fetchSingleEvent = async (id: string): Promise<Event> => {
+  const { event } = await client.request<{ event: Event }>(queryForEvent, { id });
+  return event;
+};
