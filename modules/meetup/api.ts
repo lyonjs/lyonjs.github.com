@@ -12,18 +12,9 @@ const query = gql`
           node {
             id
             title
-            description
             eventUrl
             dateTime
             imageUrl
-            venue {
-              name
-              address
-              city
-              postalCode
-              lat
-              lng
-            }
           }
         }
       }

@@ -11,7 +11,6 @@ import { H1 } from '../../modules/atoms/remark/Titles';
 import { YearNavigation } from '../../modules/event/past-events/YearNaviation';
 import { EventTile } from '../../modules/event/past-events/EventTile';
 import Link from 'next/link';
-import { slugify } from '../../modules/seo/slugify';
 import { slugEventTitle } from '../../modules/event/eventSlug';
 
 const Event: NextPage<{ pastEvents: Event[]; years: string[]; year: string }> = ({ pastEvents, years, year }) => {
