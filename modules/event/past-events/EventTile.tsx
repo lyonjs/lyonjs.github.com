@@ -7,7 +7,7 @@ export const EventTile: React.FC<{ event: Event }> = ({ event }) => {
   const formattedDayAndMonth = _capitalize(dateParsed.format('dddd D MMMM YYYY à H:mm'));
 
   return (
-    <article className={styles.eventTile}>
+    <article className={styles.eventTile} aria-label={event.title}>
       <img src={event.imageUrl} alt="" />
       <div className={styles.content}>
         <h2>{event.title}</h2>
