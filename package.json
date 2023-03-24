@@ -28,7 +28,7 @@
     "@playwright/test": "^1.31.1",
     "@types/lodash": "^4.14.187",
     "@types/node": "18.15.5",
-    "@types/react": "18.0.28",
+    "@types/react": "18.0.29",
     "@types/react-dom": "18.0.11",
     "autoprefixer": "^10.4.13",
     "classnames": "2.3.2",
