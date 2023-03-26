@@ -9,7 +9,9 @@ export const YearNavigation: React.FC<{ years: string[] }> = ({ years }) => {
       <ul className={styles.list}>
         {years.map<React.ReactNode>((year) => (
           <li key={year}>
-            <ActiveLink href={`/evenements-precedents/${year}`}>{year}</ActiveLink>
+            <ActiveLink href={`/evenements-precedents/${year}`} aria-label={`Liste des évènements de l'année ${year}`}>
+              {year}
+            </ActiveLink>
           </li>
         ))}
       </ul>

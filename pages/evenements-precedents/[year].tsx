@@ -21,7 +21,7 @@ const Event: NextPage<{ pastEvents: Event[]; years: string[]; year: string }> = 
         description={`Liste des évènements LyonJS de l'année ${year}, meetup, apéros, conférences et rassemblement, retrouver tous les liens depuis notre création.`}
       />
       <main>
-        <H1>Évènements</H1>
+        <H1>Évènements précédents</H1>
 
         <YearNavigation years={years} />
 
