@@ -1,6 +1,6 @@
 import React from 'react';
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next';
-import { fetchMeetupEvents } from '../../modules/meetup/api';
+import { fetchMeetupEvents, fetchSingleEvent } from '../../modules/meetup/api';
 import { ParsedUrlQuery } from 'querystring';
 import { LyonJSHead } from '../../modules/header/LyonJSHead';
 import { Event } from '../../modules/event/types';
@@ -36,12 +36,16 @@ interface Params extends ParsedUrlQuery {
 }
 
 export const getStaticProps: GetStaticProps = async (context) => {
-  const { pastEvents } = await fetchMeetupEvents();
   const { eventSlug } = context.params as Params;
+  const eventId = parserEventIdFromSlug(eventSlug);
+  let event;
+  if (eventId) {
+    event = await fetchSingleEvent(eventId);
+  }
 
   return {
     props: {
-      event: pastEvents.find((e) => e.id === parserEventIdFromSlug(eventSlug)),
+      event,
     },
   };
 };
