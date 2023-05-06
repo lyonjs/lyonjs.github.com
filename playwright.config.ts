@@ -51,7 +51,7 @@ export default defineConfig({
 
   /* Run your local dev server before starting the tests only in CI */
   webServer: {
-    command: 'pnpm build && pnpm start',
+    command: 'pnpm build && pnpm export && pnpm start',
     port: 3000,
     reuseExistingServer: !process.env.CI,
   },
