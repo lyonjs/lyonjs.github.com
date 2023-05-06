@@ -48,11 +48,4 @@ export default defineConfig({
       use: { ...devices['Desktop Chrome'] },
     },
   ],
-
-  /* Run your local dev server before starting the tests only in CI */
-  webServer: {
-    command: 'pnpm build && pnpm export && pnpm start',
-    port: 3000,
-    reuseExistingServer: !process.env.CI,
-  },
 });
