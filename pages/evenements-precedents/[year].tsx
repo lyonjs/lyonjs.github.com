@@ -5,13 +5,14 @@ import { Event } from '../../modules/event/types';
 import { dataOverride } from '../../data/data-override';
 import _merge from 'lodash/merge';
 import _uniq from 'lodash/uniq';
-import { fetchMeetupEvents, fetchYearsWithMeetups } from '../../modules/meetup/api';
 import { ParsedUrlQuery } from 'querystring';
 import { H1 } from '../../modules/atoms/remark/Titles';
 import { YearNavigation } from '../../modules/event/past-events/YearNaviation';
 import { EventTile } from '../../modules/event/past-events/EventTile';
 import Link from 'next/link';
 import { slugEventTitle } from '../../modules/event/eventSlug';
+import { fetchYearsWithMeetups } from '../../modules/meetup/queries/years-with-meetups';
+import { fetchPastEvents } from '../../modules/meetup/queries/past-events.api';
 
 const Event: NextPage<{ pastEvents: Event[]; years: string[]; year: string }> = ({ pastEvents, years, year }) => {
   return (
@@ -60,7 +61,7 @@ interface Params extends ParsedUrlQuery {
 }
 
 export const getStaticProps: GetStaticProps = async (context) => {
-  const { pastEvents } = await fetchMeetupEvents();
+  const pastEvents = await fetchPastEvents();
   const { year } = context.params as Params;
   const yearsFromEvents: string[] = pastEvents
     .map((event) => new Date(event.dateTime).getFullYear())

@@ -5,7 +5,7 @@ import _merge from 'lodash/merge';
 import { dataOverride } from '../data/data-override';
 import type { Event } from '../modules/event/types';
 import { LyonJSHead } from '../modules/header/LyonJSHead';
-import { fetchMeetupEvents } from '../modules/meetup/api';
+import { fetchNextEvent } from '../modules/meetup/queries/next-event.api';
 import { Sponsors } from '../modules/sponsors/Sponsors';
 import { NextEvent } from '../modules/event/next-event/NextEvent';
 import { SeePastEvents } from '../modules/home/Home.components';
@@ -33,7 +33,7 @@ const overrideEvent = (event: Event): Event => {
 };
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
-  const { nextEvent } = await fetchMeetupEvents();
+  const nextEvent = await fetchNextEvent();
 
   return {
     props: {
