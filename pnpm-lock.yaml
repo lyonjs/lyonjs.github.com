@@ -37,8 +37,8 @@ devDependencies:
     specifier: ^4.14.187
     version: 4.14.191
   '@types/node':
-    specifier: 18.16.2
-    version: 18.16.2
+    specifier: 18.16.5
+    version: 18.16.5
   '@types/react':
     specifier: 18.2.0
     version: 18.2.0
@@ -310,7 +310,7 @@ packages:
     engines: {node: '>=14'}
     hasBin: true
     dependencies:
-      '@types/node': 18.16.2
+      '@types/node': 18.16.5
       playwright-core: 1.31.1
     optionalDependencies:
       fsevents: 2.3.2
@@ -360,8 +360,8 @@ packages:
     resolution: {integrity: sha512-iiUgKzV9AuaEkZqkOLDIvlQiL6ltuZd9tGcW3gwpnX8JbuiuhFlEGmmFXEXkN50Cvq7Os88IY2v0dkDqXYWVgA==}
     dev: false
 
-  /@types/node@18.16.2:
-    resolution: {integrity: sha512-GQW/JL/5Fz/0I8RpeBG9lKp0+aNcXEaVL71c0D2Q0QHDTFvlYKT7an0onCUXj85anv7b4/WesqdfchLc0jtsCg==}
+  /@types/node@18.16.5:
+    resolution: {integrity: sha512-seOA34WMo9KB+UA78qaJoCO20RJzZGVXQ5Sh6FWu0g/hfT44nKXnej3/tCQl7FL97idFpBhisLYCTB50S0EirA==}
     dev: true
 
   /@types/prop-types@15.7.5:
