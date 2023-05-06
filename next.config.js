@@ -2,6 +2,10 @@ const withMDX = require('@next/mdx')();
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  i18n: {
+    locales: ['fr'],
+    defaultLocale: 'fr',
+  },
   experimental: {
     mdxRs: true,
   },
