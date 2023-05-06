@@ -1,7 +1,6 @@
 name: 🎭 Playwright
-on:
-  deployment_status:
-
+on: [deployment_status]
+jobs:
   test:
     if: github.event_name == 'deployment_status' && github.event.deployment_status.state == 'success'
     runs-on: ubuntu-latest
