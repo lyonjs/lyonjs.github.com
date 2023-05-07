@@ -1,0 +1,24 @@
+.collapsible:not(.expanded) {
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.collapsible:not(.expanded) p:nth-child(n + 3) a {
+  visibility: hidden; /* prevent from focusing hidden links with the keyboard */
+}
+
+.collapsible p:not(:first-child) {
+  margin-top: 1rem;
+}
+
+.seeMore {
+  display: block;
+  font-weight: bold;
+  color: var(--font-color-strong);
+  margin-bottom: 2rem;
+  text-decoration: underline;
+  text-underline-offset: 0.12em;
+  justify-self: start;
+}

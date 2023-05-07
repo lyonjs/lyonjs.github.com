@@ -4,7 +4,8 @@ import { ORGANISATION_MARKUP } from '../../header/LyonJSHead';
 import { JsonLD } from '../../seo/JsonLD';
 import type { Event } from '../types';
 
-export const EventMarkup: React.FC<{ event: Event }> = ({ event }) => (
+type Props = { event: Event };
+export const EventMarkup: React.FC<Props> = ({ event }) => (
   <JsonLD
     jsonObject={{
       '@context': 'https://schema.org',

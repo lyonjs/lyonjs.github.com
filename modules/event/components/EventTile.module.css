@@ -55,5 +55,9 @@
 .eventTile .sponsor {
   font-size: 0.875rem;
   line-height: 1.2;
+  margin-top: 1rem;
+}
+
+.eventTile .sponsor b {
   font-weight: 700;
 }
