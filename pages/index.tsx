@@ -6,10 +6,10 @@ import { dataOverride } from '../data/data-override';
 import type { Event } from '../modules/event/types';
 import { LyonJSHead } from '../modules/header/LyonJSHead';
 import { fetchMeetupEvents } from '../modules/meetup/api';
-import { Hero } from '../modules/home/Hero';
 import { Sponsors } from '../modules/sponsors/Sponsors';
 import { NextEvent } from '../modules/event/next-event/NextEvent';
 import { SeePastEvents } from '../modules/home/Home.components';
+import { HomeHero } from '../modules/home/HomeHero';
 
 type Props = { nextEvent: Event };
 
@@ -17,7 +17,7 @@ const Home: NextPage<Props> = ({ nextEvent }) => (
   <>
     <LyonJSHead />
     <main>
-      <Hero />
+      <HomeHero />
       <NextEvent event={nextEvent} />
       <SeePastEvents />
       <Sponsors />

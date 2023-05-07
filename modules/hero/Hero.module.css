@@ -8,7 +8,7 @@
 
   background-image: radial-gradient(ellipse 50% 50% at 50% 60%, hsl(var(--yellow-0-hsl) / 0.08), transparent);
 
-  /* allow the gradient to spill out of the section on large screens 
+  /* allow the gradient to spill out of the section on large screens
   without overflow issue and with no layout change */
   --spill-sides: calc((98vw - 100%) / 2);
   --spill-bottom: 90px;
@@ -19,24 +19,6 @@
 .leftContainer {
   display: flex;
   flex-direction: column;
-}
-
-.hero h1 {
-  margin-bottom: 1rem;
-}
-
-.hero h1 strong {
-  font-size: 4rem;
-  color: var(--font-color-strong);
-  line-height: 1.2;
-}
-
-.buttons {
-  margin-top: 1.5rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.75rem;
 }
 
 .hero img {
@@ -51,10 +33,6 @@
 
   .hero p {
     font-size: 1.5rem;
-  }
-
-  .buttons {
-    flex-direction: row;
   }
 
   .leftContainer {

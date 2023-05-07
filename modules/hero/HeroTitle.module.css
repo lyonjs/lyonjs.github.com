@@ -1,0 +1,9 @@
+.title {
+  margin-bottom: 1rem;
+}
+
+.title strong {
+  font-size: 4rem;
+  color: var(--font-color-strong);
+  line-height: 1.2;
+}
