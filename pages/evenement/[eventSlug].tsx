@@ -1,12 +1,13 @@
 import React from 'react';
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next';
-import { fetchMeetupEvents, fetchSingleEvent } from '../../modules/meetup/api';
 import { ParsedUrlQuery } from 'querystring';
 import { LyonJSHead } from '../../modules/header/LyonJSHead';
 import { Event } from '../../modules/event/types';
 import { EventDetail } from '../../modules/event/event-detail/EventDetail';
 import { EventMarkup } from '../../modules/event/next-event/EventMarkup';
 import { parserEventIdFromSlug, slugEventTitle } from '../../modules/event/eventSlug';
+import { fetchEvent } from '../../modules/meetup/queries/event.api';
+import { fetchPastEvents } from '../../modules/meetup/queries/past-events.api';
 
 const EventPage: NextPage<{ event: Event }> = ({ event }) => {
   return (
@@ -23,7 +24,7 @@ const EventPage: NextPage<{ event: Event }> = ({ event }) => {
   );
 };
 export const getStaticPaths: GetStaticPaths = async () => {
-  const { pastEvents } = await fetchMeetupEvents();
+  const pastEvents = await fetchPastEvents();
 
   return {
     paths: pastEvents.map((event) => ({ params: { eventSlug: slugEventTitle(event) } })),
@@ -40,7 +41,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
   const eventId = parserEventIdFromSlug(eventSlug);
   let event;
   if (eventId) {
-    event = await fetchSingleEvent(eventId);
+    event = await fetchEvent(eventId);
   }
 
   return {

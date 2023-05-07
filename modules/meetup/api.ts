@@ -1,115 +1,11 @@
 import { gql, GraphQLClient } from 'graphql-request';
 import { Event } from '../event/types';
 
-const client = new GraphQLClient('https://www.meetup.com/gql');
-const query = gql`
-  query meetupEvents($id: ID!) {
-    group(id: $id) {
-      id
-      name
-      pastEvents(input: { first: 5000 }) {
-        edges {
-          node {
-            id
-            title
-            eventUrl
-            dateTime
-            imageUrl
-          }
-        }
-      }
-      upcomingEvents(input: {}) {
-        edges {
-          node {
-            title
-            description
-            eventUrl
-            dateTime
-            imageUrl
-            venue {
-              name
-              address
-              city
-              postalCode
-              lat
-              lng
-            }
-          }
-        }
-      }
-    }
-  }
-`;
+export const client = new GraphQLClient('https://www.meetup.com/gql');
+export const LYONJS_MEETUP_ID = 18305583;
 
-type Edges<T> = {
+export type Edges<T> = {
   edges: Array<{
     node: T;
   }>;
-};
-
-type ResponseType = {
-  group: {
-    id: string;
-    name: string;
-    upcomingEvents: Edges<Event>;
-    pastEvents: Edges<Event>;
-  };
-};
-
-export const fetchMeetupEvents = async (): Promise<{ nextEvent: Event; pastEvents: Array<Event> }> => {
-  const meetupEventsResponse = await client.request<ResponseType>(query, { id: 18305583 });
-  const nextEvent = meetupEventsResponse?.group?.upcomingEvents?.edges?.[0]?.node || null;
-  const pastEvents = meetupEventsResponse?.group?.pastEvents?.edges.map((it) => it.node).reverse() || [];
-
-  return { nextEvent, pastEvents };
-};
-
-const queryForYears = gql`
-  query meetupYears($id: ID!) {
-    group(id: $id) {
-      id
-      name
-      pastEvents(input: { first: 5000 }) {
-        edges {
-          node {
-            dateTime
-          }
-        }
-      }
-    }
-  }
-`;
-
-export const fetchYearsWithMeetups = async (): Promise<Set<string>> => {
-  const meetupEventsResponse = await client.request<ResponseType>(queryForYears, { id: 18305583 });
-  const years = new Set<string>();
-  meetupEventsResponse?.group?.pastEvents?.edges.forEach((it) => {
-    years.add(new Date(it.node.dateTime).getFullYear().toString());
-  });
-
-  return years;
-};
-
-const queryForEvent = gql`
-  query meetup($id: ID!) {
-    event(id: $id) {
-      title
-      description
-      eventUrl
-      dateTime
-      imageUrl
-      venue {
-        name
-        address
-        city
-        postalCode
-        lat
-        lng
-      }
-    }
-  }
-`;
-export const fetchSingleEvent = async (id: string): Promise<Event> => {
-  const { event } = await client.request<{ event: Event }>(queryForEvent, { id });
-  return event;
 };
