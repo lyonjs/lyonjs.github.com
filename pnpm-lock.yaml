@@ -31,8 +31,8 @@ dependencies:
 
 devDependencies:
   '@playwright/test':
-    specifier: ^1.31.1
-    version: 1.31.1
+    specifier: 1.33.0
+    version: 1.33.0
   '@types/lodash':
     specifier: ^4.14.187
     version: 4.14.191
@@ -305,13 +305,13 @@ packages:
       tslib: 2.4.1
     dev: true
 
-  /@playwright/test@1.31.1:
-    resolution: {integrity: sha512-IsytVZ+0QLDh1Hj83XatGp/GsI1CDJWbyDaBGbainsh0p2zC7F4toUocqowmjS6sQff2NGT3D9WbDj/3K2CJiA==}
+  /@playwright/test@1.33.0:
+    resolution: {integrity: sha512-YunBa2mE7Hq4CfPkGzQRK916a4tuZoVx/EpLjeWlTVOnD4S2+fdaQZE0LJkbfhN5FTSKNLdcl7MoT5XB37bTkg==}
     engines: {node: '>=14'}
     hasBin: true
     dependencies:
       '@types/node': 18.16.5
-      playwright-core: 1.31.1
+      playwright-core: 1.33.0
     optionalDependencies:
       fsevents: 2.3.2
     dev: true
@@ -2376,8 +2376,8 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: true
 
-  /playwright-core@1.31.1:
-    resolution: {integrity: sha512-JTyX4kV3/LXsvpHkLzL2I36aCdml4zeE35x+G5aPc4bkLsiRiQshU5lWeVpHFAuC8xAcbI6FDcw/8z3q2xtJSQ==}
+  /playwright-core@1.33.0:
+    resolution: {integrity: sha512-aizyPE1Cj62vAECdph1iaMILpT0WUDCq3E6rW6I+dleSbBoGbktvJtzS6VHkZ4DKNEOG9qJpiom/ZxO+S15LAw==}
     engines: {node: '>=14'}
     hasBin: true
     dev: true

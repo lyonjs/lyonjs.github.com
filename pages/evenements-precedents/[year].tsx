@@ -25,11 +25,15 @@ const Event: NextPage<{ pastEvents: Event[]; years: string[]; year: string }> = 
 
         <YearNavigation years={years} />
 
-        {pastEvents.map((event) => (
-          <Link key={event.eventUrl} href={`/evenement/${slugEventTitle(event)}`}>
-            <EventTile event={event} />
-          </Link>
-        ))}
+        <ul data-testid="past-events-list">
+          {pastEvents.map((event) => (
+            <li key={event.eventUrl}>
+              <Link href={`/evenement/${slugEventTitle(event)}`}>
+                <EventTile event={event} />
+              </Link>
+            </li>
+          ))}
+        </ul>
       </main>
     </>
   );
