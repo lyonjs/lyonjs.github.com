@@ -29,3 +29,9 @@ export const vercel: Sponsor = {
   logo: '/sponsors/vercel.svg',
   url: 'https://vercel.com/',
 };
+
+export const malt: Sponsor = {
+  name: 'Malt',
+  logo: '/sponsors/malt.svg',
+  url: 'https://www.malt.com/',
+};
