@@ -6,8 +6,10 @@ import { Calendar } from '../../icons/Calendar';
 import React from 'react';
 import dayjs from 'dayjs';
 import _capitalize from 'lodash/capitalize';
+import { Location } from './Location';
 
-export const EventDetail: React.FC<{ event: Event }> = ({ event }) => {
+type Props = { event: Event };
+export const EventDetail: React.FC<Props> = ({ event }) => {
   const dateParsed = dayjs(event.dateTime);
   const formattedDayAndMonth = _capitalize(dateParsed.format('dddd D MMMM YYYY à H:mm'));
 
@@ -23,7 +25,10 @@ export const EventDetail: React.FC<{ event: Event }> = ({ event }) => {
 
           <ReactMarkdown>{event.description}</ReactMarkdown>
         </div>
-        <img src={event.imageUrl} alt="" className={styles.image} />
+        <div className={styles.sideContent}>
+          <img src={event.imageUrl} alt="" className={styles.image} />
+          <Location event={event} />
+        </div>
       </div>
     </>
   );

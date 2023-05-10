@@ -1,0 +1,27 @@
+.location {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5em;
+  line-height: 1;
+  font-size: 0.875rem;
+}
+
+.location .sponsor {
+  font-weight: bold;
+  margin-bottom: 0.5em;
+}
+
+.addressContainer > p {
+  margin-bottom: 0.3rem;
+}
+
+.location svg {
+  width: 0.75rem;
+}
+
+@media (min-width: 900px) {
+  .location .sponsor,
+  .location svg {
+    color: var(--font-color-strong);
+  }
+}

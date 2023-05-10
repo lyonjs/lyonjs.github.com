@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { Heading, HeadingProps } from '../Heading';
+import { Heading, HeadingProps } from '../heading/Heading';
 
 type HProps = Omit<HeadingProps, 'Component'>;
 

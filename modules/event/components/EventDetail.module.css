@@ -3,8 +3,7 @@
 }
 
 .container {
-  display: flex;
-  flex-direction: column-reverse;
+  display: grid;
   margin-top: 60px;
   gap: 24px;
 }
@@ -28,9 +27,21 @@
   width: 1.2em;
 }
 
+.sideContent {
+  display: none;
+}
+
+.image {
+  margin-bottom: 1rem;
+}
+
 @media screen and (min-width: 768px) {
   .container {
-    flex-direction: row;
+    grid-template-columns: 1fr 230px;
+  }
+
+  .sideContent {
+    display: block;
   }
 
   .image {

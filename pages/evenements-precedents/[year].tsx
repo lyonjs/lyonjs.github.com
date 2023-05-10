@@ -2,17 +2,16 @@ import { GetStaticPaths, GetStaticProps, NextPage } from 'next';
 import React from 'react';
 import { LyonJSHead } from '../../modules/header/LyonJSHead';
 import { Event } from '../../modules/event/types';
-import { dataOverride } from '../../data/data-override';
-import _merge from 'lodash/merge';
 import _uniq from 'lodash/uniq';
 import { ParsedUrlQuery } from 'querystring';
 import { H1 } from '../../modules/atoms/remark/Titles';
-import { YearNavigation } from '../../modules/event/past-events/YearNaviation';
-import { EventTile } from '../../modules/event/past-events/EventTile';
+import { YearNavigation } from '../../modules/event/components/YearNavigation';
+import { EventTile } from '../../modules/event/components/EventTile';
 import Link from 'next/link';
 import { slugEventTitle } from '../../modules/event/eventSlug';
 import { fetchYearsWithMeetups } from '../../modules/meetup/queries/years-with-meetups';
 import { fetchPastEvents } from '../../modules/meetup/queries/past-events.api';
+import { overrideEvent } from '../../modules/event/overrideEvent';
 
 const Event: NextPage<{ pastEvents: Event[]; years: string[]; year: string }> = ({ pastEvents, years, year }) => {
   return (
@@ -38,13 +37,6 @@ const Event: NextPage<{ pastEvents: Event[]; years: string[]; year: string }> = 
       </main>
     </>
   );
-};
-
-const overrideEvent = (event: Event): Event => {
-  if (event && dataOverride[event.eventUrl]) {
-    return _merge(event, dataOverride[event.eventUrl]);
-  }
-  return event;
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
