@@ -7,6 +7,7 @@ import { Twitter } from '../icons/Twitter';
 import { Youtube } from '../icons/Youtube';
 import { IconLink } from '../navigation/links/IconLink';
 import styles from './SocialLinks.module.css';
+import { Linkedin } from '../icons/Linkedin';
 
 export const SocialLinks: FC<HTMLAttributes<HTMLElement>> = ({ className }) => (
   <ul className={classNames(styles.socialLinks, className)}>
@@ -41,6 +42,17 @@ export const SocialLinks: FC<HTMLAttributes<HTMLElement>> = ({ className }) => (
         aria-label="Rejoindre le Slack du LyonJS"
       >
         <Slack color="currentColor" size={20} />
+      </IconLink>
+    </li>
+    <li>
+      <IconLink
+        href="https://www.linkedin.com/company/lyonjs"
+        target="_blank"
+        rel="noreferrer noopener"
+        title="La page Linkedin du LyonJS"
+        aria-label="La page Linkedin du LyonJS"
+      >
+        <Linkedin color="currentColor" size={20} />
       </IconLink>
     </li>
     <li>
