@@ -1,6 +1,6 @@
 .socialsContainer {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(6, 1fr);
   padding-top: 4rem;
   width: fit-content;
   gap: 0;

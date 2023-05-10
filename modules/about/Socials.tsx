@@ -6,6 +6,7 @@ import { Twitter } from '../icons/Twitter';
 import { Meetup } from '../icons/Meetup';
 import { IconLink } from '../navigation/links/IconLink';
 import styles from './Socials.module.css';
+import { Linkedin } from '../icons/Linkedin';
 
 export const Socials = () => (
   <ul className={styles.socialsContainer}>
@@ -37,6 +38,16 @@ export const Socials = () => (
         title="Rejoindre le Slack du LyonJS"
       >
         <Slack color="currentColor" size={32} />
+      </IconLink>
+    </li>
+    <li>
+      <IconLink
+        href="https://www.linkedin.com/company/lyonjs"
+        target="_blank"
+        rel="noreferrer noopener"
+        title="Suivre la page linkedin du LyonJS"
+      >
+        <Linkedin color="currentColor" size={32} />
       </IconLink>
     </li>
     <li>
