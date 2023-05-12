@@ -1,0 +1,21 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: min(2vw, 16px);
+}
+
+@media (min-width: 900px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.grid img {
+  display: block;
+  max-height: 220px;
+  object-fit: cover;
+}
+
+.grid a {
+  border-radius: min(2vw, 12px);
+}
