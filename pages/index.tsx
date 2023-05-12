@@ -10,10 +10,12 @@ import { HomeHero } from '../modules/home/HomeHero';
 import { NoNextEvent } from '../modules/home/NoNextEvent';
 import { EventCard } from '../modules/event/components/EventCard';
 import { overrideEvent } from '../modules/event/overrideEvent';
+import { fetchPastEvents } from '../modules/meetup/queries/past-events.api';
+import { LastReplays } from '../modules/home/LastReplays';
 
-type Props = { nextEvent: Event };
+type Props = { nextEvent: Event; pastEvents: Event[] };
 
-const Home: NextPage<Props> = ({ nextEvent }) => (
+const Home: NextPage<Props> = ({ nextEvent, pastEvents }) => (
   <>
     <LyonJSHead />
     <main>
@@ -23,6 +25,7 @@ const Home: NextPage<Props> = ({ nextEvent }) => (
         {nextEvent ? <EventCard event={nextEvent} /> : <NoNextEvent />}
       </Article>
       <SeePastEvents />
+      <LastReplays pastEvents={pastEvents} />
       <Sponsors />
     </main>
   </>
@@ -30,10 +33,15 @@ const Home: NextPage<Props> = ({ nextEvent }) => (
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
   const nextEvent = await fetchNextEvent();
+  const pastEvents = await fetchPastEvents();
 
   return {
     props: {
       nextEvent: overrideEvent(nextEvent),
+      pastEvents: pastEvents
+        .map(overrideEvent)
+        .filter((event) => event.talks?.some((talk) => talk.videoLink))
+        .slice(0, 6),
     },
   };
 };
