@@ -8,6 +8,7 @@ import { EventMarkup } from '../../modules/event/components/EventMarkup';
 import { parserEventIdFromSlug, slugEventTitle } from '../../modules/event/eventSlug';
 import { fetchEvent } from '../../modules/meetup/queries/event.api';
 import { fetchPastEvents } from '../../modules/meetup/queries/past-events.api';
+import { overrideEvent } from '../../modules/event/overrideEvent';
 
 const EventPage: NextPage<{ event: Event }> = ({ event }) => {
   return (
@@ -41,7 +42,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
   const eventId = parserEventIdFromSlug(eventSlug);
   let event;
   if (eventId) {
-    event = await fetchEvent(eventId);
+    event = overrideEvent(await fetchEvent(eventId));
   }
 
   return {
