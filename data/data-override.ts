@@ -1,17 +1,90 @@
 import type { Event } from '../modules/event/types';
-import { bedrock, indy, smile, zenika } from './sponsors';
+import { bedrock, indy, malt, smile, zenika } from './sponsors';
 
 export const dataOverride: { [key: string]: Partial<Event> } = {
+  'https://www.meetup.com/lyonjs/events/261928293': {
+    talks: [
+      {
+        title: 'Timeboxed TDD & TCR : Boostez votre Time to Market en dansant le Limbo',
+        speakers: [
+          {
+            name: 'Younes Jaaidi',
+          },
+        ],
+        videoLink: 'https://www.youtube.com/embed/p_0T0SCMuOQ',
+      },
+    ],
+  },
+  'https://www.meetup.com/lyonjs/events/274713264': {
+    sponsor: zenika,
+    talks: [
+      {
+        title: 'Back to the Vue (tour) 3',
+        speakers: [
+          {
+            name: 'Mathieu Mure',
+          },
+          {
+            name: 'Moustapha Agack',
+          },
+        ],
+        videoLink: 'https://www.youtube.com/embed/uKlPuuWzzOk',
+      },
+    ],
+  },
+  'https://www.meetup.com/lyonjs/events/266113861': {
+    sponsor: malt,
+    talks: [
+      {
+        title: 'Optimistic UI, principes et implémentations',
+        speakers: [
+          {
+            name: 'Clément Jacquelin',
+          },
+          {
+            name: 'Maxence Dalmais',
+          },
+        ],
+        videoLink: 'https://www.youtube.com/embed/OAslPGcaq1s',
+      },
+    ],
+  },
+  'https://www.meetup.com/lyonjs/events/292744601': {
+    sponsor: malt,
+    talks: [
+      {
+        title: 'Getting started with Nuxt 3 modules',
+        speakers: [{ name: 'Nicolas Payot', socialLink: 'https://twitter.com/npayot' }],
+        videoLink: 'https://www.youtube.com/embed/NtJHCe22XD8',
+      },
+      {
+        title: 'Comment gagner 1000€ en 35 minutes avec du CSS ',
+        speakers: [{ name: 'Geoffroy Begouassel', socialLink: 'https://twitter.com/npayot' }],
+        videoLink: 'https://www.youtube.com/embed/4sDZ8nArSqM',
+      },
+    ],
+  },
+  'https://www.meetup.com/lyonjs/events/291958869': {
+    talks: [
+      {
+        title: 'Playwright 🎭, the Cypress killer by Microsoft',
+        speakers: [{ name: 'Mathieu Mure', socialLink: 'https://twitter.com/mathieumure' }],
+        videoLink: 'https://www.youtube.com/embed/UDyBHzoMpV4',
+      },
+    ],
+  },
   'https://www.meetup.com/lyonjs/events/291728436': {
     sponsor: indy,
     talks: [
       {
         title: "Comment on n'a (toujours) pas codé de back-end après 9 mois en production ?",
         speakers: [{ name: 'Marc Gavanier', socialLink: 'https://twitter.com/MGavanier' }],
+        videoLink: 'https://www.youtube.com/embed/k2DWPBqmlH4',
       },
       {
         title: 'Mob Programming : ensemble on va plus loin',
         speakers: [{ name: 'Nicolas Poirier', socialLink: 'https://twitter.com/NicolasPoir' }],
+        videoLink: 'https://www.youtube.com/embed/GCNbh0Le5k4',
       },
     ],
   },

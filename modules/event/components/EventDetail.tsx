@@ -29,6 +29,12 @@ export const EventDetail: React.FC<Props> = ({ event }) => {
           <img src={event.imageUrl} alt="" className={styles.image} />
           <Location event={event} />
         </div>
+
+        <div className={styles.replays}>
+          {event.talks?.map((talk) => (
+            <iframe key={talk.title} width="100%" height="auto" src={talk.videoLink} loading="lazy" />
+          ))}
+        </div>
       </div>
     </>
   );

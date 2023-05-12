@@ -52,7 +52,10 @@
   margin-bottom: 6px;
 }
 
-.eventTile .sponsor {
+.eventTile .footer {
+  display: flex;
+  gap: 8px;
+  flex-direction: column;
   font-size: 0.875rem;
   line-height: 1.2;
   margin-top: 1rem;
@@ -60,4 +63,8 @@
 
 .eventTile .sponsor b {
   font-weight: 700;
+}
+
+.eventTile .replay svg {
+  display: inline;
 }

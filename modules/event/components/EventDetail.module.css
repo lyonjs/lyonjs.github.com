@@ -48,3 +48,14 @@
     height: 120px;
   }
 }
+
+.replays {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.replays iframe {
+  display: block;
+  aspect-ratio: 16/9;
+}
