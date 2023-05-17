@@ -35,3 +35,9 @@ export const malt: Sponsor = {
   logo: '/sponsors/malt.svg',
   url: 'https://www.malt.com/',
 };
+
+export const cleverCloud: Sponsor = {
+  name: 'Clever Cloud',
+  logo: '/sponsors/clever-cloud.svg',
+  url: 'https://www.clever-cloud.com/',
+};
