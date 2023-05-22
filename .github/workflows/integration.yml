@@ -3,7 +3,7 @@ on:
   pull_request:
   push:
     branches:
-      - 'main'
+      - 'master'
 
 jobs:
   format:
@@ -35,5 +35,3 @@ jobs:
           cache: pnpm
       - run: pnpm install --frozen-lockfile --prefer-offline
       - run: pnpm build
-      - run: pnpm export
-        name: NextJs static export
