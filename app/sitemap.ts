@@ -20,7 +20,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       lastModified,
     },
     {
-      url: `${BASE_URL}/about`,
+      url: `${BASE_URL}/a-propos`,
       lastModified,
     },
     ...Array.from(years)

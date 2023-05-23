@@ -1,3 +1,5 @@
+'use client';
+
 import { HeroTitle } from '../hero/HeroTitle';
 import { HeroButtonsContainer } from '../hero/HeroButtonsContainer';
 import { ButtonLink } from '../atoms/button/Button';

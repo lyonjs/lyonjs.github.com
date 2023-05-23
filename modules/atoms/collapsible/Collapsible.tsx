@@ -1,3 +1,5 @@
+'use client';
+
 import React, { FC, useState } from 'react';
 import classNames from 'classnames';
 import styles from './Collapsible.module.css';

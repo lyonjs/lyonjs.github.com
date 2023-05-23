@@ -8,6 +8,10 @@ const nextConfig = {
   pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
   reactStrictMode: true,
   distDir: 'dist',
+  i18n: {
+    locales: ['fr-FR'],
+    defaultLocale: 'fr-FR',
+  },
   images: {
     domains: ['pbs.twimg.com'],
     unoptimized: true, // disable as we use export mode (which is not compatible see https://nextjs.org/docs/messages/export-image-api)
