@@ -1,8 +1,6 @@
 name: Daily deploy
 
 on:
-  push:
-    branches: ['master']
   schedule:
     - cron: '0 8 * * *'
   workflow_dispatch:
@@ -17,14 +15,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      - uses: pnpm/action-setup@v2.2.4
-        name: Install pnpm
-        with:
-          version: 7
-      - uses: actions/setup-node@main
-        with:
-          cache: pnpm
-      - uses: actions/checkout@v2
       - name: Install Vercel CLI
         run: npm install --global vercel@latest
       - name: Pull Vercel Environment Information
