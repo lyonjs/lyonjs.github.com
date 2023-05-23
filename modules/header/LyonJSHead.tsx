@@ -63,7 +63,7 @@ export const LyonJSHead: React.FC<{ title?: string; description?: string; social
           __html: JSON.stringify(ORGANISATION_MARKUP),
         }}
       />
-      <meta name="robots" content="index, follow" />
+      <meta name="robots" content="index,follow" />
     </Head>
   );
 };

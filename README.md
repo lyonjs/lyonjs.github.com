@@ -1,7 +1,7 @@
 # [lyonjs.github.com](http://lyonjs.org)
 
-[![🚧 Integration](https://github.com/lyonjs/lyonjs.github.com/actions/workflows/integration.yml/badge.svg)](https://github.com/lyonjs/lyonjs.github.com/actions/workflows/integration.yml)
-[![Deploy](https://github.com/lyonjs/lyonjs.github.com/actions/workflows/build-and-deploy.yml/badge.svg)](https://github.com/lyonjs/lyonjs.github.com/actions/workflows/build-and-deploy.yml)
+[![CI](https://github.com/lyonjs/lyonjs.github.com/actions/workflows/integration.yml/badge.svg)](https://github.com/lyonjs/lyonjs.github.com/actions/workflows/integration.yml)
+[![Daily Deploy](https://github.com/lyonjs/lyonjs.github.com/actions/workflows/daily-deploy.yml/badge.svg)](https://github.com/lyonjs/lyonjs.github.com/actions/workflows/daily-deploy.yml)
 ![GitHub commit activity (branch)](https://img.shields.io/github/commit-activity/m/lyonjs/lyonjs.github.com/master)
 ![GitHub](https://img.shields.io/github/license/lyonjs/lyonjs.github.com)
 ![GitHub Repo stars](https://img.shields.io/github/stars/lyonjs/lyonjs.github.com?style=social)
