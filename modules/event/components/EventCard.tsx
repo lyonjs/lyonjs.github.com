@@ -1,4 +1,5 @@
-import React, { FC, useState } from 'react';
+import React, { FC } from 'react';
+import va from '@vercel/analytics';
 import dayjs from 'dayjs';
 import _capitalize from 'lodash/capitalize';
 import type { Event } from '../types';
@@ -41,7 +42,13 @@ export const EventCard: FC<Props> = ({ event }) => {
         <ReactMarkdown>{event.description}</ReactMarkdown>
       </Collapsible>
 
-      <ButtonLink href={event.eventUrl} target="_blank" rel="noreferrer noopener" className={styles.participate}>
+      <ButtonLink
+        href={event.eventUrl}
+        target="_blank"
+        rel="noreferrer noopener"
+        className={styles.participate}
+        onClick={() => va.track('NextEventRegister', { eventUrl: event.eventUrl })}
+      >
         <Meetup /> Participer
       </ButtonLink>
 

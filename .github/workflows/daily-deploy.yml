@@ -1,4 +1,4 @@
-name: 🚀Daily deploy
+name: 🚀 Daily deploy
 
 on:
   schedule:
