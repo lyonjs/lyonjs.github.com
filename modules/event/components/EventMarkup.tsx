@@ -1,6 +1,6 @@
 import React from 'react';
 import dayjs from 'dayjs';
-import { ORGANISATION_MARKUP } from '../../header/LyonJSHead';
+import { ORGANISATION_MARKUP } from '../../../app/org-markup';
 import { JsonLD } from '../../seo/JsonLD';
 import type { Event } from '../types';
 

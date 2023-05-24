@@ -1,3 +1,5 @@
+'use client';
+
 import React, { FC } from 'react';
 import va from '@vercel/analytics';
 import dayjs from 'dayjs';
