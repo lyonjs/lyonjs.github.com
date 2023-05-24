@@ -2,6 +2,7 @@ import { H1 } from '../../../modules/atoms/remark/Titles';
 import React, { Suspense } from 'react';
 import { Metadata } from 'next';
 import { PastEvents } from './pastEvents';
+import { Loader } from './loader';
 
 export const revalidate = 3600;
 
@@ -9,8 +10,7 @@ export default async function PastEventsPage({ params: { year } }: { params: { y
   return (
     <main>
       <H1>Évènements précédents</H1>
-
-      <Suspense fallback={<div style={{ marginTop: '56px' }}>Chargement...</div>}>
+      <Suspense fallback={<Loader />}>
         {/* @ts-expect-error Async Server Component */}
         <PastEvents year={year}></PastEvents>
       </Suspense>
