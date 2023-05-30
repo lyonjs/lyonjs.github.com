@@ -4,7 +4,7 @@ const ContentSecurityPolicy = `
   default-src 'self' 'unsafe-inline' https://lyonjs.org;
   script-src 'self' 'unsafe-inline' https://vercel.live/;
   img-src 'self' https://secure-content.meetupstatic.com/ https://images.ctfassets.net/ https://assets.vercel.com/;
-  frame-src https://www.youtube.com/;
+  frame-src https://www.youtube.com/ https://vercel.live/;
   connect-src 'self' https://vitals.vercel-insights.com/;
 `;
 
