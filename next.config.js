@@ -1,5 +1,25 @@
 const withMDX = require('@next/mdx')();
 
+const ContentSecurityPolicy = `
+  default-src 'self' 'unsafe-inline' https://lyonjs.org;
+  script-src 'self' 'unsafe-inline';
+  img-src self https://secure-content.meetupstatic.com/ https://images.ctfassets.net/;
+  style-src 'self';
+  frame-src https://www.youtube.com/;
+  font-src 'self';
+`;
+
+let CSP_RULE = [];
+
+if (process.env.NODE_ENV !== 'development') {
+  CSP_RULE = [
+    {
+      key: 'Content-Security-Policy',
+      value: ContentSecurityPolicy.replace(/\s{2,}/g, ' ').trim(),
+    },
+  ];
+}
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   experimental: {
@@ -39,8 +59,9 @@ const nextConfig = {
           },
           {
             key: 'Permissions-Policy',
-            value: 'camera=(); battery=(self); geolocation=(); microphone=()',
+            value: 'camera=(); battery=(); geolocation=(); microphone=()',
           },
+          ...CSP_RULE,
         ],
       },
     ];
