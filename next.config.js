@@ -6,6 +6,7 @@ const ContentSecurityPolicy = `
   img-src 'self' https://secure-content.meetupstatic.com/ https://images.ctfassets.net/ https://assets.vercel.com/;
   style-src 'self' 'unsafe-inline';
   frame-src https://www.youtube.com/ https://vercel.live/;
+  manifest-src 'self';
   object-src 'none';
   form-action 'none';
   connect-src 'self' https://vitals.vercel-insights.com/;
