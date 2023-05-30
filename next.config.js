@@ -58,7 +58,7 @@ const nextConfig = {
           },
           {
             key: 'Permissions-Policy',
-            value: 'camera=(); battery=(); geolocation=(); microphone=()',
+            value: 'camera=(), microphone=(), geolocation=(), browsing-topics=()',
           },
           ...CSP_RULE,
         ],
