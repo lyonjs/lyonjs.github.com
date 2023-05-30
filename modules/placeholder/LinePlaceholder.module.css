@@ -1,0 +1,16 @@
+@keyframes placeholder {
+  0% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 0.9;
+  }
+}
+
+.line {
+  height: var(--height);
+  width: var(--width);
+  background: #cccccc;
+  border-radius: 8px;
+  animation: 500ms ease-in alternate infinite placeholder;
+}
