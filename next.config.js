@@ -2,9 +2,10 @@ const withMDX = require('@next/mdx')();
 
 const ContentSecurityPolicy = `
   default-src 'self' 'unsafe-inline' https://lyonjs.org;
+  script-src 'self' 'unsafe-inline' https://vercel.live/;
   img-src 'self' https://secure-content.meetupstatic.com/ https://images.ctfassets.net/;
   frame-src https://www.youtube.com/;
-  connect-src 'self' https://vitals.vercel-insights.com/v1/vitals;
+  connect-src 'self' https://vitals.vercel-insights.com/;
 `;
 
 let CSP_RULE = [];
