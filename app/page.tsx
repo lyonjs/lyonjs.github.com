@@ -4,7 +4,7 @@ import { SeePastEvents } from '../modules/home/Home.components';
 import { Sponsors } from '../modules/sponsors/Sponsors';
 import { NextEvent } from '../modules/home/NextEvent';
 
-export const revalidate = 300;
+export const revalidate = 3600;
 export default function Home() {
   return (
     <main>
