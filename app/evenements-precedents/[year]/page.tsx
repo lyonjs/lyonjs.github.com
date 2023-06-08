@@ -11,7 +11,6 @@ export default async function PastEventsPage({ params: { year } }: { params: { y
     <main>
       <H1>Évènements précédents</H1>
       <Suspense fallback={<Loader />}>
-        {/* @ts-expect-error Async Server Component */}
         <PastEvents year={year}></PastEvents>
       </Suspense>
     </main>
