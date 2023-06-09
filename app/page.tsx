@@ -9,7 +9,6 @@ export default function Home() {
   return (
     <main>
       <HomeHero />
-      {/* @ts-expect-error Async Server Component */}
       <NextEvent />
       <SeePastEvents />
       <Sponsors />
