@@ -1,5 +1,5 @@
 'use client';
-import { useRouter } from 'next/navigation';
+import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import { MobileNavigationButton } from './button/MobileNavigationButton';
 import styles from './MobileNavigation.module.css';
@@ -8,11 +8,11 @@ import { MobileNavigationPanel } from './panel/MobileNavigationPanel';
 export const MobileNavigation = () => {
   const [isExpanded, setIsExpanded] = useState(false);
 
-  const route = useRouter();
+  const pathname = usePathname();
 
   useEffect(() => {
     setIsExpanded(false);
-  }, [route]);
+  }, [pathname]);
 
   useEffect(() => {
     document.body.toggleAttribute('data-lock-scroll', isExpanded);
