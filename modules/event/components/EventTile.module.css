@@ -6,7 +6,9 @@
   border-radius: 12px;
   align-items: center;
   gap: 24px;
-  transition: background-color 100ms, border-color 100ms;
+  transition:
+    background-color 100ms,
+    border-color 100ms;
   border: 1px solid transparent;
 }
 

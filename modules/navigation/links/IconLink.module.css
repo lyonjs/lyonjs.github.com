@@ -3,7 +3,9 @@
   display: inline-flex;
   border-radius: 50%;
   color: var(--font-color-default);
-  transition: background-color 100ms, color 100ms;
+  transition:
+    background-color 100ms,
+    color 100ms;
 }
 
 @media (hover: hover) {
