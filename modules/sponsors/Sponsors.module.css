@@ -15,7 +15,9 @@
   aspect-ratio: 250 / 150;
   background-color: var(--background-card);
   border-radius: min(2vw, 12px);
-  transition: background-color 100ms, border-color 100ms;
+  transition:
+    background-color 100ms,
+    border-color 100ms;
   border: 1px solid transparent;
 }
 
