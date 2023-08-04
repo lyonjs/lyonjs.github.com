@@ -16,7 +16,7 @@ export const HomeHero = () => {
       <p>
         La communauté lyonnaise
         <br />
-        des utilisateurs de JavaScript
+        autour de JavaScript et de son écosystème
       </p>
 
       <HeroButtonsContainer>
