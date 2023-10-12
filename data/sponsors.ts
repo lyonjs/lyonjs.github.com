@@ -41,3 +41,9 @@ export const cleverCloud: Sponsor = {
   logo: '/sponsors/clever-cloud.svg',
   url: 'https://www.clever-cloud.com/',
 };
+
+export const codeurEnSeine: Sponsor = {
+  name: 'Codeur en Seine',
+  logo: '/sponsors/codeur-en-seine.svg',
+  url: 'https://www.codeursenseine.com/',
+};
