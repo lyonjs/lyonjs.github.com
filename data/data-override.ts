@@ -4,6 +4,32 @@ import { bedrock, indy, malt, smile, zenika } from './sponsors';
 export const dataOverride: { [key: string]: Partial<Event> } = {
   'https://www.meetup.com/lyonjs/events/296202933': {
     sponsor: indy,
+    talks: [
+      {
+        title: 'Le Starter dont je suis le héros',
+        speakers: [
+          {
+            name: 'Ivan Dalmet',
+            socialLink: 'https://twitter.com/ivandalmet',
+          },
+          {
+            name: 'Yoann Fleury',
+            socialLink: 'https://twitter.com/yoannfleurydev',
+          },
+        ],
+        videoLink: 'https://www.youtube.com/embed/kJAH7dtytxM',
+      },
+      {
+        title: 'De Darwin au JS : Introduction aux algorithmes génétiques',
+        speakers: [
+          {
+            name: 'Corentin Thomasset',
+            socialLink: 'https://www.linkedin.com/in/corentin-thomasset/',
+          },
+        ],
+        videoLink: 'https://www.youtube.com/embed/X7jebXh73mk',
+      },
+    ],
   },
   'https://www.meetup.com/lyonjs/events/295583450': {
     sponsor: zenika,
