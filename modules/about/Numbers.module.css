@@ -1,0 +1,20 @@
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4rem;
+  justify-content: space-around;
+}
+
+.list li {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 180px;
+}
+
+.list li div:first-of-type {
+  font-size: 3rem;
+  color: var(--main-color);
+  font-weight: 500;
+}
