@@ -1,18 +1,15 @@
 .grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  display: flex;
+  max-width: 800px;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: min(2vw, 16px);
-}
-
-@media (min-width: 900px) {
-  .grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
 }
 
 .grid img {
   display: block;
-  max-height: 220px;
+  width: min(40vw, 250px);
+  aspect-ratio: 250 / 150;
   object-fit: cover;
 }
 
