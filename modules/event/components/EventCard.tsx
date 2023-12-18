@@ -51,7 +51,7 @@ export const EventCard: FC<Props> = ({ event }) => {
         className={styles.participate}
         onClick={() => va.track('NextEventRegister', { eventUrl: event.eventUrl })}
       >
-        <Meetup /> Participer
+        <Meetup /> {event.going ? `Rejoindre les ${event.going} participant·e·s` : 'Participez'}
       </ButtonLink>
 
       <EventMarkup event={event} />

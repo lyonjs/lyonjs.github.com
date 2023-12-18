@@ -23,6 +23,7 @@ export type Event = {
   eventUrl: string;
   dateTime: string;
   imageUrl: string;
+  going: number;
   venue: {
     name: string;
     address: string;

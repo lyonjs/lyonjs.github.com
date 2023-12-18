@@ -20,6 +20,7 @@ const queryForNextEvents = gql`
             eventUrl
             dateTime
             imageUrl
+            going
             venue {
               name
               address
