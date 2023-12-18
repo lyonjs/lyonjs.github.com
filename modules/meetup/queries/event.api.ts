@@ -10,6 +10,11 @@ const query = gql`
       eventUrl
       dateTime
       imageUrl
+      photoAlbum {
+        photoSample(amount: 10) {
+          source
+        }
+      }
       venue {
         name
         address
