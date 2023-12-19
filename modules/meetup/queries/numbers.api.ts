@@ -66,7 +66,7 @@ export const fetchNumbers = async (): Promise<Numbers[]> => {
     },
     {
       value: getAge(),
-      text: 'Années d'activité',
+      text: "Années d'activité",
     },
     {
       value: goingToEventCount,
