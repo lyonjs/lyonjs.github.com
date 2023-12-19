@@ -68,7 +68,7 @@
   display: flex;
   gap: 2rem;
   width: auto;
-  overflow: scroll;
+  overflow: auto;
   align-items: center;
 }
 
