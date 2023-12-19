@@ -38,7 +38,7 @@ export const EventMarkup: React.FC<Props> = ({ event }) => (
         validFrom: dayjs(event.dateTime).subtract(30, 'days'),
         availability: 'https://schema.org/InStock',
       },
-      image: event.imageUrl,
+      image: [event.imageUrl, ...(event.photoAlbum ? event.photoAlbum.photoSample.map((image) => image.source) : [])],
       description: event.description,
       organizer: ORGANISATION_MARKUP,
     }}

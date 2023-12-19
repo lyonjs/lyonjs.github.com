@@ -59,3 +59,23 @@
   display: block;
   aspect-ratio: 16/9;
 }
+
+.imageCollection {
+  grid-column: 1 / 3;
+}
+
+.listImages {
+  display: flex;
+  gap: 2rem;
+  width: auto;
+  overflow: auto;
+  align-items: center;
+}
+
+.listImages img {
+  display: block;
+  min-width: 300px;
+  height: auto;
+  object-fit: cover;
+  object-position: center center;
+}

@@ -15,6 +15,10 @@ export type Talk = {
   videoLink?: string;
 };
 
+export type PhotoSample = {
+  source: string;
+};
+
 export type Event = {
   id: string;
   title: string;
@@ -31,6 +35,9 @@ export type Event = {
     postalCode: string;
     lat: string;
     lng: string;
+  };
+  photoAlbum?: {
+    photoSample: PhotoSample[];
   };
   sponsor?: Sponsor;
   talks?: Array<Talk>;
