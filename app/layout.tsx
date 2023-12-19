@@ -1,4 +1,4 @@
-import { Metadata } from 'next';
+import { Metadata, Viewport } from 'next';
 import React, { ReactNode } from 'react';
 import { Header } from '../modules/header/Header';
 import { Footer } from '../modules/footer/Footer';
@@ -38,10 +38,13 @@ const title = 'LyonJS - Communauté lyonnaise des utilisateurs de JavaScript';
 const description =
   'Communauté lyonnaise des utilisateurs de JavaScript, vous retrouverez ici les replays de nos derniers meetups ainsi que les dates des prochains évènements, conférences, soirées, partage, connaissance, talk, speakers';
 
+export const viewport: Viewport = {
+  themeColor: '#000000',
+};
 export const metadata: Metadata = {
+  metadataBase: new URL('https://lyonjs.org'),
   title,
   description,
-  themeColor: '#000000',
   robots: 'index,follow',
   manifest: '/site.webmanifest',
   icons: {
