@@ -27,11 +27,11 @@ type PastEvents = {
   };
 };
 
-const getAge = () => {
-  var today = new Date();
-  var birthDate = new Date('2011-10-25');
-  var age = today.getFullYear() - birthDate.getFullYear();
-  var m = today.getMonth() - birthDate.getMonth();
+const getAge = (): number => {
+  const today = new Date();
+  const birthDate = new Date('2011-10-25');
+  let age = today.getFullYear() - birthDate.getFullYear();
+  const m = today.getMonth() - birthDate.getMonth();
   if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
     age--;
   }
@@ -66,11 +66,11 @@ export const fetchNumbers = async (): Promise<Numbers[]> => {
     },
     {
       value: getAge(),
-      text: 'Notre age',
+      text: 'Années d'activité',
     },
     {
       value: goingToEventCount,
-      text: 'Cumul des participants',
+      text: 'Participants au total',
     },
   ];
 };
