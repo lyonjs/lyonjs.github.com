@@ -2,6 +2,38 @@ import type { Event } from '../modules/event/types';
 import { bedrock, indy, malt, smile, zenika } from './sponsors';
 
 export const dataOverride: { [key: string]: Partial<Event> } = {
+  'https://www.meetup.com/lyonjs/events/297675405': {
+    sponsor: indy,
+    talks: [
+      {
+        title: 'Du Chêne au Sequoia',
+        speakers: [
+          {
+            name: 'Romain Koenig',
+            socialLink: 'https://www.linkedin.com/in/romain-koenig-502b854a/',
+          },
+        ],
+        videoLink: 'https://www.youtube.com/embed/82sKzmGqwR0',
+      },
+      {
+        title: "Revue de code : on n'est pas venu-e-s pour souffrir !",
+        speakers: [
+          {
+            name: 'Anne-Laure de Boissieu',
+            socialLink: 'https://twitter.com/AnneLaure2B',
+          },
+          {
+            name: 'Pauline Rambaud',
+            socialLink: 'https://twitter.com/pauinegu',
+          },
+        ],
+        videoLink: 'https://www.youtube.com/embed/ZdaREyJZGjg',
+      },
+    ],
+  },
+  'https://www.meetup.com/lyonjs/events/296967782': {
+    sponsor: zenika,
+  },
   'https://www.meetup.com/lyonjs/events/296202933': {
     sponsor: indy,
     talks: [
