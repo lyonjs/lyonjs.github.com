@@ -1,11 +1,11 @@
 'use client';
 import React, { useEffect, useRef } from 'react';
 import { animate, inView } from 'motion';
-import { JetBrains_Mono } from 'next/font/google';
+import { Roboto_Mono } from 'next/font/google';
 
-const MonospaceFont = JetBrains_Mono({
+const MonospaceFont = Roboto_Mono({
   variable: '--font-mono',
-  weight: '800',
+  weight: '700',
   subsets: ['latin'],
 });
 
