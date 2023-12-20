@@ -1,15 +1,20 @@
 'use client';
 import React, { useEffect, useRef } from 'react';
 import { animate, inView } from 'motion';
+import { JetBrains_Mono } from 'next/font/google';
+
+const MonospaceFont = JetBrains_Mono({
+  variable: '--font-mono',
+  weight: '800',
+  subsets: ['latin'],
+});
 
 const counter = (elementRef: HTMLDivElement, start: number, end: number) => {
-  let current = start;
   let range = end - start;
   const duration = Math.sqrt(Math.log(range));
   animate(
     (progress: number) => {
-      current = Math.floor(start + progress * range);
-      elementRef.textContent = `${current}`;
+      elementRef.textContent = `${Math.floor(start + progress * range)}`;
     },
     { duration, easing: 'ease-out' },
   );
@@ -31,7 +36,7 @@ export const Number = ({ value, text }: { value: number; text: string }) => {
   }, []);
 
   return (
-    <li ref={elementRef}>
+    <li ref={elementRef} className={MonospaceFont.variable}>
       <div ref={counterRef}>{value}</div>
       <div>{text}</div>
     </li>

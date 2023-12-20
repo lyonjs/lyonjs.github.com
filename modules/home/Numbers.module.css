@@ -17,6 +17,7 @@
 .list li div:first-of-type {
   font-size: 3rem;
   color: var(--font-color-strong);
+  font-family: var(--font-mono);
   line-height: 1.2;
-  font-weight: 900;
+  font-weight: 800;
 }
