@@ -19,7 +19,8 @@
   border-radius: min(2vw, 12px);
 }
 
-.grid a:hover::after, .grid a:focus::after {
+.grid a:hover::after,
+.grid a:focus::after {
   position: absolute;
   display: grid;
   justify-content: center;

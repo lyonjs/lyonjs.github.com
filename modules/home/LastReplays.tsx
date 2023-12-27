@@ -4,8 +4,8 @@ import styles from './LastReplays.module.css';
 import type { Event, Talk } from '../event/types';
 import Link from 'next/link';
 import { slugEventTitle } from '../event/eventSlug';
-import { fetchPastEvents } from '../meetup/queries/past-events.api'
-import { overrideEvent } from '../event/overrideEvent'
+import { fetchPastEvents } from '../meetup/queries/past-events.api';
+import { overrideEvent } from '../event/overrideEvent';
 
 type Item = {
   event: Event;
@@ -15,14 +15,17 @@ type Item = {
 
 export const LastReplays = async () => {
   const pastEvents = await fetchPastEvents();
-  const replayLinks: Item[] = pastEvents.map(overrideEvent).reduce((accumulator: Item[], event: Event) => {
-    const newEvents = event.talks?.map((talk: Talk) => ({
-      talk,
-      event,
-      videoId: talk.videoLink?.split(/embed\//)[1],
-    })) as Item[];
-    return [...accumulator, ...(newEvents || [])] as Item[];
-  }, []).slice(0,6);
+  const replayLinks: Item[] = pastEvents
+    .map(overrideEvent)
+    .reduce((accumulator: Item[], event: Event) => {
+      const newEvents = event.talks?.map((talk: Talk) => ({
+        talk,
+        event,
+        videoId: talk.videoLink?.split(/embed\//)[1],
+      })) as Item[];
+      return [...accumulator, ...(newEvents || [])] as Item[];
+    }, [])
+    .slice(0, 6);
 
   return (
     <Article>
