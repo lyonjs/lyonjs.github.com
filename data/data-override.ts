@@ -91,7 +91,7 @@ export const dataOverride: { [key: string]: Partial<Event> } = {
         videoLink: 'https://www.youtube.com/embed/bi6ALDIrmIw',
       },
       {
-        title: 'Du CSS aux shaders WebGL : panorama des techniques d\'animation en 2023 !',
+        title: "Du CSS aux shaders WebGL : panorama des techniques d'animation en 2023 !",
         speakers: [{ name: 'Julien Sulpis', socialLink: 'https://twitter.com/jsulpis' }],
         videoLink: 'https://www.youtube.com/embed/uRbvJur0RFU',
       },
