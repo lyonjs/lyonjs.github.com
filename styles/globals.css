@@ -19,6 +19,8 @@
 
   --border-light: rgb(255 255 255 / 0.12);
   --border-strong: rgb(255 255 255 / 0.3);
+  --border-dark: rgba(255 255 255 / 0.7);
+
 
   --background-card: hsl(240, 4%, 10%);
   --background-card-hover: hsl(240, 6%, 12%);
