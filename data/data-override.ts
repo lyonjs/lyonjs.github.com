@@ -32,6 +32,26 @@ export const dataOverride: { [key: string]: Partial<Event> } = {
     ],
   },
   'https://www.meetup.com/lyonjs/events/296967782': {
+    talks: [
+      {
+        title: "Tout ce que vous n'avez jamais voulu savoir sur les fuseaux horaires",
+        speakers: [
+          {
+            name: 'Julien Deniau',
+          },
+        ],
+        videoLink: 'https://www.youtube.com/embed/Y3dTgndzM5I',
+      },
+      {
+        title: 'Comment les reconverties peuvent enrichir et inspirer vos équipes ?',
+        speakers: [
+          {
+            name: 'Léa Coston',
+          },
+        ],
+        videoLink: 'https://www.youtube.com/embed/OfssR1HBebM',
+      },
+    ],
     sponsor: zenika,
   },
   'https://www.meetup.com/lyonjs/events/296202933': {
@@ -64,6 +84,18 @@ export const dataOverride: { [key: string]: Partial<Event> } = {
     ],
   },
   'https://www.meetup.com/lyonjs/events/295583450': {
+    talks: [
+      {
+        title: 'Nuxt 3 - Réussir sa migration',
+        speakers: [{ name: 'Jonathan BARTHELEMY', socialLink: 'https://twitter.com/jonathanbarthlm' }],
+        videoLink: 'https://www.youtube.com/embed/bi6ALDIrmIw',
+      },
+      {
+        title: 'Du CSS aux shaders WebGL : panorama des techniques d\'animation en 2023 !',
+        speakers: [{ name: 'Julien Sulpis', socialLink: 'https://twitter.com/jsulpis' }],
+        videoLink: 'https://www.youtube.com/embed/uRbvJur0RFU',
+      },
+    ],
     sponsor: zenika,
   },
   'https://www.meetup.com/lyonjs/events/293687276': {
