@@ -1,0 +1,34 @@
+.grid {
+  display: flex;
+  max-width: 1000px;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: min(2vw, 16px);
+}
+
+.grid img {
+  display: block;
+  width: min(40vw, 300px);
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.grid a {
+  position: relative;
+  overflow: hidden;
+  border-radius: min(2vw, 12px);
+}
+
+.grid a:hover::after,
+.grid a:focus::after {
+  position: absolute;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  inset: 0;
+  backdrop-filter: blur(5px);
+  content: 'voir la vidéo';
+  font-size: 2rem;
+  color: var(--grey-0);
+  text-shadow: 1px 1px 2px var(--font-color-strong);
+}
