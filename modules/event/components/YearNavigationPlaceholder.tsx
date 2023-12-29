@@ -5,8 +5,8 @@ export const YearNavigationPlaceholder = () => {
   return (
     <nav className={styles.navigation}>
       <ul className={styles.list}>
-        {[1, 2, 3, 4, 5, 6].map<React.ReactNode>((year) => (
-          <li key={year}>
+        {Array.from(new Array(7)).map((_, key) => (
+          <li key={key}>
             <LinePlaceholder />
           </li>
         ))}
