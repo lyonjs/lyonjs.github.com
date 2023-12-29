@@ -5,7 +5,7 @@
 .container {
   display: grid;
   margin-top: 60px;
-  gap: 24px;
+  grid-template-columns: 1fr;
 }
 
 .description p:not(:first-child) {
@@ -38,6 +38,7 @@
 @media screen and (min-width: 768px) {
   .container {
     grid-template-columns: 1fr 230px;
+    gap: 24px;
   }
 
   .sideContent {
