@@ -1,18 +1,14 @@
 import { ImageResponse } from 'next/og';
 export const runtime = 'edge';
 
-export const alt = 'About Acme'
+export const alt = 'About Acme';
 export const size = {
   width: 1200,
   height: 630,
-}
-export const contentType = 'image/png'
+};
+export const contentType = 'image/png';
 
 export default async function Image({ params: { year } }: { params: { year: string } }) {
-  const image = fetch(new URL('../../../public/android-chrome-192x192.png', import.meta.url)).then(
-    (res) => res.arrayBuffer(),
-  );
-
   return new ImageResponse(
     (
       <div
@@ -40,8 +36,8 @@ export default async function Image({ params: { year } }: { params: { year: stri
           <img
             alt="Vercel"
             height={200}
-            src={image as unknown as string}
-            style={{ margin: '0 30px' }}
+            src="https://lyonjs.org/android-chrome-192x192.png"
+            style={{ margin: '0 30px', objectFit: 'cover' }}
             width={232}
           />
         </div>
@@ -63,6 +59,6 @@ export default async function Image({ params: { year } }: { params: { year: stri
     ),
     {
       ...size,
-    }
+    },
   );
 }
