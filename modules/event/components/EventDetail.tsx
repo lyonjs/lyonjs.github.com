@@ -31,14 +31,16 @@ export const EventDetail: React.FC<Props> = ({ event }) => {
     );
   }
 
-  if (event.talks) {
+  if (event.talks && event.talks.some((talk) => talk.videoLink)) {
     replays = (
       <section id="replays">
         <Heading Component="h2">Les replays</Heading>
         <div className={styles.replays}>
-          {event.talks?.map((talk) => (
-            <iframe key={talk.title} width="100%" height="auto" src={talk.videoLink} loading="lazy" />
-          ))}
+          {event.talks
+            .filter((talk) => talk.videoLink)
+            .map((talk) => (
+              <iframe key={talk.title} width="100%" height="auto" src={talk.videoLink} loading="lazy" />
+            ))}
         </div>
       </section>
     );
