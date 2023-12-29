@@ -9,6 +9,15 @@
   visibility: hidden; /* prevent from focusing hidden links with the keyboard */
 }
 
+.collapsible p {
+  display: inline;
+}
+
+.collapsible p::after {
+  content: ' \A\A';
+  white-space: pre;
+}
+
 .collapsible p:not(:first-child) {
   margin-top: 1rem;
 }
