@@ -3,7 +3,7 @@ import { SimpleText } from '../../modules/og/SimpleText';
 
 export const runtime = 'edge';
 
-export const alt = 'À propos de LyonJS';
+export const alt = "À propos de l'association";
 export const size = {
   width: 1200,
   height: 630,

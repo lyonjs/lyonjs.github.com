@@ -1,3 +1,5 @@
+import { LogoWithText } from '../icons/LogoWithText';
+
 export const SimpleText = ({ text }: { text: string }) => {
   return (
     <div
@@ -22,13 +24,7 @@ export const SimpleText = ({ text }: { text: string }) => {
           justifyItems: 'center',
         }}
       >
-        <img
-          alt="Vercel"
-          height={200}
-          src="https://lyonjs.org/android-chrome-512x512.png"
-          style={{ margin: '0 30px', objectFit: 'cover' }}
-          width={232}
-        />
+        <LogoWithText color="#ffffff" width="340px" />
       </div>
       <div
         style={{
