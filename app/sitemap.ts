@@ -3,7 +3,7 @@ import { fetchYearsWithMeetups } from '../modules/meetup/queries/years-with-meet
 import { fetchPastEvents } from '../modules/meetup/queries/past-events.api';
 import { slugEventTitle } from '../modules/event/eventSlug';
 
-const BASE_URL = 'https://lyonjs.org';
+const BASE_URL = 'https://www.lyonjs.org';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const years = await fetchYearsWithMeetups();

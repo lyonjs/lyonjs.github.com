@@ -69,12 +69,12 @@ export const metadata: Metadata = {
     description,
     type: 'website',
     locale: 'fr-FR',
-    images: [{ url: `https://lyonjs.org/lyonjs.webp`, width: 600, height: 338 }],
+    images: [{ url: `https://www.lyonjs.org/lyonjs.webp`, width: 600, height: 338 }],
   },
   twitter: {
     card: 'summary_large_image',
     title,
     description,
-    images: [`https://lyonjs.org/lyonjs.webp`],
+    images: [`https://www.lyonjs.org/lyonjs.webp`],
   },
 };
