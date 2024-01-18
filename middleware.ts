@@ -11,7 +11,7 @@ export function middleware(request: NextRequest) {
     manifest-src 'self';
     object-src 'none';
     form-action 'none';
-    connect-src 'self' https://vitals.vercel-insights.com/;
+    connect-src 'self' https://vitals.vercel-insights.com/ https://vercel.live/;
     font-src 'self';
     base-uri 'self';
     frame-ancestors 'none';
