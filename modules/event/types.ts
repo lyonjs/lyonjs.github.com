@@ -28,6 +28,9 @@ export type Event = {
   dateTime: string;
   imageUrl: string;
   going: number;
+  group: {
+    id: string;
+  };
   venue: {
     name: string;
     address: string;
