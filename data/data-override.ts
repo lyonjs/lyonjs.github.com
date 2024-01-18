@@ -2,6 +2,31 @@ import type { Event } from '../modules/event/types';
 import { bedrock, indy, malt, smile, zenika } from './sponsors';
 
 export const dataOverride: { [key: string]: Partial<Event> } = {
+  'https://www.meetup.com/lyonjs/events/298162224': {
+    sponsor: zenika,
+    talks: [
+      {
+        title: "Comment j'ai trouvé le sens de la vie grâce à WebAssembly",
+        speakers: [
+          {
+            name: 'Théo Gianella',
+            socialLink: 'https://www.linkedin.com/in/th%C3%A9o-gianella-bb2279251/',
+          },
+        ],
+        videoLink: 'https://www.youtube.com/embed/sRTVop_TUws',
+      },
+      {
+        title: 'Sécurisons nos utilisateurs grâce au Mozilla Observatory !',
+        speakers: [
+          {
+            name: 'Antoine Caron',
+            socialLink: 'https://twitter.com/Slashgear_',
+          },
+        ],
+        videoLink: 'https://www.youtube.com/embed/nKxibe7HuwA',
+      },
+    ],
+  },
   'https://www.meetup.com/lyonjs/events/297675405': {
     sponsor: indy,
     talks: [
