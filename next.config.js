@@ -1,28 +1,5 @@
 const withMDX = require('@next/mdx')();
 
-const ContentSecurityPolicy = `
-  default-src 'none';
-  script-src 'self' 'unsafe-inline' https://vercel.live/;
-  img-src 'self' https://secure-content.meetupstatic.com/ https://images.ctfassets.net/ https://assets.vercel.com/ https://secure.meetupstatic.com/ https://img.youtube.com/;
-  style-src 'self' 'unsafe-inline';
-  frame-src https://www.youtube.com/ https://vercel.live/;
-  manifest-src 'self';
-  object-src 'none';
-  form-action 'none';
-  connect-src 'self' https://vitals.vercel-insights.com/;
-`;
-
-let CSP_RULE = [];
-
-if (process.env.NODE_ENV !== 'development') {
-  CSP_RULE = [
-    {
-      key: 'Content-Security-Policy',
-      value: ContentSecurityPolicy.replace(/\s{2,}/g, ' ').trim(),
-    },
-  ];
-}
-
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   experimental: {
@@ -64,7 +41,6 @@ const nextConfig = {
             key: 'Permissions-Policy',
             value: 'camera=(), microphone=(), geolocation=(), browsing-topics=()',
           },
-          ...CSP_RULE,
         ],
       },
     ];
