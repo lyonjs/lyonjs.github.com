@@ -38,9 +38,9 @@ export default function AppLayout({ children }: { children: ReactNode }) {
   );
 }
 
-const title = 'LyonJS - Communauté lyonnaise des utilisateurs de JavaScript';
+const title = 'LyonJS - La communauté lyonnaise autour de JavaScript et de son écosystème';
 const description =
-  'Communauté lyonnaise des utilisateurs de JavaScript, vous retrouverez ici les replays de nos derniers meetups ainsi que les dates des prochains évènements, conférences, soirées, partage, connaissance, talk, speakers';
+  'La communauté lyonnaise autour de JavaScript et de son écosystème, vous retrouverez ici les replays de nos derniers meetups ainsi que les dates des prochains évènements, conférences, soirées, partage, connaissance, talk, speakers';
 
 export const viewport: Viewport = {
   themeColor: '#000000',
