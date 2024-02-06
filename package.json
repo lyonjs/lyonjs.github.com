@@ -39,7 +39,7 @@
     "eslint-config-prettier": "9.1.0",
     "graphql": "^16.8.1",
     "graphql-request": "^6.1.0",
-    "husky": "^8.0.3",
+    "husky": "^9.0.0",
     "postcss": "^8.4.32",
     "prettier": "3.2.5",
     "pretty-quick": "^4.0.0",
