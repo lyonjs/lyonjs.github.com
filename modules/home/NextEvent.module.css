@@ -1,0 +1,21 @@
+.event:not(:last-child) {
+  margin-bottom: 2rem;
+}
+
+.event hr {
+  display: none;
+  width: 50%;
+  margin: 2rem 0 0 auto;
+  border-color: var(--main-color);
+  border-width: 2px;
+}
+
+.event:last-child hr {
+  display: none;
+}
+
+@media (min-width: 900px) {
+  .event hr {
+    display: block;
+  }
+}

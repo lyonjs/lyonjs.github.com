@@ -4,14 +4,30 @@ import { NoNextEvent } from './NoNextEvent';
 import React from 'react';
 import { fetchNextEvent } from '../meetup/queries/next-event.api';
 import { overrideEvent } from '../event/overrideEvent';
+import styles from './NextEvent.module.css';
 
 export const NextEvent = async () => {
-  const nextEvent = overrideEvent(await fetchNextEvent());
+  const nextEvents = (await fetchNextEvent()).map(overrideEvent);
+
+  let content = <NoNextEvent />;
+
+  if (nextEvents && nextEvents.length) {
+    content = (
+      <ul>
+        {nextEvents.map((event) => (
+          <li className={styles.event} key={event.id}>
+            <EventCard event={event} />
+            <hr />
+          </li>
+        ))}
+      </ul>
+    );
+  }
 
   return (
     <Article>
       <H2>Prochain évènement</H2>
-      {nextEvent ? <EventCard event={nextEvent} /> : <NoNextEvent />}
+      {content}
     </Article>
   );
 };

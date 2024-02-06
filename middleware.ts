@@ -1,5 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 
+const IS_PROD_ENV = process.env.VERCEL_ENV === 'production' || process.env.VERCEL_ENV === 'preview';
+
 export function middleware(request: NextRequest) {
   const nonce = Buffer.from(crypto.randomUUID()).toString('base64');
   const cspHeader = `
@@ -22,16 +24,19 @@ export function middleware(request: NextRequest) {
   const contentSecurityPolicyHeaderValue = cspHeader.replace(/\s{2,}/g, ' ').trim();
 
   const requestHeaders = new Headers(request.headers);
-  requestHeaders.set('x-nonce', nonce);
 
-  requestHeaders.set('Content-Security-Policy', contentSecurityPolicyHeaderValue);
+  if (IS_PROD_ENV) {
+    requestHeaders.set('x-nonce', nonce);
+    requestHeaders.set('Content-Security-Policy', contentSecurityPolicyHeaderValue);
+  }
 
   const response = NextResponse.next({
     request: {
       headers: requestHeaders,
     },
   });
-  response.headers.set('Content-Security-Policy', contentSecurityPolicyHeaderValue);
+
+  IS_PROD_ENV && response.headers.set('Content-Security-Policy', contentSecurityPolicyHeaderValue);
 
   return response;
 }

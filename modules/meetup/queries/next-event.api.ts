@@ -1,7 +1,7 @@
 import { gql } from 'graphql-request';
 import type { Event } from '../../event/types';
 import type { Edges } from '../api';
-import { client } from '../api';
+import { client, LYONJS_MEETUP_ID } from '../api';
 
 type NextEventsQueryResponse = {
   group: {
@@ -15,6 +15,7 @@ const queryForNextEvents = gql`
       upcomingEvents(input: {}) {
         edges {
           node {
+            id
             title
             description
             eventUrl
@@ -36,8 +37,7 @@ const queryForNextEvents = gql`
   }
 `;
 
-export const fetchNextEvent = async (): Promise<Event> => {
-  const response = await client.request<NextEventsQueryResponse>(queryForNextEvents, { id: 18305583 });
-  const nextEvents = response?.group?.upcomingEvents?.edges?.[0]?.node || null;
-  return nextEvents;
+export const fetchNextEvent = async (): Promise<Event[]> => {
+  const response = await client.request<NextEventsQueryResponse>(queryForNextEvents, { id: LYONJS_MEETUP_ID });
+  return response?.group?.upcomingEvents?.edges?.map((it) => it.node) || null;
 };
