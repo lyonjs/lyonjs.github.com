@@ -2,7 +2,7 @@ import classNames from 'classnames';
 import { FC, HTMLAttributes } from 'react';
 import { Meetup } from '../icons/Meetup';
 import { Reddit } from '../icons/Reddit';
-import { Slack } from '../icons/Slack';
+import { Discord } from '../icons/Discord';
 import { Twitter } from '../icons/Twitter';
 import { Youtube } from '../icons/Youtube';
 import { IconLink } from '../navigation/links/IconLink';
@@ -35,13 +35,13 @@ export const SocialLinks: FC<HTMLAttributes<HTMLElement>> = ({ className }) => (
     </li>
     <li>
       <IconLink
-        href="http://bit.ly/lyonjs-slack"
+        href="https://discord.gg/FytXQwFsG8"
         target="_blank"
         rel="noreferrer noopener"
-        title="Rejoindre le Slack du LyonJS"
-        aria-label="Rejoindre le Slack du LyonJS"
+        title="Rejoindre le Discord du LyonJS"
+        aria-label="Rejoindre le Discord du LyonJS"
       >
-        <Slack color="currentColor" size={20} />
+        <Discord color="currentColor" size={20} />
       </IconLink>
     </li>
     <li>

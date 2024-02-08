@@ -1,12 +1,12 @@
 import React from 'react';
 import { Reddit } from '../icons/Reddit';
 import { Youtube } from '../icons/Youtube';
-import { Slack } from '../icons/Slack';
 import { Twitter } from '../icons/Twitter';
 import { Meetup } from '../icons/Meetup';
 import { IconLink } from '../navigation/links/IconLink';
 import styles from './Socials.module.css';
 import { Linkedin } from '../icons/Linkedin';
+import { Discord } from '../icons/Discord';
 
 export const Socials = () => (
   <ul className={styles.socialsContainer}>
@@ -32,12 +32,12 @@ export const Socials = () => (
     </li>
     <li>
       <IconLink
-        href="https://bit.ly/lyonjs-slack"
+        href="https://discord.gg/FytXQwFsG8"
         target="_blank"
         rel="noreferrer noopener"
-        title="Rejoindre le Slack du LyonJS"
+        title="Rejoindre le Discord du LyonJS"
       >
-        <Slack color="currentColor" size={32} />
+        <Discord color="currentColor" size={32} />
       </IconLink>
     </li>
     <li>
