@@ -14,7 +14,7 @@ export const zenika: Sponsor = {
 
 export const indy: Sponsor = {
   name: 'Indy',
-  logo: '/sponsors/indy.svg',
+  logo: '/sponsors/indy.png',
   url: 'https://www.indy.fr/',
 };
 
