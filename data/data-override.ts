@@ -2,6 +2,35 @@ import type { Event } from '../modules/event/types';
 import { bedrock, indy, malt, smile, zenika } from './sponsors';
 
 export const dataOverride: { [key: string]: Partial<Event> } = {
+  'https://www.meetup.com/lyonjs/events/298932058': {
+    sponsor: indy,
+    talks: [
+      {
+        title: "L'application mobile chez Indy : rétrospective un an après",
+        speakers: [
+          {
+            name: 'Julien Tassin',
+            socialLink: 'https://www.linkedin.com/in/julien-tassin-46094a162/',
+          },
+        ],
+        videoLink: 'https://www.youtube.com/embed/d46ZfaHo0G0',
+      },
+      {
+        title: 'Appwrite est-il prêt à éteindre Firebase ?',
+        speakers: [
+          {
+            name: 'Lucas Audart',
+            socialLink: 'https://www.linkedin.com/in/lucas-audart/',
+          },
+          {
+            name: 'Mickaël Alves',
+            socialLink: 'https://twitter.com/cruuzazul',
+          },
+        ],
+        videoLink: 'https://www.youtube.com/embed/RfIUq1NmKxU',
+      },
+    ],
+  },
   'https://www.meetup.com/lyonjs/events/298162224': {
     sponsor: zenika,
     talks: [
