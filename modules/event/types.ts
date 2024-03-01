@@ -19,6 +19,15 @@ export type PhotoSample = {
   source: string;
 };
 
+export type Venue = {
+  name: string;
+  address: string;
+  city: string;
+  postalCode: string;
+  lat: string;
+  lng: string;
+};
+
 export type Event = {
   id: string;
   title: string;
@@ -31,14 +40,7 @@ export type Event = {
   group: {
     id: string;
   };
-  venue: {
-    name: string;
-    address: string;
-    city: string;
-    postalCode: string;
-    lat: string;
-    lng: string;
-  };
+  venue?: Venue;
   photoAlbum?: {
     photoSample: PhotoSample[];
   };

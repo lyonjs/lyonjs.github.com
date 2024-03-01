@@ -31,7 +31,7 @@ export const EventCard: FC<Props> = ({ event }) => {
 
       <div className={styles.venue}>
         <img src={event.imageUrl} alt={event.title} className={styles.picture} loading="lazy" />
-        <Location event={event} className={styles.location} />
+        {event.venue && <Location venue={event.venue} className={styles.location} />}
       </div>
 
       {event.sponsor && (

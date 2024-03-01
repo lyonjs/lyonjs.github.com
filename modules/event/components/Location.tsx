@@ -1,26 +1,26 @@
 import React, { FC } from 'react';
 import styles from './Location.module.css';
 import { Pin } from '../../icons/Pin';
-import type { Event } from '../types';
+import { Venue } from '../types';
 import classNames from 'classnames';
 
 type Props = {
-  event: Event;
+  venue: Venue;
   className?: string;
 };
-export const Location: FC<Props> = ({ event, className }) => (
+export const Location: FC<Props> = ({ venue, className }) => (
   <a
-    href={`http://maps.google.com/maps?q=loc:${event.venue.lat}+${event.venue.lng}`}
+    href={`http://maps.google.com/maps?q=loc:${venue.lat}+${venue.lng}`}
     target="_blank"
     rel="noreferrer noopener"
     className={classNames(styles.location, className)}
   >
     <Pin />
     <div className={styles.addressContainer}>
-      <p>{event.venue.name}</p>
-      <p>{event.venue.address}</p>
+      <p>{venue.name}</p>
+      <p>{venue.address}</p>
       <p>
-        {event.venue.postalCode} {event.venue.city}
+        {venue.postalCode} {venue.city}
       </p>
     </div>
   </a>

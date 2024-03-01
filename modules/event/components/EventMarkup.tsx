@@ -15,17 +15,19 @@ export const EventMarkup: React.FC<Props> = ({ event }) => (
       endDate: dayjs(event.dateTime).add(3, 'hours'),
       eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
       eventStatus: 'https://schema.org/EventScheduled',
-      location: {
-        '@type': 'Place',
-        name: event.venue.name,
-        address: {
-          '@type': 'PostalAddress',
-          streetAddress: event.venue.address,
-          addressLocality: event.venue.city,
-          postalCode: event.venue.postalCode,
-          addressCountry: 'FR',
-        },
-      },
+      location: event.venue
+        ? {
+            '@type': 'Place',
+            name: event.venue.name,
+            address: {
+              '@type': 'PostalAddress',
+              streetAddress: event.venue.address,
+              addressLocality: event.venue.city,
+              postalCode: event.venue.postalCode,
+              addressCountry: 'FR',
+            },
+          }
+        : null,
       performer: {
         '@type': 'PerformingGroup',
         name: 'LyonJS Community',
