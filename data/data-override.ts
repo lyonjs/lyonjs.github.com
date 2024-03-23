@@ -2,6 +2,31 @@ import type { Event } from '../modules/event/types';
 import { bedrock, indy, malt, smile, zenika } from './sponsors';
 
 export const dataOverride: { [key: string]: Partial<Event> } = {
+  'https://www.meetup.com/lyonjs/events/299527784': {
+    sponsor: zenika,
+    talks: [
+      {
+        title: "Du code à l'image : Aller et retour",
+        speakers: [
+          {
+            name: 'Etienne Doyon',
+            socialLink: 'https://www.linkedin.com/in/doyon-etienne/',
+          },
+        ],
+        videoLink: 'https://www.youtube.com/embed/YErYM5eu6Uo',
+      },
+      {
+        title: 'Le futur du web est sur la périphérie du réseau',
+        speakers: [
+          {
+            name: 'Julien Sulpis',
+            socialLink: 'https://twitter.com/jsulpis',
+          },
+        ],
+        videoLink: 'https://www.youtube.com/embed/2vonCshgv00',
+      },
+    ],
+  },
   'https://www.meetup.com/lyonjs/events/298932058': {
     sponsor: indy,
     talks: [
