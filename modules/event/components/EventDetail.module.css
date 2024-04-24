@@ -62,21 +62,47 @@
 }
 
 .imageCollection {
-  grid-column: 1 / 3;
+  grid-column: 1 / 2;
 }
 
-.listImages {
+.lists ul {
+  display: grid;
+  gap: 1rem;
+  list-style: none;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-auto-rows: 180px;
+}
+
+@media screen and (min-width: 768px) {
+  .lists ul {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .imageCollection {
+    grid-column: 1 / 3;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .lists ul {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+.imageContainer {
+  border: none;
   display: flex;
-  gap: 2rem;
-  width: auto;
-  overflow: auto;
-  align-items: center;
+  position: relative;
+  width: 100%;
+  height: 100%;
 }
 
-.listImages img {
-  display: block;
-  min-width: 300px;
-  height: auto;
+.imageContainer:focus {
+  outline-offset: 2px;
+}
+
+.imageContainer > img {
   object-fit: cover;
-  object-position: center center;
+  width: 100%;
+  height: 100%;
 }
