@@ -1,7 +1,32 @@
 import type { Event } from '../modules/event/types';
-import { bedrock, indy, malt, smile, zenika } from './sponsors';
+import { bedrock, indy, malt, smile, wanadev, zenika } from './sponsors';
 
 export const dataOverride: { [key: string]: Partial<Event> } = {
+  'https://www.meetup.com/lyonjs/events/299916483': {
+    sponsor: wanadev,
+    talks: [
+      {
+        title: 'Créer son service de streaming vidéo en direct (ou comment faire son Twitch du pauvre)',
+        speakers: [
+          {
+            name: 'Damien Fernandes',
+            socialLink: 'https://github.com/damienfern',
+          },
+        ],
+        videoLink: 'https://www.youtube.com/embed/0JT3XwggfOc',
+      },
+      {
+        title: 'Gérer la concurrence entre clients avec messenger et rabbitMQ',
+        speakers: [
+          {
+            name: 'Ismaile Abdallah',
+            socialLink: 'https://www.linkedin.com/in/ismaile-abdallah/',
+          },
+        ],
+        videoLink: 'https://www.youtube.com/embed/B8AEED0SPMs',
+      },
+    ],
+  },
   'https://www.meetup.com/lyonjs/events/299527784': {
     sponsor: zenika,
     talks: [

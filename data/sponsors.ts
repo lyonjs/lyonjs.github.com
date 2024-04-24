@@ -47,3 +47,9 @@ export const codeurEnSeine: Sponsor = {
   logo: '/sponsors/codeur-en-seine.svg',
   url: 'https://www.codeursenseine.com/',
 };
+
+export const wanadev: Sponsor = {
+  name: 'Wanadev Digital',
+  logo: '/sponsors/wanadev.svg',
+  url: 'https://www.wanadevdigital.fr/',
+};
