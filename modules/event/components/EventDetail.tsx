@@ -14,7 +14,7 @@ type Props = { event: Event };
 
 export const PictureComponent = ({ index, image }: { index: number; image: string }) => {
   return (
-    <li className={styles.li} key={index}>
+    <li key={index}>
       <a href={image} className={styles.imageContainer}>
         <Image
           loading="lazy"
