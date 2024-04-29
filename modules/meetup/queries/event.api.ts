@@ -11,7 +11,7 @@ const query = gql`
       dateTime
       imageUrl
       photoAlbum {
-        photoSample(amount: 10) {
+        photoSample(amount: 20) {
           source
         }
       }
