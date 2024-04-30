@@ -79,7 +79,7 @@ export const EventDetail: React.FC<Props> = ({ event }) => {
           <ReactMarkdown>{event.description}</ReactMarkdown>
         </div>
         <div className={styles.sideContent}>
-          <img src={event.imageUrl} alt="" className={styles.image} />
+          <Image src={event.imageUrl} alt="" className={styles.image} width={240} height={150} />
           {event.venue && <Location venue={event.venue} />}
         </div>
         {replays}

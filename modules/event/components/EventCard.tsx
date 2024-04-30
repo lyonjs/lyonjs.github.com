@@ -2,6 +2,7 @@
 
 import React, { FC } from 'react';
 import va from '@vercel/analytics';
+import Image from 'next/image';
 import dayjs from 'dayjs';
 import _capitalize from 'lodash/capitalize';
 import type { Event } from '../types';
@@ -30,7 +31,14 @@ export const EventCard: FC<Props> = ({ event }) => {
       </span>
 
       <div className={styles.venue}>
-        <img src={event.imageUrl} alt={event.title} className={styles.picture} loading="lazy" />
+        <Image
+          src={event.imageUrl}
+          alt={event.title}
+          className={styles.picture}
+          loading="lazy"
+          width={230}
+          height={130}
+        />
         {event.venue && <Location venue={event.venue} className={styles.location} />}
       </div>
 

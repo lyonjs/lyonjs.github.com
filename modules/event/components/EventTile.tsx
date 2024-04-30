@@ -3,6 +3,7 @@ import dayjs from 'dayjs';
 import styles from './EventTile.module.css';
 import _capitalize from 'lodash/capitalize';
 import { Youtube } from '../../icons/Youtube';
+import Image from 'next/image';
 
 type Props = { event: Event };
 export const EventTile: React.FC<Props> = ({ event }) => {
@@ -12,7 +13,7 @@ export const EventTile: React.FC<Props> = ({ event }) => {
 
   return (
     <article className={styles.eventTile} aria-label={event.title}>
-      <img src={event.imageUrl} alt="" />
+      <Image src={event.imageUrl} alt="" width={160} height={90} />
       <div className={styles.content}>
         <h2>{event.title}</h2>
         <div className={styles.time}>{formattedDayAndMonth}</div>
