@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { slugEventTitle } from '../event/eventSlug';
 import { fetchPastEvents } from '../meetup/queries/past-events.api';
 import { overrideEvent } from '../event/overrideEvent';
+import Image from 'next/image';
 
 type Item = {
   event: Event;
@@ -33,7 +34,13 @@ export const LastReplays = async () => {
       <div className={styles.grid}>
         {replayLinks.map(({ talk, event, videoId }) => (
           <Link key={event.id} href={`/evenement/${slugEventTitle(event)}#replays`}>
-            <img loading="lazy" src={`https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`} alt={talk?.title} />
+            <Image
+              loading="lazy"
+              src={`https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`}
+              alt={talk?.title}
+              width={320}
+              height={180}
+            />
           </Link>
         ))}
       </div>

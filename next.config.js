@@ -9,8 +9,24 @@ const nextConfig = {
   reactStrictMode: true,
   distDir: 'dist',
   images: {
-    domains: ['pbs.twimg.com'],
-    unoptimized: true, // disable as we use export mode (which is not compatible see https://nextjs.org/docs/messages/export-image-api)
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'images.ctfassets.net',
+      },
+      {
+        protocol: 'https',
+        hostname: 'assets.vercel.com',
+      },
+      {
+        protocol: 'https',
+        hostname: '**.meetupstatic.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'img.youtube.com',
+      },
+    ],
   },
   headers() {
     return [
