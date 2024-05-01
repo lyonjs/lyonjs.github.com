@@ -1,3 +1,4 @@
+'use client';
 import Image from 'next/image';
 import { H1 } from '../../atoms/remark/Titles';
 import type { Event } from '../types';
@@ -9,26 +10,9 @@ import dayjs from 'dayjs';
 import _capitalize from 'lodash/capitalize';
 import { Location } from './Location';
 import { Heading } from '../../atoms/heading/Heading';
+import { PhotoAlbum } from './PhotoAlbum';
 
 type Props = { event: Event };
-
-export const PictureComponent = ({ index, image }: { index: number; image: string }) => {
-  return (
-    <li key={index}>
-      <a href={image} className={styles.imageContainer}>
-        <Image
-          loading="lazy"
-          src={image}
-          sizes="(min-width: 320px) 768w, (min-width: 768px) 1024w, (min-width: 1024px) 1200w"
-          width={224}
-          height={224}
-          alt=""
-          aria-hidden="true"
-        />
-      </a>
-    </li>
-  );
-};
 
 export const EventDetail: React.FC<Props> = ({ event }) => {
   const dateParsed = dayjs(event.dateTime);
@@ -37,18 +21,7 @@ export const EventDetail: React.FC<Props> = ({ event }) => {
   let images;
 
   if (event.photoAlbum) {
-    images = (
-      <section className={styles.imageCollection}>
-        <Heading Component="h2">Les images</Heading>
-        <div className={styles.lists}>
-          <ul>
-            {event.photoAlbum.photoSample.map((image, index) => (
-              <PictureComponent key={image.source} index={index} image={image.source} />
-            ))}
-          </ul>
-        </div>
-      </section>
-    );
+    images = <PhotoAlbum photoAlbum={event.photoAlbum} />;
   }
 
   if (event.talks && event.talks.some((talk) => talk.videoLink)) {
