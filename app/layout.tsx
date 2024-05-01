@@ -26,7 +26,7 @@ export default function AppLayout({ children }: { children: ReactNode }) {
             type="application/ld+json"
             nonce={`${nonce}`}
             dangerouslySetInnerHTML={{
-              __html: JSON.stringify(ORGANISATION_MARKUP).replaceAll('</', '<\\/'),
+              __html: JSON.stringify(ORGANISATION_MARKUP),
             }}
           />
           {children}
