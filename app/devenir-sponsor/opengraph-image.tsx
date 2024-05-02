@@ -11,7 +11,7 @@ export const size = {
 export const contentType = 'image/png';
 
 export default async function Image() {
-  return new ImageResponse(<SimpleText text={`Devenir sponsor de LyonJS`} />, {
+  return new ImageResponse(<SimpleText text={`Devenir sponsor`} />, {
     ...size,
   });
 }
