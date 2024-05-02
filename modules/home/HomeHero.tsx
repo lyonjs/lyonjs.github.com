@@ -8,6 +8,7 @@ import { Edit } from '../icons/Edit';
 import { Hero } from '../hero/Hero';
 import React from 'react';
 import va from '@vercel/analytics';
+import { Gift } from '../icons/Gift';
 
 export const HomeHero = () => {
   return (
@@ -36,6 +37,9 @@ export const HomeHero = () => {
           onClick={() => va.track('SubmitCFP')}
         >
           <Edit /> Proposer un sujet
+        </ButtonLink>
+        <ButtonLink variant="secondary" href="/devenir-sponsor">
+          <Gift /> Sponsoriser un événement
         </ButtonLink>
       </HeroButtonsContainer>
     </Hero>
