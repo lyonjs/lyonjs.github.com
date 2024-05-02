@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 // @ts-ignore
 import Content from './content.mdx';
 
-export default function Calendrier() {
+export default function BecomeSponsor() {
   return (
     <main>
       <Content />
@@ -10,7 +10,7 @@ export default function Calendrier() {
   );
 }
 export const revalidate = 3600;
-const title = 'LyonJS | Calendrier prévisionnel';
+const title = 'LyonJS | Devenir sponsor';
 const description = 'Vous souhaitez sponsoriser un événement de LyonJS, voici les dates prévues pour les mois à venir';
 
 export const metadata: Metadata = {
