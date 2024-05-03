@@ -5,7 +5,7 @@ export const YearNavigationPlaceholder = () => {
   return (
     <nav className={styles.navigation}>
       <ul className={styles.list}>
-        {Array.from(new Array(7)).map((_, key) => (
+        {Array.from({ length: 7 }).map((_, key) => (
           <li key={key}>
             <LinePlaceholder />
           </li>

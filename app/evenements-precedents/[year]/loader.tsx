@@ -7,7 +7,7 @@ export const Loader = () => {
     <>
       <YearNavigationPlaceholder />
       <ul data-testid="past-events-list">
-        {Array.from(new Array(6)).map((_, key) => (
+        {Array.from({ length: 6 }).map((_, key) => (
           <li key={key}>
             <EventTilePlaceholder />
           </li>

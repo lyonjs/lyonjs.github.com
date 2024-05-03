@@ -1,6 +1,4 @@
-import { gql, GraphQLClient } from 'graphql-request';
-import { Event } from '../event/types';
-
+import { GraphQLClient } from 'graphql-request';
 export const client = new GraphQLClient('https://www.meetup.com/gql', { fetch });
 export const LYONJS_MEETUP_ID = 18305583;
 

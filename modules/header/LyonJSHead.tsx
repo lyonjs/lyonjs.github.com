@@ -1,7 +1,8 @@
+// noinspection ES6UnusedImports
+
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { orgas } from '../../data/orgas';
-import { JsonLD } from '../seo/JsonLD';
 
 const DEFAULT_TITLE = 'LyonJS - Communauté lyonnaise des utilisateurs de JavaScript';
 const DEFAULT_DESCRIPTION =

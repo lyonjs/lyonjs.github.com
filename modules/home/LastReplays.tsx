@@ -1,4 +1,4 @@
-import React, { FC, useMemo } from 'react';
+import React from 'react';
 import { Article, H2 } from './Home.components';
 import styles from './LastReplays.module.css';
 import type { Event, Talk } from '../event/types';

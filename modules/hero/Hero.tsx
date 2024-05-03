@@ -1,6 +1,3 @@
-import { ButtonLink } from '../atoms/button/Button';
-import { Edit } from '../icons/Edit';
-import { People } from '../icons/People';
 import styles from './Hero.module.css';
 
 type Props = {
