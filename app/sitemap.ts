@@ -16,6 +16,10 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       lastModified,
     },
     {
+      url: `${BASE_URL}/devenir-sponsor`,
+      lastModified,
+    },
+    {
       url: `${BASE_URL}/code-de-conduite`,
       lastModified,
     },

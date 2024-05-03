@@ -3,6 +3,8 @@ import Image from 'next/image';
 import React from 'react';
 import { Article, H2 } from '../home/Home.components';
 import styles from './Sponsors.module.css';
+import { Gift } from '../icons/Gift';
+import { ButtonLink } from '../atoms/button/Button';
 
 export const Sponsors = () => (
   <Article>
@@ -14,5 +16,8 @@ export const Sponsors = () => (
         </a>
       ))}
     </div>
+    <ButtonLink variant="primary" href="/devenir-sponsor" className={styles.sponsorAction}>
+      <Gift /> Sponsoriser un événement <span aria-hidden="true">&rarr;</span>
+    </ButtonLink>
   </Article>
 );

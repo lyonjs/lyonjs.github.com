@@ -18,6 +18,9 @@ export const Navbar: FC<HTMLAttributes<HTMLElement>> = ({ className }) => (
         <NavLink href="/a-propos">À&nbsp;propos</NavLink>
       </li>
       <li>
+        <NavLink href="/devenir-sponsor">Devenir&nbsp;sponsor</NavLink>
+      </li>
+      <li>
         <NavLink href="/code-de-conduite">Code&nbsp;de&nbsp;conduite</NavLink>
       </li>
     </ul>

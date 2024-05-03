@@ -1,0 +1,17 @@
+.list {
+  list-style: disc;
+  padding-left: 2rem;
+}
+
+.list li {
+  margin-bottom: 1em;
+}
+
+.list li:has(> strong) {
+  color: var(--main-color);
+  text-decoration: line-through;
+}
+
+.list strong {
+  font-style: italic;
+}

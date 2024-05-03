@@ -30,3 +30,7 @@
   max-height: min(14vw, 80px);
   max-width: 75%;
 }
+
+.sponsorAction {
+  margin-top: 2em;
+}
