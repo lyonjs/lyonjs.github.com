@@ -11,7 +11,7 @@ export default function BecomeSponsor() {
 }
 export const revalidate = 3600;
 const title = 'LyonJS | Devenir sponsor';
-const description = 'Vous souhaitez sponsoriser un événement de LyonJS, voici les dates prévues pour les mois à venir';
+const description = 'Vous souhaitez sponsoriser un événement de LyonJS, voici toutes les informations nécessaires';
 
 export const metadata: Metadata = {
   title,
