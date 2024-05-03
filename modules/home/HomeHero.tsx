@@ -38,9 +38,6 @@ export const HomeHero = () => {
         >
           <Edit /> Proposer un sujet
         </ButtonLink>
-        <ButtonLink variant="secondary" href="/devenir-sponsor">
-          <Gift /> Sponsoriser un événement
-        </ButtonLink>
       </HeroButtonsContainer>
     </Hero>
   );
