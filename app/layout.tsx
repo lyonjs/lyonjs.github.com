@@ -4,6 +4,7 @@ import { headers } from 'next/headers';
 import { Header } from '../modules/header/Header';
 import { Footer } from '../modules/footer/Footer';
 import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 import 'normalize.css';
 import '../styles/globals.css';
@@ -32,6 +33,7 @@ export default function AppLayout({ children }: { children: ReactNode }) {
           {children}
           <Footer />
           <Analytics />
+          <SpeedInsights />
         </div>
       </body>
     </html>
