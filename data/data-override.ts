@@ -2,6 +2,9 @@ import type { Event } from '../modules/event/types';
 import { bedrock, indy, malt, smile, wanadev, zenika } from './sponsors';
 
 export const dataOverride: { [key: string]: Partial<Event> } = {
+  'https://www.meetup.com/lyonjs/events/300714737': {
+    sponsor: bedrock,
+  },
   'https://www.meetup.com/lyonjs/events/299916483': {
     sponsor: wanadev,
     talks: [

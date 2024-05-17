@@ -3,7 +3,7 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  max-width: 800px;
+  max-width: 1000px;
   gap: min(2vw, 16px);
 }
 
@@ -11,7 +11,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: min(40vw, 250px);
+  width: min(40vw, 200px);
   aspect-ratio: 250 / 150;
   background-color: var(--background-card);
   border-radius: min(2vw, 12px);

@@ -53,3 +53,15 @@ export const wanadev: Sponsor = {
   logo: '/sponsors/wanadev.svg',
   url: 'https://www.wanadevdigital.fr/',
 };
+
+export const wildCodeSchool: Sponsor = {
+  name: 'Wild Code School',
+  logo: '/sponsors/wildcodeschool.svg',
+  url: 'https://www.wildcodeschool.com/',
+};
+
+export const leWagon: Sponsor = {
+  name: 'Le Wagon',
+  logo: '/sponsors/wagon.svg',
+  url: 'https://www.lewagon.com/fr',
+};
