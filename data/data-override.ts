@@ -1,9 +1,24 @@
 import type { Event } from '../modules/event/types';
-import { bedrock, indy, malt, smile, wanadev, zenika } from './sponsors';
+import { bedrock, indy, leWagon, malt, smile, wanadev, zenika } from './sponsors';
 
 export const dataOverride: { [key: string]: Partial<Event> } = {
+  'https://www.meetup.com/lyonjs/events/301132346': {
+    sponsor: leWagon,
+  },
   'https://www.meetup.com/lyonjs/events/300714737': {
     sponsor: bedrock,
+    talks: [
+      {
+        title: "Play Pause - Les coulisses d'un player vidéo",
+        speakers: [
+          {
+            name: 'Arthur Gaudard',
+            socialLink: 'https://www.linkedin.com/in/arthur-gaudard/',
+          },
+        ],
+        videoLink: 'https://www.youtube.com/embed/VX9ppF6eMjc',
+      },
+    ],
   },
   'https://www.meetup.com/lyonjs/events/299916483': {
     sponsor: wanadev,
