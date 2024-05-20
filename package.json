@@ -38,7 +38,7 @@
     "classnames": "2.5.1",
     "encoding": "^0.1.13",
     "graphql": "^16.8.1",
-    "graphql-request": "^6.1.0",
+    "graphql-request": "^7.0.0",
     "husky": "^9.0.0",
     "oxlint": "^0.3.1",
     "postcss": "^8.4.32",
