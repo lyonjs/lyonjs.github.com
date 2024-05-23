@@ -43,7 +43,7 @@ dependencies:
     version: 0.33.4
   yet-another-react-lightbox:
     specifier: ^3.17.5
-    version: 3.18.0(react-dom@18.3.1)(react@18.3.1)
+    version: 3.19.0(react-dom@18.3.1)(react@18.3.1)
 
 devDependencies:
   '@playwright/test':
@@ -2590,8 +2590,8 @@ packages:
     hasBin: true
     dev: true
 
-  /yet-another-react-lightbox@3.18.0(react-dom@18.3.1)(react@18.3.1):
-    resolution: {integrity: sha512-Zf3Stgp+gSAZe5Uy45OJDDxxXoE+fENZjJnAa7HD+yb/5xAhBQqqz8K7u4kAuj12lexEOASks2wHeYaZ+yUVnQ==}
+  /yet-another-react-lightbox@3.19.0(react-dom@18.3.1)(react@18.3.1):
+    resolution: {integrity: sha512-HbvKVKfl17J51MdE2wMiZqwIDlse3CJYffQhl4RUOG1BZLcQ74Jf/CxGEa/EIECwCaabRiHzZbX88+z4Flvl0A==}
     engines: {node: '>=14'}
     peerDependencies:
       react: '>=16.8.0'
