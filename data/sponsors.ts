@@ -65,3 +65,15 @@ export const leWagon: Sponsor = {
   logo: '/sponsors/wagon.svg',
   url: 'https://www.lewagon.com/fr',
 };
+
+export const shodo: Sponsor = {
+  name: 'Shodo',
+  logo: '/sponsors/shodo.svg',
+  url: 'https://shodo.io/',
+};
+
+export const CBTW: Sponsor = {
+  name: 'Collaboration betters the world',
+  logo: '/sponsors/CBTW.svg',
+  url: 'https://collaborationbetterstheworld.com/',
+};

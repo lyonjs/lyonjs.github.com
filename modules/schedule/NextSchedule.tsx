@@ -11,12 +11,18 @@ export const NextSchedule = () => {
     <ul className={styles.list}>
       {sortSchedules.map((event) => (
         <li key={event.date}>
-          {new Date(event.date).toLocaleDateString('fr-FR', {
-            year: 'numeric',
-            month: 'long',
-            day: 'numeric',
-          })}{' '}
-          {event.sponsor ? <strong>- Déjà réservé</strong> : null}
+          <span className={styles.date}>
+            {new Date(event.date).toLocaleDateString('fr-FR', {
+              year: 'numeric',
+              month: 'long',
+              day: 'numeric',
+            })}
+          </span>
+          {event.sponsor ? (
+            <>
+              <strong>- Déjà réservé</strong> par <a href={event.sponsor.url}>{event.sponsor.name}</a>{' '}
+            </>
+          ) : null}
         </li>
       ))}
     </ul>

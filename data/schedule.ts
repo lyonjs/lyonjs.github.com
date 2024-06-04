@@ -1,5 +1,5 @@
 import { Schedule } from '../modules/schedule/types';
-import { bedrock, indy, leWagon, wildCodeSchool } from './sponsors';
+import { bedrock, CBTW, indy, leWagon, shodo, wildCodeSchool } from './sponsors';
 
 export const schedule: Schedule[] = [
   {
@@ -24,11 +24,13 @@ export const schedule: Schedule[] = [
   },
   {
     date: '10/09/2024',
+    sponsor: shodo,
   },
   {
     date: '11/13/2024',
   },
   {
     date: '12/11/2024',
+    sponsor: CBTW,
   },
 ];

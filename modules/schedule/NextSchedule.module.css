@@ -9,7 +9,10 @@
 
 .list li:has(> strong) {
   color: var(--main-color);
-  text-decoration: line-through;
+
+  .date {
+    text-decoration: line-through;
+  }
 }
 
 .list strong {
