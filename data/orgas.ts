@@ -47,4 +47,13 @@ export const orgas: Array<Orga> = [
       linkedin: 'mickaelalves',
     },
   },
+  {
+    name: 'Mohamed Djebali',
+    avatarUrl: '/orgas/mohamed.jpeg',
+    description: 'Software Developer at Worldline | Co Organizer | Quiz Lover',
+    social: {
+      twitter: 'MohamedDjebali',
+      linkedin: 'mohamed-djebali-developpeur-web',
+    },
+  },
 ];
