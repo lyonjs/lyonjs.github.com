@@ -78,7 +78,7 @@ export const CBTW: Sponsor = {
   url: 'https://collaborationbetterstheworld.com/',
 };
 
-export const Theodo: Sponsor = {
+export const theodo: Sponsor = {
   name: 'Theodo',
   logo: '/sponsors/theodo.svg',
   url: 'https://www.theodo.fr/',
