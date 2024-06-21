@@ -58,7 +58,7 @@ export const orgas: Array<Orga> = [
   },
   {
     name: 'Johana Lavigne',
-    avatarUrl: '/orgas/johana.jpeg',
+    avatarUrl: '/orgas/johana.jpg',
     description: 'JS Developer | Co Organizer of @LyonJS & @DuchessFR | Fitness & Running Lover',
     social: {
       twitter: 'JohanaLavigne',
