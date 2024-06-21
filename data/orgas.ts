@@ -56,4 +56,13 @@ export const orgas: Array<Orga> = [
       linkedin: 'mohamed-djebali-developpeur-web',
     },
   },
+  {
+    name: 'Johana Lavigne',
+    avatarUrl: '/orgas/johana.jpeg',
+    description: 'JS Developer | Co Organizer of @LyonJS & @DuchessFR | Fitness & Running Lover',
+    social: {
+      twitter: 'JohanaLavigne',
+      linkedin: 'johana-lavigne',
+    },
+  },
 ];
