@@ -1,3 +1,5 @@
+import * as sponsors from '../data/sponsors';
+import * as partners from '../data/partners';
 import React from 'react';
 import { HomeHero } from '../modules/home/HomeHero';
 import { SeePastEvents } from '../modules/home/Home.components';
@@ -15,7 +17,8 @@ export default function Home() {
       <SeePastEvents />
       <Numbers />
       <LastReplays />
-      <Sponsors />
+      <Sponsors title="Sponsors" sponsors={sponsors} />
+      <Sponsors title="Partneraires et Conférences" sponsors={partners} />
     </main>
   );
 }
