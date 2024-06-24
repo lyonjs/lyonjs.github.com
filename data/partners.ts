@@ -1,14 +1,12 @@
 import { Sponsor } from '../modules/event/types';
 
-export type Partner = Sponsor;
-
-export const C3dev: Partner = {
+export const C3dev: Sponsor = {
   name: 'C3 dev fest',
   logo: '/partners/c3dev.svg',
   url: 'https://c3fest.com/',
 };
 
-export const dotJS: Partner = {
+export const dotJS: Sponsor = {
   name: 'DotJS',
   logo: '/partners/dotjs.png',
   url: 'https://www.dotjs.io/',

@@ -6,7 +6,7 @@ import { Gift } from '../icons/Gift';
 import { ButtonLink } from '../atoms/button/Button';
 import { Sponsor } from '../event/types';
 
-export const Sponsors = ({ title, sponsors }: { title: string; sponsors: Sponsor[] }) => (
+export const Sponsors = ({ title, sponsors }: { title: string; sponsors: Record<string, Sponsor> }) => (
   <Article>
     <H2>{title}</H2>
     <div className={styles.sponsors}>

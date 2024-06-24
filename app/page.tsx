@@ -7,6 +7,7 @@ import { Sponsors } from '../modules/sponsors/Sponsors';
 import { NextEvent } from '../modules/home/NextEvent';
 import { Numbers } from '../modules/home/Numbers';
 import { LastReplays } from '../modules/home/LastReplays';
+import { Sponsor } from '../modules/event/types';
 
 export const revalidate = 3600;
 export default function Home() {
