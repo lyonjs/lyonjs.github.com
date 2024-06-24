@@ -4,6 +4,28 @@ import { bedrock, indy, leWagon, malt, smile, wanadev, zenika } from './sponsors
 export const dataOverride: { [key: string]: Partial<Event> } = {
   'https://www.meetup.com/lyonjs/events/301132346': {
     sponsor: leWagon,
+    talks: [
+      {
+        title: 'Transpilation : Comment coder dans un langage quand on ne connaît pas ce langage',
+        speakers: [
+          {
+            name: 'Nirina RABESON',
+            socialLink: 'https://bsky.app/profile/nirinarabeson.fr',
+          },
+        ],
+        videoLink: 'https://www.youtube.com/embed/Q3D8sGoS9PA',
+      },
+      {
+        title: 'Atomic Deployment pour DevOps à barbe blanche',
+        speakers: [
+          {
+            name: 'M4dz',
+            socialLink: 'https://github.com/m4dz',
+          },
+        ],
+        videoLink: 'https://www.youtube.com/embed/Xq7Rw8kymuY',
+      },
+    ],
   },
   'https://www.meetup.com/lyonjs/events/300714737': {
     sponsor: bedrock,
