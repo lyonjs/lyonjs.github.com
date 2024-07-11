@@ -14,13 +14,13 @@
     "e2e": "playwright test"
   },
   "dependencies": {
-    "@next/mdx": "14.2.4",
+    "@next/mdx": "14.2.5",
     "@vercel/analytics": "^1.1.1",
     "@vercel/speed-insights": "^1.0.10",
     "dayjs": "^1.11.10",
     "lodash": "^4.17.21",
     "motion": "^10.16.4",
-    "next": "14.2.4",
+    "next": "14.2.5",
     "normalize.css": "8.0.1",
     "react": "18.3.1",
     "react-dom": "18.3.1",
