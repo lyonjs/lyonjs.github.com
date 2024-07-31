@@ -27,8 +27,10 @@
   align-items: center;
   inset: 0;
   backdrop-filter: blur(5px);
-  content: 'voir la vidéo';
-  font-size: 2rem;
-  color: var(--grey-0);
-  text-shadow: 1px 1px 2px var(--font-color-strong);
+  content: 'Voir la vidéo';
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: var(--white-0);
+  text-shadow: 0 0 5px var(--grey-0);
 }
