@@ -77,3 +77,9 @@ export const theodo: Sponsor = {
   logo: '/sponsors/theodo.svg',
   url: 'https://www.theodo.fr/',
 };
+
+export const axopen: Sponsor = {
+  name: 'Axopen',
+  logo: '/sponsors/axopen.svg',
+  url: 'https://www.axopen.com/',
+};
