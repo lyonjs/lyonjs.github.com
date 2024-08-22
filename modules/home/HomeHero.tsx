@@ -31,7 +31,7 @@ export const HomeHero = () => {
         </ButtonLink>
         <ButtonLink
           variant="secondary"
-          href="https://bit.ly/lyonjs-cfp"
+          href="https://conference-hall.io/lyon-js-meetup"
           target="_blank"
           rel="noreferrer noopener"
           onClick={() => va.track('SubmitCFP')}
