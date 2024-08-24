@@ -3,7 +3,6 @@ import Image from 'next/image';
 import { H1 } from '../../atoms/remark/Titles';
 import type { Event } from '../types';
 import styles from './EventDetail.module.css';
-import ReactMarkdown from 'react-markdown';
 import { Calendar } from '../../icons/Calendar';
 import React from 'react';
 import dayjs from 'dayjs';
@@ -14,9 +13,10 @@ import { PhotoAlbum } from './PhotoAlbum';
 
 type Props = { event: Event };
 
-export const EventDetail: React.FC<Props> = ({ event }) => {
+export const EventDetail: React.FC<Props> = async ({ event }) => {
   const dateParsed = dayjs(event.dateTime);
   const formattedDayAndMonth = _capitalize(dateParsed.format('dddd D MMMM YYYY à H:mm'));
+  const ReactMarkdown = await import('react-markdown').then((module) => module.default);
   let replays;
   let images;
 
