@@ -1,7 +1,26 @@
 import type { Event } from '../modules/event/types';
-import { bedrock, indy, leWagon, malt, smile, wanadev, zenika } from './sponsors';
+import { bedrock, indy, leWagon, malt, smile, wanadev, wildCodeSchool, zenika } from './sponsors';
 
 export const dataOverride: { [key: string]: Partial<Event> } = {
+  'https://www.meetup.com/lyonjs/events/301751075': {
+    sponsor: wildCodeSchool,
+    talks: [
+      {
+        title: 'Arrêtons de (dé)tester nos applications',
+        speakers: [
+          {
+            name: 'Louis Njako',
+            socialLink: 'https://www.linkedin.com/in/louis-fredice-njako-molom-268bab292/',
+          },
+          {
+            name: 'Stanley Servical',
+            socialLink: 'https://www.linkedin.com/in/stanley-s-88a34b52/',
+          },
+        ],
+        videoLink: 'https://www.youtube.com/embed/5kHK1xhRRfU',
+      },
+    ],
+  },
   'https://www.meetup.com/lyonjs/events/301132346': {
     sponsor: leWagon,
     talks: [
