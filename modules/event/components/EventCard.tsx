@@ -7,7 +7,6 @@ import dayjs from 'dayjs';
 import _capitalize from 'lodash/capitalize';
 import type { Event } from '../types';
 import { ButtonLink } from '../../atoms/button/Button';
-import ReactMarkdown from 'react-markdown';
 import { H3 } from '../../atoms/remark/Titles';
 import styles from './EventCard.module.css';
 import { Calendar } from '../../icons/Calendar';
@@ -16,11 +15,13 @@ import { EventMarkup } from './EventMarkup';
 import { Collapsible } from '../../atoms/collapsible/Collapsible';
 import { Location } from './Location';
 
+
 type Props = { event: Event };
 
-export const EventCard: FC<Props> = ({ event }) => {
+export const EventCard: FC<Props> = async ({ event }) => {
   const dateParsed = dayjs(event.dateTime);
   const formattedDayAndMonth = _capitalize(dateParsed.format('dddd D MMMM YYYY à H:mm'));
+  const ReactMarkdown = await import("react-markdown").then(module => module.default)
 
   return (
     <article className={styles.container}>
