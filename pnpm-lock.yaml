@@ -22,7 +22,7 @@ dependencies:
     version: 4.17.21
   motion:
     specifier: ^10.16.4
-    version: 10.16.4
+    version: 10.18.0
   next:
     specifier: 14.2.6
     version: 14.2.6(@playwright/test@1.46.1)(react-dom@18.3.1)(react@18.3.1)
@@ -515,7 +515,7 @@ packages:
       '@motionone/easing': 10.18.0
       '@motionone/types': 10.17.1
       '@motionone/utils': 10.18.0
-      tslib: 2.4.1
+      tslib: 2.7.0
     dev: false
 
   /@motionone/dom@10.18.0:
@@ -526,14 +526,14 @@ packages:
       '@motionone/types': 10.17.1
       '@motionone/utils': 10.18.0
       hey-listen: 1.0.8
-      tslib: 2.4.1
+      tslib: 2.7.0
     dev: false
 
   /@motionone/easing@10.18.0:
     resolution: {integrity: sha512-VcjByo7XpdLS4o9T8t99JtgxkdMcNWD3yHU/n6CLEz3bkmKDRZyYQ/wmSf6daum8ZXqfUAgFeCZSpJZIMxaCzg==}
     dependencies:
       '@motionone/utils': 10.18.0
-      tslib: 2.4.1
+      tslib: 2.7.0
     dev: false
 
   /@motionone/generators@10.18.0:
@@ -541,14 +541,7 @@ packages:
     dependencies:
       '@motionone/types': 10.17.1
       '@motionone/utils': 10.18.0
-      tslib: 2.4.1
-    dev: false
-
-  /@motionone/svelte@10.16.4:
-    resolution: {integrity: sha512-zRVqk20lD1xqe+yEDZhMYgftsuHc25+9JSo+r0a0OWUJFocjSV9D/+UGhX4xgJsuwB9acPzXLr20w40VnY2PQA==}
-    dependencies:
-      '@motionone/dom': 10.18.0
-      tslib: 2.4.1
+      tslib: 2.7.0
     dev: false
 
   /@motionone/types@10.17.1:
@@ -560,15 +553,7 @@ packages:
     dependencies:
       '@motionone/types': 10.17.1
       hey-listen: 1.0.8
-      tslib: 2.4.1
-    dev: false
-
-  /@motionone/vue@10.16.4:
-    resolution: {integrity: sha512-z10PF9JV6SbjFq+/rYabM+8CVlMokgl8RFGvieSGNTmrkQanfHn+15XBrhG3BgUfvmTeSeyShfOHpG0i9zEdcg==}
-    deprecated: Motion One for Vue is deprecated. Use Oku Motion instead https://oku-ui.com/motion
-    dependencies:
-      '@motionone/dom': 10.18.0
-      tslib: 2.4.1
+      tslib: 2.7.0
     dev: false
 
   /@next/env@14.2.6:
@@ -3022,15 +3007,13 @@ packages:
     engines: {node: '>=16 || 14 >=14.17'}
     dev: true
 
-  /motion@10.16.4:
-    resolution: {integrity: sha512-wvBeT0sZNgU6Od1aimjywBikqzm5yE97+L9eM/AoLy01AXNPdcnSDVHB3CoR0dGdHMbp/S0A/PjsJfWg0+k8Mg==}
+  /motion@10.18.0:
+    resolution: {integrity: sha512-MVAZZmwM/cp77BrNe1TxTMldxRPjwBNHheU5aPToqT4rJdZxLiADk58H+a0al5jKLxkB0OdgNq6DiVn11cjvIQ==}
     dependencies:
       '@motionone/animation': 10.18.0
       '@motionone/dom': 10.18.0
-      '@motionone/svelte': 10.16.4
       '@motionone/types': 10.17.1
       '@motionone/utils': 10.18.0
-      '@motionone/vue': 10.16.4
     dev: false
 
   /mri@1.2.0:
