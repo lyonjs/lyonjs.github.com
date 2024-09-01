@@ -33,7 +33,7 @@ export const LastReplays = async () => {
       <H2>Nos derniers replays</H2>
       <div className={styles.grid}>
         {replayLinks.map(({ talk, event, videoId }) => (
-          <Link key={event.id} href={`/evenement/${slugEventTitle(event)}#replays`}>
+          <Link key={talk?.title || event.id} href={`/evenement/${slugEventTitle(event)}#replays`}>
             <Image
               loading="lazy"
               src={`https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`}

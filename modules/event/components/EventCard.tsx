@@ -14,13 +14,15 @@ import { Meetup } from '../../icons/Meetup';
 import { EventMarkup } from './EventMarkup';
 import { Collapsible } from '../../atoms/collapsible/Collapsible';
 import { Location } from './Location';
+import dynamic from 'next/dynamic';
 
 type Props = { event: Event };
 
-export const EventCard: FC<Props> = async ({ event }) => {
+const ReactMarkdown = dynamic(() => import('react-markdown').then((module) => module.default));
+
+export const EventCard: FC<Props> = ({ event }) => {
   const dateParsed = dayjs(event.dateTime);
   const formattedDayAndMonth = _capitalize(dateParsed.format('dddd D MMMM YYYY à H:mm'));
-  const ReactMarkdown = await import('react-markdown').then((module) => module.default);
 
   return (
     <article className={styles.container}>
