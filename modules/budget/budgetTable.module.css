@@ -1,0 +1,14 @@
+.budgetTable thead {
+  color: var(--yellow-1);
+  text-align: left;
+}
+.budgetTable tbody tr {
+  padding: 0.75rem;
+}
+
+.budgetTable,
+.budgetTable th,
+.budgetTable td {
+  border: 1px solid white;
+  padding: 1rem;
+}
