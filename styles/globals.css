@@ -61,3 +61,23 @@ a,
 [data-lock-scroll] {
   overflow: hidden !important;
 }
+
+table {
+  thead {
+    color: var(--yellow-1);
+    text-align: left;
+  }
+
+  tbody {
+    tr {
+      padding: 0.75rem;
+    }
+  }
+}
+
+table,
+th,
+td {
+  border: 1px solid white;
+  padding: 1rem;
+}
