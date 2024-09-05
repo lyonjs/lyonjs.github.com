@@ -10,8 +10,6 @@ export const size = {
 };
 export const contentType = 'image/png';
 
-export default async function Image() {
-  return new ImageResponse(<SimpleText text={`Budget`} />, {
-    ...size,
-  });
+export default function Image() {
+  return new ImageResponse(<SimpleText text={`Budget`} />, size);
 }

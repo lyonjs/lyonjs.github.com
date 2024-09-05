@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 // @ts-ignore
 import Content from './content.mdx';
 
-export default function APropos() {
+export default function BudgetEtFinancement() {
   return <Content />;
 }
 export const revalidate = 3600;

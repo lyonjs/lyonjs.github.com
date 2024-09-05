@@ -18,7 +18,7 @@ export const budgetRows: BudgetRowType[] = [
   {
     expense: 'Nom de domaine et hébergement',
     description: "Actuellement acheté auprès d'OVH",
-    cost: 80,
+    cost: 15.59,
   },
   {
     expense: 'Hébergement du site',
