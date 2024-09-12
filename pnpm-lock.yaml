@@ -87,7 +87,7 @@ devDependencies:
     version: 7.1.0(graphql@16.9.0)
   husky:
     specifier: ^9.0.0
-    version: 9.1.5
+    version: 9.1.6
   oxlint:
     specifier: ^0.9.0
     version: 0.9.5
@@ -2368,8 +2368,8 @@ packages:
     engines: {node: '>=10.17.0'}
     dev: true
 
-  /husky@9.1.5:
-    resolution: {integrity: sha512-rowAVRUBfI0b4+niA4SJMhfQwc107VLkBUgEYYAOQAbqDCnra1nYh83hF/MDmhYs9t9n1E3DuKOrs2LYNC+0Ag==}
+  /husky@9.1.6:
+    resolution: {integrity: sha512-sqbjZKK7kf44hfdE94EoX8MZNk0n7HeW37O4YrVGCF4wzgQjp+akPAkfUK5LZ6KuR/6sqeAVuXHji+RzQgOn5A==}
     engines: {node: '>=18'}
     hasBin: true
     dev: true
