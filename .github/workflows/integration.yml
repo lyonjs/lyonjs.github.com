@@ -13,8 +13,6 @@ jobs:
       - uses: actions/checkout@main
       - uses: pnpm/action-setup@v4.0.0
         name: Install pnpm
-        with:
-          version: 7
       - uses: actions/setup-node@main
         with:
           cache: pnpm
@@ -29,8 +27,6 @@ jobs:
       - uses: actions/checkout@main
       - uses: pnpm/action-setup@v4.0.0
         name: Install pnpm
-        with:
-          version: 7
       - uses: actions/setup-node@main
         with:
           cache: pnpm
