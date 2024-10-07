@@ -2,6 +2,30 @@ import type { Event } from '../modules/event/types';
 import { bedrock, indy, leWagon, malt, smile, wanadev, wildCodeSchool, zenika } from './sponsors';
 
 export const dataOverride: { [key: string]: Partial<Event> } = {
+  'https://www.meetup.com/lyonjs/events/303049235': {
+    talks: [
+      {
+        title: "Le leader imposteur, l'histoire d'un syndrome devenu opportunité",
+        speakers: [
+          {
+            name: 'Mathieu Mure',
+            socialLink: 'https://x.com/mathieumure',
+          },
+        ],
+        videoLink: 'https://www.youtube.com/embed/HGue9iHIaZg?si=y5XtDfgDjdvAWvVY',
+      },
+      {
+        title: 'Streams en Node.js : Concepts, Utilisations et Pratiques',
+        speakers: [
+          {
+            name: 'Guillaume Marchand',
+            socialLink: 'https://www.linkedin.com/in/guillaumemarchand69',
+          },
+        ],
+        videoLink: 'https://www.youtube.com/embed/Hr5waCBoils?si=2RdUeS573QRIJt-v',
+      },
+    ],
+  },
   'https://www.meetup.com/lyonjs/events/301751075': {
     sponsor: wildCodeSchool,
     talks: [
