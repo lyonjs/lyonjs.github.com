@@ -8,7 +8,6 @@ import { Edit } from '../icons/Edit';
 import { Hero } from '../hero/Hero';
 import React from 'react';
 import va from '@vercel/analytics';
-import { Gift } from '../icons/Gift';
 
 export const HomeHero = () => {
   return (
