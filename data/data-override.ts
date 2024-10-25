@@ -1,7 +1,32 @@
 import type { Event } from '../modules/event/types';
-import { bedrock, indy, leWagon, malt, smile, wanadev, wildCodeSchool, zenika } from './sponsors';
+import { bedrock, indy, leWagon, malt, shodo, smile, wanadev, wildCodeSchool, zenika } from './sponsors';
 
 export const dataOverride: { [key: string]: Partial<Event> } = {
+  'https://www.meetup.com/lyonjs/events/303395273': {
+    sponsor: shodo,
+    talks: [
+      {
+        title: 'Comment développer une expérience collective en Javascript ?',
+        speakers: [
+          {
+            name: 'Samuel Ronce',
+            socialLink: 'https://x.com/SamuelRonce',
+          },
+        ],
+        videoLink: 'https://www.youtube.com/embed/nojyhr4jV0w',
+      },
+      {
+        title: 'Des annotations à la magie noire: les possibilitées insoupsonnées de TypeScript.',
+        speakers: [
+          {
+            name: 'Etienne Deladonchamps',
+            socialLink: 'https://www.linkedin.com/in/etiennedldc/',
+          },
+        ],
+        videoLink: 'https://www.youtube.com/embed/bmjsCBWJ3ws',
+      },
+    ],
+  },
   'https://www.meetup.com/lyonjs/events/303049235': {
     sponsor: indy,
     talks: [
