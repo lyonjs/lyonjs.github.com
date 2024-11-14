@@ -1,7 +1,10 @@
 import type { Event } from '../modules/event/types';
-import { bedrock, indy, leWagon, malt, shodo, smile, wanadev, wildCodeSchool, zenika } from './sponsors';
+import { bedrock, indy, leWagon, malt, shodo, smile, theodo, wanadev, wildCodeSchool, zenika } from './sponsors';
 
 export const dataOverride: { [key: string]: Partial<Event> } = {
+  'https://www.meetup.com/lyonjs/events/304182290': {
+    sponsor: theodo,
+  },
   'https://www.meetup.com/lyonjs/events/303395273': {
     sponsor: shodo,
     talks: [
