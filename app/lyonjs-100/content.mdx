@@ -2,48 +2,60 @@ import { ListOfPeople } from '../../modules/person/ListOfPeople';
 import { Sponsors } from '../../modules/sponsors/Sponsors';
 import { gold, silver, bronze } from '../../data/lyonjs100-sponsors';
 import { speakers } from '../../data/lyonjs100-speakers';
+import Image from 'next/image';
+import cinema from './cinema.jpg';
+import styles from './LyonJS100.module.css';
 
-# LyonJS 💯
+<div className={styles.hero}>
+  <Image className={styles.background} src={cinema} width={1200} alt="" />
+  <h1>LyonJS 💯</h1>
+  <img
+    className={styles.lion}
+    src="/lion-1440.webp"
+    srcSet={[360, 720, 1440].map((width) => `/lion-${width}.webp ${width}w`).join(',')}
+    sizes="(max-width: 900px) 80vw, 720px"
+    width={1440}
+    height={810}
+    alt="Lion jaune en 3D"
+  />
+</div>
 
 ## Qu'est ce que LyonJS 100 ?
 
 Nous sommes ravis d'annoncer que pour célébrer notre 100ème événement, LyonJS organise une journée de conférence exceptionnelle ! 🎉
 
-## Détails de l'Événement
+Nous ne pouvions pas laisser passer cette occasion spéciale sans marquer le coup, c'est pourquoi nous avons prévu une journée entière de conférences, de rencontres et de célébrations pour célébrer ça ensemble.
+
+Pour se faire nous avons privatisez une **salle de cinéma pour l'occasion**, de quoi vous offrir un cadre agréable pour une journée rythmée par des talks de qualité.
+Un bon petit déjeuner pour commencer la journée et un buffet pour le déjeuner dans une zone du cinéma réservée pour l'occasion.
+
+Nous allons donc ouvrir la billetterie le <time dateTime="2024-12-06T09:00">6 décembre 2024</time>, alors assurez-vous de réserver votre place dès que possible, car les places seront limitées à **100**!
+
+## En résumé
 
 - **📅 Date** : 21 février 2025
 - **📌 Lieu** : UGC Part dieu
-- **🎟️ Ouverture de la billetterie** : 6 décembre 2024 (sous réserve de la confirmation des derniers sponsors)
-
-## Inscription
-
-L'ouverture de la billetterie est prévue pour le 6 décembre 2024. Assurez-vous de réserver votre place dès que possible, car les places seront limitées !
+- **🎟️ Ouverture de la billetterie** : 6 décembre 2024
 
 ## Programme
 
 Le programme complet de la journée sera annoncé prochainement. Restez à l'affût pour découvrir les conférences prévues pour cette journée spéciale.
 
-Voici nos premiers speaker pour cet événement :
-
 <ListOfPeople people={speakers} />
 
 ## Sponsors
 
-Nous avons déjà sécurisé 80% de nos sponsors et nous avons jusqu'au 29 novembre 2024 pour finaliser les derniers détails. Si vous êtes intéressé par le sponsoring de cet événement, n'hésitez pas à nous contacter !
+Un grand merci à nos sponsors pour leur soutien continu.
+Nous sommes reconnaissants de leur contribution à cet événement spécial.
+Certains de nos sponsors seront présents durant la journée, n'hésitez pas à aller à leur rencontre pour en apprendre plus sur leurs activités.
 
 <Sponsors title="🥇Sponsors Gold" sponsors={gold} />
 <Sponsors title="🥈Sponsors Silver" sponsors={silver} />
 <Sponsors title="🥉Sponsors Bronze" sponsors={bronze} />
 
-## Contact
+## Infos
 
 Pour toute question ou demande de sponsoring, veuillez nous contacter à l'adresse suivante : [contact@lyonjs.com](mailto:contact@lyonjs.com).
 
-## Suivez-nous
-
 Pour ne rien manquer des dernières nouvelles et mises à jour concernant cet événement, suivez-nous sur nos réseaux sociaux :
-
-- [Twitter](https://twitter.com/lyonjs)
-- [LinkedIn](https://linkedin.com/company/lyonjs)
-
 Nous avons hâte de vous voir nombreux et nombreuses pour célébrer ensemble cette étape importante pour LyonJS ! 🌟

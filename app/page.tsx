@@ -7,19 +7,15 @@ import { Sponsors } from '../modules/sponsors/Sponsors';
 import { NextEvent } from '../modules/home/NextEvent';
 import { Numbers } from '../modules/home/Numbers';
 import { LastReplays } from '../modules/home/LastReplays';
-import { Announcement } from '../modules/home/Announcement';
+import { HomeAnnouncement } from '../modules/lyonjs100/HomeAnnouncement';
 
 export const revalidate = 3600;
+
 export default function Home() {
   return (
     <main>
       <HomeHero />
-      <Announcement title="LyonJS 💯" link={{ url: '/lyonjs-100', label: "Plus d'info" }}>
-        <div className="flex flex-col" style={{ gap: '20px' }}>
-          <p>LyonJS fête sa 100ème édition !</p>
-          <p>Pour l'occasion, nous vous préparons une journée de conférence le 21 février 2025 à l'UGC de Part Dieu</p>
-        </div>
-      </Announcement>
+      <HomeAnnouncement />
       <NextEvent />
       <SeePastEvents />
       <Numbers />
