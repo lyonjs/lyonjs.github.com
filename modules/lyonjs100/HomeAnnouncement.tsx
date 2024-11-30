@@ -37,7 +37,7 @@ export function HomeAnnouncement() {
             <address>UGC de Part Dieu</address>.
           </span>
         </div>
-        <div className="mt-14 flex justify-center -mb-16">
+        <div className={styles.cta}>
           <ButtonLink href="/lyonjs-100">
             Chope ta place ! <span aria-hidden="true">&rarr;</span>
           </ButtonLink>

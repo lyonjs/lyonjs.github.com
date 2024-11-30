@@ -19,12 +19,12 @@ export const speakers: Array<Speaker> = [
     social: { twitter: 'JNYBGR', linkedin: 'jonny-burger-4115109b' },
   },
   {
-    name: `Bientôt d'autres`,
+    name: `Elle aussi !! 🤩`,
     avatarUrl: '/speakers/secret.png',
     social: {},
   },
   {
-    name: `Pourquoi pas toi ?`,
+    name: `Non pas lui !! ?? 😱`,
     avatarUrl: '/speakers/secret.png',
     social: {},
   },
