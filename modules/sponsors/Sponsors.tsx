@@ -6,7 +6,12 @@ import { Gift } from '../icons/Gift';
 import { ButtonLink } from '../atoms/button/Button';
 import { Sponsor } from '../event/types';
 
-export const Sponsors = ({ title, sponsors }: { title: string; sponsors: Record<string, Sponsor> }) => (
+type Props = {
+  title: string;
+  sponsors: Record<string, Sponsor>;
+  withLink?: boolean;
+};
+export const Sponsors = ({ title, sponsors, withLink }: Props) => (
   <Article>
     <H2>{title}</H2>
     <div className={styles.sponsors}>
@@ -16,7 +21,7 @@ export const Sponsors = ({ title, sponsors }: { title: string; sponsors: Record<
         </a>
       ))}
     </div>
-    {/sponsor/i.test(title) && (
+    {withLink && (
       <ButtonLink variant="primary" href="/devenir-sponsor" className={styles.sponsorAction}>
         <Gift /> Sponsoriser un événement <span aria-hidden="true">&rarr;</span>
       </ButtonLink>

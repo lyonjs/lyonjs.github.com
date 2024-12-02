@@ -1,0 +1,70 @@
+.hero {
+  position: relative;
+  margin-top: 2rem;
+  height: 10rem;
+  overflow: hidden;
+  border-radius: 0.5rem;
+}
+
+.hero .background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  object-fit: cover;
+  object-position: bottom;
+}
+
+.hero h1 {
+  position: absolute;
+  left: 0.5rem;
+  bottom: 2rem;
+  font-size: 3rem;
+  color: var(--white-0);
+  z-index: 1;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgb(12, 12, 13);
+  background: linear-gradient(
+    0deg,
+    rgba(12, 12, 13, 1) 0%,
+    rgba(12, 12, 13, 0.8421743697478992) 25%,
+    rgba(12, 12, 13, 0) 83%
+  );
+}
+
+.logo {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  height: 90%;
+  width: auto;
+  bottom: 0;
+}
+
+.cta {
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+}
+
+@media screen and (min-width: 768px) {
+  .hero {
+    height: 20rem;
+  }
+
+  .hero h1 {
+    left: 1rem;
+    font-size: 5rem;
+  }
+}
