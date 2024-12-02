@@ -41,22 +41,26 @@
   );
 }
 
-.lion {
-  display: none;
+.logo {
   position: absolute;
-  right: -10%;
-  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
   z-index: 1;
-  max-width: 40%;
+  height: 90%;
+  width: auto;
+  bottom: 0;
+}
+
+.cta {
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
 }
 
 @media screen and (min-width: 768px) {
   .hero {
     height: 20rem;
-  }
-
-  .lion {
-    display: block;
   }
 
   .hero h1 {
