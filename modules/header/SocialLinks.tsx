@@ -8,6 +8,7 @@ import { Youtube } from '../icons/Youtube';
 import { IconLink } from '../navigation/links/IconLink';
 import styles from './SocialLinks.module.css';
 import { Linkedin } from '../icons/Linkedin';
+import { Bluesky } from '../icons/Bluesky';
 
 export const SocialLinks: FC<HTMLAttributes<HTMLElement>> = ({ className }) => (
   <ul className={classNames(styles.socialLinks, className)}>
@@ -20,6 +21,17 @@ export const SocialLinks: FC<HTMLAttributes<HTMLElement>> = ({ className }) => (
         aria-label="La page Meetup du LyonJS"
       >
         <Meetup color="currentColor" size={20} />
+      </IconLink>
+    </li>
+    <li>
+      <IconLink
+        href="https://bsky.app/profile/lyonjs.org"
+        target="_blank"
+        rel="noreferrer noopener"
+        title="Compte Bluesky du LyonJS"
+        aria-label="Compte Bluesky du LyonJS"
+      >
+        <Bluesky color="currentColor" size={20} />
       </IconLink>
     </li>
     <li>
