@@ -1,7 +1,14 @@
 import { Sponsor } from '../modules/event/types';
 import { bedrock, cleverCloud, indy, malt, theodo, wanadev, zenika } from './sponsors';
 
-export const gold: Array<Sponsor> = [malt];
+export const gold: Array<Sponsor> = [
+  malt,
+  {
+    name: 'Fulll',
+    url: 'https://www.fulll.fr/',
+    logo: '/sponsors/fulll.webp',
+  },
+];
 
 export const silver: Array<Sponsor> = [
   { name: '365 Talent', url: 'https://www.365talents.com/fr/', logo: '/sponsors/365Talent.svg' },
