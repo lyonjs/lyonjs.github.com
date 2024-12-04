@@ -1,0 +1,85 @@
+.container {
+  margin-top: 2rem;
+}
+
+.card {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  background: var(--background-card);
+  margin: auto auto min(4vw, 32px);
+  padding: 16px;
+  border-radius: 12px;
+  align-items: center;
+  gap: 18px;
+  transition:
+    background-color 100ms,
+    border-color 100ms;
+  border: 1px solid transparent;
+  max-width: 800px;
+}
+
+.card:hover {
+  background-color: var(--background-card-hover);
+  border-color: var(--border-light);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: -18px;
+  max-height: 24px;
+}
+
+.title {
+  font-size: 1.5rem;
+  margin-top: 1rem;
+  margin-bottom: 0;
+  align-self: flex-start;
+}
+
+.type,
+.sponsor {
+  font-size: 1rem;
+  align-self: flex-start;
+}
+
+.description {
+  font-size: 1rem;
+  align-self: flex-start;
+  color: var(--white-0);
+  min-height: 72px;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.header .logo {
+  display: none;
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 7rem;
+  max-height: 80px;
+}
+
+.logo {
+  width: 5rem;
+  height: auto;
+  margin-bottom: 1rem;
+}
+
+@media screen and (min-width: 600px) {
+  .header .logo {
+    display: block;
+  }
+
+  .header .sponsor {
+    display: none;
+  }
+
+  .card > .logo {
+    display: none;
+  }
+}
