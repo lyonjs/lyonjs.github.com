@@ -7,6 +7,7 @@ import { IconLink } from '../navigation/links/IconLink';
 import styles from './Socials.module.css';
 import { Linkedin } from '../icons/Linkedin';
 import { Discord } from '../icons/Discord';
+import { Bluesky } from '../icons/Bluesky';
 
 export const Socials = () => (
   <ul className={styles.socialsContainer}>
@@ -28,6 +29,17 @@ export const Socials = () => (
         title="Compte Twitter du LyonJS"
       >
         <Twitter color="currentColor" size={32} />
+      </IconLink>
+    </li>
+    <li>
+      <IconLink
+        href="https://bsky.app/profile/lyonjs.org"
+        target="_blank"
+        rel="noreferrer noopener"
+        title="Compte Bluesky du LyonJS"
+        aria-label="Compte Bluesky du LyonJS"
+      >
+        <Bluesky color="currentColor" size={32} />
       </IconLink>
     </li>
     <li>
