@@ -4,6 +4,28 @@ import { bedrock, indy, leWagon, malt, shodo, smile, theodo, wanadev, wildCodeSc
 export const dataOverride: { [key: string]: Partial<Event> } = {
   'https://www.meetup.com/lyonjs/events/304182290': {
     sponsor: theodo,
+    talks: [
+      {
+        title: 'Réinventez vos Composants : Cap sur les Compound Components !',
+        speakers: [
+          {
+            name: 'Julien Sanchez-Porro',
+            socialLink: 'https://www.linkedin.com/in/julien-sanchez-porro-55182ba9',
+          },
+        ],
+        videoLink: 'https://www.youtube.com/embed/8_R0aJMO868',
+      },
+      {
+        title: 'Personne ne sait si Internet est sécurisé',
+        speakers: [
+          {
+            name: 'Alexis Raymann',
+            socialLink: 'https://www.linkedin.com/in/alexis-reymann-ab0b33124',
+          },
+        ],
+        videoLink: 'https://www.youtube.com/embed/3Gv2gYicPOU',
+      },
+    ],
   },
   'https://www.meetup.com/lyonjs/events/303395273': {
     sponsor: shodo,
