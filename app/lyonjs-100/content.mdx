@@ -6,6 +6,7 @@ import Image from 'next/image';
 import cinema from './cinema.jpg';
 import styles from './LyonJS100.module.css';
 import { ButtonLink } from '../../modules/atoms/button/Button';
+import { Gift } from '../../modules/icons/Gift';
 
 <div className={styles.hero}>
   <Image className={styles.background} src={cinema} width={1200} alt="" />
@@ -50,6 +51,14 @@ Le programme complet de la journée sera annoncé prochainement. Restez à l'aff
 Un grand merci à nos sponsors pour leur soutien continu.
 Nous sommes reconnaissants de leur contribution à cet événement spécial.
 Certains de nos sponsors seront présents durant la journée, n'hésitez pas à aller à leur rencontre pour en apprendre plus sur leurs activités.
+
+Nos sponsors sont également à la recherche de nouveaux talents, alors n'hésitez pas à consulter les offres d'emploi disponibles sur notre site.
+
+<div className={styles.cta}>
+  <ButtonLink href="/lyonjs-100/job-board">
+    Les offres d'emploi <Gift />
+  </ButtonLink>
+</div>
 
 <Sponsors title="🥇Sponsors Gold" sponsors={gold} />
 <Sponsors title="🥈Sponsors Silver" sponsors={silver} />
