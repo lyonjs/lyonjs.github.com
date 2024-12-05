@@ -8,6 +8,11 @@ export const gold: Array<Sponsor> = [
     url: 'https://www.fulll.fr/',
     logo: '/sponsors/fulll.webp',
   },
+  {
+    name: 'Kolecto',
+    url: 'https://www.kolecto.fr/',
+    logo: '/sponsors/kolecto.svg',
+  },
 ];
 
 export const silver: Array<Sponsor> = [
