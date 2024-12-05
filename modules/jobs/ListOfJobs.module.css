@@ -1,5 +1,7 @@
 .container {
-  margin-top: 2rem;
+  gap: 2rem;
+  display: grid;
+  grid-template-columns: 1fr;
 }
 
 .card {
@@ -7,7 +9,7 @@
   position: relative;
   flex-direction: column;
   background: var(--background-card);
-  margin: auto auto min(4vw, 32px);
+  margin: auto;
   padding: 16px;
   border-radius: 12px;
   align-items: center;
@@ -81,5 +83,11 @@
 
   .card > .logo {
     display: none;
+  }
+}
+
+@media screen and (min-width: 956px) {
+  .container {
+    grid-template-columns: 1fr 1fr;
   }
 }
