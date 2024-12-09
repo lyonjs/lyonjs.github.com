@@ -35,12 +35,6 @@ export const schedule: Schedule[] = [
     sponsor: CBTW,
   },
   {
-    date: '01/15/2025',
-  },
-  {
-    date: '02/12/2025',
-  },
-  {
     date: '03/12/2025',
     sponsor: axopen,
   },
