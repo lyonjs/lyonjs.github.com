@@ -36,13 +36,13 @@ export const schedule: Schedule[] = [
   },
   {
     date: '01/15/2025',
-    sponsor: axopen,
   },
   {
     date: '02/12/2025',
   },
   {
     date: '03/12/2025',
+    sponsor: axopen,
   },
   {
     date: '04/16/2025',
