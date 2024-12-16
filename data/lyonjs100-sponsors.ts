@@ -13,6 +13,7 @@ export const gold: Array<Sponsor> = [
     url: 'https://www.kolecto.fr/',
     logo: '/sponsors/kolecto.svg',
   },
+  { name: 'Akawaka', url: 'https://www.akawaka.fr/', logo: '/sponsors/akawaka.svg' },
 ];
 
 export const silver: Array<Sponsor> = [
@@ -20,7 +21,6 @@ export const silver: Array<Sponsor> = [
   zenika,
   bedrock,
   indy,
-  { name: 'Akawaka', url: 'https://www.akawaka.fr/', logo: '/sponsors/akawaka.svg' },
   theodo,
 ];
 
