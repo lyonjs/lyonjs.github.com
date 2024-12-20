@@ -4,6 +4,18 @@ import { bedrock, CBTW, indy, leWagon, malt, shodo, smile, theodo, wanadev, wild
 export const dataOverride: { [key: string]: Partial<Event> } = {
   'https://www.meetup.com/lyonjs/events/304691839': {
     sponsor: CBTW,
+    talks: [
+      {
+        title: 'Donnez des super pouvoirs à vos applications avec WebAssembly',
+        speakers: [
+          {
+            name: 'Philippe Charrière',
+            socialLink: 'https://x.com/k33g_org',
+          },
+        ],
+        videoLink: 'https://www.youtube.com/embed/T2VYIvJwFTs',
+      },
+    ],
   },
   'https://www.meetup.com/lyonjs/events/304182290': {
     sponsor: theodo,
