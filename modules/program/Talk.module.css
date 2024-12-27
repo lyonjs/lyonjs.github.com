@@ -1,0 +1,36 @@
+.container {
+  background-color: var(--background-card);
+  padding: 2.5rem;
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.title {
+  margin-top: 0;
+}
+
+.speaker {
+  flex-shrink: 0;
+}
+
+.description {
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  line-height: 28px;
+  overflow-wrap: break-word;
+}
+
+.description ul {
+  list-style: inside;
+  margin-bottom: 20px;
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    gap: 60px;
+    flex-direction: row;
+  }
+}

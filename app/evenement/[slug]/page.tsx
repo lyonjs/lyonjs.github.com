@@ -23,7 +23,7 @@ export default async function EventPage({ params: { slug } }: { params: { slug: 
         <EventMarkup event={event} />
       </main>
     );
-  } catch (e) {
+  } catch {
     notFound();
   }
 }
@@ -50,7 +50,7 @@ export async function generateMetadata({ params: { slug } }: { params: { slug: s
         description,
       },
     };
-  } catch (e) {
+  } catch {
     return {};
   }
 }
