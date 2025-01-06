@@ -1,8 +1,9 @@
 import { Metadata } from 'next';
 import { H1 } from '../../../modules/atoms/remark/Titles';
-import { speakers } from '../../../data/lyonjs100-speakers';
+import { program, speakers } from '../../../data/lyonjs100-speakers';
 import { Talk } from '../../../modules/program/Talk';
 import styles from './Programme.module.css';
+import { Heading } from '../../../modules/atoms/heading/Heading';
 
 const title = 'LyonJS | LyonJS 💯 | Programme';
 const description = 'Le programme de la journée du LyonJS 100';
@@ -31,8 +32,17 @@ export default function LyonJS100() {
         de la journée ! Le programme détaillé est encore en validation.
       </p>
       <div className={styles.container}>
-        {speakers.map((speaker) => (
-          <Talk speaker={speaker} key={speaker.name} />
+        {program.map((slot) => (
+          <>
+            <div className={styles.timeCard}>{slot.time}</div>
+            {slot.speaker ? (
+              <Talk speaker={slot.speaker} key={slot.time} />
+            ) : (
+              <article className={styles.slotCard} key={slot.time}>
+                <Heading Component="h2">{slot.title}</Heading>
+              </article>
+            )}
+          </>
         ))}
       </div>
     </main>
