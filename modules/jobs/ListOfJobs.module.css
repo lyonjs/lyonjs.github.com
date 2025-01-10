@@ -19,6 +19,7 @@
     border-color 100ms;
   border: 1px solid transparent;
   max-width: 800px;
+  height: 100%;
 }
 
 .card:hover {
@@ -49,12 +50,23 @@
 }
 
 .description {
-  font-size: 1rem;
+  font-size: 0.9rem;
   align-self: flex-start;
   color: var(--white-0);
   min-height: 72px;
   margin-top: 2rem;
   margin-bottom: 1rem;
+  flex-grow: 1;
+}
+
+.description p,
+.description ul {
+  margin-bottom: 10px;
+}
+
+.description ul {
+  list-style: initial;
+  margin-left: 20px;
 }
 
 .header .logo {

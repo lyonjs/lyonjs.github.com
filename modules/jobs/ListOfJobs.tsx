@@ -3,6 +3,9 @@ import styles from './ListOfJobs.module.css';
 import { H2 } from '../atoms/remark/Titles';
 import React from 'react';
 import { ButtonLink } from '../atoms/button/Button';
+import dynamic from 'next/dynamic';
+
+const ReactMarkdown = dynamic(() => import('react-markdown').then((module) => module.default));
 
 type Props = {
   jobs: Array<Job>;
@@ -20,7 +23,7 @@ export const ListOfJobs = ({ jobs }: Props) => {
                 <img className={styles.logo} src={job.sponsor.logo} alt={job.sponsor.name} />
               </div>
               <H2 className={styles.title}>{job.title}</H2>
-              <p className={styles.description}>{job.description}</p>
+              <ReactMarkdown className={styles.description}>{job.description}</ReactMarkdown>
               <img className={styles.logo} src={job.sponsor.logo} alt={job.sponsor.name} />
               <ButtonLink href={job.url} target="_blank" rel="noreferrer noopener" className={styles.participate}>
                 Voir l'annonce <span aria-hidden="true">&rarr;</span>
