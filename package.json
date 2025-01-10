@@ -20,7 +20,7 @@
     "@vercel/speed-insights": "^1.0.12",
     "dayjs": "^1.11.13",
     "lodash": "^4.17.21",
-    "motion": "^10.18.0",
+    "motion": "^11.0.0",
     "next": "14.2.21",
     "normalize.css": "8.0.1",
     "react": "19.0.0",
