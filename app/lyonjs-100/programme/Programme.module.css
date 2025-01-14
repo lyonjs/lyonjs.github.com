@@ -1,0 +1,44 @@
+.container {
+  display: flex;
+  gap: 20px;
+  padding: 20px 0;
+  flex-direction: column;
+  align-items: center;
+}
+
+.introduction {
+  color: var(--white-0);
+  margin-top: 24px;
+}
+
+.timeCard {
+  background-color: var(--main-color);
+  color: var(--background-page);
+  /*border-radius: 0.375em;*/
+  display: inline-flex;
+  align-items: center;
+  gap: 0.625em;
+  padding: 0.75em 4em;
+  transition: background-color 100ms;
+  font-weight: 500;
+  white-space: nowrap;
+  transform: translateY(100%);
+  z-index: 2;
+}
+
+.slotCard {
+  background-color: var(--background-card);
+  padding: 2.5rem;
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 40px;
+  width: 100%;
+}
+
+.slotCard h2 {
+  margin: 1.5rem 0 0.5rem;
+  text-align: center;
+  text-decoration: none;
+}

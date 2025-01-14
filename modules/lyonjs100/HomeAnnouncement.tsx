@@ -36,10 +36,15 @@ export function HomeAnnouncement() {
             Rendez-vous le <time dateTime="2025-02-21T09:00">21 février 2025</time> à l'
             <address>UGC de Part Dieu</address>.
           </span>
+          <div>
+            <ButtonLink href="/lyonjs-100" variant="secondary">
+              Plus d'info
+            </ButtonLink>
+          </div>
         </div>
         <div className={styles.cta}>
-          <ButtonLink href="/lyonjs-100">
-            Chope ta place ! <span aria-hidden="true">&rarr;</span>
+          <ButtonLink href="/lyonjs-100/programme">
+            Découvre le programme ! <span aria-hidden="true">&rarr;</span>
           </ButtonLink>
         </div>
       </div>
