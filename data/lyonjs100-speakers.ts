@@ -34,7 +34,7 @@ const jeremiePatonnier: Speaker = {
   talk: {
     title: "Deno, l'avenir du dev JS/TS ?",
     description:
-      "Deno est la nouvelle alternative à Node... si on en crois Ryan Dahl, le créateur de ces deux environnements ! Si Node est devenus un standard industriel pour le développement de serveur d'API et d'application Web Front, quel est l'intérêt de Deno ? Juste un runtime JS de plus ? Que nenni, Deno, c'est Node avec 10 d'expérience en plus, avec des paradigme plus moderne, des choix d'architecture plus robuste et tout un écosystème pour supporter l'usage de JavaScript et TypeScript à grande échelle. Il y a beaucoup à dire... alors si on se prenais un petit moment pour faire le tour de ce nouvel environnement d'exécution JS qui va très vraisemblablement changer nos pratiques de dev dans les 5 ans à venir ?",
+      "Deno est la nouvelle alternative à Node... si on en crois Ryan Dahl, le créateur de ces deux environnements ! Si Node est devenus un standard industriel pour le développement de serveur d'API et d'application Web Front, quel est l'intérêt de Deno ? Juste un runtime JS de plus ? Que nenni, Deno, c'est Node avec 10 d'expérience en plus, avec des paradigme plus moderne, des choix d'architecture plus robuste et tout un écosystème pour supporter l'usage de JavaScript et TypeScript à grande échelle. Il y a beaucoup à dire... alors si on se prenait un petit moment pour faire le tour de ce nouvel environnement d'exécution JS qui va très vraisemblablement changer nos pratiques de dev dans les 5 ans à venir ?",
   },
 };
 
@@ -99,30 +99,32 @@ Vous repartirez avec une nouvelle vision du métier de l'intégration web, des p
   },
 };
 
-const closing: Speaker = {
-  name: 'TODO',
-  avatarUrl: '/speakers/secret.png',
-  social: { twitter: 'TODO', linkedin: 'TODO' },
+const julienHuang: Speaker = {
+  name: 'Julien Huang',
+  avatarUrl: '/speakers/julien-huang.png',
+  social: { twitter: 'JulienHuang_dev', linkedin: 'julien-huang' },
   talk: {
-    title: 'TODO',
-    description: `TODO`,
+    title: 'Tout sur les composants serveur Nuxt',
+    description: `Tout le monde connaît les "server components" de React et Next. Mais qu’en est-il de l’écosystème VueJS ? Avec Nuxt, le méta-framework basé sur VueJS, nous avons aussi des composants serveur ! Bien que le nom soit le même, leur fonctionnement est différent.
+   
+Dans ce talk, nous verrons ce que sont les Islands ainsi que les composants serveur dans Nuxt, et ce qui les distingue des composants serveur de React et des Islands d’Astro.`,
   },
 };
 
 export const speakers: Array<Speaker> = [matthieuLux, jeremiePatonnier, jonnyBurger, ayoubAlouane];
 
 export const program: Array<{ time: string; speaker?: Speaker; title?: string }> = [
-  { time: '08h00', title: '🥐 Accueil & Petit déjeuner' },
-  { time: '09h00', title: '🎤 Keynote' },
-  { time: '09h30', speaker: matthieuLux },
-  { time: '10h30', title: '☕ Pause' },
-  { time: '10h50', speaker: ayoubAlouane },
-  { time: '11h50', speaker: jonnyBurger },
-  { time: '12h20', title: '🍽️ Déjeuner' },
-  { time: '14h00', speaker: julienSulpis },
-  { time: '15h00', speaker: manonCarbonnel },
-  { time: '16h00', title: '☕ Pause' },
-  { time: '16h20', speaker: jeremiePatonnier },
-  { time: '17h10', speaker: closing },
-  { time: '18h00', title: '🎉 Fin' },
+  { time: '08:00', title: '🥐 Accueil & Petit déjeuner' },
+  { time: '09:00', title: '🎤 Keynote' },
+  { time: '09:30', speaker: matthieuLux },
+  { time: '10:30', title: '☕ Pause' },
+  { time: '10:50', speaker: ayoubAlouane },
+  { time: '11:50', speaker: jonnyBurger },
+  { time: '12:20', title: '🍽️ Déjeuner' },
+  { time: '14:00', speaker: julienSulpis },
+  { time: '15:00', speaker: manonCarbonnel },
+  { time: '16:00', title: '☕ Pause' },
+  { time: '16:20', speaker: jeremiePatonnier },
+  { time: '17:10', speaker: julienHuang },
+  { time: '18:00', title: '🎉 Fin' },
 ];

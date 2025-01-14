@@ -34,7 +34,9 @@ export default function LyonJS100() {
       <div className={styles.container}>
         {program.map((slot) => (
           <>
-            <div className={styles.timeCard}>{slot.time}</div>
+            <time className={styles.timeCard} dateTime={`2025-02-21T${slot.time}`} title={slot.title}>
+              {slot.time}
+            </time>
             {slot.speaker ? (
               <Talk speaker={slot.speaker} key={slot.time} />
             ) : (
