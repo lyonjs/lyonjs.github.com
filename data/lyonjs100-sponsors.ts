@@ -23,8 +23,8 @@ export const _365talents: Sponsor = {
   logo: '/sponsors/365Talent.svg',
 };
 
-export const gold: Array<Sponsor> = [malt, fulll, kolecto];
+export const gold: Array<Sponsor> = [malt, fulll, kolecto, akawaka];
 
-export const silver: Array<Sponsor> = [_365talents, zenika, bedrock, indy, akawaka, theodo];
+export const silver: Array<Sponsor> = [_365talents, zenika, bedrock, indy, theodo];
 
 export const bronze = [cleverCloud, wanadev, feelinjob];
