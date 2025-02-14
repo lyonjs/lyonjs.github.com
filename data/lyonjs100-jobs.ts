@@ -180,6 +180,96 @@ const silverSponsorJobs: Array<Job> = [
   - Tu as une légitimité technique grâce à tes connaissances en d’architecture, en test et sur des sujets DevOps ou Monitoring.
   - Tu veux rester proche de l’opérationnel en participant à la delivery et aux code-reviews`,
   },
+  {
+    title: 'Dev FullStack Java Vue',
+    url: 'https://www.linkedin.com/jobs/view/4141614425/',
+    sponsor: zenika,
+    type: 'CDI',
+    description: `
+Inspiré par le principe Kaizen ou "le changement pour le meilleur", Zenika a vu le jour en 2006.
+Aujourd’hui, avec 550 personnes réparties sur 14 agences en France et à l'international. Nous
+plaçons l’amélioration continue au cœur de notre quête de l’excellence, accompagnant nos
+clients dans les défis technologiques les plus ambitieu
+
+Notre réussite repose sur nos consultant/es et la confiance mutuelle qui nous lie. Cela se tradu
+par un principe bottom up, où l'autonomie et la responsabilisation encouragent les idées et les
+propositions dont la mise en œuvre est facilitée par un management de proximité. Zenika est
+aujourd’hui une Best Workplace que nous avons co-construite avec une organisation horizontale.
+Elle repose sur des engagements incarnés à tous les niveaux :
+* Une culture du partage : La transmission de savoirs est essentielle. Nous animons cette
+culture à travers des formations, événements, conférences, communautés de pratiques,
+publications et un engagement fort dans l'open source.
+* Un suivi de carrière et un accompagnement de proximité : Convaincus qu'une carrière
+peut évoluer de multiples façons, nous avons conçu le CareerPath, un parcours sur
+mesure qui aligne missions, formations, certifications et mentorat avec tes objecti
+professionnels pour soutenir ta progression vers divers rôles comme : formateur·rice,
+leader technique, architecte, manager de carrière, directeur·rice technique, speaker·euse
+et bien d’autres.
+* Un juste équilibre vie privée / vie professionnelle : nous t'offrons une flexibilité sur t
+horaires et le télétravail, convaincus que ton implication Zenika et ton sens du service à
+l'égard de ton client guidera tes choix.
+* Un engagement sociétal et écologique : Nous travaillons sur notre empreinte carbone en
+suivant de près notre bilan et en déployant des actions concrètes. Nous mettons aussi à
+ta disposition des moyens pour t’investir dans des associations et des partenariats
+durables notamment en faveur de l’inclusion des femmes dans la tech.
+Nous plaçons nos consultant/es au cœur de notre réussite en leur offrant les moyens de
+façonner leur métier et d’exprimer leur potentiel. C’est pourquoi chaque agence locale exprime
+ces engagements avec ses spécificités que tu découvriras lors de ton process de recrutemen
+Et toi alors, te reconnais-tu dans l’esprit Zenika ?
+Être consultant/e chez Zenika c’est bien plus que déployer des compétences techniques. C’est
+proposer des solutions techniques au service d’un produit qui répond à un besoin fonctionnel. En
+tant que Consultant/e Fullstack Java Vue, tu joueras un rôle clé dans l’accompagnement de nos
+clients pour bâtir des environnements robustes et collaboratifs. Concrètement, cela signifie
+* Concevoir des architectures techniques sur-mesure pour intégrer et déployer des
+solutions de manière fluide et continu
+
+* Participer à la définition des fonctionnalités et de la roadma
+* Intervenir sur tout le processus d’un projet agile : de la conception, au développement, en
+passant par les tests tout en respectant les bonnes pratiques Craft.
+Compétences : Java 11 à 23, Spring, Quarkus, SQL, CI/CD, Gitlab CI, Jenkins, JUnit, Vue, Jest,
+Playwright, nuxt, vitest, vite
+👉 Apporte ta valeur ajoutée de conseil
+* Ton écoute active te permet de bien comprendre le besoin derrière la demande du client
+et d’être force de proposition.
+* Tu partages ton savoir avec les membres de ton équipe et tu permets ainsi l’amélioration
+continue au niveau du collectif
+* Ta culture transverse Craft, DevOps, Lean, Agilité te permet de proposer et mettre en
+place des bonnes pratiques.
+* Tu fais preuve d’adaptabilité et de sens des priorités en fonction du contexte technique et
+fonctionnel de ton client.
+En parallèle de tes missions clients, tu l’auras compris toutes tes idées et propositions sont les
+bienvenues pour faire vivre notre culture, et t’impliquer dans notre démarche d’amélioration
+continue.
+
+Envie d’apporter ta pierre à l'édifice ? Alors voici ce qui t’attend
+󰚈 L’expérience candidat
+Parce que l’amélioration continue commence dès ta candidature, nous mettons un point
+d’honneur à proposer une expérience candidat/e 🌟 à la hauteur de l’expérience Zenika. Suite à
+ta candidature, tu recevras une réponse sous deux semaines maximum.
+* Si cette dernière est retenue, tu échangeras avec notre équipe recrutement, le moment
+pour nous d’apprendre à nous connaître mutuellement.
+Le premier échange est concluant ? Deux échanges suivront pour mieux cerner tes attentes, ta
+posture et tes compétences techniques.
+* Échange technique avec un binôme de consultant/es autour d’un Live Coding, l'occasion
+de comprendre comment tu réfléchis et interagit avec tes pair
+* Échange vision avec un binôme managérial, l’occasion de challenger ta posture de
+conseil et de te projeter dans l’écosystème Zenika.
+Le process est terminé, compte sur nous pour te faire un retour le plus transparent et constructif.
+C’est positif, super ! 🎉 Nous te ferons une proposition d’embauche 🖋, et si tu nous rejoins nous
+t’accompagnerons de l’onboarding jusqu’à l’offboarding en respectant les engagements que
+nous t’avons présenté.
+
+Nous parlerons en toute transparence de notre politique de rémunération dès le premier
+échange. Chez Zenika, l’équité à la compétence prime sur les années d’expérience. Tes qualités
+de consultant/e et tes expertises techniques nous permettront de te faire la proposition la plus
+juste.
+Chez Zenika, la RSE a une place centrale dans toutes nos décisions, c’est pourquoi nous nous
+engageons à garantir l’égalité de traitement pour chaque candidature. Nous sommes convaincus
+que la diversité apporte de la valeur, et l’expérience candidat est au cœur de nos préoccupations.
+Si tu as des besoins spécifiques, nous adapterons ton processus de recrutement et t
+intégration en conséquence.
+    `,
+  },
 ];
 
 export const lyonJS100Jobs = [...goldSponsorJobs, ...silverSponsorJobs];
