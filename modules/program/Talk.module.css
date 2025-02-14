@@ -14,7 +14,8 @@
 
 .speaker {
   display: flex;
-  align-items: first;
+  align-items: flex-start;
+  justify-content: center;
   gap: 2rem;
   flex-shrink: 0;
 }

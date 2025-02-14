@@ -9,13 +9,7 @@ import dynamic from 'next/dynamic';
 const ReactMarkdown = dynamic(() => import('react-markdown').then((module) => module.default));
 
 export const Talk = ({ speakers, talk }: { speakers: Speaker[]; talk?: TalkType }) => {
-  let currentTalk;
-
-  if (speakers[0].talk) {
-    currentTalk = speakers[0].talk;
-  } else {
-    currentTalk = talk;
-  }
+  const currentTalk = talk || speakers[0].talk;
 
   return (
     <article className={styles.container}>
