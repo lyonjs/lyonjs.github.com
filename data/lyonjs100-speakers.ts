@@ -1,9 +1,11 @@
+export type Talk = {
+  title: string;
+  description?: string;
+};
+
 export type Speaker = {
   name: string;
-  talk?: {
-    title: string;
-    description?: string;
-  };
+  talk?: Talk;
   avatarUrl: string;
   social: {
     twitter?: string;
@@ -56,16 +58,16 @@ None of these will be in-depth but by the end of the talk, you shall have no fea
   },
 };
 
-const ayoubAlouane: Speaker = {
-  name: `Ayoub Alouane`,
-  avatarUrl: '/speakers/ayoub-alouane.png',
-  social: { twitter: 'alouane_med', linkedin: 'med-ayb-alouane' },
-  talk: {
-    title: "La Performance Web : Le cas de l'Afrique",
-    description: `Nous partons souvent du principe que tout le monde dispose d'une bonne connexion Internet et d'un matériel informatique de haute spécification. Bien que cela puisse être vrai dans certaines régions, ce n'est pas le cas dans le monde entier. Je souhaite attirer l'attention sur l'Afrique, où de nombreux pays luttent contre de faibles connexions 3G coûteuses, en fonction de la quantité de données consommées. Ceci est dû à l'infrastructure limitée du continent, conduisant à une dépendance aux connexions mobiles.
+const antoineCaron: Speaker = {
+  name: `Antoine Caron`,
+  avatarUrl: '/orgas/antoine.jpg',
+  social: { twitter: 'Slashgear_', linkedin: 'antoine-caron-slash' },
+};
 
-Compte tenu de ces circonstances, une utilisation efficace des données avec une bonne performance web devient une priorité. Ainsi, notre session se concentrera sur les défis rencontrés par les utilisateurs et les développeurs africains, et comment le téléchargement et l'exécution de grandes quantités de JavaScript exacerbe les problèmes de consommation de données et de performance. Nous explorerons comment les frameworks js existants ont tenté de résoudre le problème et comment Qwik, avec son approche innovante de la Resumability, présente une solution transformatrice à ces défis. Contrairement aux SPAs traditionnels, la Resumability de Qwik réduit considérablement la charge initiale de JavaScript, permettant aux applications de devenir interactives plus rapidement, même sur des connexions lentes.`,
-  },
+const julesPoissonnet: Speaker = {
+  name: 'Jules Poissonnet',
+  avatarUrl: '/speakers/jules-poissonnet.jpg',
+  social: { linkedin: 'jules-poissonnet' },
 };
 
 const julienSulpis: Speaker = {
@@ -111,20 +113,39 @@ Dans ce talk, nous verrons ce que sont les Islands ainsi que les composants serv
   },
 };
 
-export const speakers: Array<Speaker> = [matthieuLux, jeremiePatonnier, jonnyBurger, ayoubAlouane];
+export const speakers: Array<Speaker> = [matthieuLux, jeremiePatonnier, jonnyBurger, antoineCaron];
 
-export const program: Array<{ time: string; speaker?: Speaker; title?: string }> = [
+export const program: Array<{ time: string; speaker?: Speaker[]; title?: string; talk?: Talk }> = [
   { time: '08:00', title: '🥐 Accueil & Petit déjeuner' },
   { time: '09:00', title: '🎤 Keynote' },
-  { time: '09:30', speaker: matthieuLux },
+  { time: '09:30', speaker: [matthieuLux] },
   { time: '10:30', title: '☕ Pause' },
-  { time: '10:50', speaker: ayoubAlouane },
-  { time: '11:50', speaker: jonnyBurger },
+  {
+    time: '10:50',
+    speaker: [julesPoissonnet, antoineCaron],
+    talk: {
+      title: "Tester c'est tricher",
+      description: `
+Dans le monde du développement logiciel, la pyramide des tests est un modèle souvent pris pour acquis. Pourtant, est-elle vraiment la clé pour garantir une couverture de tests optimale et une maintenance efficace ? Ce talk propose de questionner ce modèle en montrant que "tester, c'est tricher" si l'on se limite à une vision traditionnelle des tests.
+
+À travers des exemples concrets et des démonstrations en live, nous explorerons les limites de la pyramide des tests. Nous verrons pourquoi il est essentiel de revoir la place des tests end-to-end (E2E) et comment une bonne stratégie de test repose sur la compréhension des comportements plutôt que sur une approche quantitative. Le tout avec une approche pragmatique qui met l'accent sur la valeur ajoutée des tests et leur impact à long terme.
+
+Nous proposerons des réponses aux questions souvent évoquées:
+
+"Est-ce que tester avec des mocks c'est moins bien que sans ?"
+"Est-ce compliqué de setup une stack de tests E2E en 2025 ?"
+"Est-ce que le test coverage est une metric intéressante ?"
+"Quels outils on recommande dans un stack de test en 2025 ?"
+Ce talk s'adresse aux développeurs, testeurs et architectes qui souhaitent repenser leur manière d'aborder les tests, tout en optimisant le temps de développement et la qualité du produit. L'objectif est de leur fournir des clés pour construire une stratégie de test adaptée à leurs besoins, afin de maximiser la valeur de leurs tests tout en minimisant les coûts et les efforts de maintenance.
+  `,
+    },
+  },
+  { time: '11:50', speaker: [jonnyBurger] },
   { time: '12:20', title: '🍽️ Déjeuner' },
-  { time: '14:00', speaker: julienSulpis },
-  { time: '15:00', speaker: manonCarbonnel },
+  { time: '14:00', speaker: [julienSulpis] },
+  { time: '15:00', speaker: [manonCarbonnel] },
   { time: '16:00', title: '☕ Pause' },
-  { time: '16:20', speaker: jeremiePatonnier },
-  { time: '17:10', speaker: julienHuang },
+  { time: '16:20', speaker: [jeremiePatonnier] },
+  { time: '17:10', speaker: [julienHuang] },
   { time: '18:00', title: '🎉 Fin' },
 ];

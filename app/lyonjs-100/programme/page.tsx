@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 import { H1 } from '../../../modules/atoms/remark/Titles';
-import { program, speakers } from '../../../data/lyonjs100-speakers';
+import { program } from '../../../data/lyonjs100-speakers';
 import { Talk } from '../../../modules/program/Talk';
 import styles from './Programme.module.css';
 import { Heading } from '../../../modules/atoms/heading/Heading';
@@ -38,7 +38,7 @@ export default function LyonJS100() {
               {slot.time}
             </time>
             {slot.speaker ? (
-              <Talk speaker={slot.speaker} key={slot.time} />
+              <Talk speakers={slot.speaker} key={slot.time} talk={slot.talk} />
             ) : (
               <article className={styles.slotCard} key={slot.time}>
                 <Heading Component="h2">{slot.title}</Heading>

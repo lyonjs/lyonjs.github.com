@@ -13,6 +13,9 @@
 }
 
 .speaker {
+  display: flex;
+  align-items: first;
+  gap: 2rem;
   flex-shrink: 0;
 }
 
