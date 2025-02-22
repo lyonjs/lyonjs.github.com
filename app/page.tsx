@@ -15,10 +15,10 @@ export default function Home() {
   return (
     <main>
       <HomeHero />
-      <HomeAnnouncement />
       <NextEvent />
       <SeePastEvents />
       <Numbers />
+      <HomeAnnouncement />
       <LastReplays />
       <Sponsors title="Sponsors" sponsors={sponsors} withLink />
       <Sponsors title="Partneraires et Conférences" sponsors={partners} />

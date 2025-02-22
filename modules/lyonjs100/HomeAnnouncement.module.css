@@ -1,9 +1,3 @@
-.header {
-  position: absolute;
-  top: -6rem;
-  left: 1rem;
-}
-
 .container {
   --image-width: 400px;
 }
@@ -56,10 +50,6 @@
     object-fit: cover;
     object-position: bottom;
     border-radius: 0.5rem;
-  }
-
-  .header {
-    left: calc(var(--image-width) + 1rem);
   }
 
   .cta {
