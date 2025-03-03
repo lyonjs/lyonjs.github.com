@@ -61,7 +61,7 @@ export const fetchNumbers = async (): Promise<Numbers[]> => {
       text: 'Événements organisés',
     },
     {
-      value: 3741,
+      value: 3831,
       text: 'Inscrits sur Meetup',
     },
     {
