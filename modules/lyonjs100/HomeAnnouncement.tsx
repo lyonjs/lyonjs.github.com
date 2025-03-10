@@ -17,22 +17,17 @@ export function HomeAnnouncement() {
         <div className={styles.description}>
           <p>LyonJS a fêté sa 100ème édition et ses 13 ans.</p>
           <p>
-            Grâce au support de nombreux sponsors, nous vous avons concocté une conférence d'une journée. On vous
-            sélectionne des talks de qualité, des speakers de renom et des surprises!
+            Grâce au support de nombreux sponsors, nous vous avons concocté une conférence d'une journée. On vous a
+            sélectionné des talks de qualité, des speakers de renom et des surprises!
           </p>
           <p>
             Une journée de conférence dans une salle de cinéma privatisée rien que pour nous et un buffet traiteur le
             midi pour se retrouver et discuter.
           </p>
-          <div>
-            <ButtonLink href="/lyonjs-100" variant="secondary">
-              Plus d'info
-            </ButtonLink>
-          </div>
         </div>
         <div className={styles.cta}>
-          <ButtonLink href="/lyonjs-100/programme">
-            Retrouvez le programme ! <span aria-hidden="true">&rarr;</span>
+          <ButtonLink href="/lyonjs-100">
+            Retrouvez les replays ! <span aria-hidden="true">&rarr;</span>
           </ButtonLink>
         </div>
       </div>

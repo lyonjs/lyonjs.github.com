@@ -115,13 +115,10 @@ Dans ce talk, nous verrons ce que sont les Islands ainsi que les composants serv
 
 export const speakers: Array<Speaker> = [matthieuLux, jeremiePatonnier, jonnyBurger, antoineCaron];
 
-export const program: Array<{ time: string; speaker?: Speaker[]; title?: string; talk?: Talk }> = [
-  { time: '08:00', title: '🥐 Accueil & Petit déjeuner' },
-  { time: '09:00', title: '🎤 Keynote' },
-  { time: '09:30', speaker: [matthieuLux] },
-  { time: '10:30', title: '☕ Pause' },
+export const program: Array<{ speaker: Speaker[]; talk?: Talk; youtubeId: string }> = [
+  { speaker: [matthieuLux], youtubeId: 'xc169yA-pA8' },
   {
-    time: '10:50',
+    youtubeId: 'I_zNxGqRI3w',
     speaker: [julesPoissonnet, antoineCaron],
     talk: {
       title: "Tester c'est tricher",
@@ -140,12 +137,9 @@ Ce talk s'adresse aux développeurs, testeurs et architectes qui souhaitent repe
   `,
     },
   },
-  { time: '11:50', speaker: [jonnyBurger] },
-  { time: '12:20', title: '🍽️ Déjeuner' },
-  { time: '14:00', speaker: [julienSulpis] },
-  { time: '15:00', speaker: [manonCarbonnel] },
-  { time: '16:00', title: '☕ Pause' },
-  { time: '16:20', speaker: [jeremiePatonnier] },
-  { time: '17:10', speaker: [julienHuang] },
-  { time: '18:00', title: '🎉 Fin' },
+  { speaker: [jonnyBurger], youtubeId: 'uuEYP5tc4II' },
+  { speaker: [julienSulpis], youtubeId: 'pfPK9LA6rf8' },
+  { speaker: [manonCarbonnel], youtubeId: 'jZGWoGgeeJ0' },
+  { speaker: [jeremiePatonnier], youtubeId: 'Do9c1x4lJVQ' },
+  { speaker: [julienHuang], youtubeId: 'Oj732xo77_g' },
 ];

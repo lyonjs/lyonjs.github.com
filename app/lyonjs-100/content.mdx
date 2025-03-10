@@ -1,58 +1,34 @@
-import { ListOfPeople } from '../../modules/person/ListOfPeople';
 import { Sponsors } from '../../modules/sponsors/Sponsors';
 import { gold, silver, bronze } from '../../data/lyonjs100-sponsors';
-import { speakers } from '../../data/lyonjs100-speakers';
 import Image from 'next/image';
 import cinema from './cinema.jpg';
 import styles from './LyonJS100.module.css';
-import { ButtonLink } from '../../modules/atoms/button/Button';
-import { lyonJS100Jobs } from '../../data/lyonjs100-jobs';
-import { ListOfJobs } from '../../modules/jobs/ListOfJobs';
+import { Programme } from './programme';
 
 <div className={styles.hero}>
   <Image className={styles.background} src={cinema} width={1200} alt="" />
   <img className={styles.logo} src="/lyonjs100/LyonJS_100.webp" width={1440} height={810} alt="Logo du LyonJS 100" />
 </div>
 
-## Qu'est ce que LyonJS 100 ?
+# Qu'est ce que LyonJS 100 ?
 
 Nous sommes ravis d'annoncer que pour célébrer notre 100ème événement, LyonJS organise une journée de conférence exceptionnelle ! 🎉
 
-Nous ne pouvions pas laisser passer cette occasion spéciale sans marquer le coup, c'est pourquoi nous avons prévu une journée entière de conférences, de rencontres et de célébrations pour célébrer ça ensemble.
+Nous ne pouvions pas laisser passer cette occasion spéciale sans marquer le coup, c'est pourquoi nous avons proposé une journée entière de conférences le 21 février 2025.
 
-Pour se faire nous avons privatisé une **salle de cinéma pour l'occasion**, de quoi vous offrir un cadre agréable pour une journée rythmée par des talks de qualité.
-Un bon petit déjeuner pour commencer la journée et un buffet pour le déjeuner dans une zone du cinéma réservée pour l'occasion.
+Pour se faire nous avons privatisé une **salle de cinéma de l'UGC Part dieu pour l'occasion**, de quoi offrir un cadre agréable pour une journée rythmée par des talks de qualité.
 
-## En résumé
-
-- **📅 Date** : 21 février 2025
-- **📌 Lieu** : UGC Part dieu
-- **🎟️ Ouverture de la billetterie** : 6 décembre 2024
-
-## Programme
+## Programme et Replay
 
 Le programme complet de la journée est disponible ci-dessous.
 
-<div className={styles.cta}>
-  <ButtonLink href="/lyonjs-100/programme">
-    Programme <span aria-hidden="true">&rarr;</span>
-  </ButtonLink>
-</div>
+<Programme />
 
 ## Sponsors
 
 Un grand merci à nos sponsors pour leur soutien continu.
 Nous sommes reconnaissants de leur contribution à cet événement spécial.
-Certains de nos sponsors seront présents durant la journée, n'hésitez pas à aller à leur rencontre pour en apprendre plus sur leurs activités.
-
-Nos sponsors sont également à la recherche de nouveaux talents, alors n'hésitez pas à consulter les offres d'emploi disponibles sur notre site.
 
 <Sponsors title="🥇Sponsors Gold" sponsors={gold} />
 <Sponsors title="🥈Sponsors Silver" sponsors={silver} />
 <Sponsors title="🥉Sponsors Bronze" sponsors={bronze} />
-
-## Recrutement
-
-Nos sponsors ont des offres d'emploi à vous proposer. N'hésites pas à les consulter, postuler ou les contacters si vous êtes intéressé·es.
-
-<ListOfJobs jobs={lyonJS100Jobs} />

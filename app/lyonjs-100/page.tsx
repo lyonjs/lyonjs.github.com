@@ -7,7 +7,8 @@ export default function LyonJS100() {
 }
 export const revalidate = 3600;
 const title = 'LyonJS | LyonJS 💯';
-const description = "Qu'est ce que le LyonJS 100 ? Comment participer à la journée de conférence ?";
+const description =
+  "Qu'est ce que le LyonJS 100 ? Comment participer à la journée de conférence ? Les replays des conférences";
 
 export const metadata: Metadata = {
   title,

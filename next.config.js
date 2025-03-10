@@ -28,6 +28,15 @@ const nextConfig = {
       },
     ],
   },
+  redirects() {
+    return [
+      {
+        source: '/lyonjs-100/programme',
+        destination: '/lyonjs-100',
+        permanent: true,
+      },
+    ];
+  },
   headers() {
     return [
       {

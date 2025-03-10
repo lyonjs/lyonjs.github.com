@@ -1,5 +1,5 @@
 .container {
-  --image-width: 400px;
+  --image-width: 300px;
 }
 
 .description {
@@ -35,7 +35,7 @@
 
 @media screen and (min-width: 768px) {
   .description {
-    margin-left: calc(var(--image-width) - 1rem);
+    margin-left: calc(var(--image-width) + 2rem);
   }
 
   .image {
