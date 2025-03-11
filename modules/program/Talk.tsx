@@ -5,10 +5,11 @@ import { Heading } from '../atoms/heading/Heading';
 import { PersonDisplay } from '../person/PersonDisplay';
 import { Collapsible } from '../atoms/collapsible/Collapsible';
 import dynamic from 'next/dynamic';
+import { ButtonLink } from '../atoms/button/Button';
 
 const ReactMarkdown = dynamic(() => import('react-markdown').then((module) => module.default));
 
-export const Talk = ({ speakers, talk }: { speakers: Speaker[]; talk?: TalkType }) => {
+export const Talk = ({ speakers, talk, replay }: { speakers: Speaker[]; talk?: TalkType; replay?: string }) => {
   const currentTalk = talk || speakers[0].talk;
 
   return (
@@ -21,6 +22,11 @@ export const Talk = ({ speakers, talk }: { speakers: Speaker[]; talk?: TalkType 
           <Collapsible className={styles.description}>
             <ReactMarkdown>{currentTalk.description}</ReactMarkdown>
           </Collapsible>
+        )}
+        {replay && (
+          <ButtonLink href={replay} target="_blank">
+            Regarder le replay
+          </ButtonLink>
         )}
       </div>
       <div className={styles.speaker}>
