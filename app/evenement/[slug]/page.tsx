@@ -9,7 +9,8 @@ import { Metadata } from 'next';
 
 export const revalidate = 3600;
 
-export default async function EventPage({ params: { slug } }: { params: { slug: string } }) {
+export default async function EventPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
   const eventId = parserEventIdFromSlug(slug);
   if (!eventId) {
     notFound();
@@ -28,7 +29,8 @@ export default async function EventPage({ params: { slug } }: { params: { slug: 
   }
 }
 
-export async function generateMetadata({ params: { slug } }: { params: { slug: string } }): Promise<Metadata> {
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params;
   const eventId = parserEventIdFromSlug(slug);
   if (!eventId) {
     return {};
