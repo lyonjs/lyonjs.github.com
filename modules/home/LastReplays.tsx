@@ -24,7 +24,9 @@ export const LastReplays = async () => {
         event,
         videoId: talk.videoLink?.split(/embed\//)[1],
       })) as Item[];
-      return [...accumulator, ...(newEvents || [])] as Item[];
+      accumulator.push(...((newEvents || []) as Item[]));
+
+      return accumulator;
     }, [])
     .slice(0, 6);
 
