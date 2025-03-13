@@ -19,9 +19,7 @@ export const Location: FC<Props> = ({ venue, className }) => (
     <div className={styles.addressContainer}>
       <p>{venue.name}</p>
       <p>{venue.address}</p>
-      <p>
-        {venue.postalCode} {venue.city}
-      </p>
+      <p>{venue.city}</p>
     </div>
   </a>
 );

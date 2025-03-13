@@ -26,7 +26,6 @@ const queryForNextEvents = gql`
               name
               address
               city
-              postalCode
               lat
               lng
             }
