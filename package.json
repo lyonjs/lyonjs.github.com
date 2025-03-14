@@ -40,7 +40,7 @@
     "encoding": "^0.1.13",
     "eslint": "9.21.0",
     "eslint-config-next": "14.2.23",
-    "eslint-config-prettier": "10.0.1",
+    "eslint-config-prettier": "10.1.1",
     "graphql": "^16.9.0",
     "graphql-request": "^7.1.0",
     "husky": "^9.0.0",
