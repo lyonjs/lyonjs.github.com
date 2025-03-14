@@ -15,8 +15,9 @@ import { ORGANISATION_MARKUP } from './org-markup';
 
 dayjs.locale('fr');
 
-export default function AppLayout({ children }: { children: ReactNode }) {
-  const nonce = headers().get('x-nonce');
+export default async function AppLayout({ children }: { children: ReactNode }) {
+  const header = await headers();
+  const nonce = header.get('x-nonce');
 
   return (
     <html lang="fr-FR">
