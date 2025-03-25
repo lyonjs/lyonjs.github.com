@@ -31,7 +31,7 @@ export const EventDetail: React.FC<Props> = async ({ event }) => {
           {event.talks
             .filter((talk) => talk.videoLink)
             .map((talk) => (
-              <iframe sandbox="" key={talk.title} width="100%" height="auto" src={talk.videoLink} loading="lazy" />
+              <iframe key={talk.title} width="100%" height="auto" src={talk.videoLink} loading="lazy" />
             ))}
         </div>
       </section>
