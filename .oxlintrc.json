@@ -7,7 +7,8 @@
     "perf": "error"
   },
   "rules": {
-    "react-in-jsx-scope": "off"
+    "react-in-jsx-scope": "off",
+    "react/iframe-missing-sandbox": "off"
   },
   "settings": {
     "jsx-a11y": {

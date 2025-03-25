@@ -17,6 +17,32 @@ import {
 export const dataOverride: { [key: string]: Partial<Event> } = {
   'https://www.meetup.com/lyonjs/events/306419959': {
     sponsor: axopen,
+    talks: [
+      {
+        title: 'Créez votre application JS en full serverless',
+        speakers: [
+          {
+            name: 'Louis Noyaret',
+            socialLink: 'https://www.linkedin.com/in/louis-noyaret-b1b241184/',
+          },
+          {
+            name: 'Nathan Mittelette',
+            socialLink: 'https://www.linkedin.com/in/nathan-mittelette/',
+          },
+        ],
+        videoLink: 'https://www.youtube.com/embed/EdxJYgj7tnU',
+      },
+      {
+        title: 'La planète en danger, des nouvelles du Front !',
+        speakers: [
+          {
+            name: 'Sylvain Gougouzian',
+            socialLink: 'https://www.linkedin.com/in/sylvain-gougouzian/',
+          },
+        ],
+        videoLink: 'https://www.youtube.com/embed/YaTdmTyXvJM',
+      },
+    ],
   },
   'https://www.meetup.com/lyonjs/events/304691839': {
     sponsor: CBTW,
