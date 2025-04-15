@@ -83,3 +83,9 @@ export const axopen: Sponsor = {
   logo: '/sponsors/axopen.svg',
   url: 'https://www.axopen.com/',
 };
+
+export const fulll: Sponsor = {
+  name: 'Fulll',
+  url: 'https://www.fulll.fr/',
+  logo: '/sponsors/fulll.webp',
+};

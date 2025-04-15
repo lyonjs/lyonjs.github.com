@@ -1,11 +1,5 @@
 import { Sponsor } from '../modules/event/types';
-import { bedrock, cleverCloud, indy, malt, theodo, wanadev, zenika } from './sponsors';
-
-export const fulll: Sponsor = {
-  name: 'Fulll',
-  url: 'https://www.fulll.fr/',
-  logo: '/sponsors/fulll.webp',
-};
+import { bedrock, cleverCloud, fulll, indy, malt, theodo, wanadev, zenika } from './sponsors';
 
 export const kolecto: Sponsor = {
   name: 'Kolecto',
