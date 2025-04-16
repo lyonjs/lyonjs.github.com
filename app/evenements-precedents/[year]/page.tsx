@@ -2,6 +2,8 @@ import { H1 } from '../../../modules/atoms/remark/Titles';
 import React from 'react';
 import { Metadata } from 'next';
 import { PastEvents } from './pastEvents';
+import { fetchPastEvents } from '../../../modules/meetup/queries/past-events.api';
+import _uniq from 'lodash/uniq';
 
 export const revalidate = 3600;
 const DEFAULT_YEAR = `${new Date().getFullYear()}`;
@@ -34,4 +36,16 @@ export async function generateMetadata({ params }: { params: Promise<{ year?: st
       description,
     },
   };
+}
+
+export async function generateStaticParams() {
+  const allPastEvents = await fetchPastEvents();
+  const yearsFromEvents: string[] = allPastEvents
+    .map((event) => new Date(event.dateTime).getFullYear())
+    .map((year) => year.toString());
+  const years = _uniq(yearsFromEvents);
+
+  return years.map((year) => ({
+    year,
+  }));
 }

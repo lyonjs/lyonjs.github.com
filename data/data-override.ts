@@ -3,6 +3,7 @@ import {
   axopen,
   bedrock,
   CBTW,
+  fulll,
   indy,
   leWagon,
   malt,
@@ -15,6 +16,32 @@ import {
 } from './sponsors';
 
 export const dataOverride: { [key: string]: Partial<Event> } = {
+  'https://www.meetup.com/lyonjs/events/306992187': {
+    sponsor: fulll,
+    talks: [
+      {
+        title: 'Refondre sans tout casser : notre migration vers une architecture microfrontend',
+        speakers: [
+          {
+            name: 'Nicolas Lefebvre',
+          },
+          {
+            name: 'Maël Martin',
+            socialLink: 'https://www.linkedin.com/in/maelmartin/',
+          },
+        ],
+      },
+      {
+        title: 'Rendre ses API idempotentes avec NestJS',
+        speakers: [
+          {
+            name: 'Johann Pardanaud',
+            socialLink: 'https://www.linkedin.com/in/johann-pardanaud/',
+          },
+        ],
+      },
+    ],
+  },
   'https://www.meetup.com/lyonjs/events/306419959': {
     sponsor: axopen,
     talks: [
