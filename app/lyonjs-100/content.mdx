@@ -4,6 +4,8 @@ import Image from 'next/image';
 import cinema from './cinema.jpg';
 import styles from './LyonJS100.module.css';
 import { Programme } from './programme';
+import { PhotoAlbum } from '../../modules/event/components/PhotoAlbum';
+import { lyonjs100Photos } from '../../data/lyonjs100-photos';
 
 <div className={styles.hero}>
   <Image className={styles.background} src={cinema} width={1200} alt="" />
@@ -12,17 +14,21 @@ import { Programme } from './programme';
 
 # Qu'est ce que LyonJS 100 ?
 
-Nous sommes ravis d'annoncer que pour célébrer notre 100ème événement, LyonJS organise une journée de conférence exceptionnelle ! 🎉
+Nous sommes ravis d'annoncer que, pour célébrer notre 100ème événement, LyonJS organise une journée de conférence exceptionnelle ! 🎉
 
-Nous ne pouvions pas laisser passer cette occasion spéciale sans marquer le coup, c'est pourquoi nous avons proposé une journée entière de conférences le 21 février 2025.
+Nous ne pouvions pas laisser passer cette occasion spéciale sans marquer le coup. C'est pourquoi nous avons proposé une journée entière de conférences le 21 février 2025.
 
-Pour se faire nous avons privatisé une **salle de cinéma de l'UGC Part dieu pour l'occasion**, de quoi offrir un cadre agréable pour une journée rythmée par des talks de qualité.
+Pour ce faire, nous avons privatisé une **salle de cinéma de l'UGC Part-Dieu pour l'occasion**, de quoi offrir un cadre agréable pour une journée rythmée par des talks de qualité.
 
 ## Programme et Replay
 
 Le programme complet de la journée est disponible ci-dessous.
 
 <Programme />
+
+<div className={styles.container}>
+  <PhotoAlbum photoAlbum={lyonjs100Photos} />
+</div>
 
 ## Sponsors
 
