@@ -57,6 +57,7 @@ export const schedule: Schedule[] = [
   },
   {
     date: '10/15/2025',
+    sponsor: indy,
   },
   {
     date: '11/19/2025',
