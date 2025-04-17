@@ -30,6 +30,7 @@ export const dataOverride: { [key: string]: Partial<Event> } = {
             socialLink: 'https://www.linkedin.com/in/maelmartin/',
           },
         ],
+        videoLink: 'https://www.youtube.com/embed/0m495GAYIvU',
       },
       {
         title: 'Rendre ses API idempotentes avec NestJS',
@@ -39,6 +40,7 @@ export const dataOverride: { [key: string]: Partial<Event> } = {
             socialLink: 'https://www.linkedin.com/in/johann-pardanaud/',
           },
         ],
+        videoLink: 'https://www.youtube.com/embed/OTGqNSwAif8',
       },
     ],
   },
