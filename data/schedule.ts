@@ -1,5 +1,17 @@
 import { Schedule } from '../modules/schedule/types';
-import { axopen, bedrock, CBTW, fulll, indy, leWagon, shodo, theodo, wildCodeSchool, zenika } from './sponsors';
+import {
+  adaTechSchool,
+  axopen,
+  bedrock,
+  CBTW,
+  fulll,
+  indy,
+  leWagon,
+  shodo,
+  theodo,
+  wildCodeSchool,
+  zenika,
+} from './sponsors';
 
 export const schedule: Schedule[] = [
   {
@@ -52,9 +64,11 @@ export const schedule: Schedule[] = [
   },
   {
     date: '07/09/2025',
+    sponsor: adaTechSchool,
   },
   {
     date: '09/17/2025',
+    sponsor: shodo,
   },
   {
     date: '10/15/2025',
