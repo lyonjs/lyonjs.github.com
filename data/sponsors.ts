@@ -89,3 +89,9 @@ export const fulll: Sponsor = {
   url: 'https://www.fulll.fr/',
   logo: '/sponsors/fulll.webp',
 };
+
+export const adaTechSchool: Sponsor = {
+  name: 'Ada Tech School',
+  logo: '/sponsors/adatechschool.png',
+  url: 'https://www.adatechschool.fr/',
+};
