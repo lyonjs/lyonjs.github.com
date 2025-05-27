@@ -16,6 +16,25 @@ import {
 } from './sponsors';
 
 export const dataOverride: { [key: string]: Partial<Event> } = {
+  'https://www.meetup.com/lyonjs/events/307652646': {
+    sponsor: zenika,
+    talks: [
+      {
+        title: 'Tu te mets combien en responsive CSS ? Edition 2025',
+        speakers: [
+          {
+            name: 'Théo Gianella',
+            socialLink: 'https://github.com/TGianella',
+          },
+          {
+            name: 'Julien Sulpis',
+            socialLink: 'https://bsky.app/profile/jsulpis.dev',
+          },
+        ],
+        videoLink: 'https://www.youtube.com/embed/0Ro_eofaWvY',
+      },
+    ],
+  },
   'https://www.meetup.com/lyonjs/events/306992187': {
     sponsor: fulll,
     talks: [
