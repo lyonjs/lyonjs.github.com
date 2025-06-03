@@ -31,6 +31,7 @@ export const dataOverride: { [key: string]: Partial<Event> } = {
             socialLink: 'https://www.linkedin.com/in/lucas-audart/',
           },
         ],
+        videoLink: 'https://www.youtube.com/embed/cc6B4Ctcm_w',
       },
       {
         title: 'Restez Zen en codant ! (Trucs et astuces)',
@@ -44,6 +45,7 @@ export const dataOverride: { [key: string]: Partial<Event> } = {
             socialLink: 'https://www.linkedin.com/in/matthieu-s-b2182861/',
           },
         ],
+        videoLink: 'https://www.youtube.com/embed/L0_nSfK7sjk',
       },
     ],
   },
