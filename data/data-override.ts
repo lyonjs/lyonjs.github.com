@@ -16,6 +16,37 @@ import {
 } from './sponsors';
 
 export const dataOverride: { [key: string]: Partial<Event> } = {
+  'https://www.meetup.com/lyonjs/events/308003912': {
+    sponsor: bedrock,
+    talks: [
+      {
+        title: 'React Compiler : Easier, Better, Faster, Stronger 🤖',
+        speakers: [
+          {
+            name: 'Mickael Alves',
+            socialLink: 'https://www.linkedin.com/in/mickaelalves/',
+          },
+          {
+            name: 'Lucas Audart',
+            socialLink: 'https://www.linkedin.com/in/lucas-audart/',
+          },
+        ],
+      },
+      {
+        title: 'Restez Zen en codant ! (Trucs et astuces)',
+        speakers: [
+          {
+            name: 'Léa Coston',
+            socialLink: 'https://www.linkedin.com/in/l%C3%A9a-coston-92321099/',
+          },
+          {
+            name: 'Matthieu Sauboua-Beneluz',
+            socialLink: 'https://www.linkedin.com/in/matthieu-s-b2182861/',
+          },
+        ],
+      },
+    ],
+  },
   'https://www.meetup.com/lyonjs/events/307652646': {
     sponsor: zenika,
     talks: [
