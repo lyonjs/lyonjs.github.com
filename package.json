@@ -2,7 +2,7 @@
   "name": "lyonjs-website",
   "version": "0.1.0",
   "private": true,
-  "packageManager": "pnpm@9.15.9",
+  "packageManager": "pnpm@10.13.1",
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
