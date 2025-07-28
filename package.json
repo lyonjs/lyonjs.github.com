@@ -30,7 +30,7 @@
     "yet-another-react-lightbox": "^3.21.4"
   },
   "devDependencies": {
-    "@playwright/test": "1.51.0",
+    "@playwright/test": "1.54.1",
     "@types/lodash": "^4.17.7",
     "@types/node": "22.16.5",
     "@types/react": "19.0.10",
