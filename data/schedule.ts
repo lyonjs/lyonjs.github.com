@@ -76,6 +76,7 @@ export const schedule: Schedule[] = [
   },
   {
     date: '11/19/2025',
+    sponsor: leWagon,
   },
   {
     date: '12/10/2025',
