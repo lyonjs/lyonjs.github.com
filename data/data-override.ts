@@ -1,5 +1,6 @@
 import type { Event } from '../modules/event/types';
 import {
+  adaTechSchool,
   axopen,
   bedrock,
   CBTW,
@@ -16,6 +17,15 @@ import {
 } from './sponsors';
 
 export const dataOverride: { [key: string]: Partial<Event> } = {
+  'https://www.meetup.com/lyonjs/events/310652398': {
+    sponsor: shodo,
+  },
+  'https://www.meetup.com/lyonjs/events/310653880': {
+    sponsor: adaTechSchool,
+  },
+  'https://www.meetup.com/lyonjs/events/308433948': {
+    sponsor: adaTechSchool,
+  },
   'https://www.meetup.com/lyonjs/events/308003912': {
     sponsor: bedrock,
     talks: [
