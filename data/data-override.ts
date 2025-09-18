@@ -19,6 +19,30 @@ import {
 export const dataOverride: { [key: string]: Partial<Event> } = {
   'https://www.meetup.com/lyonjs/events/310652398': {
     sponsor: shodo,
+    talks: [
+      {
+        title: 'PandaCSS – le CSS-in-JS statique, type-safe, rapide et élégant.',
+        speakers: [
+          {
+            name: 'Etienne DELADONCHAMPS',
+            socialLink: 'https://www.linkedin.com/in/etiennedldc/',
+          },
+        ],
+        videoLink: 'https://www.youtube.com/embed/rposw55uN_o',
+      },
+      {
+        title: '(Re)Découvrir le front par les tests',
+        speakers: [
+          {
+            name: 'Jérémy CHAUVIN',
+          },
+          {
+            name: 'Yann BOUVET',
+          },
+        ],
+        videoLink: 'https://www.youtube.com/embed/HTntXaU04EU',
+      },
+    ],
   },
   'https://www.meetup.com/lyonjs/events/310653880': {
     sponsor: adaTechSchool,
