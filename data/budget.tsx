@@ -22,7 +22,7 @@ export const budgetRows: BudgetRowType[] = [
   },
   {
     expense: 'Hébergement du site',
-    description: 'Offert par Vercel et Clever Cloud',
+    description: 'Offert par Clever Cloud',
     cost: 0,
   },
   {

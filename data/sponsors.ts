@@ -24,12 +24,6 @@ export const smile: Sponsor = {
   url: 'https://www.smile.eu/fr',
 };
 
-export const vercel: Sponsor = {
-  name: 'Vercel',
-  logo: '/sponsors/vercel.svg',
-  url: 'https://vercel.com/',
-};
-
 export const malt: Sponsor = {
   name: 'Malt',
   logo: '/sponsors/malt.svg',
