@@ -89,3 +89,9 @@ export const adaTechSchool: Sponsor = {
   logo: '/sponsors/adatechschool.png',
   url: 'https://www.adatechschool.fr/',
 };
+
+export const ippon: Sponsor = {
+  name: 'Ippon',
+  logo: '/sponsors/ippon.svg',
+  url: 'https://fr.ippon.tech/',
+};

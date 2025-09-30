@@ -6,6 +6,7 @@ import {
   CBTW,
   fulll,
   indy,
+  ippon,
   leWagon,
   shodo,
   theodo,
@@ -80,6 +81,7 @@ export const schedule: Schedule[] = [
   },
   {
     date: '12/10/2025',
+    sponsor: ippon,
   },
   {
     date: '01/14/2026',
