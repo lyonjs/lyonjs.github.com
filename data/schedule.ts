@@ -4,6 +4,7 @@ import {
   axopen,
   bedrock,
   CBTW,
+  esker,
   fulll,
   indy,
   ippon,
@@ -88,6 +89,7 @@ export const schedule: Schedule[] = [
   },
   {
     date: '02/11/2026',
+    sponsor: esker,
   },
   {
     date: '03/11/2026',

@@ -95,3 +95,9 @@ export const ippon: Sponsor = {
   logo: '/sponsors/ippon.svg',
   url: 'https://fr.ippon.tech/',
 };
+
+export const esker: Sponsor = {
+  name: 'Esker',
+  logo: '/sponsors/esker.svg',
+  url: 'https://www.esker.fr/',
+};
