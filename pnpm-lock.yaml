@@ -86,7 +86,7 @@ importers:
         version: 16.10.0
       graphql-request:
         specifier: ^7.1.0
-        version: 7.1.2(graphql@16.10.0)
+        version: 7.3.0(graphql@16.10.0)
       husky:
         specifier: ^9.0.0
         version: 9.1.7
@@ -1301,8 +1301,8 @@ packages:
   graphemer@1.4.0:
     resolution: {integrity: sha512-EtKwoO6kxCL9WO5xipiHTZlSzBm7WLT627TqC/uVRd0HKmq8NXyebnNYxDoBi7wt8eTWrUrKXCOVaFq9x1kgag==}
 
-  graphql-request@7.1.2:
-    resolution: {integrity: sha512-+XE3iuC55C2di5ZUrB4pjgwe+nIQBuXVIK9J98wrVwojzDW3GMdSBZfxUk8l4j9TieIpjpggclxhNEU9ebGF8w==}
+  graphql-request@7.3.0:
+    resolution: {integrity: sha512-cxmQfa/ZknSNtuJpgPpr4CQTwPjSP57EYzOyNoyhPakXqr1yvTtOXNFbxQYaz4DMQ801i2DjnwUkifGLjtXhSQ==}
     peerDependencies:
       graphql: 14 - 16
 
@@ -3621,7 +3621,7 @@ snapshots:
 
   graphemer@1.4.0: {}
 
-  graphql-request@7.1.2(graphql@16.10.0):
+  graphql-request@7.3.0(graphql@16.10.0):
     dependencies:
       '@graphql-typed-document-node/core': 3.2.0(graphql@16.10.0)
       graphql: 16.10.0
