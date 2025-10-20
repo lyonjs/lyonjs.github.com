@@ -17,6 +17,9 @@ import {
 } from './sponsors';
 
 export const dataOverride: { [key: string]: Partial<Event> } = {
+  'https://www.meetup.com/lyonjs/events/311188398': {
+    sponsor: indy,
+  },
   'https://www.meetup.com/lyonjs/events/310652398': {
     sponsor: shodo,
     talks: [
