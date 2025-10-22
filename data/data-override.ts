@@ -19,6 +19,22 @@ import {
 export const dataOverride: { [key: string]: Partial<Event> } = {
   'https://www.meetup.com/lyonjs/events/311188398': {
     sponsor: indy,
+    talks: [
+      {
+        title: ' 🏗️ Déconstruction et Démystification 🧙‍♂️',
+        speakers: [
+          {
+            name: 'Nirina Rabeson',
+            socialLink: 'https://bsky.app/profile/nirinarabeson.fr',
+          },
+          {
+            name: 'Virgil Roger',
+            socialLink: 'https://www.linkedin.com/in/virgil-roger-a4979a89/',
+          },
+        ],
+        videoLink: 'https://www.youtube.com/embed/fXv7F7MxEQM',
+      },
+    ],
   },
   'https://www.meetup.com/lyonjs/events/310652398': {
     sponsor: shodo,
