@@ -5,26 +5,25 @@ import { client, LYONJS_MEETUP_ID } from '../api';
 const query = gql`
   query meetup($id: ID!) {
     event(id: $id) {
+      id
       title
       description
       eventUrl
       dateTime
-      imageUrl
-      photoAlbum {
-        photoSample(amount: 20) {
-          source
-        }
+      featuredEventPhoto {
+        highResUrl
+      }
+      venues {
+        name
+        address
+        postalCode
+        country
+      }
+      rsvps {
+        yesCount
       }
       group {
         id
-      }
-      venue {
-        name
-        address
-        city
-        postalCode
-        lat
-        lng
       }
     }
   }

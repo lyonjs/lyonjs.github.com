@@ -34,14 +34,16 @@ export const EventCard: FC<Props> = ({ event }) => {
 
       <div className={styles.venue}>
         <Image
-          src={event.imageUrl}
+          src={event.featuredEventPhoto.highResUrl}
           alt={event.title}
           className={styles.picture}
           loading="lazy"
           width={230}
           height={130}
         />
-        {event.venue && <Location venue={event.venue} className={styles.location} />}
+        {event.venues && (
+          <Location venue={Array.isArray(event.venues) ? event.venues[0] : event.venues} className={styles.location} />
+        )}
       </div>
 
       {event.sponsor && (
@@ -61,7 +63,7 @@ export const EventCard: FC<Props> = ({ event }) => {
         className={styles.participate}
         onClick={() => va.track('NextEventRegister', { eventUrl: event.eventUrl })}
       >
-        <Meetup /> {event.going ? `Rejoindre les ${event.going} participant·e·s` : 'Participez'}
+        <Meetup /> {event.rsvps.yesCount ? `Rejoindre les ${event.rsvps.yesCount} participant·e·s` : 'Participez'}
       </ButtonLink>
 
       <EventMarkup event={event} />
