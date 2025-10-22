@@ -10,7 +10,7 @@ type Response = {
 const queryForYears = gql`
   query meetupYears($id: ID!) {
     group(id: $id) {
-      pastEvents(input: { first: 5000 }) {
+      events(first: 1000, status: PAST, sort: ASC) {
         edges {
           node {
             dateTime

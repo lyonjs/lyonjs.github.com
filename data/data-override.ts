@@ -17,7 +17,7 @@ import {
 } from './sponsors';
 
 export const dataOverride: { [key: string]: Partial<Event> } = {
-  'https://www.meetup.com/lyonjs/events/311188398': {
+  'https://www.meetup.com/lyonjs/events/311188398/': {
     sponsor: indy,
     talks: [
       {
@@ -36,7 +36,7 @@ export const dataOverride: { [key: string]: Partial<Event> } = {
       },
     ],
   },
-  'https://www.meetup.com/lyonjs/events/310652398': {
+  'https://www.meetup.com/lyonjs/events/310652398/': {
     sponsor: shodo,
     talks: [
       {
@@ -63,13 +63,13 @@ export const dataOverride: { [key: string]: Partial<Event> } = {
       },
     ],
   },
-  'https://www.meetup.com/lyonjs/events/310653880': {
+  'https://www.meetup.com/lyonjs/events/310653880/': {
     sponsor: adaTechSchool,
   },
-  'https://www.meetup.com/lyonjs/events/308433948': {
+  'https://www.meetup.com/lyonjs/events/308433948/': {
     sponsor: adaTechSchool,
   },
-  'https://www.meetup.com/lyonjs/events/308003912': {
+  'https://www.meetup.com/lyonjs/events/308003912/': {
     sponsor: bedrock,
     talks: [
       {
@@ -102,7 +102,7 @@ export const dataOverride: { [key: string]: Partial<Event> } = {
       },
     ],
   },
-  'https://www.meetup.com/lyonjs/events/307652646': {
+  'https://www.meetup.com/lyonjs/events/307652646/': {
     sponsor: zenika,
     talks: [
       {
@@ -121,7 +121,7 @@ export const dataOverride: { [key: string]: Partial<Event> } = {
       },
     ],
   },
-  'https://www.meetup.com/lyonjs/events/306992187': {
+  'https://www.meetup.com/lyonjs/events/306992187/': {
     sponsor: fulll,
     talks: [
       {
@@ -149,7 +149,7 @@ export const dataOverride: { [key: string]: Partial<Event> } = {
       },
     ],
   },
-  'https://www.meetup.com/lyonjs/events/306419959': {
+  'https://www.meetup.com/lyonjs/events/306419959/': {
     sponsor: axopen,
     talks: [
       {
@@ -178,7 +178,7 @@ export const dataOverride: { [key: string]: Partial<Event> } = {
       },
     ],
   },
-  'https://www.meetup.com/lyonjs/events/304691839': {
+  'https://www.meetup.com/lyonjs/events/304691839/': {
     sponsor: CBTW,
     talks: [
       {
@@ -193,7 +193,7 @@ export const dataOverride: { [key: string]: Partial<Event> } = {
       },
     ],
   },
-  'https://www.meetup.com/lyonjs/events/304182290': {
+  'https://www.meetup.com/lyonjs/events/304182290/': {
     sponsor: theodo,
     talks: [
       {
@@ -218,7 +218,7 @@ export const dataOverride: { [key: string]: Partial<Event> } = {
       },
     ],
   },
-  'https://www.meetup.com/lyonjs/events/303395273': {
+  'https://www.meetup.com/lyonjs/events/303395273/': {
     sponsor: shodo,
     talks: [
       {
@@ -243,7 +243,7 @@ export const dataOverride: { [key: string]: Partial<Event> } = {
       },
     ],
   },
-  'https://www.meetup.com/lyonjs/events/303049235': {
+  'https://www.meetup.com/lyonjs/events/303049235/': {
     sponsor: indy,
     talks: [
       {
@@ -268,7 +268,7 @@ export const dataOverride: { [key: string]: Partial<Event> } = {
       },
     ],
   },
-  'https://www.meetup.com/lyonjs/events/301751075': {
+  'https://www.meetup.com/lyonjs/events/301751075/': {
     sponsor: wildCodeSchool,
     talks: [
       {
@@ -287,7 +287,7 @@ export const dataOverride: { [key: string]: Partial<Event> } = {
       },
     ],
   },
-  'https://www.meetup.com/lyonjs/events/301132346': {
+  'https://www.meetup.com/lyonjs/events/301132346/': {
     sponsor: leWagon,
     talks: [
       {
@@ -312,7 +312,7 @@ export const dataOverride: { [key: string]: Partial<Event> } = {
       },
     ],
   },
-  'https://www.meetup.com/lyonjs/events/300714737': {
+  'https://www.meetup.com/lyonjs/events/300714737/': {
     sponsor: bedrock,
     talks: [
       {
@@ -327,7 +327,7 @@ export const dataOverride: { [key: string]: Partial<Event> } = {
       },
     ],
   },
-  'https://www.meetup.com/lyonjs/events/299916483': {
+  'https://www.meetup.com/lyonjs/events/299916483/': {
     sponsor: wanadev,
     talks: [
       {
@@ -352,7 +352,7 @@ export const dataOverride: { [key: string]: Partial<Event> } = {
       },
     ],
   },
-  'https://www.meetup.com/lyonjs/events/299527784': {
+  'https://www.meetup.com/lyonjs/events/299527784/': {
     sponsor: zenika,
     talks: [
       {
@@ -377,7 +377,7 @@ export const dataOverride: { [key: string]: Partial<Event> } = {
       },
     ],
   },
-  'https://www.meetup.com/lyonjs/events/298932058': {
+  'https://www.meetup.com/lyonjs/events/298932058/': {
     sponsor: indy,
     talks: [
       {
@@ -406,7 +406,7 @@ export const dataOverride: { [key: string]: Partial<Event> } = {
       },
     ],
   },
-  'https://www.meetup.com/lyonjs/events/298162224': {
+  'https://www.meetup.com/lyonjs/events/298162224/': {
     sponsor: zenika,
     talks: [
       {
@@ -431,7 +431,7 @@ export const dataOverride: { [key: string]: Partial<Event> } = {
       },
     ],
   },
-  'https://www.meetup.com/lyonjs/events/297675405': {
+  'https://www.meetup.com/lyonjs/events/297675405/': {
     sponsor: indy,
     talks: [
       {
@@ -460,7 +460,7 @@ export const dataOverride: { [key: string]: Partial<Event> } = {
       },
     ],
   },
-  'https://www.meetup.com/lyonjs/events/296967782': {
+  'https://www.meetup.com/lyonjs/events/296967782/': {
     talks: [
       {
         title: "Tout ce que vous n'avez jamais voulu savoir sur les fuseaux horaires",
@@ -483,7 +483,7 @@ export const dataOverride: { [key: string]: Partial<Event> } = {
     ],
     sponsor: zenika,
   },
-  'https://www.meetup.com/lyonjs/events/296202933': {
+  'https://www.meetup.com/lyonjs/events/296202933/': {
     sponsor: indy,
     talks: [
       {
@@ -512,7 +512,7 @@ export const dataOverride: { [key: string]: Partial<Event> } = {
       },
     ],
   },
-  'https://www.meetup.com/lyonjs/events/295583450': {
+  'https://www.meetup.com/lyonjs/events/295583450/': {
     talks: [
       {
         title: 'Nuxt 3 - Réussir sa migration',
@@ -527,10 +527,10 @@ export const dataOverride: { [key: string]: Partial<Event> } = {
     ],
     sponsor: zenika,
   },
-  'https://www.meetup.com/lyonjs/events/293687276': {
+  'https://www.meetup.com/lyonjs/events/293687276/': {
     sponsor: zenika,
   },
-  'https://www.meetup.com/lyonjs/events/261928293': {
+  'https://www.meetup.com/lyonjs/events/261928293/': {
     talks: [
       {
         title: 'Timeboxed TDD & TCR : Boostez votre Time to Market en dansant le Limbo',
@@ -543,7 +543,7 @@ export const dataOverride: { [key: string]: Partial<Event> } = {
       },
     ],
   },
-  'https://www.meetup.com/lyonjs/events/274713264': {
+  'https://www.meetup.com/lyonjs/events/274713264/': {
     sponsor: zenika,
     talks: [
       {
@@ -560,7 +560,7 @@ export const dataOverride: { [key: string]: Partial<Event> } = {
       },
     ],
   },
-  'https://www.meetup.com/lyonjs/events/266113861': {
+  'https://www.meetup.com/lyonjs/events/266113861/': {
     sponsor: malt,
     talks: [
       {
@@ -577,7 +577,7 @@ export const dataOverride: { [key: string]: Partial<Event> } = {
       },
     ],
   },
-  'https://www.meetup.com/lyonjs/events/292744601': {
+  'https://www.meetup.com/lyonjs/events/292744601/': {
     sponsor: malt,
     talks: [
       {
@@ -592,7 +592,7 @@ export const dataOverride: { [key: string]: Partial<Event> } = {
       },
     ],
   },
-  'https://www.meetup.com/lyonjs/events/291958869': {
+  'https://www.meetup.com/lyonjs/events/291958869/': {
     talks: [
       {
         title: 'Playwright 🎭, the Cypress killer by Microsoft',
@@ -601,7 +601,7 @@ export const dataOverride: { [key: string]: Partial<Event> } = {
       },
     ],
   },
-  'https://www.meetup.com/lyonjs/events/291728436': {
+  'https://www.meetup.com/lyonjs/events/291728436/': {
     sponsor: indy,
     talks: [
       {
@@ -616,7 +616,7 @@ export const dataOverride: { [key: string]: Partial<Event> } = {
       },
     ],
   },
-  'https://www.meetup.com/lyonjs/events/290762638': {
+  'https://www.meetup.com/lyonjs/events/290762638/': {
     sponsor: zenika,
     talks: [
       {
@@ -631,7 +631,7 @@ export const dataOverride: { [key: string]: Partial<Event> } = {
       },
     ],
   },
-  'https://www.meetup.com/lyonjs/events/289494397': {
+  'https://www.meetup.com/lyonjs/events/289494397/': {
     sponsor: indy,
     talks: [
       {
@@ -644,7 +644,7 @@ export const dataOverride: { [key: string]: Partial<Event> } = {
       },
     ],
   },
-  'https://www.meetup.com/lyonjs/events/289164485': {
+  'https://www.meetup.com/lyonjs/events/289164485/': {
     sponsor: smile,
     talks: [
       {
@@ -653,7 +653,7 @@ export const dataOverride: { [key: string]: Partial<Event> } = {
       },
     ],
   },
-  'https://www.meetup.com/lyonjs/events/288153025': {
+  'https://www.meetup.com/lyonjs/events/288153025/': {
     sponsor: indy,
     talks: [
       {
@@ -665,7 +665,7 @@ export const dataOverride: { [key: string]: Partial<Event> } = {
       },
     ],
   },
-  'https://www.meetup.com/lyonjs/events/285497869': {
+  'https://www.meetup.com/lyonjs/events/285497869/': {
     sponsor: bedrock,
     talks: [
       {
@@ -680,7 +680,7 @@ export const dataOverride: { [key: string]: Partial<Event> } = {
       },
     ],
   },
-  'https://www.meetup.com/lyonjs/events/284851207': {
+  'https://www.meetup.com/lyonjs/events/284851207/': {
     sponsor: indy,
     talks: [
       {
@@ -693,7 +693,7 @@ export const dataOverride: { [key: string]: Partial<Event> } = {
       },
     ],
   },
-  'https://www.meetup.com/lyonjs/events/284549533': {
+  'https://www.meetup.com/lyonjs/events/284549533/': {
     sponsor: zenika,
     talks: [
       {

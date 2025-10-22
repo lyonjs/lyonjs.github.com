@@ -38,7 +38,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   try {
     const event = overrideEvent(await fetchEvent(eventId));
     const title = `LyonJS | ${event.title}`;
-    const description = `Évènement LyonJS: ${event.shortDescription || event.description.slice(0, 250)}...`;
+    const description = `Évènement LyonJS: ${event.description.slice(0, 250)}...`;
 
     return {
       title,

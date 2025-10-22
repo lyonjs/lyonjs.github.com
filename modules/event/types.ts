@@ -26,21 +26,25 @@ export type Venue = {
   postalCode: string;
   lat: string;
   lng: string;
+  country: string;
 };
 
 export type Event = {
   id: string;
   title: string;
-  shortDescription: string;
   description: string;
   eventUrl: string;
   dateTime: string;
-  imageUrl: string;
-  going: number;
+  featuredEventPhoto: {
+    highResUrl: string;
+  };
+  rsvps: {
+    yesCount: number;
+  };
   group: {
     id: string;
   };
-  venue?: Venue;
+  venues: Venue[] | Venue;
   photoAlbum?: {
     photoSample: PhotoSample[];
   };

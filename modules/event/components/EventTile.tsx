@@ -13,7 +13,7 @@ export const EventTile: React.FC<Props> = ({ event }) => {
 
   return (
     <article className={styles.eventTile} aria-label={event.title}>
-      <Image src={event.imageUrl} alt="" width={160} height={90} />
+      <Image src={event.featuredEventPhoto.highResUrl} alt="" width={160} height={90} />
       <div className={styles.content}>
         <h2>{event.title}</h2>
         <div className={styles.time}>{formattedDayAndMonth}</div>

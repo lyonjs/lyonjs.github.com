@@ -5,14 +5,14 @@ import { client, LYONJS_MEETUP_ID } from '../api';
 
 type NextEventsQueryResponse = {
   group: {
-    upcomingEvents: Edges<Event>;
+    events: Edges<Event>;
   };
 };
 
 const queryForNextEvents = gql`
   query meetupEvents($id: ID!) {
     group(id: $id) {
-      upcomingEvents(input: {}) {
+      events {
         edges {
           node {
             id
@@ -20,14 +20,18 @@ const queryForNextEvents = gql`
             description
             eventUrl
             dateTime
-            imageUrl
-            going
-            venue {
+            featuredEventPhoto {
+              highResUrl
+            }
+            venues {
               name
               address
+              postalCode
               city
-              lat
-              lng
+              country
+            }
+            rsvps {
+              yesCount
             }
           }
         }
@@ -38,5 +42,5 @@ const queryForNextEvents = gql`
 
 export const fetchNextEvent = async (): Promise<Event[]> => {
   const response = await client.request<NextEventsQueryResponse>(queryForNextEvents, { id: LYONJS_MEETUP_ID });
-  return response?.group?.upcomingEvents?.edges?.map((it) => it.node) || null;
+  return response?.group?.events?.edges?.map((it) => it.node) || null;
 };
