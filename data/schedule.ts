@@ -86,6 +86,7 @@ export const schedule: Schedule[] = [
   },
   {
     date: '01/14/2026',
+    sponsor: zenika,
   },
   {
     date: '02/11/2026',
