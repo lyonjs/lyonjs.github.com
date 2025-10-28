@@ -85,7 +85,7 @@ export const schedule: Schedule[] = [
     sponsor: ippon,
   },
   {
-    date: '01/14/2026',
+    date: '01/13/2026',
     sponsor: zenika,
   },
   {
