@@ -96,7 +96,7 @@ export const schedule: Schedule[] = [
     date: '03/11/2026',
   },
   {
-    date: '04/11/2026',
+    date: '04/08/2026',
   },
   {
     date: '05/15/2026',
