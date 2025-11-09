@@ -35,7 +35,7 @@ export type Event = {
   description: string;
   eventUrl: string;
   dateTime: string;
-  featuredEventPhoto: {
+  featuredEventPhoto?: {
     highResUrl: string;
   };
   rsvps: {

@@ -44,7 +44,7 @@ export const EventMarkup: React.FC<Props> = ({ event }) => {
           availability: 'https://schema.org/InStock',
         },
         image: [
-          event.featuredEventPhoto.highResUrl,
+          event.featuredEventPhoto?.highResUrl ?? '/lyonjs.webp',
           ...(event.photoAlbum ? event.photoAlbum.photoSample.map((image) => image.source) : []),
         ],
         description: event.description,

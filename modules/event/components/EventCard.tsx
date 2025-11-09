@@ -34,7 +34,7 @@ export const EventCard: FC<Props> = ({ event }) => {
 
       <div className={styles.venue}>
         <Image
-          src={event.featuredEventPhoto.highResUrl}
+          src={event.featuredEventPhoto?.highResUrl ?? '/lyonjs.webp'}
           alt={event.title}
           className={styles.picture}
           loading="lazy"
