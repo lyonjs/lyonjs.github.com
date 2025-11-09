@@ -51,7 +51,13 @@ export const EventDetail: React.FC<Props> = async ({ event }) => {
           <ReactMarkdown>{event.description}</ReactMarkdown>
         </div>
         <div className={styles.sideContent}>
-          <Image src={event.featuredEventPhoto.highResUrl} alt="" className={styles.image} width={240} height={150} />
+          <Image
+            src={event.featuredEventPhoto?.highResUrl ?? '/lyonjs.webp'}
+            alt=""
+            className={styles.image}
+            width={240}
+            height={150}
+          />
           {event.venues && <Location venue={Array.isArray(event.venues) ? event.venues[0] : event.venues} />}
         </div>
         {replays}
