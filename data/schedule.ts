@@ -9,6 +9,7 @@ import {
   indy,
   ippon,
   leWagon,
+  lyonJS,
   shodo,
   theodo,
   wildCodeSchool,
@@ -94,6 +95,7 @@ export const schedule: Schedule[] = [
   },
   {
     date: '03/11/2026',
+    sponsor: lyonJS,
   },
   {
     date: '04/08/2026',
