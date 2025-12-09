@@ -17,6 +17,31 @@ import {
 } from './sponsors';
 
 export const dataOverride: { [key: string]: Partial<Event> } = {
+  'https://www.meetup.com/lyonjs/events/311629673/': {
+    sponsor: leWagon,
+    talks: [
+      {
+        title: "Elysia: un cousin d'ExpressJS sous Bun",
+        speakers: [
+          {
+            name: 'Sylvain Gougouzian',
+            socialLink: 'https://www.linkedin.com/in/gouz/',
+          },
+        ],
+        videoLink: 'https://www.youtube.com/embed/TOCxwXquXDM?si=0o307sYXws1tyD_J',
+      },
+      {
+        title: 'InertiaJS : le pont invisible entre Backend et Frontend moderne',
+        speakers: [
+          {
+            name: 'Mathieu Tudisco',
+            socialLink: 'https://www.linkedin.com/in/mathieutu/',
+          },
+        ],
+        videoLink: 'https://www.youtube.com/embed/QHzPAat9WHY?si=2ks2krO2fHz37_xa',
+      },
+    ],
+  },
   'https://www.meetup.com/lyonjs/events/311188398/': {
     sponsor: indy,
     talks: [
