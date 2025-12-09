@@ -28,7 +28,7 @@ export const dataOverride: { [key: string]: Partial<Event> } = {
             socialLink: 'https://www.linkedin.com/in/gouz/',
           },
         ],
-        videoLink: 'https://www.youtube.com/embed/TOCxwXquXDM?si=0o307sYXws1tyD_J',
+        videoLink: 'https://www.youtube.com/embed/TOCxwXquXDM',
       },
       {
         title: 'InertiaJS : le pont invisible entre Backend et Frontend moderne',
@@ -38,7 +38,7 @@ export const dataOverride: { [key: string]: Partial<Event> } = {
             socialLink: 'https://www.linkedin.com/in/mathieutu/',
           },
         ],
-        videoLink: 'https://www.youtube.com/embed/QHzPAat9WHY?si=2ks2krO2fHz37_xa',
+        videoLink: 'https://www.youtube.com/embed/QHzPAat9WHY',
       },
     ],
   },
