@@ -101,9 +101,3 @@ export const esker: Sponsor = {
   logo: '/sponsors/esker.svg',
   url: 'https://www.esker.fr/',
 };
-
-export const lyonJS: Sponsor = {
-  name: 'LyonJS',
-  logo: '/lyonjs.png',
-  url: 'https://www.lyonjs.org/',
-};
