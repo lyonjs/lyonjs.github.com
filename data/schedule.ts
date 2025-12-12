@@ -9,12 +9,12 @@ import {
   indy,
   ippon,
   leWagon,
-  lyonJS,
   shodo,
   theodo,
   wildCodeSchool,
   zenika,
 } from './sponsors';
+import { Sponsor } from '../modules/event/types';
 
 export const schedule: Schedule[] = [
   {
@@ -95,7 +95,9 @@ export const schedule: Schedule[] = [
   },
   {
     date: '03/11/2026',
-    sponsor: lyonJS,
+    sponsor: {
+      name: 'LyonJS',
+    } as Sponsor,
   },
   {
     date: '04/08/2026',
