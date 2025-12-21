@@ -36,7 +36,7 @@ export const orgas: Array<Orga> = [
     name: 'Mickael Alves',
     avatarUrl: '/orgas/mickael.jpeg',
     social: {
-      twitter: 'cruuzazul',
+      twitter: 'mickaelalvs',
       linkedin: 'mickaelalves',
     },
   },

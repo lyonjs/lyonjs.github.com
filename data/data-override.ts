@@ -424,7 +424,7 @@ export const dataOverride: { [key: string]: Partial<Event> } = {
           },
           {
             name: 'Mickaël Alves',
-            socialLink: 'https://twitter.com/cruuzazul',
+            socialLink: 'https://x.com/mickaelalvs',
           },
         ],
         videoLink: 'https://www.youtube.com/embed/RfIUq1NmKxU',
@@ -725,7 +725,7 @@ export const dataOverride: { [key: string]: Partial<Event> } = {
         title: 'Comment faire un trailer vidéo qui déchire avec des technos web ?',
         videoLink: 'https://www.youtube.com/embed/8nnDOT8b5Oc',
         speakers: [
-          { name: 'Mickaël Alves', socialLink: 'https://twitter.com/cruuzazul' },
+          { name: 'Mickaël Alves', socialLink: 'https://x.com/mickaelalvs' },
           { name: 'Antoine Caron', socialLink: 'https://twitter.com/slashgear_' },
         ],
       },
