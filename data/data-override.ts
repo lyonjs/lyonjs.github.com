@@ -17,6 +17,20 @@ import {
 } from './sponsors';
 
 export const dataOverride: { [key: string]: Partial<Event> } = {
+  'https://www.meetup.com/lyonjs/events/312539589/': {
+    talks: [
+      {
+        title: 'CJS, ESM, WTF ??',
+        speakers: [
+          {
+            name: 'Théo Gianella',
+            socialLink: 'https://www.linkedin.com/in/th%C3%A9o-gianella/',
+          },
+        ],
+        videoLink: 'https://www.youtube.com/embed/6mcR9RxiByQ',
+      },
+    ],
+  },
   'https://www.meetup.com/lyonjs/events/311629673/': {
     sponsor: leWagon,
     talks: [
