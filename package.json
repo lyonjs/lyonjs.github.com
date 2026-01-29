@@ -34,7 +34,6 @@
     "@types/react-dom": "19.0.4",
     "autoprefixer": "^10.4.20",
     "classnames": "2.5.1",
-    "encoding": "^0.1.13",
     "graphql": "^16.9.0",
     "graphql-request": "^7.1.0",
     "husky": "^9.0.0",
