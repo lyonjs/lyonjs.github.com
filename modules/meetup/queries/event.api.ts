@@ -1,3 +1,4 @@
+import { cache } from 'react';
 import { gql } from 'graphql-request';
 import { Event } from '../../event/types';
 import { client, LYONJS_MEETUP_ID } from '../api';
@@ -32,7 +33,7 @@ const query = gql`
 type Response = {
   event: Event;
 };
-export const fetchEvent = async (id: string): Promise<Event> => {
+export const fetchEvent = cache(async (id: string): Promise<Event> => {
   const response = await client.request<Response>(query, { id });
 
   if (response?.event.group.id !== `${LYONJS_MEETUP_ID}`) {
@@ -40,4 +41,4 @@ export const fetchEvent = async (id: string): Promise<Event> => {
   }
 
   return response?.event;
-};
+});

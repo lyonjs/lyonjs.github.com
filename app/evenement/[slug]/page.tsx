@@ -1,13 +1,19 @@
 import { EventDetail } from '../../../modules/event/components/EventDetail';
 import { EventMarkup } from '../../../modules/event/components/EventMarkup';
 import React from 'react';
-import { parserEventIdFromSlug } from '../../../modules/event/eventSlug';
+import { parserEventIdFromSlug, slugEventTitle } from '../../../modules/event/eventSlug';
 import { overrideEvent } from '../../../modules/event/overrideEvent';
 import { fetchEvent } from '../../../modules/meetup/queries/event.api';
+import { fetchPastEvents } from '../../../modules/meetup/queries/past-events.api';
 import { notFound } from 'next/navigation';
 import { Metadata } from 'next';
 
 export const revalidate = 3600;
+
+export async function generateStaticParams() {
+  const events = await fetchPastEvents();
+  return events.map((event) => ({ slug: slugEventTitle(event) }));
+}
 
 export default async function EventPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
