@@ -19,11 +19,7 @@ export const HomeHero = () => {
       </p>
 
       <HeroButtonsContainer>
-        <ButtonLink
-          href="https://www.meetup.com/fr-FR/lyonjs/"
-          target="_blank"
-          rel="noreferrer noopener"
-        >
+        <ButtonLink href="https://www.meetup.com/fr-FR/lyonjs/" target="_blank" rel="noreferrer noopener">
           <People /> Rejoindre le meetup
         </ButtonLink>
         <ButtonLink

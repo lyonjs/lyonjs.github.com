@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-LyonJS community website built with Next.js 15 (App Router), React 19, TypeScript, and Tailwind CSS. Content is primarily in French. Hosted on Vercel.
+LyonJS community website built with Next.js 15 (App Router), React 19, TypeScript, and CSS Modules. Content is primarily in French. Hosted on Vercel.
 
 ## Commands
 

@@ -1,7 +1,3 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 :root {
   --grey-0: hsl(240, 4%, 5%);
   --yellow-0: hsl(var(--yellow-0-hsl));
