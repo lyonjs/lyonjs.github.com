@@ -33,6 +33,7 @@ export const Number = ({ value, text }: { value: number; text: string }) => {
         }
       });
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- animation should only run on mount
   }, []);
 
   return (

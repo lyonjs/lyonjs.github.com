@@ -3,7 +3,7 @@ import styles from './NextSchedule.module.css';
 
 const sortSchedules = schedule
   .filter((event) => new Date(event.date).getTime() > Date.now())
-  .sort((a, b) => {
+  .toSorted((a, b) => {
     return new Date(a.date).getTime() - new Date(b.date).getTime();
   });
 export const NextSchedule = () => {

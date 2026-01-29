@@ -36,7 +36,9 @@ export function middleware(request: NextRequest) {
     },
   });
 
-  IS_PROD_ENV && response.headers.set('Content-Security-Policy', contentSecurityPolicyHeaderValue);
+  if (IS_PROD_ENV) {
+    response.headers.set('Content-Security-Policy', contentSecurityPolicyHeaderValue);
+  }
 
   return response;
 }

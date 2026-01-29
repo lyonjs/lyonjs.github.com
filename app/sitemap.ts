@@ -28,7 +28,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       lastModified,
     },
     ...Array.from(years)
-      .reverse()
+      .toReversed()
       .map((year) => ({
         url: `${BASE_URL}/evenements-precedents/${year}`,
         lastModified,

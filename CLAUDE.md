@@ -45,3 +45,4 @@ To add talk details, video links, or sponsors for a past event, add an entry in 
 - Prettier: single quotes, 120 char width, trailing commas
 - Linter: oxlint with React, TypeScript, and unicorn plugins
 - Dates use dayjs with French locale
+- Commits follow [Conventional Commits](https://www.conventionalcommits.org/) (e.g. `fix:`, `feat:`, `chore:`)
