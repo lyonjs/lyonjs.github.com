@@ -4,7 +4,6 @@ import { slugEventTitle } from '../../../modules/event/eventSlug';
 import { EventTile } from '../../../modules/event/components/EventTile';
 import React from 'react';
 import { fetchPastEvents } from '../../../modules/meetup/queries/past-events.api';
-import _uniq from 'lodash/uniq';
 import { overrideEvent } from '../../../modules/event/overrideEvent';
 
 export async function PastEvents({ year }: { year: string }) {
@@ -12,7 +11,7 @@ export async function PastEvents({ year }: { year: string }) {
   const yearsFromEvents: string[] = allPastEvents
     .map((event) => new Date(event.dateTime).getFullYear())
     .map((year) => year.toString());
-  const years = _uniq(yearsFromEvents);
+  const years = [...new Set(yearsFromEvents)];
   const pastEvents = allPastEvents
     .map(overrideEvent)
     .filter((event) => new Date(event.dateTime).getFullYear().toString() === year);
