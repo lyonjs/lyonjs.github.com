@@ -1,7 +1,6 @@
 'use client';
 
 import React, { FC } from 'react';
-import va from '@vercel/analytics';
 import Image from 'next/image';
 import dayjs from 'dayjs';
 import _capitalize from 'lodash/capitalize';
@@ -61,7 +60,6 @@ export const EventCard: FC<Props> = ({ event }) => {
         target="_blank"
         rel="noreferrer noopener"
         className={styles.participate}
-        onClick={() => va.track('NextEventRegister', { eventUrl: event.eventUrl })}
       >
         <Meetup /> {event.rsvps.yesCount ? `Rejoindre les ${event.rsvps.yesCount} participant·e·s` : 'Participez'}
       </ButtonLink>
