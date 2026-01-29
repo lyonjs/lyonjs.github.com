@@ -1,1 +1,1 @@
-pnpm pretty-quick --staged
+pnpm oxfmt --write .

@@ -12,12 +12,12 @@ LyonJS community website built with Next.js 15 (App Router), React 19, TypeScrip
 pnpm dev          # Dev server with Turbopack (port 3000)
 pnpm build        # Production build (outputs to dist/)
 pnpm lint         # Lint with oxlint
-pnpm fmt          # Format with Prettier
+pnpm fmt          # Format with oxfmt
 pnpm fmt:check    # Check formatting without modifying
 pnpm e2e          # Run Playwright e2e tests (chromium only)
 ```
 
-Pre-commit hook runs `pretty-quick --staged` automatically via Husky.
+Pre-commit hook runs `oxfmt --write .` automatically via Husky.
 
 ## Architecture
 
@@ -42,7 +42,7 @@ To add talk details, video links, or sponsors for a past event, add an entry in 
 
 ## Code Style
 
-- Prettier: single quotes, 120 char width, trailing commas
+- Formatter (oxfmt): single quotes, 120 char width, trailing commas
 - Linter: oxlint with React, TypeScript, and unicorn plugins
 - Dates use dayjs with French locale
 - Commits follow [Conventional Commits](https://www.conventionalcommits.org/) (e.g. `fix:`, `feat:`, `chore:`)

@@ -17,7 +17,7 @@ jobs:
         with:
           cache: pnpm
       - run: pnpm install --frozen-lockfile --prefer-offline
-      - run: pnpm prettier --check .
+      - run: pnpm fmt:check
       - run: pnpm lint
 
   nextjs:
