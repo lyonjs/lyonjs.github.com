@@ -1,7 +1,5 @@
-import Image from 'next/image';
 import styles from './HomeAnnouncement.module.css';
 import React from 'react';
-import cinema from './cinema.jpg';
 import { ButtonLink } from '../atoms/button/Button';
 import { Article, H2 } from '../home/Home.components';
 
@@ -13,7 +11,6 @@ export function HomeAnnouncement() {
         className={`flex flex-col grow justify-center rounded-lg p-10 pt-20 mt-10 ${styles.container}`}
         style={{ backgroundColor: 'var(--background-card)', position: 'relative' }}
       >
-        <Image className={styles.image} src={cinema} width={350} alt="" />
         <div className={styles.description}>
           <p>LyonJS a fêté sa 100ème édition et ses 13 ans.</p>
           <p>
