@@ -44,5 +44,5 @@ To add talk details, video links, or sponsors for a past event, add an entry in 
 
 - Formatter (oxfmt): single quotes, 120 char width, trailing commas
 - Linter: oxlint with React, TypeScript, and unicorn plugins
-- Dates use dayjs with French locale
+- Dates use `temporal-polyfill` (`Temporal` API) with `Intl.DateTimeFormat('fr-FR')` for French formatting (see `modules/event/dateUtils.ts`)
 - Commits follow [Conventional Commits](https://www.conventionalcommits.org/) (e.g. `fix:`, `feat:`, `chore:`)

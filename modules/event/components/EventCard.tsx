@@ -2,9 +2,8 @@
 
 import React, { FC } from 'react';
 import Image from 'next/image';
-import dayjs from 'dayjs';
-import _capitalize from 'lodash/capitalize';
 import type { Event } from '../types';
+import { formatEventDate } from '../dateUtils';
 import { ButtonLink } from '../../atoms/button/Button';
 import { H3 } from '../../atoms/remark/Titles';
 import styles from './EventCard.module.css';
@@ -20,8 +19,7 @@ type Props = { event: Event };
 const ReactMarkdown = dynamic(() => import('react-markdown').then((module) => module.default));
 
 export const EventCard: FC<Props> = ({ event }) => {
-  const dateParsed = dayjs(event.dateTime);
-  const formattedDayAndMonth = _capitalize(dateParsed.format('dddd D MMMM YYYY à H:mm'));
+  const formattedDayAndMonth = formatEventDate(event.dateTime);
 
   return (
     <article className={styles.container}>
@@ -55,12 +53,7 @@ export const EventCard: FC<Props> = ({ event }) => {
         <ReactMarkdown>{event.description}</ReactMarkdown>
       </Collapsible>
 
-      <ButtonLink
-        href={event.eventUrl}
-        target="_blank"
-        rel="noreferrer noopener"
-        className={styles.participate}
-      >
+      <ButtonLink href={event.eventUrl} target="_blank" rel="noreferrer noopener" className={styles.participate}>
         <Meetup /> {event.rsvps.yesCount ? `Rejoindre les ${event.rsvps.yesCount} participant·e·s` : 'Participez'}
       </ButtonLink>
 

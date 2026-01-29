@@ -1,14 +1,12 @@
 import type { Event } from '../types';
-import dayjs from 'dayjs';
 import styles from './EventTile.module.css';
-import _capitalize from 'lodash/capitalize';
+import { formatEventDate } from '../dateUtils';
 import { Youtube } from '../../icons/Youtube';
 import Image from 'next/image';
 
 type Props = { event: Event };
 export const EventTile: React.FC<Props> = ({ event }) => {
-  const dateParsed = dayjs(event.dateTime);
-  const formattedDayAndMonth = _capitalize(dateParsed.format('dddd D MMMM YYYY à H:mm'));
+  const formattedDayAndMonth = formatEventDate(event.dateTime);
   const hasReplay = event.talks?.some((talk) => talk.videoLink);
 
   return (

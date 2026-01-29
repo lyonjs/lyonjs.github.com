@@ -1,6 +1,6 @@
 import React from 'react';
-import dayjs from 'dayjs';
 import { ORGANISATION_MARKUP } from '../../../app/org-markup';
+import { addToDateTime, subtractFromDateTime } from '../dateUtils';
 import { JsonLD } from '../../seo/JsonLD';
 import type { Event } from '../types';
 
@@ -14,7 +14,7 @@ export const EventMarkup: React.FC<Props> = ({ event }) => {
         '@type': 'Event',
         name: event.title,
         startDate: event.dateTime,
-        endDate: dayjs(event.dateTime).add(3, 'hours'),
+        endDate: addToDateTime(event.dateTime, { hours: 3 }),
         eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
         eventStatus: 'https://schema.org/EventScheduled',
         location:
@@ -40,7 +40,7 @@ export const EventMarkup: React.FC<Props> = ({ event }) => {
           url: event.eventUrl,
           price: 0,
           priceCurrency: 'EUR',
-          validFrom: dayjs(event.dateTime).subtract(30, 'days'),
+          validFrom: subtractFromDateTime(event.dateTime, { days: 30 }),
           availability: 'https://schema.org/InStock',
         },
         image: [

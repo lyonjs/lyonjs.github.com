@@ -6,12 +6,7 @@ import { Footer } from '../modules/footer/Footer';
 
 import 'normalize.css';
 import '../styles/globals.css';
-import 'dayjs/locale/fr';
-import dayjs from 'dayjs';
-
 import { ORGANISATION_MARKUP } from './org-markup';
-
-dayjs.locale('fr');
 
 export default async function AppLayout({ children }: { children: ReactNode }) {
   const header = await headers();
