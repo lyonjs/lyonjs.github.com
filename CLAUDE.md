@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-LyonJS community website built with Next.js 15 (App Router), React 19, TypeScript, and CSS Modules. Content is primarily in French. Hosted on Vercel.
+LyonJS community website built with Next.js 15 (App Router), React 19, TypeScript, and CSS Modules. Content is primarily in French. Deployed on Scaleway Serverless Containers (production always-warm, PR previews with scale-to-zero).
 
 ## Commands
 
@@ -38,7 +38,11 @@ To add talk details, video links, or sponsors for a past event, add an entry in 
 
 ### Middleware
 
-`middleware.ts` sets Content Security Policy and security headers. CSP uses nonce-based inline script security and whitelists specific external origins.
+`middleware.ts` sets Content Security Policy and security headers. CSP uses nonce-based inline script security and whitelists specific external origins. CSP is enabled when `DEPLOY_ENV` is `production` or `preview`.
+
+### Deployment
+
+Docker images are built and pushed by CI (`.github/workflows/integration.yml`). Production deploys on push to `master` (Scaleway Serverless Container, `min-scale=1`). PRs get preview containers (`min-scale=0`, scale-to-zero) with automatic cleanup on close (`.github/workflows/deploy-cleanup.yml`).
 
 ## Code Style
 

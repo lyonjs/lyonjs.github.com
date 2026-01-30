@@ -100,14 +100,14 @@ jobs:
     environment:
       name: production
       url: ${{ steps.deploy.outputs.url }}
+    env:
+      SCW_ACCESS_KEY: ${{ secrets.SCW_ACCESS_KEY }}
+      SCW_SECRET_KEY: ${{ secrets.SCW_SECRET_KEY }}
+      SCW_DEFAULT_PROJECT_ID: ${{ secrets.SCW_DEFAULT_PROJECT_ID }}
+      SCW_DEFAULT_ORGANIZATION_ID: ${{ secrets.SCW_DEFAULT_ORGANIZATION_ID }}
     steps:
-      - name: Setup Scaleway CLI
-        uses: scaleway/action-scw@v0
-        with:
-          access-key: ${{ secrets.SCW_ACCESS_KEY }}
-          secret-key: ${{ secrets.SCW_SECRET_KEY }}
-          default-project-id: ${{ secrets.SCW_DEFAULT_PROJECT_ID }}
-          default-organization-id: ${{ secrets.SCW_DEFAULT_ORGANIZATION_ID }}
+      - name: Install Scaleway CLI
+        run: curl -s https://raw.githubusercontent.com/scaleway/scaleway-cli/master/scripts/get.sh | sudo sh
 
       - name: Deploy container
         id: deploy
@@ -142,14 +142,14 @@ jobs:
     environment:
       name: preview-pr-${{ github.event.pull_request.number }}
       url: ${{ steps.deploy.outputs.url }}
+    env:
+      SCW_ACCESS_KEY: ${{ secrets.SCW_ACCESS_KEY }}
+      SCW_SECRET_KEY: ${{ secrets.SCW_SECRET_KEY }}
+      SCW_DEFAULT_PROJECT_ID: ${{ secrets.SCW_DEFAULT_PROJECT_ID }}
+      SCW_DEFAULT_ORGANIZATION_ID: ${{ secrets.SCW_DEFAULT_ORGANIZATION_ID }}
     steps:
-      - name: Setup Scaleway CLI
-        uses: scaleway/action-scw@v0
-        with:
-          access-key: ${{ secrets.SCW_ACCESS_KEY }}
-          secret-key: ${{ secrets.SCW_SECRET_KEY }}
-          default-project-id: ${{ secrets.SCW_DEFAULT_PROJECT_ID }}
-          default-organization-id: ${{ secrets.SCW_DEFAULT_ORGANIZATION_ID }}
+      - name: Install Scaleway CLI
+        run: curl -s https://raw.githubusercontent.com/scaleway/scaleway-cli/master/scripts/get.sh | sudo sh
 
       - name: Deploy preview container
         id: deploy
