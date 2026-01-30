@@ -69,17 +69,16 @@ jobs:
         id: meta
         run: |
           SCW_REGISTRY="${{ vars.SCW_REGISTRY_ENDPOINT }}"
-          IMAGE_NAME="lyonjs.github.com"
+          GHCR_IMAGE="ghcr.io/lyonjs/lyonjs.github.com"
+          SCW_IMAGE="${SCW_REGISTRY}/lyonjs-website"
 
           if [ "${{ github.event_name }}" = "push" ]; then
-            GHCR_TAGS="ghcr.io/lyonjs/${IMAGE_NAME}:latest,ghcr.io/lyonjs/${IMAGE_NAME}:${{ github.sha }}"
-            SCW_TAGS="${SCW_REGISTRY}/${IMAGE_NAME}:latest,${SCW_REGISTRY}/${IMAGE_NAME}:${{ github.sha }}"
-            ALL_TAGS="${GHCR_TAGS},${SCW_TAGS}"
-            echo "scw_image=${SCW_REGISTRY}/${IMAGE_NAME}:${{ github.sha }}" >> "$GITHUB_OUTPUT"
+            ALL_TAGS="${GHCR_IMAGE}:latest,${GHCR_IMAGE}:${{ github.sha }},${SCW_IMAGE}:latest,${SCW_IMAGE}:${{ github.sha }}"
+            echo "scw_image=${SCW_IMAGE}:${{ github.sha }}" >> "$GITHUB_OUTPUT"
           else
             PR_NUMBER="${{ github.event.pull_request.number }}"
-            ALL_TAGS="${SCW_REGISTRY}/${IMAGE_NAME}:pr-${PR_NUMBER}"
-            echo "scw_image=${SCW_REGISTRY}/${IMAGE_NAME}:pr-${PR_NUMBER}" >> "$GITHUB_OUTPUT"
+            ALL_TAGS="${SCW_IMAGE}:pr-${PR_NUMBER}"
+            echo "scw_image=${SCW_IMAGE}:pr-${PR_NUMBER}" >> "$GITHUB_OUTPUT"
           fi
 
           echo "tags=${ALL_TAGS}" >> "$GITHUB_OUTPUT"
