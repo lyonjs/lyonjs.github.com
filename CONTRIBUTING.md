@@ -40,6 +40,43 @@ flowchart LR
   end
 ```
 
+## Deployment
+
+The site is deployed on **Scaleway Serverless Containers**. The CI pipeline (`.github/workflows/integration.yml`) handles everything automatically.
+
+### How it works
+
+```mermaid
+flowchart LR
+  P[Push / PR] --> CI[CI: format + build]
+  CI --> D[Docker build & push]
+  D -->|push master| SCR[Scaleway Container Registry]
+  D -->|push master| GHCR[GitHub Container Registry]
+  D -->|PR| SCR
+  SCR -->|push master| PROD[Production container<br/>min-scale=1]
+  SCR -->|PR| PREVIEW[Preview container<br/>min-scale=0]
+```
+
+- **Production** (`master`): the container is always warm (`min-scale=1`, `max-scale=5`). Deployed automatically on every push to `master`.
+- **Preview** (pull requests): a `preview-pr-<N>` container is created per PR with scale-to-zero (`min-scale=0`). The preview URL appears in the PR via GitHub Environments ("View deployment" button). The container and image tag are automatically cleaned up when the PR is closed (`.github/workflows/deploy-cleanup.yml`).
+
+### Docker image registries
+
+Images are pushed to two registries:
+
+- **Scaleway Container Registry** (`rg.fr-par.scw.cloud/lyonjs/lyonjs.github.com`) — used by Serverless Containers for deployment
+- **GitHub Container Registry** (`ghcr.io/lyonjs/lyonjs.github.com`) — archive/backup, push on `master` only
+
+### Environment variables
+
+The `DEPLOY_ENV` variable (`production` or `preview`) controls whether CSP security headers are applied in `middleware.ts`.
+
+### Required GitHub configuration
+
+Secrets: `SCW_ACCESS_KEY`, `SCW_SECRET_KEY`, `SCW_DEFAULT_PROJECT_ID`, `SCW_DEFAULT_ORGANIZATION_ID`
+
+Variables: `SCW_REGISTRY_ENDPOINT`, `SCW_PROD_NAMESPACE_ID`, `SCW_PREVIEW_NAMESPACE_ID`, `SCW_PROD_CONTAINER_ID`
+
 ## How to?
 
 ### How to enhance content of past events?

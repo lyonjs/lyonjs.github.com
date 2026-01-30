@@ -69,17 +69,16 @@ jobs:
         id: meta
         run: |
           SCW_REGISTRY="${{ vars.SCW_REGISTRY_ENDPOINT }}"
-          IMAGE_NAME="lyonjs.github.com"
+          GHCR_IMAGE="ghcr.io/lyonjs/lyonjs.github.com"
+          SCW_IMAGE="${SCW_REGISTRY}/lyonjs-website"
 
           if [ "${{ github.event_name }}" = "push" ]; then
-            GHCR_TAGS="ghcr.io/lyonjs/${IMAGE_NAME}:latest,ghcr.io/lyonjs/${IMAGE_NAME}:${{ github.sha }}"
-            SCW_TAGS="${SCW_REGISTRY}/${IMAGE_NAME}:latest,${SCW_REGISTRY}/${IMAGE_NAME}:${{ github.sha }}"
-            ALL_TAGS="${GHCR_TAGS},${SCW_TAGS}"
-            echo "scw_image=${SCW_REGISTRY}/${IMAGE_NAME}:${{ github.sha }}" >> "$GITHUB_OUTPUT"
+            ALL_TAGS="${GHCR_IMAGE}:latest,${GHCR_IMAGE}:${{ github.sha }},${SCW_IMAGE}:latest,${SCW_IMAGE}:${{ github.sha }}"
+            echo "scw_image=${SCW_IMAGE}:${{ github.sha }}" >> "$GITHUB_OUTPUT"
           else
             PR_NUMBER="${{ github.event.pull_request.number }}"
-            ALL_TAGS="${SCW_REGISTRY}/${IMAGE_NAME}:pr-${PR_NUMBER}"
-            echo "scw_image=${SCW_REGISTRY}/${IMAGE_NAME}:pr-${PR_NUMBER}" >> "$GITHUB_OUTPUT"
+            ALL_TAGS="${SCW_IMAGE}:pr-${PR_NUMBER}"
+            echo "scw_image=${SCW_IMAGE}:pr-${PR_NUMBER}" >> "$GITHUB_OUTPUT"
           fi
 
           echo "tags=${ALL_TAGS}" >> "$GITHUB_OUTPUT"
@@ -100,14 +99,14 @@ jobs:
     environment:
       name: production
       url: ${{ steps.deploy.outputs.url }}
+    env:
+      SCW_ACCESS_KEY: ${{ secrets.SCW_ACCESS_KEY }}
+      SCW_SECRET_KEY: ${{ secrets.SCW_SECRET_KEY }}
+      SCW_DEFAULT_PROJECT_ID: ${{ secrets.SCW_DEFAULT_PROJECT_ID }}
+      SCW_DEFAULT_ORGANIZATION_ID: ${{ secrets.SCW_DEFAULT_ORGANIZATION_ID }}
     steps:
-      - name: Setup Scaleway CLI
-        uses: scaleway/action-scw@v0
-        with:
-          access-key: ${{ secrets.SCW_ACCESS_KEY }}
-          secret-key: ${{ secrets.SCW_SECRET_KEY }}
-          default-project-id: ${{ secrets.SCW_DEFAULT_PROJECT_ID }}
-          default-organization-id: ${{ secrets.SCW_DEFAULT_ORGANIZATION_ID }}
+      - name: Install Scaleway CLI
+        run: curl -s https://raw.githubusercontent.com/scaleway/scaleway-cli/master/scripts/get.sh | sudo sh
 
       - name: Deploy container
         id: deploy
@@ -139,19 +138,17 @@ jobs:
     if: github.event_name == 'pull_request'
     needs: docker
     runs-on: ubuntu-latest
-    permissions:
-      pull-requests: write
     environment:
       name: preview-pr-${{ github.event.pull_request.number }}
       url: ${{ steps.deploy.outputs.url }}
+    env:
+      SCW_ACCESS_KEY: ${{ secrets.SCW_ACCESS_KEY }}
+      SCW_SECRET_KEY: ${{ secrets.SCW_SECRET_KEY }}
+      SCW_DEFAULT_PROJECT_ID: ${{ secrets.SCW_DEFAULT_PROJECT_ID }}
+      SCW_DEFAULT_ORGANIZATION_ID: ${{ secrets.SCW_DEFAULT_ORGANIZATION_ID }}
     steps:
-      - name: Setup Scaleway CLI
-        uses: scaleway/action-scw@v0
-        with:
-          access-key: ${{ secrets.SCW_ACCESS_KEY }}
-          secret-key: ${{ secrets.SCW_SECRET_KEY }}
-          default-project-id: ${{ secrets.SCW_DEFAULT_PROJECT_ID }}
-          default-organization-id: ${{ secrets.SCW_DEFAULT_ORGANIZATION_ID }}
+      - name: Install Scaleway CLI
+        run: curl -s https://raw.githubusercontent.com/scaleway/scaleway-cli/master/scripts/get.sh | sudo sh
 
       - name: Deploy preview container
         id: deploy
@@ -214,35 +211,3 @@ jobs:
 
           echo "::error::Preview deployment timed out"
           exit 1
-
-      - name: Comment on PR
-        uses: actions/github-script@v7
-        with:
-          script: |
-            const marker = '<!-- scw-preview-comment -->';
-            const url = '${{ steps.deploy.outputs.url }}';
-            const body = `${marker}\n### 🔍 Preview deployment\n\nDeployed to Scaleway Serverless Containers:\n${url}\n\n_Updated at ${new Date().toISOString()}_`;
-
-            const { data: comments } = await github.rest.issues.listComments({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              issue_number: context.issue.number,
-            });
-
-            const existing = comments.find(c => c.body.includes(marker));
-
-            if (existing) {
-              await github.rest.issues.updateComment({
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-                comment_id: existing.id,
-                body,
-              });
-            } else {
-              await github.rest.issues.createComment({
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-                issue_number: context.issue.number,
-                body,
-              });
-            }
