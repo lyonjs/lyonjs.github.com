@@ -63,6 +63,7 @@ flowchart LR
 ### Docker image registries
 
 Images are pushed to two registries:
+
 - **Scaleway Container Registry** (`rg.fr-par.scw.cloud/lyonjs/lyonjs.github.com`) — used by Serverless Containers for deployment
 - **GitHub Container Registry** (`ghcr.io/lyonjs/lyonjs.github.com`) — archive/backup, push on `master` only
 
