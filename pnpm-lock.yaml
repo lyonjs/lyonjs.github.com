@@ -56,10 +56,10 @@ importers:
         version: 2.5.1
       graphql:
         specifier: ^16.9.0
-        version: 16.10.0
+        version: 16.12.0
       graphql-request:
         specifier: ^7.1.0
-        version: 7.4.0(graphql@16.10.0)
+        version: 7.4.0(graphql@16.12.0)
       husky:
         specifier: ^9.0.0
         version: 9.1.7
@@ -487,8 +487,8 @@ packages:
     peerDependencies:
       graphql: 14 - 16
 
-  graphql@16.10.0:
-    resolution: {integrity: sha512-AjqGKbDGUFRKIRCP9tCKiIGHyriz2oHEbPIbEtcSLSs4YjReZOIPQQWek4+6hjw62H9QShXHyaGivGiYVLeYFQ==}
+  graphql@16.12.0:
+    resolution: {integrity: sha512-DKKrynuQRne0PNpEbzuEdHlYOMksHSUI8Zc9Unei5gTsMNA2/vMpoMz/yKba50pejK56qj98qM0SjYxAKi13gQ==}
     engines: {node: ^12.22.0 || ^14.16.0 || ^16.0.0 || >=17.0.0}
 
   hast-util-to-jsx-runtime@2.3.6:
@@ -842,9 +842,9 @@ snapshots:
       tslib: 2.8.1
     optional: true
 
-  '@graphql-typed-document-node/core@3.2.0(graphql@16.10.0)':
+  '@graphql-typed-document-node/core@3.2.0(graphql@16.12.0)':
     dependencies:
-      graphql: 16.10.0
+      graphql: 16.12.0
 
   '@img/sharp-darwin-arm64@0.33.5':
     optionalDependencies:
@@ -1147,12 +1147,12 @@ snapshots:
   fsevents@2.3.2:
     optional: true
 
-  graphql-request@7.4.0(graphql@16.10.0):
+  graphql-request@7.4.0(graphql@16.12.0):
     dependencies:
-      '@graphql-typed-document-node/core': 3.2.0(graphql@16.10.0)
-      graphql: 16.10.0
+      '@graphql-typed-document-node/core': 3.2.0(graphql@16.12.0)
+      graphql: 16.12.0
 
-  graphql@16.10.0: {}
+  graphql@16.12.0: {}
 
   hast-util-to-jsx-runtime@2.3.6:
     dependencies:
