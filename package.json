@@ -21,7 +21,7 @@
     "react": "19.2.4",
     "react-dom": "19.2.4",
     "react-markdown": "^9.0.1",
-    "sharp": "^0.33.5",
+    "sharp": "^0.34.0",
     "temporal-polyfill": "^0.3.0",
     "yet-another-react-lightbox": "^3.21.4"
   },
