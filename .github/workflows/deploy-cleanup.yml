@@ -1,0 +1,53 @@
+name: 🧹 Preview cleanup
+on:
+  pull_request:
+    types: [closed]
+
+jobs:
+  cleanup:
+    name: 🗑️ Delete preview container
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup Scaleway CLI
+        uses: scaleway/action-scw@v0
+        with:
+          access-key: ${{ secrets.SCW_ACCESS_KEY }}
+          secret-key: ${{ secrets.SCW_SECRET_KEY }}
+          default-project-id: ${{ secrets.SCW_DEFAULT_PROJECT_ID }}
+          default-organization-id: ${{ secrets.SCW_DEFAULT_ORGANIZATION_ID }}
+
+      - name: Delete preview container
+        run: |
+          PR_NUMBER="${{ github.event.pull_request.number }}"
+          CONTAINER_NAME="preview-pr-${PR_NUMBER}"
+          NAMESPACE_ID="${{ vars.SCW_PREVIEW_NAMESPACE_ID }}"
+
+          # Find container by exact name match
+          CONTAINER_ID=$(scw container container list \
+            namespace-id="${NAMESPACE_ID}" \
+            region=fr-par \
+            -o json | jq -r --arg name "$CONTAINER_NAME" '.[] | select(.name == $name) | .id')
+
+          if [ -n "$CONTAINER_ID" ]; then
+            echo "Deleting container ${CONTAINER_ID} (${CONTAINER_NAME})"
+            scw container container delete "${CONTAINER_ID}" region=fr-par
+          else
+            echo "No container found for ${CONTAINER_NAME}, skipping"
+          fi
+
+      - name: Delete SCR image tag
+        run: |
+          PR_NUMBER="${{ github.event.pull_request.number }}"
+          IMAGE_TAG="pr-${PR_NUMBER}"
+          SCW_REGISTRY="${{ vars.SCW_REGISTRY_ENDPOINT }}"
+
+          # List images and find the one with our tag
+          IMAGE_ID=$(scw registry image list \
+            -o json | jq -r --arg tag "$IMAGE_TAG" '.[] | select(.tags[]? == $tag) | .id')
+
+          if [ -n "$IMAGE_ID" ]; then
+            echo "Deleting image ${IMAGE_ID} with tag ${IMAGE_TAG}"
+            scw registry image delete "${IMAGE_ID}"
+          else
+            echo "No image found with tag ${IMAGE_TAG}, skipping"
+          fi

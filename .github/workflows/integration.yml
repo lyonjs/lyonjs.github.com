@@ -5,6 +5,10 @@ on:
     branches:
       - 'master'
 
+concurrency:
+  group: deploy-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
 jobs:
   format:
     name: 💅 Check format
@@ -35,26 +39,210 @@ jobs:
 
   docker:
     name: 🐳 Docker build & push
-    if: github.event_name == 'push'
-    needs: nextjs
+    needs: [format, nextjs]
     runs-on: ubuntu-latest
     permissions:
       contents: read
       packages: write
+    outputs:
+      scw_image: ${{ steps.meta.outputs.scw_image }}
     steps:
       - uses: actions/checkout@main
       - uses: docker/setup-buildx-action@v3
-      - uses: docker/login-action@v3
+
+      - name: Login to GHCR
+        if: github.event_name == 'push'
+        uses: docker/login-action@v3
         with:
           registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Login to Scaleway Container Registry
+        uses: docker/login-action@v3
+        with:
+          registry: rg.fr-par.scw.cloud
+          username: nologin
+          password: ${{ secrets.SCW_SECRET_KEY }}
+
+      - name: Compute image tags
+        id: meta
+        run: |
+          SCW_REGISTRY="${{ vars.SCW_REGISTRY_ENDPOINT }}"
+          IMAGE_NAME="lyonjs.github.com"
+
+          if [ "${{ github.event_name }}" = "push" ]; then
+            GHCR_TAGS="ghcr.io/lyonjs/${IMAGE_NAME}:latest,ghcr.io/lyonjs/${IMAGE_NAME}:${{ github.sha }}"
+            SCW_TAGS="${SCW_REGISTRY}/${IMAGE_NAME}:latest,${SCW_REGISTRY}/${IMAGE_NAME}:${{ github.sha }}"
+            ALL_TAGS="${GHCR_TAGS},${SCW_TAGS}"
+            echo "scw_image=${SCW_REGISTRY}/${IMAGE_NAME}:${{ github.sha }}" >> "$GITHUB_OUTPUT"
+          else
+            PR_NUMBER="${{ github.event.pull_request.number }}"
+            ALL_TAGS="${SCW_REGISTRY}/${IMAGE_NAME}:pr-${PR_NUMBER}"
+            echo "scw_image=${SCW_REGISTRY}/${IMAGE_NAME}:pr-${PR_NUMBER}" >> "$GITHUB_OUTPUT"
+          fi
+
+          echo "tags=${ALL_TAGS}" >> "$GITHUB_OUTPUT"
+
       - uses: docker/build-push-action@v6
         with:
           context: .
           push: true
-          tags: |
-            ghcr.io/lyonjs/lyonjs.github.com:latest
-            ghcr.io/lyonjs/lyonjs.github.com:${{ github.sha }}
+          tags: ${{ steps.meta.outputs.tags }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
+
+  deploy-production:
+    name: 🚀 Deploy production
+    if: github.event_name == 'push'
+    needs: docker
+    runs-on: ubuntu-latest
+    environment:
+      name: production
+      url: ${{ steps.deploy.outputs.url }}
+    steps:
+      - name: Setup Scaleway CLI
+        uses: scaleway/action-scw@v0
+        with:
+          access-key: ${{ secrets.SCW_ACCESS_KEY }}
+          secret-key: ${{ secrets.SCW_SECRET_KEY }}
+          default-project-id: ${{ secrets.SCW_DEFAULT_PROJECT_ID }}
+          default-organization-id: ${{ secrets.SCW_DEFAULT_ORGANIZATION_ID }}
+
+      - name: Deploy container
+        id: deploy
+        run: |
+          scw container container update \
+            "${{ vars.SCW_PROD_CONTAINER_ID }}" \
+            registry-image="${{ needs.docker.outputs.scw_image }}" \
+            redeploy=true \
+            region=fr-par
+
+          # Poll until ready (timeout 3 min)
+          for i in $(seq 1 36); do
+            STATUS=$(scw container container get "${{ vars.SCW_PROD_CONTAINER_ID }}" region=fr-par -o json | jq -r '.status')
+            if [ "$STATUS" = "ready" ]; then
+              URL=$(scw container container get "${{ vars.SCW_PROD_CONTAINER_ID }}" region=fr-par -o json | jq -r '.domain_name')
+              echo "url=https://${URL}" >> "$GITHUB_OUTPUT"
+              echo "Container is ready at https://${URL}"
+              exit 0
+            fi
+            echo "Status: ${STATUS} - waiting..."
+            sleep 5
+          done
+
+          echo "::error::Deployment timed out"
+          exit 1
+
+  deploy-preview:
+    name: 🔍 Deploy preview
+    if: github.event_name == 'pull_request'
+    needs: docker
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+    environment:
+      name: preview-pr-${{ github.event.pull_request.number }}
+      url: ${{ steps.deploy.outputs.url }}
+    steps:
+      - name: Setup Scaleway CLI
+        uses: scaleway/action-scw@v0
+        with:
+          access-key: ${{ secrets.SCW_ACCESS_KEY }}
+          secret-key: ${{ secrets.SCW_SECRET_KEY }}
+          default-project-id: ${{ secrets.SCW_DEFAULT_PROJECT_ID }}
+          default-organization-id: ${{ secrets.SCW_DEFAULT_ORGANIZATION_ID }}
+
+      - name: Deploy preview container
+        id: deploy
+        run: |
+          PR_NUMBER="${{ github.event.pull_request.number }}"
+          CONTAINER_NAME="preview-pr-${PR_NUMBER}"
+          NAMESPACE_ID="${{ vars.SCW_PREVIEW_NAMESPACE_ID }}"
+          IMAGE="${{ needs.docker.outputs.scw_image }}"
+
+          # Check if the container already exists (exact name match)
+          EXISTING=$(scw container container list \
+            namespace-id="${NAMESPACE_ID}" \
+            region=fr-par \
+            -o json | jq -r --arg name "$CONTAINER_NAME" '.[] | select(.name == $name) | .id')
+
+          if [ -n "$EXISTING" ]; then
+            echo "Updating existing container ${EXISTING}"
+            scw container container update \
+              "${EXISTING}" \
+              registry-image="${IMAGE}" \
+              redeploy=true \
+              region=fr-par
+            CONTAINER_ID="${EXISTING}"
+          else
+            echo "Creating new preview container"
+            RESULT=$(scw container container create \
+              namespace-id="${NAMESPACE_ID}" \
+              name="${CONTAINER_NAME}" \
+              registry-image="${IMAGE}" \
+              port=3000 \
+              min-scale=0 \
+              max-scale=1 \
+              memory-limit=256 \
+              cpu-limit=250 \
+              privacy=public \
+              http-option=redirected \
+              environment-variables.DEPLOY_ENV=preview \
+              environment-variables.NODE_ENV=production \
+              environment-variables.HOSTNAME=0.0.0.0 \
+              region=fr-par \
+              -o json)
+            CONTAINER_ID=$(echo "$RESULT" | jq -r '.id')
+
+            # Deploy the newly created container
+            scw container container deploy "${CONTAINER_ID}" region=fr-par
+          fi
+
+          # Poll until ready (timeout 3 min)
+          for i in $(seq 1 36); do
+            STATUS=$(scw container container get "${CONTAINER_ID}" region=fr-par -o json | jq -r '.status')
+            if [ "$STATUS" = "ready" ]; then
+              URL=$(scw container container get "${CONTAINER_ID}" region=fr-par -o json | jq -r '.domain_name')
+              echo "url=https://${URL}" >> "$GITHUB_OUTPUT"
+              echo "Container is ready at https://${URL}"
+              exit 0
+            fi
+            echo "Status: ${STATUS} - waiting..."
+            sleep 5
+          done
+
+          echo "::error::Preview deployment timed out"
+          exit 1
+
+      - name: Comment on PR
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const marker = '<!-- scw-preview-comment -->';
+            const url = '${{ steps.deploy.outputs.url }}';
+            const body = `${marker}\n### 🔍 Preview deployment\n\nDeployed to Scaleway Serverless Containers:\n${url}\n\n_Updated at ${new Date().toISOString()}_`;
+
+            const { data: comments } = await github.rest.issues.listComments({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+            });
+
+            const existing = comments.find(c => c.body.includes(marker));
+
+            if (existing) {
+              await github.rest.issues.updateComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                comment_id: existing.id,
+                body,
+              });
+            } else {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: context.issue.number,
+                body,
+              });
+            }

@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 
-const IS_PROD_ENV = process.env.VERCEL_ENV === 'production' || process.env.VERCEL_ENV === 'preview';
+const IS_PROD_ENV = process.env.DEPLOY_ENV === 'production' || process.env.DEPLOY_ENV === 'preview';
 
 export function middleware(request: NextRequest) {
   const nonce = Buffer.from(crypto.randomUUID()).toString('base64');
