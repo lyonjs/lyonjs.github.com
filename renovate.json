@@ -8,7 +8,6 @@
   "packageRules": [
     {
       "matchDepTypes": ["devDependencies"],
-      "matchPackageNames": ["lint", "prettier"],
       "automerge": true
     },
     {
