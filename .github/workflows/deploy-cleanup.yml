@@ -1,11 +1,14 @@
-name: 🧹 Preview cleanup
+name: 🧹 Cleanup
 on:
   pull_request:
     types: [closed]
+  schedule:
+    - cron: '0 3 * * 1' # Every Monday at 3am UTC
 
 jobs:
-  cleanup:
+  preview-cleanup:
     name: 🗑️ Delete preview container
+    if: github.event_name == 'pull_request'
     runs-on: ubuntu-latest
     env:
       SCW_ACCESS_KEY: ${{ secrets.SCW_ACCESS_KEY }}
@@ -39,7 +42,6 @@ jobs:
         run: |
           PR_NUMBER="${{ github.event.pull_request.number }}"
           IMAGE_TAG="pr-${PR_NUMBER}"
-          SCW_REGISTRY="${{ vars.SCW_REGISTRY_ENDPOINT }}"
 
           # List images and find the one with our tag
           IMAGE_ID=$(scw registry image list \
@@ -51,3 +53,59 @@ jobs:
           else
             echo "No image found with tag ${IMAGE_TAG}, skipping"
           fi
+
+  registry-cleanup:
+    name: 🧹 Purge old production images
+    if: github.event_name == 'schedule'
+    runs-on: ubuntu-latest
+    env:
+      SCW_ACCESS_KEY: ${{ secrets.SCW_ACCESS_KEY }}
+      SCW_SECRET_KEY: ${{ secrets.SCW_SECRET_KEY }}
+      SCW_DEFAULT_PROJECT_ID: ${{ secrets.SCW_DEFAULT_PROJECT_ID }}
+      SCW_DEFAULT_ORGANIZATION_ID: ${{ secrets.SCW_DEFAULT_ORGANIZATION_ID }}
+    steps:
+      - name: Install Scaleway CLI
+        run: curl -s https://raw.githubusercontent.com/scaleway/scaleway-cli/master/scripts/get.sh | sudo sh
+
+      - name: Purge old images
+        run: |
+          KEEP=5
+
+          # List all images, sorted oldest first
+          IMAGES=$(scw registry image list \
+            -o json | jq -c 'sort_by(.created_at)')
+
+          # Filter out images that have a "latest" or "pr-" tag (previews handled separately)
+          OLD_IMAGES=$(echo "$IMAGES" | jq -c --argjson keep "$KEEP" '
+            [ .[] | select(
+              (.tags | length > 0) and
+              (.tags | all(test("^(latest|pr-)") | not))
+            )] | .[:-$keep]')
+
+          COUNT=$(echo "$OLD_IMAGES" | jq 'length')
+          echo "Found ${COUNT} old image(s) to delete (keeping last ${KEEP})"
+
+          echo "## 🧹 Registry cleanup" >> "$GITHUB_STEP_SUMMARY"
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+
+          if [ "$COUNT" -eq 0 ]; then
+            echo "Nothing to clean up." >> "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+
+          echo "| Image ID | Tags | Size | Created |" >> "$GITHUB_STEP_SUMMARY"
+          echo "|---|---|---|---|" >> "$GITHUB_STEP_SUMMARY"
+
+          echo "$OLD_IMAGES" | jq -r '.[] | .id' | while read -r IMAGE_ID; do
+            TAGS=$(echo "$OLD_IMAGES" | jq -r --arg id "$IMAGE_ID" '.[] | select(.id == $id) | .tags | join(", ")')
+            SIZE=$(echo "$OLD_IMAGES" | jq -r --arg id "$IMAGE_ID" '.[] | select(.id == $id) | .size')
+            SIZE_MB=$(awk "BEGIN {printf \"%.1f\", ${SIZE}/1024/1024}")
+            CREATED=$(echo "$OLD_IMAGES" | jq -r --arg id "$IMAGE_ID" '.[] | select(.id == $id) | .created_at')
+
+            echo "Deleting ${IMAGE_ID} (tags: ${TAGS})"
+            echo "| \`${IMAGE_ID}\` | ${TAGS} | ${SIZE_MB} MB | ${CREATED} |" >> "$GITHUB_STEP_SUMMARY"
+            scw registry image delete "${IMAGE_ID}"
+          done
+
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          echo "Deleted **${COUNT}** image(s), kept last **${KEEP}**." >> "$GITHUB_STEP_SUMMARY"
