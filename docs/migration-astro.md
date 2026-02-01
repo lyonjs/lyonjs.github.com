@@ -28,83 +28,84 @@ Le site LyonJS tourne sur Next.js 16 (App Router, React 19, standalone output) d
 
 ### Pages et routes
 
-| Next.js (App Router) | Astro | Effort |
-|---|---|---|
-| `app/page.tsx` | `src/pages/index.astro` | Faible |
-| `app/a-propos/page.tsx` | `src/pages/a-propos.astro` | Faible |
-| `app/code-de-conduite/page.tsx` | `src/pages/code-de-conduite.astro` | Faible |
-| `app/devenir-sponsor/page.tsx` | `src/pages/devenir-sponsor.astro` | Faible |
-| `app/budget-et-financement/page.tsx` | `src/pages/budget-et-financement.astro` | Faible |
-| `app/evenements-precedents/page.tsx` | `src/pages/evenements-precedents/index.astro` | Faible |
-| `app/evenements-precedents/[year]/page.tsx` | `src/pages/evenements-precedents/[year].astro` avec `getStaticPaths()` | Moyen |
-| `app/evenement/[slug]/page.tsx` | `src/pages/evenement/[slug].astro` avec `getStaticPaths()` | Moyen |
-| `app/lyonjs-100/page.tsx` | `src/pages/lyonjs-100.astro` | Faible |
-| `app/not-found.tsx` | `src/pages/404.astro` | Faible |
-| `app/layout.tsx` | `src/layouts/Layout.astro` | Moyen |
-| `app/robots.ts` | `src/pages/robots.txt.ts` | Faible |
-| `app/sitemap.ts` | `@astrojs/sitemap` integration | Faible |
+| Next.js (App Router)                        | Astro                                                                  | Effort |
+| ------------------------------------------- | ---------------------------------------------------------------------- | ------ |
+| `app/page.tsx`                              | `src/pages/index.astro`                                                | Faible |
+| `app/a-propos/page.tsx`                     | `src/pages/a-propos.astro`                                             | Faible |
+| `app/code-de-conduite/page.tsx`             | `src/pages/code-de-conduite.astro`                                     | Faible |
+| `app/devenir-sponsor/page.tsx`              | `src/pages/devenir-sponsor.astro`                                      | Faible |
+| `app/budget-et-financement/page.tsx`        | `src/pages/budget-et-financement.astro`                                | Faible |
+| `app/evenements-precedents/page.tsx`        | `src/pages/evenements-precedents/index.astro`                          | Faible |
+| `app/evenements-precedents/[year]/page.tsx` | `src/pages/evenements-precedents/[year].astro` avec `getStaticPaths()` | Moyen  |
+| `app/evenement/[slug]/page.tsx`             | `src/pages/evenement/[slug].astro` avec `getStaticPaths()`             | Moyen  |
+| `app/lyonjs-100/page.tsx`                   | `src/pages/lyonjs-100.astro`                                           | Faible |
+| `app/not-found.tsx`                         | `src/pages/404.astro`                                                  | Faible |
+| `app/layout.tsx`                            | `src/layouts/Layout.astro`                                             | Moyen  |
+| `app/robots.ts`                             | `src/pages/robots.txt.ts`                                              | Faible |
+| `app/sitemap.ts`                            | `@astrojs/sitemap` integration                                         | Faible |
 
 ### Data fetching
 
-| Pattern Next.js | Equivalent Astro | Notes |
-|---|---|---|
-| `generateStaticParams()` | `getStaticPaths()` | Meme concept, syntaxe differente |
-| `revalidate = 3600` (ISR) | Rebuild CI ou SSR mode | Pas d'ISR en SSG, voir section dediee |
-| `React cache()` | Appel direct dans le frontmatter | Pas de deduplication automatique, mais les appels sont dans le frontmatter donc executes une seule fois |
-| Server components async | Composants Astro (async par defaut) | Transition naturelle |
+| Pattern Next.js           | Equivalent Astro                    | Notes                                                                                                   |
+| ------------------------- | ----------------------------------- | ------------------------------------------------------------------------------------------------------- |
+| `generateStaticParams()`  | `getStaticPaths()`                  | Meme concept, syntaxe differente                                                                        |
+| `revalidate = 3600` (ISR) | Rebuild CI ou SSR mode              | Pas d'ISR en SSG, voir section dediee                                                                   |
+| `React cache()`           | Appel direct dans le frontmatter    | Pas de deduplication automatique, mais les appels sont dans le frontmatter donc executes une seule fois |
+| Server components async   | Composants Astro (async par defaut) | Transition naturelle                                                                                    |
 
 ### Composants interactifs (React islands)
 
 Ces 7 composants necessitent du JS client et deviendraient des islands React dans Astro :
 
-| Composant | Utilise | Directive Astro |
-|---|---|---|
-| `HomeHero.tsx` | motion (animations) | `client:load` |
-| `Number.tsx` | motion, next/font | `client:visible` |
-| `Collapsible.tsx` | useState | `client:visible` |
-| `NavLink.tsx` | next/navigation (usePathname) | `client:load` |
-| `MobileNavigation.tsx` | useState, usePathname, useEffect | `client:load` |
-| `PhotoAlbum.tsx` | useState, dynamic import lightbox | `client:visible` |
-| `EventCard.tsx` | dynamic import react-markdown | `client:visible` |
+| Composant              | Utilise                           | Directive Astro  |
+| ---------------------- | --------------------------------- | ---------------- |
+| `HomeHero.tsx`         | motion (animations)               | `client:load`    |
+| `Number.tsx`           | motion, next/font                 | `client:visible` |
+| `Collapsible.tsx`      | useState                          | `client:visible` |
+| `NavLink.tsx`          | next/navigation (usePathname)     | `client:load`    |
+| `MobileNavigation.tsx` | useState, usePathname, useEffect  | `client:load`    |
+| `PhotoAlbum.tsx`       | useState, dynamic import lightbox | `client:visible` |
+| `EventCard.tsx`        | dynamic import react-markdown     | `client:visible` |
 
 **Note** : `NavLink` et `MobileNavigation` utilisent `usePathname()` de `next/navigation`. A remplacer par `window.location.pathname` ou `Astro.url.pathname` (partie serveur) + event listeners cote client.
 
 ### Images
 
-| Next.js | Astro |
-|---|---|
-| `next/image` (8 fichiers) | `astro:assets` `<Image>` component |
-| `remotePatterns` dans next.config | `image.domains` dans astro.config |
-| Optimisation automatique (sharp) | Optimisation automatique (sharp) |
+| Next.js                           | Astro                              |
+| --------------------------------- | ---------------------------------- |
+| `next/image` (8 fichiers)         | `astro:assets` `<Image>` component |
+| `remotePatterns` dans next.config | `image.domains` dans astro.config  |
+| Optimisation automatique (sharp)  | Optimisation automatique (sharp)   |
 
 Le composant `<Image>` d'Astro offre les memes fonctionnalites (lazy loading, format moderne, responsive). Migration directe.
 
 ### MDX
 
-| Next.js | Astro |
-|---|---|
-| `@next/mdx` + `mdx-components.tsx` | `@astrojs/mdx` integration |
-| 5 fichiers `.mdx` | Meme fichiers, syntaxe compatible |
-| Custom components mapping | Components passees via props dans le layout |
+| Next.js                            | Astro                                       |
+| ---------------------------------- | ------------------------------------------- |
+| `@next/mdx` + `mdx-components.tsx` | `@astrojs/mdx` integration                  |
+| 5 fichiers `.mdx`                  | Meme fichiers, syntaxe compatible           |
+| Custom components mapping          | Components passees via props dans le layout |
 
 Astro a un excellent support MDX natif. Les composants React embarques dans le MDX (`<Orgas />`, `<Socials />`) peuvent rester en React via les islands ou etre convertis en composants Astro.
 
 ### Metadata / SEO
 
-| Next.js | Astro |
-|---|---|
-| `export const metadata: Metadata` | `<head>` dans le layout + props |
-| `generateMetadata()` | Props dynamiques dans le layout |
-| `opengraph-image.tsx` (6 fichiers) | `satori` + `sharp` au build (voir ci-dessous) |
-| `robots.ts` | `src/pages/robots.txt.ts` |
-| `sitemap.ts` | `@astrojs/sitemap` |
-| JSON-LD structured data | `<script type="application/ld+json">` dans le layout |
+| Next.js                            | Astro                                                |
+| ---------------------------------- | ---------------------------------------------------- |
+| `export const metadata: Metadata`  | `<head>` dans le layout + props                      |
+| `generateMetadata()`               | Props dynamiques dans le layout                      |
+| `opengraph-image.tsx` (6 fichiers) | `satori` + `sharp` au build (voir ci-dessous)        |
+| `robots.ts`                        | `src/pages/robots.txt.ts`                            |
+| `sitemap.ts`                       | `@astrojs/sitemap`                                   |
+| JSON-LD structured data            | `<script type="application/ld+json">` dans le layout |
 
 ### OG Images dynamiques
 
 C'est le point le plus complexe. Actuellement 6 routes generent des images OG via `next/og` (basee sur `satori`).
 
 **Options avec Astro** :
+
 1. **`astro-og-canvas`** : Librairie communautaire pour generer des OG images au build
 2. **`satori` + `sharp` directement** : Meme moteur que `next/og`, utilisable dans `getStaticPaths()` pour generer les images au build
 3. **Service externe** : Generer via un endpoint API separe
@@ -114,10 +115,12 @@ Recommandation : option 2, generer les images au build avec `satori` directement
 ### Middleware / Headers de securite
 
 Le `middleware.ts` actuel gere :
+
 - Nonce CSP pour les scripts inline
 - Headers de securite (X-Frame-Options, etc.)
 
 **Avec Astro** :
+
 - Les headers statiques (X-Frame-Options, etc.) → configures dans le Dockerfile / reverse proxy / `astro.config.mjs` en mode SSR
 - Le nonce CSP → plus necessaire si pas de scripts inline. Sinon, middleware Astro en mode SSR.
 - Alternative : configurer les headers directement dans Scaleway Serverless Containers
@@ -128,12 +131,12 @@ Une seule redirection (`/lyonjs-100/programme` → `/lyonjs-100`) → `redirects
 
 ### Styles
 
-| Next.js | Astro |
-|---|---|
+| Next.js                    | Astro                            |
+| -------------------------- | -------------------------------- |
 | CSS Modules (20+ fichiers) | CSS Modules supportes nativement |
-| `globals.css` | Import global dans le layout |
-| `normalize.css` | Import dans le layout |
-| `classnames` | Continue a fonctionner |
+| `globals.css`              | Import global dans le layout     |
+| `normalize.css`            | Import dans le layout            |
+| `classnames`               | Continue a fonctionner           |
 
 Migration transparente, rien a changer.
 
@@ -143,11 +146,11 @@ Le site utilise `revalidate = 3600` sur plusieurs pages pour actualiser les donn
 
 **Options avec Astro** :
 
-| Option | Description | Impact |
-|---|---|---|
-| **SSG + rebuild cron** | Workflow CI schedule qui rebuild et redeploy toutes les heures | Simple, pas de serveur Node, image Docker minimale (nginx) |
-| **SSR mode** | Astro en mode `output: 'server'` avec cache headers | Garde le comportement ISR, mais necessite Node.js runtime |
-| **Hybride** | `output: 'hybrid'` — pages statiques par defaut, quelques routes SSR | Meilleur compromis |
+| Option                 | Description                                                          | Impact                                                     |
+| ---------------------- | -------------------------------------------------------------------- | ---------------------------------------------------------- |
+| **SSG + rebuild cron** | Workflow CI schedule qui rebuild et redeploy toutes les heures       | Simple, pas de serveur Node, image Docker minimale (nginx) |
+| **SSR mode**           | Astro en mode `output: 'server'` avec cache headers                  | Garde le comportement ISR, mais necessite Node.js runtime  |
+| **Hybride**            | `output: 'hybrid'` — pages statiques par defaut, quelques routes SSR | Meilleur compromis                                         |
 
 **Recommandation** : SSG + rebuild cron. Le contenu change rarement (quelques meetups par mois). Un rebuild horaire ou quotidien suffit largement. Cela permet de deployer une image Docker statique (nginx) au lieu d'un runtime Node.js.
 
@@ -200,19 +203,19 @@ Le site utilise `revalidate = 3600` sur plusieurs pages pour actualiser les donn
 
 ## Estimation de la complexite
 
-| Element | Fichiers | Complexite |
-|---|---|---|
-| Pages statiques (MDX) | 5 | Faible |
-| Layout + Header + Footer | 3 | Faible |
-| Navigation (mobile, links) | 3 | Moyenne |
-| Homepage (hero, numbers, replays) | 5 | Moyenne |
-| Pages dynamiques (events, years) | 4 | Moyenne |
-| Module Meetup API | 5 | Faible (reutilisable) |
-| Data files | 9 | Aucune (reutilisable) |
-| OG images | 6 | Elevee |
-| Middleware → headers | 1 | Faible |
-| Tests Playwright | 3 | Faible (memes URLs) |
-| CI/CD + Docker | 3 | Faible |
+| Element                           | Fichiers | Complexite            |
+| --------------------------------- | -------- | --------------------- |
+| Pages statiques (MDX)             | 5        | Faible                |
+| Layout + Header + Footer          | 3        | Faible                |
+| Navigation (mobile, links)        | 3        | Moyenne               |
+| Homepage (hero, numbers, replays) | 5        | Moyenne               |
+| Pages dynamiques (events, years)  | 4        | Moyenne               |
+| Module Meetup API                 | 5        | Faible (reutilisable) |
+| Data files                        | 9        | Aucune (reutilisable) |
+| OG images                         | 6        | Elevee                |
+| Middleware → headers              | 1        | Faible                |
+| Tests Playwright                  | 3        | Faible (memes URLs)   |
+| CI/CD + Docker                    | 3        | Faible                |
 
 **Code reutilisable sans modification** : tout le dossier `data/`, le module `meetup/` (queries, API), les utilitaires (`dateUtils`, `slugify`, `overrideEvent`), les types, `classnames`, CSS Modules.
 
