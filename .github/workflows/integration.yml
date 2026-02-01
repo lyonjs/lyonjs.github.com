@@ -87,9 +87,27 @@ jobs:
         with:
           context: .
           push: true
+          load: true
           tags: ${{ steps.meta.outputs.tags }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
+
+      - name: Docker image summary
+        run: |
+          IMAGE=$(echo "${{ steps.meta.outputs.tags }}" | cut -d',' -f1)
+          SIZE_BYTES=$(docker image inspect "$IMAGE" --format='{{.Size}}')
+          SIZE_MB=$(awk "BEGIN {printf \"%.1f\", ${SIZE_BYTES}/1024/1024}")
+          LAYERS=$(docker image inspect "$IMAGE" --format='{{len .RootFS.Layers}}')
+          CREATED=$(docker image inspect "$IMAGE" --format='{{.Created}}')
+
+          echo "## 🐳 Docker image" >> "$GITHUB_STEP_SUMMARY"
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          echo "| | |" >> "$GITHUB_STEP_SUMMARY"
+          echo "|---|---|" >> "$GITHUB_STEP_SUMMARY"
+          echo "| **Image** | \`${IMAGE}\` |" >> "$GITHUB_STEP_SUMMARY"
+          echo "| **Size** | ${SIZE_MB} MB |" >> "$GITHUB_STEP_SUMMARY"
+          echo "| **Layers** | ${LAYERS} |" >> "$GITHUB_STEP_SUMMARY"
+          echo "| **Created** | ${CREATED} |" >> "$GITHUB_STEP_SUMMARY"
 
   deploy-production:
     name: 🚀 Deploy production
