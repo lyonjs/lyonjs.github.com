@@ -113,8 +113,6 @@ Dans ce talk, nous verrons ce que sont les Islands ainsi que les composants serv
   },
 };
 
-export const speakers: Array<Speaker> = [matthieuLux, jeremiePatonnier, jonnyBurger, antoineCaron];
-
 export const program: Array<{ speaker: Speaker[]; talk?: Talk; youtubeId: string }> = [
   { speaker: [matthieuLux], youtubeId: 'xc169yA-pA8' },
   {
