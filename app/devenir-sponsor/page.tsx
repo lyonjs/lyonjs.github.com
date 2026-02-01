@@ -9,7 +9,6 @@ export default function BecomeSponsor() {
     </main>
   );
 }
-export const revalidate = 3600;
 const title = 'LyonJS | Devenir sponsor';
 const description = 'Vous souhaitez sponsoriser un événement de LyonJS, voici toutes les informations nécessaires';
 

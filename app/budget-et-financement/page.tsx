@@ -5,7 +5,6 @@ import Content from './content.mdx';
 export default function BudgetEtFinancement() {
   return <Content />;
 }
-export const revalidate = 3600;
 const title = 'LyonJS | Budget et financement de l’association';
 const description = "Quelles sont les dépenses de l'association LyonJS, comment elle se finance";
 

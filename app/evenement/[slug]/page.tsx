@@ -8,8 +8,6 @@ import { fetchPastEvents } from '../../../modules/meetup/queries/past-events.api
 import { notFound } from 'next/navigation';
 import { Metadata } from 'next';
 
-export const revalidate = 3600;
-
 export async function generateStaticParams() {
   const events = await fetchPastEvents();
   return events.map((event) => ({ slug: slugEventTitle(event) }));

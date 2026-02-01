@@ -1,3 +1,4 @@
+import { cache } from 'react';
 import { Event } from '../../event/types';
 import { gql } from 'graphql-request';
 import { client, Edges, LYONJS_MEETUP_ID } from '../api';
@@ -38,9 +39,9 @@ const query = gql`
   }
 `;
 
-export const fetchPastEvents = async (): Promise<Array<Event>> => {
+export const fetchPastEvents = cache(async (): Promise<Array<Event>> => {
   const meetupEventsResponse = await client.request<ResponseType>(query, { id: LYONJS_MEETUP_ID });
   const pastEvents = meetupEventsResponse?.group?.events?.edges.map((it) => it.node).toReversed() || [];
 
   return pastEvents;
-};
+});
