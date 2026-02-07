@@ -11,6 +11,10 @@ function youtubeVideoId(embedUrl: string): string | null {
   return match?.[1] ?? null;
 }
 
+function escapeXml(str: string): string {
+  return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+}
+
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const years = await fetchYearsWithMeetups();
   const pastEvents = await fetchPastEvents();
@@ -68,9 +72,11 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
           const videoId = youtubeVideoId(talk.videoLink);
           if (!videoId) continue;
           videos.push({
-            title: talk.title,
+            title: escapeXml(talk.title),
             thumbnail_loc: `https://img.youtube.com/vi/${videoId}/0.jpg`,
-            description: `${talk.title} - ${talk.speakers?.map((s) => s.name).join(', ') ?? ''} @ ${event.title}`,
+            description: escapeXml(
+              `${talk.title} - ${talk.speakers?.map((s) => s.name).join(', ') ?? ''} @ ${event.title}`,
+            ),
           });
         }
       }
