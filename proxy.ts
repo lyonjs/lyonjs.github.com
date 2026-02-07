@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 
 const IS_PROD_ENV = process.env.DEPLOY_ENV === 'production' || process.env.DEPLOY_ENV === 'preview';
 
-export function middleware(request: NextRequest) {
+export function proxy(request: NextRequest) {
   const nonce = Buffer.from(crypto.randomUUID()).toString('base64');
   const cspHeader = `
     default-src 'none';

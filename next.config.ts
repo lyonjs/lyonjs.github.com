@@ -1,7 +1,7 @@
-const withMDX = require('@next/mdx')();
+import type { NextConfig } from 'next';
+import withMDX from '@next/mdx';
 
-/** @type {import('next').NextConfig} */
-const nextConfig = {
+const nextConfig: NextConfig = {
   output: 'standalone',
   experimental: {
     mdxRs: true,
@@ -73,4 +73,4 @@ const nextConfig = {
   },
 };
 
-module.exports = withMDX(nextConfig);
+export default withMDX()(nextConfig);
