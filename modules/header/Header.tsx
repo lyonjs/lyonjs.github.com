@@ -4,6 +4,7 @@ import { LogoWithText } from '../icons/LogoWithText';
 import { SocialLinks } from './SocialLinks';
 import { Navbar } from '../navigation/Navbar';
 import { MobileNavigation } from '../navigation/mobile/MobileNavigation';
+import { SearchDialog } from '../search/SearchDialog';
 
 export const Header = () => (
   <header className={styles.header}>
@@ -14,6 +15,7 @@ export const Header = () => (
     <MobileNavigation />
 
     <Navbar className={styles.navbar} />
+    <SearchDialog />
     <SocialLinks className={styles.socialLinks} />
   </header>
 );

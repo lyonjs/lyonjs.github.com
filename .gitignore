@@ -40,3 +40,6 @@ yarn-error.log*
 
 # IDE
 .idea
+
+# Generated search index
+/public/search-index.json
