@@ -3,6 +3,8 @@ import React from 'react';
 import { Metadata } from 'next';
 import { PastEvents } from './pastEvents';
 import { fetchPastEvents } from '../../../modules/meetup/queries/past-events.api';
+export const revalidate = 3600;
+
 const DEFAULT_YEAR = `${new Date().getFullYear()}`;
 
 export default async function PastEventsPage({ params }: { params: Promise<{ year?: string }> }) {
