@@ -10,7 +10,15 @@ import { ORGANISATION_MARKUP } from './org-markup';
 export default function AppLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="fr-FR">
+      <head>
+        <link rel="preconnect" href="https://secure-content.meetupstatic.com" />
+        <link rel="preconnect" href="https://secure.meetupstatic.com" />
+        <link rel="preconnect" href="https://img.youtube.com" />
+      </head>
       <body>
+        <a href="#main-content" className="skip-to-content">
+          Aller au contenu
+        </a>
         <div id="__next">
           <Header />
           <script
@@ -19,7 +27,7 @@ export default function AppLayout({ children }: { children: ReactNode }) {
               __html: JSON.stringify(ORGANISATION_MARKUP),
             }}
           />
-          {children}
+          <div id="main-content">{children}</div>
           <Footer />
         </div>
       </body>

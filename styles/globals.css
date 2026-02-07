@@ -110,3 +110,19 @@ a,
 [data-lock-scroll] {
   overflow: hidden !important;
 }
+
+.skip-to-content {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 100;
+  padding: 8px 16px;
+  background: var(--main-color);
+  color: var(--grey-0);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.skip-to-content:focus {
+  left: 0;
+}
