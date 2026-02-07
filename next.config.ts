@@ -72,7 +72,7 @@ const nextConfig: NextConfig = {
             key: 'Content-Security-Policy',
             value: [
               "default-src 'none'",
-              "script-src 'self'",
+              "script-src 'self' 'unsafe-inline'",
               "img-src 'self' https://secure-content.meetupstatic.com/ https://images.ctfassets.net/ https://assets.vercel.com/ https://secure.meetupstatic.com/ https://img.youtube.com/",
               "style-src 'self' 'unsafe-inline'",
               'frame-src https://www.youtube.com/',
