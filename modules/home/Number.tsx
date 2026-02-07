@@ -1,6 +1,6 @@
 'use client';
 import React, { useEffect, useRef } from 'react';
-import { animate, inView } from 'motion';
+import { animate, motion, useInView } from 'motion/react';
 import { Roboto_Mono } from 'next/font/google';
 
 const MonospaceFont = Roboto_Mono({
@@ -16,30 +16,32 @@ const counter = (elementRef: HTMLDivElement, start: number, end: number) => {
     (progress: number) => {
       elementRef.textContent = `${Math.floor(start + progress * range)}`;
     },
-    { duration, easing: 'ease-out' },
+    { duration, ease: 'easeOut' },
   );
 };
 
 export const Number = ({ value, text }: { value: number; text: string }) => {
-  const elementRef = useRef(null);
+  const elementRef = useRef<HTMLLIElement>(null);
   const counterRef = useRef<HTMLDivElement>(null);
+  const isInView = useInView(elementRef, { once: true });
 
   useEffect(() => {
-    if (elementRef.current) {
-      inView(elementRef.current, ({ target }) => {
-        animate(target, { opacity: 1 }, { delay: 0.2, easing: 'ease-out' });
-        if (counterRef.current) {
-          counter(counterRef.current, Math.floor(value * 0.6), value);
-        }
-      });
+    if (isInView && counterRef.current) {
+      counter(counterRef.current, Math.floor(value * 0.6), value);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps -- animation should only run on mount
-  }, []);
+  }, [isInView]);
 
   return (
-    <li ref={elementRef} className={MonospaceFont.variable}>
+    <motion.li
+      ref={elementRef}
+      className={MonospaceFont.variable}
+      initial={{ opacity: 0 }}
+      animate={isInView ? { opacity: 1 } : {}}
+      transition={{ delay: 0.2, ease: 'easeOut' }}
+    >
       <div ref={counterRef}>{value}</div>
       <div>{text}</div>
-    </li>
+    </motion.li>
   );
 };
