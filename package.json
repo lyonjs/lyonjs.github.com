@@ -29,6 +29,7 @@
     "@types/node": "24.10.11",
     "@types/react": "19.2.13",
     "@types/react-dom": "19.2.3",
+    "babel-plugin-react-compiler": "^1.0.0",
     "classnames": "2.5.1",
     "graphql": "^16.9.0",
     "graphql-request": "^7.1.0",

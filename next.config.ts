@@ -3,6 +3,7 @@ import withMDX from '@next/mdx';
 
 const nextConfig: NextConfig = {
   output: 'standalone',
+  reactCompiler: true,
   experimental: {
     mdxRs: true,
   },
