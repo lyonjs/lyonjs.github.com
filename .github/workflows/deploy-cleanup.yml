@@ -1,6 +1,7 @@
 name: 🧹 Cleanup
 permissions:
   contents: read
+  deployments: write
 on:
   pull_request:
     types: [closed]
@@ -55,6 +56,16 @@ jobs:
           else
             echo "No image found with tag ${IMAGE_TAG}, skipping"
           fi
+
+      - name: Delete GitHub environment
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          PR_NUMBER="${{ github.event.pull_request.number }}"
+          ENV_NAME="preview-pr-${PR_NUMBER}"
+
+          echo "Deleting GitHub environment ${ENV_NAME}"
+          gh api --method DELETE "repos/${{ github.repository }}/environments/${ENV_NAME}" || echo "Environment ${ENV_NAME} not found, skipping"
 
   registry-cleanup:
     name: 🧹 Purge old production images
