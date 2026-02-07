@@ -26,7 +26,7 @@
     "yet-another-react-lightbox": "^3.21.4"
   },
   "devDependencies": {
-    "@playwright/test": "1.58.1",
+    "@playwright/test": "1.58.2",
     "@types/node": "24.10.10",
     "@types/react": "19.2.11",
     "@types/react-dom": "19.2.3",
