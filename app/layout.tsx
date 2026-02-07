@@ -1,6 +1,5 @@
 import { Metadata, Viewport } from 'next';
 import React, { ReactNode } from 'react';
-import { headers } from 'next/headers';
 import { Header } from '../modules/header/Header';
 import { Footer } from '../modules/footer/Footer';
 
@@ -8,10 +7,7 @@ import 'normalize.css';
 import '../styles/globals.css';
 import { ORGANISATION_MARKUP } from './org-markup';
 
-export default async function AppLayout({ children }: { children: ReactNode }) {
-  const header = await headers();
-  const nonce = header.get('x-nonce');
-
+export default function AppLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="fr-FR">
       <body>
@@ -19,7 +15,6 @@ export default async function AppLayout({ children }: { children: ReactNode }) {
           <Header />
           <script
             type="application/ld+json"
-            nonce={`${nonce}`}
             dangerouslySetInnerHTML={{
               __html: JSON.stringify(ORGANISATION_MARKUP),
             }}
