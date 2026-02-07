@@ -1,4 +1,4 @@
-import * as sponsors from '../data/sponsors';
+import { getRecentSponsors } from '../data/schedule';
 import * as partners from '../data/partners';
 import React from 'react';
 import { HomeHero } from '../modules/home/HomeHero';
@@ -12,6 +12,7 @@ import { HomeAnnouncement } from '../modules/lyonjs100/HomeAnnouncement';
 export const revalidate = 3600;
 
 export default function Home() {
+  const sponsors = getRecentSponsors();
   return (
     <main>
       <HomeHero />

@@ -109,3 +109,19 @@ export const schedule: Schedule[] = [
     date: '06/10/2026',
   },
 ];
+
+export function getRecentSponsors(months = 12): Record<string, Sponsor> {
+  const now = new Date();
+  const cutoff = new Date(now.getFullYear(), now.getMonth() - months, now.getDate());
+
+  const result: Record<string, Sponsor> = {};
+  for (const entry of schedule) {
+    if (!entry.sponsor?.logo) continue;
+    const [month, day, year] = entry.date.split('/');
+    const date = new Date(Number(year), Number(month) - 1, Number(day));
+    if (date >= cutoff && date <= now) {
+      result[entry.sponsor.name] = entry.sponsor;
+    }
+  }
+  return result;
+}
