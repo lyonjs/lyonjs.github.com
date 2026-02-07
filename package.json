@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "node scripts/generate-search-index.mjs && next build",
     "start": "next start",
     "lint": "oxlint",
     "fmt": "oxfmt --write .",
@@ -14,6 +14,7 @@
   },
   "dependencies": {
     "@next/mdx": "16.1.6",
+    "fuse.js": "^7.1.0",
     "motion": "^12.0.0",
     "next": "16.1.6",
     "normalize.css": "8.0.1",

@@ -11,6 +11,9 @@ importers:
       '@next/mdx':
         specifier: 16.1.6
         version: 16.1.6
+      fuse.js:
+        specifier: ^7.1.0
+        version: 7.1.0
       motion:
         specifier: ^12.0.0
         version: 12.33.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
@@ -538,6 +541,10 @@ packages:
     resolution: {integrity: sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA==}
     engines: {node: ^8.16.0 || ^10.6.0 || >=11.0.0}
     os: [darwin]
+
+  fuse.js@7.1.0:
+    resolution: {integrity: sha512-trLf4SzuuUxfusZADLINj+dE8clK1frKdmqiJNb1Es75fmI5oY6X2mxLVUciLLjxqw/xr72Dhy+lER6dGd02FQ==}
+    engines: {node: '>=10'}
 
   graphql-request@7.4.0:
     resolution: {integrity: sha512-xfr+zFb/QYbs4l4ty0dltqiXIp07U6sl+tOKAb0t50/EnQek6CVVBLjETXi+FghElytvgaAWtIOt3EV7zLzIAQ==}
@@ -1194,6 +1201,8 @@ snapshots:
 
   fsevents@2.3.2:
     optional: true
+
+  fuse.js@7.1.0: {}
 
   graphql-request@7.4.0(graphql@16.12.0):
     dependencies:
