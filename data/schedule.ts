@@ -94,7 +94,7 @@ export const schedule: Schedule[] = [
     sponsor: esker,
   },
   {
-    date: '03/11/2026',
+    date: '03/18/2026',
     sponsor: {
       name: 'LyonJS',
     } as Sponsor,
