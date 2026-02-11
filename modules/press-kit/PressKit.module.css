@@ -1,0 +1,151 @@
+/* Logo cards */
+
+.logoCard {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background-color: var(--background-card);
+  border: 1px solid var(--border-light);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.logoPreview {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background: repeating-conic-gradient(hsl(0 0% 90%) 0% 25%, hsl(0 0% 100%) 0% 50%) 0 0 / 20px 20px;
+  height: 200px;
+}
+
+.logoInfo {
+  flex: 1;
+  padding: 1rem 1.25rem;
+  border-top: 1px solid var(--border-light);
+}
+
+.logoName {
+  font-weight: 600;
+  color: var(--font-color-strong);
+  margin-bottom: 0.25rem;
+}
+
+.logoDescription {
+  font-size: 0.875rem;
+  color: var(--font-color-default);
+  margin-bottom: 0.75rem;
+}
+
+.variantGroup {
+  margin-bottom: 0.5rem;
+}
+
+.variantGroupLabel {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--font-color-default);
+  margin-bottom: 0.25rem;
+}
+
+.variantList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+}
+
+.variantRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.variantFormat {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--font-color-default);
+  min-width: 4rem;
+}
+
+.variantActions {
+  display: flex;
+  gap: 0.375rem;
+}
+
+/* Buttons */
+
+.actionButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.375rem 0.75rem;
+  border-radius: 0.375em;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  white-space: nowrap;
+  color: var(--font-color-strong);
+  background-color: var(--background-button);
+  transition: background-color 100ms;
+  cursor: pointer;
+  border: none;
+  text-decoration: none;
+}
+
+.actionButton:hover {
+  background-color: var(--background-button-hover);
+}
+
+.actionButton:active {
+  background-color: var(--background-button-active);
+}
+
+.copied {
+  color: #4ade80;
+}
+
+/* Color swatches */
+
+.colorSwatch {
+  background-color: var(--background-card);
+  border: 1px solid var(--border-light);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.swatchPreview {
+  height: 80px;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.swatchInfo {
+  padding: 0.75rem 1rem;
+}
+
+.swatchName {
+  font-weight: 600;
+  color: var(--font-color-strong);
+  font-size: 0.875rem;
+  margin-bottom: 0.125rem;
+}
+
+.swatchDescription {
+  font-size: 0.75rem;
+  color: var(--font-color-default);
+  margin-bottom: 0.5rem;
+}
+
+.swatchValues {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.swatchValue {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  font-family: monospace;
+  color: var(--font-color-default);
+}

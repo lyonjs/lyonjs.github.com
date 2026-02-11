@@ -1,0 +1,56 @@
+.intro {
+  color: var(--font-color-default);
+  max-width: 720px;
+  line-height: 1.7;
+}
+
+.section {
+  margin-top: 3rem;
+}
+
+.logoGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+@media (min-width: 600px) {
+  .logoGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.colorGrid {
+  margin-top: 1rem;
+  max-width: 280px;
+}
+
+.guidelineColumn {
+  background-color: var(--background-card);
+  border: 1px solid var(--border-light);
+  border-radius: 12px;
+  padding: 1.25rem;
+  margin-top: 1rem;
+  max-width: 600px;
+}
+
+.guidelineList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.guidelineItem {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  color: var(--font-color-default);
+  line-height: 1.5;
+}
+
+.guidelineIconDo {
+  color: #4ade80;
+  flex-shrink: 0;
+}
