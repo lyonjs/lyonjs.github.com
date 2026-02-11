@@ -4,6 +4,7 @@ import {
   axopen,
   bedrock,
   CBTW,
+  esker,
   fulll,
   indy,
   leWagon,
@@ -17,6 +18,31 @@ import {
 } from './sponsors';
 
 export const dataOverride: { [key: string]: Partial<Event> } = {
+  'https://www.meetup.com/lyonjs/events/313009078/': {
+    sponsor: esker,
+    talks: [
+      {
+        title: 'libmodulor : une nouvelle façon de créer des applications platform-agnostic',
+        speakers: [
+          {
+            name: 'Chafik H',
+            socialLink: 'https://www.linkedin.com/in/chafikhnini/',
+          },
+        ],
+        videoLink: 'https://www.youtube.com/embed/28taxWSgq24',
+      },
+      {
+        title: 'SSE Chronicles: Quand ton appli chuchote à ton navigateur',
+        speakers: [
+          {
+            name: 'M4dz',
+            socialLink: 'https://www.linkedin.com/in/m4d-z/',
+          },
+        ],
+        videoLink: 'https://www.youtube.com/embed/DdZnG81I1uI',
+      },
+    ],
+  },
   'https://www.meetup.com/lyonjs/events/312539589/': {
     talks: [
       {
