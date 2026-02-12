@@ -4,8 +4,6 @@ import { CopyButton } from './CopyButton';
 import { DownloadButton } from './DownloadButton';
 import styles from './PressKit.module.css';
 
-const BASE_URL = 'https://www.lyonjs.org';
-
 function groupVariants(variants: LogoVariant[]) {
   const vector: LogoVariant[] = [];
   const png: LogoVariant[] = [];
@@ -47,7 +45,7 @@ export function LogoCard({ logo }: { logo: LogoAsset }) {
                   <span className={styles.variantFormat}>{variant.format}</span>
                   <div className={styles.variantActions}>
                     <DownloadButton href={variant.filePath} label="Télécharger" />
-                    <CopyButton value={`${BASE_URL}${variant.filePath}`} label="Copier le lien" />
+                    <CopyButton path={variant.filePath} label="Copier le lien" />
                   </div>
                 </div>
               ))}

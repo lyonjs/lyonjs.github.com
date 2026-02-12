@@ -5,11 +5,12 @@ import { Copy } from '../icons/Copy';
 import { Check } from '../icons/Check';
 import styles from './PressKit.module.css';
 
-export function CopyButton({ value, label = 'Copier le lien' }: { value: string; label?: string }) {
+export function CopyButton({ value, path, label = 'Copier le lien' }: { value?: string; path?: string; label?: string }) {
   const [copied, setCopied] = useState(false);
 
   const handleCopy = async () => {
-    await navigator.clipboard.writeText(value);
+    const text = path ? `${window.location.origin}${path}` : value ?? '';
+    await navigator.clipboard.writeText(text);
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   };
