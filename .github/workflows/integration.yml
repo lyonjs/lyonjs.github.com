@@ -116,6 +116,8 @@ jobs:
     if: github.event_name == 'push'
     needs: docker
     runs-on: ubuntu-latest
+    permissions:
+      deployments: write
     environment:
       name: production
       url: ${{ steps.deploy.outputs.url }}
@@ -158,6 +160,8 @@ jobs:
     if: github.event_name == 'pull_request'
     needs: docker
     runs-on: ubuntu-latest
+    permissions:
+      deployments: write
     environment:
       name: preview-pr-${{ github.event.pull_request.number }}
       url: ${{ steps.deploy.outputs.url }}
