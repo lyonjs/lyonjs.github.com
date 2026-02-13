@@ -27,8 +27,9 @@ export default function PressePage() {
     <main>
       <Heading Component="h1">Kit Presse</Heading>
       <p className={styles.intro}>
-        Retrouvez ici les ressources visuelles de LyonJS&nbsp;: logos, couleurs, description et consignes d&apos;utilisation.
-        N&apos;hésitez pas à les utiliser pour vos articles, présentations ou supports de communication.
+        Retrouvez ici les ressources visuelles de LyonJS&nbsp;: logos, couleurs, description et consignes
+        d&apos;utilisation. N&apos;hésitez pas à les utiliser pour vos articles, présentations ou supports de
+        communication.
       </p>
 
       <section className={styles.section}>
@@ -39,8 +40,8 @@ export default function PressePage() {
             mensuels ouverts et gratuits dédiés aux technologies Web et JavaScript/TypeScript.
           </p>
           <p>
-            Chaque événement propose des conférences suivies d&apos;un moment convivial pour
-            permettre aux participants d&apos;échanger et de poursuivre les discussions.
+            Chaque événement propose des conférences suivies d&apos;un moment convivial pour permettre aux participants
+            d&apos;échanger et de poursuivre les discussions.
           </p>
         </div>
       </section>

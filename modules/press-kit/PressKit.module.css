@@ -49,7 +49,9 @@
   border-radius: 0.25rem;
   color: hsl(0 0% 100% / 0.7);
   cursor: pointer;
-  transition: background-color 100ms, color 100ms;
+  transition:
+    background-color 100ms,
+    color 100ms;
 }
 
 .backgroundToggle:hover {
