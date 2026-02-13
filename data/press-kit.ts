@@ -55,13 +55,22 @@ export const logos: LogoAsset[] = [
   },
 ];
 
-export const brandColor: BrandColor = {
-  name: 'Jaune LyonJS',
-  description: 'Couleur principale de la marque',
-  hex: '#EDD533',
-  hsl: 'hsl(52, 83%, 62%)',
-  cssVariable: '--yellow-0',
-};
+export const brandColors: BrandColor[] = [
+  {
+    name: 'Jaune LyonJS',
+    description: 'Couleur principale de la marque',
+    hex: '#EDD533',
+    hsl: 'hsl(52, 83%, 62%)',
+    cssVariable: '--yellow-0',
+  },
+  {
+    name: 'Noir LyonJS',
+    description: 'Couleur secondaire de la marque',
+    hex: '#323330',
+    hsl: 'hsl(60, 5%, 19%)',
+    cssVariable: '--black-0',
+  },
+];
 
 export const guidelines: GuidelineItem[] = [
   { text: 'Utiliser le logo sur un fond sombre pour un meilleur contraste' },

@@ -2,12 +2,12 @@ import { Metadata } from 'next';
 import { Heading } from '../../modules/atoms/heading/Heading';
 import { LogoCard } from '../../modules/press-kit/LogoCard';
 import { ColorSwatch } from '../../modules/press-kit/ColorSwatch';
-import { logos, brandColor, guidelines } from '../../data/press-kit';
+import { logos, brandColors, guidelines } from '../../data/press-kit';
 import styles from './PressKit.module.css';
 
 const title = 'LyonJS | Kit Presse';
 const description =
-  "Retrouvez les logos, couleurs et consignes d'utilisation de la marque LyonJS pour vos supports de communication.";
+  "Retrouvez les logos, couleurs, description et consignes d'utilisation de la marque LyonJS pour vos supports de communication.";
 
 export const metadata: Metadata = {
   title,
@@ -27,9 +27,23 @@ export default function PressePage() {
     <main>
       <Heading Component="h1">Kit Presse</Heading>
       <p className={styles.intro}>
-        Retrouvez ici les ressources visuelles de LyonJS&nbsp;: logos, couleur et consignes d&apos;utilisation.
+        Retrouvez ici les ressources visuelles de LyonJS&nbsp;: logos, couleurs, description et consignes d&apos;utilisation.
         N&apos;hésitez pas à les utiliser pour vos articles, présentations ou supports de communication.
       </p>
+
+      <section className={styles.section}>
+        <Heading Component="h2">A propos du LyonJS</Heading>
+        <div className={styles.descriptionBlock}>
+          <p>
+            LyonJS est la communauté lyonnaise autour de JavaScript et de son écosystème. Elle organise des meetups
+            mensuels ouverts et gratuits dédiés aux technologies Web et JavaScript/TypeScript.
+          </p>
+          <p>
+            Chaque événement propose des conférences suivies d&apos;un moment convivial pour
+            permettre aux participants d&apos;échanger et de poursuivre les discussions.
+          </p>
+        </div>
+      </section>
 
       <section className={styles.section}>
         <Heading Component="h2">Logos</Heading>
@@ -41,9 +55,11 @@ export default function PressePage() {
       </section>
 
       <section className={styles.section}>
-        <Heading Component="h2">Couleur</Heading>
+        <Heading Component="h2">Couleurs</Heading>
         <div className={styles.colorGrid}>
-          <ColorSwatch color={brandColor} />
+          {brandColors.map((color) => (
+            <ColorSwatch key={color.hex} color={color} />
+          ))}
         </div>
       </section>
 

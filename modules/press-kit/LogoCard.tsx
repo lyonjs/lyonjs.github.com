@@ -1,7 +1,7 @@
-import Image from 'next/image';
 import type { LogoAsset, LogoVariant } from '../../data/press-kit';
 import { CopyButton } from './CopyButton';
 import { DownloadButton } from './DownloadButton';
+import { LogoPreview } from './LogoPreview';
 import styles from './PressKit.module.css';
 
 function groupVariants(variants: LogoVariant[]) {
@@ -28,11 +28,7 @@ export function LogoCard({ logo }: { logo: LogoAsset }) {
 
   return (
     <div className={styles.logoCard}>
-      {preview?.previewPath && (
-        <div className={styles.logoPreview}>
-          <Image src={preview.previewPath} alt={logo.name} width={200} height={100} style={{ objectFit: 'contain' }} />
-        </div>
-      )}
+      {preview?.previewPath && <LogoPreview src={preview.previewPath} alt={logo.name} />}
       <div className={styles.logoInfo}>
         <div className={styles.logoName}>{logo.name}</div>
         <div className={styles.logoDescription}>{logo.description}</div>

@@ -8,6 +8,16 @@
   margin-top: 3rem;
 }
 
+.descriptionBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  color: var(--font-color-default);
+  max-width: 720px;
+  line-height: 1.7;
+  margin-top: 1rem;
+}
+
 .logoGrid {
   display: grid;
   grid-template-columns: 1fr;
@@ -22,8 +32,9 @@
 }
 
 .colorGrid {
+  display: flex;
+  gap: 1.5rem;
   margin-top: 1rem;
-  max-width: 280px;
 }
 
 .guidelineColumn {
