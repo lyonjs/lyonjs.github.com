@@ -1,14 +1,17 @@
 .button {
   position: absolute;
-  right: 5px;
-  top: 5px;
-  width: 4rem;
-  height: 4rem;
+  right: 12px;
+  top: 12px;
+  width: 3.5rem;
+  height: 3.5rem;
   color: var(--font-color-strong);
+  background-color: var(--background-card);
+  border-radius: 12px;
   display: inline-flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 1rem;
+  padding: 0.875rem;
+  cursor: pointer;
   z-index: 999;
 }
 

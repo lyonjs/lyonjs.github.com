@@ -5,7 +5,7 @@
   padding-top: 20px;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1200px) {
   .navbar,
   .socialLinks {
     display: none !important;
