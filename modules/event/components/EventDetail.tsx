@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import { H1 } from '../../atoms/remark/Titles';
 import type { Event } from '../types';
 import styles from './EventDetail.module.css';
@@ -8,10 +9,11 @@ import { formatEventDate } from '../dateUtils';
 import { Location } from './Location';
 import { Heading } from '../../atoms/heading/Heading';
 import { PhotoAlbum } from './PhotoAlbum';
+import { slugTalkTitle } from '../talkSlug';
 
-type Props = { event: Event };
+type Props = { event: Event; slug: string };
 
-export const EventDetail: React.FC<Props> = async ({ event }) => {
+export const EventDetail: React.FC<Props> = async ({ event, slug }) => {
   const formattedDayAndMonth = formatEventDate(event.dateTime);
   const ReactMarkdown = await import('react-markdown').then((module) => module.default);
   let replays;
@@ -25,13 +27,21 @@ export const EventDetail: React.FC<Props> = async ({ event }) => {
     replays = (
       <section id="replays">
         <Heading Component="h2">Les replays</Heading>
-        <div className={styles.replays}>
+        <ul className={styles.replays}>
           {event.talks
             .filter((talk) => talk.videoLink)
-            .map((talk) => (
-              <iframe key={talk.title} width="100%" height="auto" src={talk.videoLink} loading="lazy" />
-            ))}
-        </div>
+            .map((talk) => {
+              const speakers = talk.speakers?.map((s) => s.name).join(', ');
+              return (
+                <li key={talk.title}>
+                  <Link href={`/evenement/${slug}/replay/${slugTalkTitle(talk)}`} className={styles.replayLink}>
+                    {talk.title}
+                    {speakers && <span className={styles.replaySpeakers}> — {speakers}</span>}
+                  </Link>
+                </li>
+              );
+            })}
+        </ul>
       </section>
     );
   }
@@ -39,6 +49,8 @@ export const EventDetail: React.FC<Props> = async ({ event }) => {
   return (
     <>
       <H1 className={styles.title}>{event.title}</H1>
+
+      {replays}
 
       <div className={styles.container}>
         <div className={styles.description}>
@@ -58,7 +70,6 @@ export const EventDetail: React.FC<Props> = async ({ event }) => {
           />
           {event.venues && <Location venue={Array.isArray(event.venues) ? event.venues[0] : event.venues} />}
         </div>
-        {replays}
         {images}
       </div>
     </>

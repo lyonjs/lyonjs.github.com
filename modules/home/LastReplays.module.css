@@ -19,6 +19,19 @@
   border-radius: min(2vw, 12px);
 }
 
+.talkTitle {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 24px 8px 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--white-0);
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+  pointer-events: none;
+}
+
 .grid a:hover::after,
 .grid a:focus::after {
   position: absolute;
@@ -27,7 +40,7 @@
   align-items: center;
   inset: 0;
   backdrop-filter: blur(5px);
-  content: 'Voir la vidéo';
+  content: 'Voir le replay';
   font-size: 1.5rem;
   font-weight: bold;
   text-transform: uppercase;
