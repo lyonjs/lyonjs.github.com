@@ -24,7 +24,7 @@ export default async function EventPage({ params }: { params: Promise<{ slug: st
 
     return (
       <main>
-        <EventDetail event={event} />
+        <EventDetail event={event} slug={slug} />
         <EventMarkup event={event} />
       </main>
     );

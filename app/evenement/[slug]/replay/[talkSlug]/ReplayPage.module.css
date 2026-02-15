@@ -1,0 +1,51 @@
+.page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding-top: 40px;
+}
+
+.videoWrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+}
+
+.videoWrapper iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 8px;
+}
+
+.info {
+  margin-top: 24px;
+}
+
+.title {
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.speakers {
+  margin-top: 8px;
+  font-size: 1.1rem;
+  color: var(--grey-1);
+}
+
+.speakers a {
+  color: var(--primary);
+  text-decoration: underline;
+}
+
+.backLink {
+  display: inline-block;
+  margin-top: 16px;
+  color: var(--primary);
+  text-decoration: none;
+}
+
+.backLink:hover {
+  text-decoration: underline;
+}

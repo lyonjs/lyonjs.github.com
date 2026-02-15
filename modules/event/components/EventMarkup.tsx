@@ -3,10 +3,35 @@ import { ORGANISATION_MARKUP } from '../../../app/org-markup';
 import { addToDateTime, subtractFromDateTime } from '../dateUtils';
 import { JsonLD } from '../../seo/JsonLD';
 import type { Event } from '../types';
+import { slugEventTitle } from '../eventSlug';
+import { slugTalkTitle } from '../talkSlug';
+import { youtubeWatchUrl, youtubeThumbnailUrl } from '../youtubeUtils';
+
+const BASE_URL = 'https://www.lyonjs.org';
 
 type Props = { event: Event };
 export const EventMarkup: React.FC<Props> = ({ event }) => {
   const venue = Array.isArray(event.venues) ? event.venues[0] : event.venues;
+  const eventSlug = slugEventTitle(event);
+
+  const videoObjects =
+    event.talks
+      ?.filter((talk) => talk.videoLink)
+      .map((talk) => {
+        const speakers = talk.speakers?.map((s) => s.name).join(', ') ?? '';
+        return {
+          '@type': 'VideoObject',
+          name: talk.title,
+          description: `Replay de "${talk.title}" par ${speakers}, présenté lors de ${event.title}`,
+          thumbnailUrl: youtubeThumbnailUrl(talk.videoLink!) ?? undefined,
+          embedUrl: talk.videoLink,
+          contentUrl: youtubeWatchUrl(talk.videoLink!) ?? undefined,
+          uploadDate: event.dateTime,
+          url: `${BASE_URL}/evenement/${eventSlug}/replay/${slugTalkTitle(talk)}`,
+          publisher: ORGANISATION_MARKUP,
+        };
+      }) ?? [];
+
   return (
     <JsonLD
       jsonObject={{
@@ -49,6 +74,7 @@ export const EventMarkup: React.FC<Props> = ({ event }) => {
         ],
         description: event.description,
         organizer: ORGANISATION_MARKUP,
+        ...(videoObjects.length > 0 ? { subjectOf: videoObjects } : {}),
       }}
     />
   );
