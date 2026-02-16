@@ -25,14 +25,14 @@ export const formerOrgas: Array<Orga> = [
     name: 'Maxence Dalmais',
     avatarUrl: '/orgas/maxence.jpeg',
     social: {
-      linkedin: 'maxencedalmais'
+      linkedin: 'maxencedalmais',
     },
   },
   {
     name: 'Mickael Daniel',
     avatarUrl: '/orgas/mickaelD.jpeg',
     social: {
-      linkedin: 'mickaeldaniel'
+      linkedin: 'mickaeldaniel',
     },
   },
   {
@@ -40,14 +40,14 @@ export const formerOrgas: Array<Orga> = [
     avatarUrl: '/orgas/matthieu.jpeg',
     social: {
       linkedin: 'swiip',
-      twitter: 'Swiip'
+      twitter: 'Swiip',
     },
   },
   {
     name: 'Nicolas Morel',
     avatarUrl: '/orgas/nicolas.jpeg',
     social: {
-      linkedin: 'nicolas-m-5b384a173'
+      linkedin: 'nicolas-m-5b384a173',
     },
   },
   {
@@ -55,10 +55,9 @@ export const formerOrgas: Array<Orga> = [
     avatarUrl: '/orgas/florian.jpeg',
     social: {
       linkedin: 'floriantraverse',
-    }
-  }
+    },
+  },
 ];
-
 
 export const orgas: Array<Orga> = [
   {
