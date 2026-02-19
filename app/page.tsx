@@ -22,7 +22,7 @@ export default function Home() {
       <HomeAnnouncement />
       <LastReplays />
       <Sponsors title="Sponsors" sponsors={sponsors} withLink />
-      <Sponsors title="Partneraires et Conférences" sponsors={partners} />
+      <Sponsors title="Partenaires et Conférences" sponsors={partners} />
     </main>
   );
 }
