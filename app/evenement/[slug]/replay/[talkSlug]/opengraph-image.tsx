@@ -10,7 +10,7 @@ export const size = {
 };
 export const contentType = 'image/png';
 
-export default async function Image({ params }: { params: Promise<{ talkSlug: string }> }) {
+export default async function Image({ params }: PageProps<'/evenement/[slug]/replay/[talkSlug]'>) {
   const { talkSlug } = await params;
   const title = talkSlug.replace(/-/g, ' ');
   return new ImageResponse(<SimpleText text={title} />, {

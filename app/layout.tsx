@@ -1,5 +1,5 @@
 import { Metadata, Viewport } from 'next';
-import React, { ReactNode } from 'react';
+import React from 'react';
 import { Header } from '../modules/header/Header';
 import { Footer } from '../modules/footer/Footer';
 
@@ -7,7 +7,7 @@ import 'normalize.css';
 import '../styles/globals.css';
 import { ORGANISATION_MARKUP } from './org-markup';
 
-export default function AppLayout({ children }: { children: ReactNode }) {
+export default function AppLayout({ children }: LayoutProps<'/'>) {
   return (
     <html lang="fr-FR">
       <head>

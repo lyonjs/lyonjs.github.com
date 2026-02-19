@@ -7,7 +7,7 @@ export const revalidate = 3600;
 
 const DEFAULT_YEAR = `${new Date().getFullYear()}`;
 
-export default async function PastEventsPage({ params }: { params: Promise<{ year?: string }> }) {
+export default async function PastEventsPage({ params }: PageProps<'/evenements-precedents/[year]'>) {
   const { year = DEFAULT_YEAR } = await params;
 
   return (
@@ -18,7 +18,7 @@ export default async function PastEventsPage({ params }: { params: Promise<{ yea
   );
 }
 
-export async function generateMetadata({ params }: { params: Promise<{ year?: string }> }): Promise<Metadata> {
+export async function generateMetadata({ params }: PageProps<'/evenements-precedents/[year]'>): Promise<Metadata> {
   const { year = DEFAULT_YEAR } = await params;
   const title = `LyonJS | Évènements ${year}`;
   const description = `Liste des évènements LyonJS de l'année ${year}, meetup, apéros, conférences et rassemblement, retrouver tous les liens depuis notre création.`;
