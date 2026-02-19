@@ -46,7 +46,9 @@ async function getEventAndTalk(slug: string, talkSlug: string) {
   }
 }
 
-export async function generateMetadata({ params }: { params: Promise<Params> }): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: PageProps<'/evenement/[slug]/replay/[talkSlug]'>): Promise<Metadata> {
   const { slug, talkSlug } = await params;
   const result = await getEventAndTalk(slug, talkSlug);
   if (!result) return {};
@@ -83,7 +85,7 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
   };
 }
 
-export default async function ReplayPage({ params }: { params: Promise<Params> }) {
+export default async function ReplayPage({ params }: PageProps<'/evenement/[slug]/replay/[talkSlug]'>) {
   const { slug, talkSlug } = await params;
   const result = await getEventAndTalk(slug, talkSlug);
   if (!result) notFound();

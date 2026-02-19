@@ -9,7 +9,8 @@ export const size = {
 };
 export const contentType = 'image/png';
 
-export default async function Image({ params: { year } }: { params: { year: string } }) {
+export default async function Image({ params }: PageProps<'/evenements-precedents/[year]'>) {
+  const { year } = await params;
   return new ImageResponse(<SimpleText text={`Nos évènements de l'année ${year}`} />, {
     ...size,
   });

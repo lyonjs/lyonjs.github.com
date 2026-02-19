@@ -13,7 +13,7 @@ export async function generateStaticParams() {
   return events.map((event) => ({ slug: slugEventTitle(event) }));
 }
 
-export default async function EventPage({ params }: { params: Promise<{ slug: string }> }) {
+export default async function EventPage({ params }: PageProps<'/evenement/[slug]'>) {
   const { slug } = await params;
   const eventId = parserEventIdFromSlug(slug);
   if (!eventId) {
@@ -33,7 +33,7 @@ export default async function EventPage({ params }: { params: Promise<{ slug: st
   }
 }
 
-export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+export async function generateMetadata({ params }: PageProps<'/evenement/[slug]'>): Promise<Metadata> {
   const { slug } = await params;
   const eventId = parserEventIdFromSlug(slug);
   if (!eventId) {
