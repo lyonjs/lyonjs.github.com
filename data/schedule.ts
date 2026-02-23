@@ -95,9 +95,7 @@ export const schedule: Schedule[] = [
   },
   {
     date: '03/18/2026',
-    sponsor: {
-      name: 'LyonJS',
-    } as Sponsor,
+    sponsor: bedrock,
   },
   {
     date: '04/08/2026',
