@@ -11,6 +11,7 @@ import {
   leWagon,
   shodo,
   theodo,
+  wanadev,
   wildCodeSchool,
   zenika,
 } from './sponsors';
@@ -98,7 +99,8 @@ export const schedule: Schedule[] = [
     sponsor: bedrock,
   },
   {
-    date: '04/08/2026',
+    date: '04/23/2026',
+    sponsor: wanadev,
   },
   {
     date: '05/20/2026',
