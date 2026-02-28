@@ -1,0 +1,179 @@
+.container {
+  max-width: 500px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.field label {
+  font-weight: 500;
+  color: var(--font-color-strong);
+}
+
+.field input,
+.field select {
+  padding: 0.75rem;
+  border-radius: 0.375rem;
+  border: 1px solid var(--border-color);
+  background-color: var(--background-button);
+  color: var(--font-color);
+  font-size: 1rem;
+}
+
+.field input:focus,
+.field select:focus {
+  outline: 2px solid var(--main-color);
+  outline-offset: 2px;
+}
+
+.button {
+  padding: 0.75rem 1.25rem;
+  border-radius: 0.375rem;
+  border: none;
+  background-color: var(--main-color);
+  color: var(--background-page);
+  font-weight: 500;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 100ms;
+}
+
+.button:hover:not(:disabled) {
+  background-color: var(--main-color-dark);
+}
+
+.button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.formActions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.buttonSecondary {
+  padding: 0.75rem 1.25rem;
+  border-radius: 0.375rem;
+  border: 1px solid var(--border-color);
+  background-color: var(--background-button);
+  color: var(--font-color);
+  font-weight: 500;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 100ms;
+}
+
+.buttonSecondary:hover:not(:disabled) {
+  background-color: var(--background-button-hover);
+}
+
+.buttonSecondary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.buttonIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem;
+  border-radius: 0.375rem;
+  border: none;
+  background-color: var(--main-color);
+  color: var(--background-page);
+  cursor: pointer;
+  transition: background-color 100ms;
+}
+
+.buttonIcon:hover:not(:disabled) {
+  background-color: var(--main-color-dark);
+}
+
+.buttonIcon:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.buttonIcon svg {
+  margin-left: 1ch;
+}
+
+.previewSection {
+  margin-top: 2.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.previewField {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.previewLabel {
+  font-weight: 500;
+  color: var(--font-color-strong);
+}
+
+.previewZone {
+  position: relative;
+  padding: 0.75rem;
+  border-radius: 0.375rem;
+  border: 1px solid var(--border-color);
+  background-color: var(--background-button);
+  color: var(--font-color);
+}
+
+.previewZone:hover .copyButton {
+  opacity: 1;
+}
+
+.previewSubjectText,
+.previewBodyText {
+  margin: 0;
+  font-family: inherit;
+  font-size: 0.9375rem;
+}
+
+.previewBodyText {
+  white-space: pre-wrap;
+}
+
+.copyButton {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.375rem 0.625rem;
+  border-radius: 0.375rem;
+  border: 1px solid var(--border-color);
+  background-color: var(--background-page);
+  color: var(--font-color);
+  font-size: 0.8125rem;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 100ms;
+}
+
+.copyButton:hover {
+  background-color: var(--background-button-hover);
+}
