@@ -21,7 +21,7 @@ export const Collapsible: FC<Props> = ({ children, className }) => {
       >
         {children}
       </div>
-      <button type="button" className={styles.seeMore} onClick={() => setIsExpanded((isExpanded) => !isExpanded)}>
+      <button type="button" className={styles.seeMore} onClick={() => setIsExpanded((currentValue) => !currentValue)}>
         {isExpanded ? 'Voir moins' : 'Voir plus'}
       </button>
     </>
