@@ -54,14 +54,14 @@ jobs:
 
       - name: Login to GHCR
         if: github.event_name == 'push'
-        uses: docker/login-action@v3
+        uses: docker/login-action@v4
         with:
           registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Login to Scaleway Container Registry
-        uses: docker/login-action@v3
+        uses: docker/login-action@v4
         with:
           registry: rg.fr-par.scw.cloud
           username: nologin
