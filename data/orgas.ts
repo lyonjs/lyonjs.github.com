@@ -7,7 +7,7 @@ export type Orga = {
   };
 };
 
-export const orgas: Array<Orga> = [
+export const formerOrgas: Array<Orga> = [
   {
     name: 'Paul Mougel',
     avatarUrl: '/orgas/paul.jpeg',
@@ -16,6 +16,50 @@ export const orgas: Array<Orga> = [
       linkedin: 'paulmougel',
     },
   },
+  {
+    name: 'Romain',
+    avatarUrl: '/orgas/romain.jpeg',
+    social: {},
+  },
+  {
+    name: 'Maxence Dalmais',
+    avatarUrl: '/orgas/maxence.jpeg',
+    social: {
+      linkedin: 'maxencedalmais',
+    },
+  },
+  {
+    name: 'Mickael Daniel',
+    avatarUrl: '/orgas/mickaelD.jpeg',
+    social: {
+      linkedin: 'mickaeldaniel',
+    },
+  },
+  {
+    name: 'Matthieu Lux',
+    avatarUrl: '/orgas/matthieu.jpeg',
+    social: {
+      linkedin: 'swiip',
+      twitter: 'Swiip',
+    },
+  },
+  {
+    name: 'Nicolas Morel',
+    avatarUrl: '/orgas/nicolas.jpeg',
+    social: {
+      linkedin: 'nicolas-m-5b384a173',
+    },
+  },
+  {
+    name: 'Florian Traverse',
+    avatarUrl: '/orgas/florian.jpeg',
+    social: {
+      linkedin: 'floriantraverse',
+    },
+  },
+];
+
+export const orgas: Array<Orga> = [
   {
     name: 'Mathieu Mure',
     avatarUrl: '/orgas/mathieu.jpeg',
