@@ -17,11 +17,6 @@ export const formerOrgas: Array<Orga> = [
     },
   },
   {
-    name: 'Romain',
-    avatarUrl: '/orgas/romain.jpeg',
-    social: {},
-  },
-  {
     name: 'Maxence Dalmais',
     avatarUrl: '/orgas/maxence.jpeg',
     social: {
@@ -48,13 +43,6 @@ export const formerOrgas: Array<Orga> = [
     avatarUrl: '/orgas/nicolas.jpeg',
     social: {
       linkedin: 'nicolas-m-5b384a173',
-    },
-  },
-  {
-    name: 'Florian Traverse',
-    avatarUrl: '/orgas/florian.jpeg',
-    social: {
-      linkedin: 'floriantraverse',
     },
   },
 ];
