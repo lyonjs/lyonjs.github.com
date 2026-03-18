@@ -88,4 +88,12 @@ export const orgas: Array<Orga> = [
       linkedin: 'johana-lavigne',
     },
   },
+  {
+    name: 'Etienne Idoux',
+    avatarUrl: '/orgas/etienne.jpeg',
+    social: {
+      twitter: 'eidoux',
+      linkedin: 'etienne-idoux',
+    },
+  },
 ];
