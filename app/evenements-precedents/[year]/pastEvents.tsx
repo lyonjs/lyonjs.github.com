@@ -10,7 +10,7 @@ export async function PastEvents({ year }: { year: string }) {
   const allPastEvents = await fetchPastEvents();
   const yearsFromEvents: string[] = allPastEvents
     .map((event) => new Date(event.dateTime).getFullYear())
-    .map((year) => year.toString());
+    .map((eventYear) => eventYear.toString());
   const years = [...new Set(yearsFromEvents)];
   const pastEvents = allPastEvents
     .map(overrideEvent)

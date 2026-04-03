@@ -13,9 +13,9 @@
     "e2e": "playwright test"
   },
   "dependencies": {
-    "@next/mdx": "16.1.6",
+    "@next/mdx": "16.2.2",
     "motion": "^12.0.0",
-    "next": "16.1.6",
+    "next": "16.2.2",
     "normalize.css": "8.0.1",
     "react": "19.2.4",
     "react-dom": "19.2.4",
@@ -25,8 +25,8 @@
     "yet-another-react-lightbox": "^3.21.4"
   },
   "devDependencies": {
-    "@playwright/test": "1.58.2",
-    "@types/node": "24.10.13",
+    "@playwright/test": "1.59.1",
+    "@types/node": "24.12.0",
     "@types/react": "19.2.14",
     "@types/react-dom": "19.2.3",
     "babel-plugin-react-compiler": "^1.0.0",
@@ -34,9 +34,9 @@
     "graphql": "^16.9.0",
     "graphql-request": "^7.1.0",
     "husky": "^9.0.0",
-    "oxfmt": "^0.32.0",
+    "oxfmt": "^0.43.0",
     "oxlint": "^1.42.0",
-    "typescript": "5.9.3"
+    "typescript": "6.0.2"
   },
-  "packageManager": "pnpm@10.30.2"
+  "packageManager": "pnpm@10.33.0"
 }
