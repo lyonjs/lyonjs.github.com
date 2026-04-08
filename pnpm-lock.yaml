@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@next/mdx':
-        specifier: 16.2.2
-        version: 16.2.2
+        specifier: 16.2.3
+        version: 16.2.3
       motion:
         specifier: ^12.0.0
         version: 12.38.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
@@ -254,8 +254,8 @@ packages:
   '@next/env@16.2.3':
     resolution: {integrity: sha512-ZWXyj4uNu4GCWQw9cjRxWlbD+33mcDszIo9iQxFnBX3Wmgq9ulaSJcl6VhuWx5pCWqqD+9W6Wfz7N0lM5lYPMA==}
 
-  '@next/mdx@16.2.2':
-    resolution: {integrity: sha512-2CbRTXE6sJ7zDAaKXknb5FrrPs46iJeMPzuoBXsAOV/XVnxABGD4mSDusn0VuCoII/KjUZ+zsuo2VFbchYQXng==}
+  '@next/mdx@16.2.3':
+    resolution: {integrity: sha512-mm7XNfPagSIcN8jFtozB9toeh5ESES0KCLRoo0gu6xydijvnIrV7dRIK3akNL3Tecc8AHX1FNzYZOZTeFU6RCw==}
     peerDependencies:
       '@mdx-js/loader': '>=0.15.0'
       '@mdx-js/react': '>=0.15.0'
@@ -1170,7 +1170,7 @@ snapshots:
 
   '@next/env@16.2.3': {}
 
-  '@next/mdx@16.2.2':
+  '@next/mdx@16.2.3':
     dependencies:
       source-map: 0.7.6
 
