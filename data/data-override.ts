@@ -758,6 +758,9 @@ export const dataOverride: { [key: string]: Partial<Event> } = {
       },
     ],
   },
+  'https://www.meetup.com/lyonjs/events/314711688/': {
+    sponsor: zenika,
+  },
   'https://www.meetup.com/lyonjs/events/284549533/': {
     sponsor: zenika,
     talks: [

@@ -103,7 +103,8 @@ export const schedule: Schedule[] = [
     sponsor: wanadev,
   },
   {
-    date: '05/20/2026',
+    date: '05/27/2026',
+    sponsor: zenika,
   },
   {
     date: '06/16/2026',
