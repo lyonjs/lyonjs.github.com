@@ -101,3 +101,9 @@ export const esker: Sponsor = {
   logo: '/sponsors/esker.svg',
   url: 'https://www.esker.fr/',
 };
+
+export const EPSI: Sponsor = {
+  name: 'EPSI',
+  logo: '/sponsors/epsi.svg',
+  url: 'https://www.epsi.fr/',
+};
