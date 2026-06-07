@@ -205,10 +205,10 @@ jobs:
               port=3000 \
               min-scale=0 \
               max-scale=1 \
-              memory-limit=256 \
-              cpu-limit=250 \
+              memory-limit-bytes=268435456 \
+              mvcpu-limit=250 \
               privacy=public \
-              http-option=redirected \
+              https-connections-only=true \
               environment-variables.DEPLOY_ENV=preview \
               environment-variables.NODE_ENV=production \
               environment-variables.HOSTNAME=0.0.0.0 \
