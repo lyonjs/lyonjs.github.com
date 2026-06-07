@@ -205,7 +205,7 @@ jobs:
               port=3000 \
               min-scale=0 \
               max-scale=1 \
-              memory-limit-bytes=268435456 \
+              memory-limit-bytes=0.25GB \
               mvcpu-limit=250 \
               privacy=public \
               https-connections-only=true \
