@@ -136,8 +136,8 @@ jobs:
           scw container container update \
             "${{ vars.SCW_PROD_CONTAINER_ID }}" \
             image="${{ needs.docker.outputs.scw_image }}" \
-            redeploy=true \
             region=fr-par
+          scw container container redeploy "${{ vars.SCW_PROD_CONTAINER_ID }}" region=fr-par
 
           # Poll until ready (timeout 3 min)
           for i in $(seq 1 36); do
@@ -193,8 +193,8 @@ jobs:
             scw container container update \
               "${EXISTING}" \
               image="${IMAGE}" \
-              redeploy=true \
               region=fr-par
+            scw container container redeploy "${EXISTING}" region=fr-par
             CONTAINER_ID="${EXISTING}"
           else
             echo "Creating new preview container"
