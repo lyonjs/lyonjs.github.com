@@ -18,6 +18,31 @@ import {
 } from './sponsors';
 
 export const dataOverride: { [key: string]: Partial<Event> } = {
+  'https://www.meetup.com/lyonjs/events/314104906/': {
+    sponsor: wanadev,
+    talks: [
+      {
+        title: 'Loi de Conway et documentation',
+        speakers: [
+          {
+            name: 'Sarah Haïm-Lubczanski',
+            socialLink: 'https://www.linkedin.com/in/sarahhaim/',
+          },
+        ],
+        videoLink: 'https://www.youtube.com/embed/9v9QVQeYZeM?start=1104&end=3055"',
+      },
+      {
+        title: 'Les mystères des permissions',
+        speakers: [
+          {
+            name: 'Céline Louvet',
+            socialLink: 'https://www.linkedin.com/in/celinelouvet/',
+          },
+        ],
+        videoLink: 'https://www.youtube.com/embed/9v9QVQeYZeM?start=3110&end=5356',
+      },
+    ],
+  },
   'https://www.meetup.com/lyonjs/events/313009078/': {
     sponsor: esker,
     talks: [
