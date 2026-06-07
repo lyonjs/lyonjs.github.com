@@ -135,7 +135,7 @@ jobs:
         run: |
           scw container container update \
             "${{ vars.SCW_PROD_CONTAINER_ID }}" \
-            registry-image="${{ needs.docker.outputs.scw_image }}" \
+            image="${{ needs.docker.outputs.scw_image }}" \
             redeploy=true \
             region=fr-par
 
@@ -192,7 +192,7 @@ jobs:
             echo "Updating existing container ${EXISTING}"
             scw container container update \
               "${EXISTING}" \
-              registry-image="${IMAGE}" \
+              image="${IMAGE}" \
               redeploy=true \
               region=fr-par
             CONTAINER_ID="${EXISTING}"
@@ -201,7 +201,7 @@ jobs:
             RESULT=$(scw container container create \
               namespace-id="${NAMESPACE_ID}" \
               name="${CONTAINER_NAME}" \
-              registry-image="${IMAGE}" \
+              image="${IMAGE}" \
               port=3000 \
               min-scale=0 \
               max-scale=1 \
