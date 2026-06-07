@@ -135,8 +135,7 @@ jobs:
         run: |
           scw container container update \
             "${{ vars.SCW_PROD_CONTAINER_ID }}" \
-            registry-image="${{ needs.docker.outputs.scw_image }}" \
-            redeploy=true \
+            image="${{ needs.docker.outputs.scw_image }}" \
             region=fr-par
 
           # Poll until ready (timeout 3 min)
@@ -192,8 +191,7 @@ jobs:
             echo "Updating existing container ${EXISTING}"
             scw container container update \
               "${EXISTING}" \
-              registry-image="${IMAGE}" \
-              redeploy=true \
+              image="${IMAGE}" \
               region=fr-par
             CONTAINER_ID="${EXISTING}"
           else
@@ -201,14 +199,14 @@ jobs:
             RESULT=$(scw container container create \
               namespace-id="${NAMESPACE_ID}" \
               name="${CONTAINER_NAME}" \
-              registry-image="${IMAGE}" \
+              image="${IMAGE}" \
               port=3000 \
               min-scale=0 \
               max-scale=1 \
-              memory-limit=256 \
-              cpu-limit=250 \
+              memory-limit-bytes=0.25GB \
+              mvcpu-limit=250 \
               privacy=public \
-              http-option=redirected \
+              https-connections-only=true \
               environment-variables.DEPLOY_ENV=preview \
               environment-variables.NODE_ENV=production \
               environment-variables.HOSTNAME=0.0.0.0 \
@@ -217,7 +215,7 @@ jobs:
             CONTAINER_ID=$(echo "$RESULT" | jq -r '.id')
 
             # Deploy the newly created container
-            scw container container deploy "${CONTAINER_ID}" region=fr-par
+            scw container container redeploy "${CONTAINER_ID}" region=fr-par
           fi
 
           # Poll until ready (timeout 3 min)
