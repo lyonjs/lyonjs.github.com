@@ -217,7 +217,7 @@ jobs:
             CONTAINER_ID=$(echo "$RESULT" | jq -r '.id')
 
             # Deploy the newly created container
-            scw container container deploy "${CONTAINER_ID}" region=fr-par
+            scw container container redeploy "${CONTAINER_ID}" region=fr-par
           fi
 
           # Poll until ready (timeout 3 min)
