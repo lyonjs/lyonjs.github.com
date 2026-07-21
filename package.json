@@ -17,7 +17,7 @@
     "motion": "^12.0.0",
     "next": "16.2.10",
     "normalize.css": "8.0.1",
-    "react": "19.2.7",
+    "react": "19.2.8",
     "react-dom": "19.2.7",
     "react-markdown": "^10.0.0",
     "sharp": "^0.34.0",
