@@ -13,9 +13,9 @@
     "e2e": "playwright test"
   },
   "dependencies": {
-    "@next/mdx": "16.2.10",
+    "@next/mdx": "16.2.11",
     "motion": "^12.0.0",
-    "next": "16.2.10",
+    "next": "16.2.11",
     "normalize.css": "8.0.1",
     "react": "19.2.8",
     "react-dom": "19.2.8",
