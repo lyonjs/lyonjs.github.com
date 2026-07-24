@@ -33,8 +33,8 @@ importers:
         specifier: ^0.34.0
         version: 0.34.5
       temporal-polyfill:
-        specifier: ^0.3.0
-        version: 0.3.2
+        specifier: ^1.0.0
+        version: 1.0.1
       yet-another-react-lightbox:
         specifier: ^3.21.4
         version: 3.32.1(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
@@ -993,11 +993,14 @@ packages:
       babel-plugin-macros:
         optional: true
 
-  temporal-polyfill@0.3.2:
-    resolution: {integrity: sha512-TzHthD/heRK947GNiSu3Y5gSPpeUDH34+LESnfsq8bqpFhsB79HFBX8+Z834IVX68P3EUyRPZK5bL/1fh437Eg==}
+  temporal-polyfill@1.0.1:
+    resolution: {integrity: sha512-N2SoI9olnW7BUsU8RosDphZQl9s+WJ8O7PoJMFCr/e5/1rFkVI4GNOWaSeySG+UoP04foPYsnLWbJmbXOiShZg==}
 
-  temporal-spec@0.3.1:
-    resolution: {integrity: sha512-B4TUhezh9knfSIMwt7RVggApDRJZo73uZdj8AacL2mZ8RP5KtLianh2MXxL06GN9ESYiIsiuoLQhgVfwe55Yhw==}
+  temporal-spec@1.0.0:
+    resolution: {integrity: sha512-00Ahj1e1ifaERTMOIIGpOCdOo9IEk2m6GGSMedsn9a2SIsGLdOTbmME1Htv6IM82b6VHrzSUTIVc7YHy6hdhFQ==}
+
+  temporal-utils@1.0.1:
+    resolution: {integrity: sha512-HAixuesxFQIUaQk3ptX2jhfO/FsOkgVkDDMawvp6n/fkB1q6BKfs3lURw9I+pK/2e2e/q/vrLrxmeqauBoyGMQ==}
 
   tinypool@2.1.0:
     resolution: {integrity: sha512-Pugqs6M0m7Lv1I7FtxN4aoyToKg1C4tu+/381vH35y8oENM/Ai7f7C4StcoK4/+BSw9ebcS8jRiVrORFKCALLw==}
@@ -1922,11 +1925,14 @@ snapshots:
       client-only: 0.0.1
       react: 19.2.8
 
-  temporal-polyfill@0.3.2:
+  temporal-polyfill@1.0.1:
     dependencies:
-      temporal-spec: 0.3.1
+      temporal-spec: 1.0.0
+      temporal-utils: 1.0.1
 
-  temporal-spec@0.3.1: {}
+  temporal-spec@1.0.0: {}
+
+  temporal-utils@1.0.1: {}
 
   tinypool@2.1.0: {}
 
