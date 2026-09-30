@@ -822,7 +822,7 @@ export const dataOverride: { [key: string]: Partial<Event> } = {
             socialLink: 'https://www.linkedin.com/in/mickaelalves/',
           },
         ],
-        videoLink: 'https://www.youtube.com/embed/fG6AKmBplBY',
+        videoLink: 'https://www.youtube.com/embed/jCWtOIORu5c',
       },
     ],
   },
