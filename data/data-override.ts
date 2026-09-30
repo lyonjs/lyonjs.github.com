@@ -807,4 +807,22 @@ export const dataOverride: { [key: string]: Partial<Event> } = {
       },
     ],
   },
+  'https://www.meetup.com/lyonjs/events/316459375/': {
+    talks: [
+      {
+        title: 'MCP UI, React et LLM: comment créer son App dans Claude & ChatGPT',
+        speakers: [
+          {
+            name: 'Mathieu Mure',
+            socialLink: 'https://www.linkedin.com/in/mathieu-mure/',
+          },
+          {
+            name: 'Mickaël Alves',
+            socialLink: 'https://www.linkedin.com/in/mickaelalves/',
+          },
+        ],
+        videoLink: 'https://www.youtube.com/embed/fG6AKmBplBY',
+      },
+    ],
+  },
 };
