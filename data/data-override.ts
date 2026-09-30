@@ -808,6 +808,7 @@ export const dataOverride: { [key: string]: Partial<Event> } = {
     ],
   },
   'https://www.meetup.com/lyonjs/events/316459375/': {
+    sponsor: zenika,
     talks: [
       {
         title: 'MCP UI, React et LLM: comment créer son App dans Claude & ChatGPT',
