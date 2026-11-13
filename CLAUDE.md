@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-LyonJS community website built with Next.js 16 (App Router), React 19, TypeScript, and CSS Modules. Content is primarily in French. Deployed on Scaleway Serverless Containers (production always-warm, PR previews with scale-to-zero).
+LyonJS community website built with Next.js 16 (App Router), React 19, TypeScript, and CSS Modules. Content is primarily in French. Deployed on Vercel (production and PR previews).
 
 ## Commands
 
@@ -42,7 +42,7 @@ To add talk details, video links, or sponsors for a past event, add an entry in 
 
 ### Deployment
 
-Docker images are built and pushed by CI (`.github/workflows/integration.yml`). Production deploys on push to `master` (Scaleway Serverless Container, `min-scale=1`). PRs get preview containers (`min-scale=0`, scale-to-zero) with automatic cleanup on close (`.github/workflows/deploy-cleanup.yml`).
+Vercel deploys production (on push to `master`) and PR previews through its GitHub integration. CI (`.github/workflows/integration.yml`) still builds the Docker image on every PR and pushes it to GHCR (`ghcr.io/lyonjs/lyonjs.github.com`) on push to `master`.
 
 ## Code Style
 
