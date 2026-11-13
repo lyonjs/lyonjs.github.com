@@ -11,7 +11,7 @@ export const feelinjob = { name: 'Feelinjob', url: 'https://www.feelinjob.com/',
 
 export const akawaka: Sponsor = { name: 'Akawaka', url: 'https://www.akawaka.fr/', logo: '/sponsors/akawaka.svg' };
 
-export const _365talents: Sponsor = {
+export const talents365: Sponsor = {
   name: '365 Talent',
   url: 'https://www.365talents.com/fr/',
   logo: '/sponsors/365Talent.svg',
@@ -19,6 +19,6 @@ export const _365talents: Sponsor = {
 
 export const gold: Array<Sponsor> = [malt, fulll, kolecto, akawaka];
 
-export const silver: Array<Sponsor> = [_365talents, zenika, bedrock, indy, theodo];
+export const silver: Array<Sponsor> = [talents365, zenika, bedrock, indy, theodo];
 
 export const bronze = [cleverCloud, wanadev, feelinjob];
