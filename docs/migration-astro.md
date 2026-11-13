@@ -2,7 +2,7 @@
 
 ## Contexte
 
-Le site LyonJS tourne sur Next.js 16 (App Router, React 19, standalone output) deploye sur Scaleway Serverless Containers. Ce document evalue la faisabilite et l'interet d'une migration vers Astro.
+Le site LyonJS tourne sur Next.js 16 (App Router, React 19, standalone output) deploye sur Vercel. Ce document evalue la faisabilite et l'interet d'une migration vers Astro.
 
 ## Pourquoi migrer ?
 
@@ -22,7 +22,7 @@ Le site LyonJS tourne sur Next.js 16 (App Router, React 19, standalone output) d
 - **Ecosysteme React reduit** : Les librairies React (`motion`, `yet-another-react-lightbox`, `react-markdown`) fonctionnent via les islands, mais c'est un pattern moins ergonomique que le tout-React.
 - **OG images dynamiques** : Next.js genere des images OG via `next/og` (edge runtime + JSX). Astro n'a pas d'equivalent natif, il faut utiliser `@vercel/og`, `satori`, ou generer les images au build.
 - **Courbe d'apprentissage** : Syntaxe `.astro` differente de JSX (frontmatter + template). Les contributeurs devront s'adapter.
-- **Middleware** : Pas d'equivalent direct au middleware Next.js. Les headers CSP devront etre configures au niveau du serveur (Scaleway / Docker) ou via Astro SSR middleware.
+- **Middleware** : Pas d'equivalent direct au middleware Next.js. Les headers CSP devront etre configures au niveau du serveur (Vercel / Docker) ou via Astro SSR middleware.
 
 ## Inventaire des fonctionnalites a migrer
 
@@ -123,7 +123,7 @@ Le `middleware.ts` actuel gere :
 
 - Les headers statiques (X-Frame-Options, etc.) → configures dans le Dockerfile / reverse proxy / `astro.config.mjs` en mode SSR
 - Le nonce CSP → plus necessaire si pas de scripts inline. Sinon, middleware Astro en mode SSR.
-- Alternative : configurer les headers directement dans Scaleway Serverless Containers
+- Alternative : configurer les headers directement dans la config Vercel
 
 ### Redirections
 
@@ -199,7 +199,7 @@ Le site utilise `revalidate = 3600` sur plusieurs pages pour actualiser les donn
 - [ ] Adapter le Dockerfile pour Astro
 - [ ] Si SSG pur : optionnel — remplacer le runtime Node.js par nginx pour une image plus legere
 - [ ] Ajouter un workflow cron pour rebuild periodique (si SSG)
-- [ ] Verifier que les deploys Scaleway fonctionnent
+- [ ] Verifier que les deploys Vercel fonctionnent
 
 ## Estimation de la complexite
 

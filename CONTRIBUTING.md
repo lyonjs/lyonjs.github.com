@@ -42,40 +42,14 @@ flowchart LR
 
 ## Deployment
 
-The site is deployed on **Scaleway Serverless Containers**. The CI pipeline (`.github/workflows/integration.yml`) handles everything automatically.
+The site is deployed by **Vercel** through its GitHub integration: every PR gets a preview deployment, and `master` is deployed to production.
 
-### How it works
+### Docker image
 
-```mermaid
-flowchart LR
-  P[Push / PR] --> CI[CI: format + build]
-  CI --> D[Docker build & push]
-  D -->|push master| SCR[Scaleway Container Registry]
-  D -->|push master| GHCR[GitHub Container Registry]
-  D -->|PR| SCR
-  SCR -->|push master| PROD[Production container<br/>min-scale=1]
-  SCR -->|PR| PREVIEW[Preview container<br/>min-scale=0]
-```
+The CI pipeline (`.github/workflows/integration.yml`) still builds the Docker image (`Dockerfile`) on every push and PR, to make sure the app can be self-hosted:
 
-- **Production** (`master`): the container is always warm (`min-scale=1`, `max-scale=5`). Deployed automatically on every push to `master`.
-- **Preview** (pull requests): a `preview-pr-<N>` container is created per PR with scale-to-zero (`min-scale=0`). The preview URL appears in the PR via GitHub Environments ("View deployment" button). The container and image tag are automatically cleaned up when the PR is closed (`.github/workflows/deploy-cleanup.yml`).
-
-### Docker image registries
-
-Images are pushed to two registries:
-
-- **Scaleway Container Registry** (`rg.fr-par.scw.cloud/lyonjs/lyonjs.github.com`) — used by Serverless Containers for deployment
-- **GitHub Container Registry** (`ghcr.io/lyonjs/lyonjs.github.com`) — archive/backup, push on `master` only
-
-### Environment variables
-
-The `DEPLOY_ENV` variable (`production` or `preview`) is set on the containers but is currently not read by the application: CSP and security headers are always applied from `next.config.ts`.
-
-### Required GitHub configuration
-
-Secrets: `SCW_ACCESS_KEY`, `SCW_SECRET_KEY`, `SCW_DEFAULT_PROJECT_ID`, `SCW_DEFAULT_ORGANIZATION_ID`
-
-Variables: `SCW_REGISTRY_ENDPOINT`, `SCW_PROD_NAMESPACE_ID`, `SCW_PREVIEW_NAMESPACE_ID`, `SCW_PROD_CONTAINER_ID`
+- **Pull requests**: the image is built but not pushed.
+- **`master`**: the image is pushed to the GitHub Container Registry (`ghcr.io/lyonjs/lyonjs.github.com`) with the `latest` and commit SHA tags.
 
 ## How to?
 
