@@ -14,6 +14,7 @@ import {
   wanadev,
   wildCodeSchool,
   zenika,
+  EPSI,
 } from './sponsors';
 import { Sponsor } from '../modules/event/types';
 
@@ -107,7 +108,8 @@ export const schedule: Schedule[] = [
     sponsor: zenika,
   },
   {
-    date: '06/16/2026',
+    date: '06/17/2026',
+    sponsor: EPSI,
   },
   {
     date: '07/07/2026',
