@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-LyonJS community website built with Next.js 15 (App Router), React 19, TypeScript, and CSS Modules. Content is primarily in French. Deployed on Scaleway Serverless Containers (production always-warm, PR previews with scale-to-zero).
+LyonJS community website built with Next.js 16 (App Router), React 19, TypeScript, and CSS Modules. Content is primarily in French. Deployed on Scaleway Serverless Containers (production always-warm, PR previews with scale-to-zero).
 
 ## Commands
 
@@ -36,9 +36,9 @@ Event data comes from the **Meetup.com GraphQL API** (`modules/meetup/api.ts`, g
 
 To add talk details, video links, or sponsors for a past event, add an entry in `data/data-override.ts` keyed by the Meetup event URL. Import sponsors from `data/sponsors.ts`.
 
-### Middleware
+### Security headers
 
-`middleware.ts` sets Content Security Policy and security headers. CSP uses nonce-based inline script security and whitelists specific external origins. CSP is enabled when `DEPLOY_ENV` is `production` or `preview`.
+`next.config.ts` (`headers()`) sets the Content Security Policy and security headers for every route. The CSP whitelists specific external origins (Meetup, YouTube, etc.); update it when adding a new external resource.
 
 ### Deployment
 
