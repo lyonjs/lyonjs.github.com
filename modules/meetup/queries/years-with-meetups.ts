@@ -1,32 +1,7 @@
-import { gql } from 'graphql-request';
-import { client, Edges } from '../api';
-
-type Response = {
-  group: {
-    pastEvents: Edges<{ dateTime: string }>;
-  };
-};
-
-const queryForYears = gql`
-  query meetupYears($id: ID!) {
-    group(id: $id) {
-      events(first: 1000, status: PAST, sort: ASC) {
-        edges {
-          node {
-            dateTime
-          }
-        }
-      }
-    }
-  }
-`;
+import { fetchPastEvents } from './past-events.api';
 
 export const fetchYearsWithMeetups = async (): Promise<Set<string>> => {
-  const meetupEventsResponse = await client.request<Response>(queryForYears, { id: 18305583 });
-  const years = new Set<string>();
-  meetupEventsResponse?.group?.pastEvents?.edges.forEach((it) => {
-    years.add(new Date(it.node.dateTime).getFullYear().toString());
-  });
+  const pastEvents = await fetchPastEvents();
 
-  return years;
+  return new Set(pastEvents.map((event) => new Date(event.dateTime).getFullYear().toString()));
 };

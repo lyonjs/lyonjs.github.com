@@ -1,6 +1,5 @@
 import { orgas } from '../data/orgas';
-
-const BASE_URL = 'https://www.lyonjs.org';
+import { SITE_URL as BASE_URL } from '../modules/seo/siteUrl';
 
 export const ORGANISATION_MARKUP = {
   '@context': 'https://schema.org',

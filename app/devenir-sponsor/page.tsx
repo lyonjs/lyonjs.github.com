@@ -15,6 +15,9 @@ const description = 'Vous souhaitez sponsoriser un événement de LyonJS, voici 
 export const metadata: Metadata = {
   title,
   description,
+  alternates: {
+    canonical: '/devenir-sponsor',
+  },
   twitter: {
     title,
     description,

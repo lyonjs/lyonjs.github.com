@@ -6,8 +6,7 @@ import type { Event } from '../types';
 import { slugEventTitle } from '../eventSlug';
 import { slugTalkTitle } from '../talkSlug';
 import { youtubeWatchUrl, youtubeThumbnailUrl } from '../youtubeUtils';
-
-const BASE_URL = 'https://www.lyonjs.org';
+import { SITE_URL as BASE_URL } from '../../seo/siteUrl';
 
 type Props = { event: Event };
 export const EventMarkup: React.FC<Props> = ({ event }) => {

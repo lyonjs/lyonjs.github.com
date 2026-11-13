@@ -12,6 +12,9 @@ const description =
 export const metadata: Metadata = {
   title,
   description,
+  alternates: {
+    canonical: '/code-de-conduite',
+  },
   twitter: {
     title,
     description,

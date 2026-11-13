@@ -1,6 +1,7 @@
 import { getRecentSponsors } from '../data/schedule';
 import * as partners from '../data/partners';
 import React from 'react';
+import { Metadata } from 'next';
 import { HomeHero } from '../modules/home/HomeHero';
 import { SeePastEvents } from '../modules/home/Home.components';
 import { Sponsors } from '../modules/sponsors/Sponsors';
@@ -10,6 +11,12 @@ import { LastReplays } from '../modules/home/LastReplays';
 import { HomeAnnouncement } from '../modules/lyonjs100/HomeAnnouncement';
 
 export const revalidate = 3600;
+
+export const metadata: Metadata = {
+  alternates: {
+    canonical: '/',
+  },
+};
 
 export default function Home() {
   const sponsors = getRecentSponsors();
