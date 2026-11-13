@@ -113,6 +113,7 @@ export const schedule: Schedule[] = [
   },
   {
     date: '07/07/2026',
+    sponsor: adaTechSchool,
   },
   {
     date: '09/16/2026',
@@ -125,6 +126,7 @@ export const schedule: Schedule[] = [
   },
   {
     date: '12/01/2026',
+    sponsor: indy,
   },
   {
     date: '01/13/2027',
