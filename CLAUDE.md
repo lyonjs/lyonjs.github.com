@@ -19,6 +19,10 @@ pnpm e2e          # Run Playwright e2e tests (chromium only)
 
 Pre-commit hook runs `oxfmt --write .` automatically via Husky.
 
+### Next.js DevTools MCP
+
+`.mcp.json` registers [`next-devtools-mcp`](https://github.com/vercel/next-devtools-mcp). With `pnpm dev` running, its `nextjs_index` / `nextjs_call` tools expose the dev server's routes, compilation issues, runtime errors and page metadata. Use it to check errors after a change instead of guessing from the code.
+
 ## Architecture
 
 ### Data Flow
