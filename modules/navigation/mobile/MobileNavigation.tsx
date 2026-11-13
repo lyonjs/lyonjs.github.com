@@ -9,10 +9,12 @@ export const MobileNavigation = () => {
   const [isExpanded, setIsExpanded] = useState(false);
 
   const pathname = usePathname();
+  const [previousPathname, setPreviousPathname] = useState(pathname);
 
-  useEffect(() => {
+  if (pathname !== previousPathname) {
+    setPreviousPathname(pathname);
     setIsExpanded(false);
-  }, [pathname]);
+  }
 
   useEffect(() => {
     document.body.toggleAttribute('data-lock-scroll', isExpanded);

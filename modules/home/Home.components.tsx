@@ -1,6 +1,7 @@
 import { FC, PropsWithChildren } from 'react';
 import { ButtonLink } from '../atoms/button/Button';
 import { H2 as Heading2 } from '../atoms/remark/Titles';
+import { getCurrentYear } from '../event/dateUtils';
 import styles from './Home.module.css';
 
 export const Article: FC<PropsWithChildren> = ({ children }) => (
@@ -15,7 +16,7 @@ export const H2: FC<PropsWithChildren> = ({ children }) => (
 
 export const SeePastEvents = () => (
   <div className={styles.seePastEvents}>
-    <ButtonLink variant="secondary" href={`/evenements-precedents/${new Date().getFullYear()}`}>
+    <ButtonLink variant="secondary" href={`/evenements-precedents/${getCurrentYear()}`}>
       Voir les événements passés <span aria-hidden="true">&rarr;</span>
     </ButtonLink>
   </div>

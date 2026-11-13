@@ -30,3 +30,7 @@ export function addToDateTime(iso: string, duration: Temporal.DurationLike): str
 export function subtractFromDateTime(iso: string, duration: Temporal.DurationLike): string {
   return Temporal.Instant.from(iso).toZonedDateTimeISO(TIMEZONE).subtract(duration).toInstant().toString();
 }
+
+export function getCurrentYear(): number {
+  return Temporal.Now.plainDateISO(TIMEZONE).year;
+}

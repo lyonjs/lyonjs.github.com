@@ -19,18 +19,19 @@ export default async function EventPage({ params }: PageProps<'/evenement/[slug]
   if (!eventId) {
     notFound();
   }
+  let event;
   try {
-    const event = overrideEvent(await fetchEvent(eventId));
-
-    return (
-      <main>
-        <EventDetail event={event} slug={slug} />
-        <EventMarkup event={event} />
-      </main>
-    );
+    event = overrideEvent(await fetchEvent(eventId));
   } catch {
     notFound();
   }
+
+  return (
+    <main>
+      <EventDetail event={event} slug={slug} />
+      <EventMarkup event={event} />
+    </main>
+  );
 }
 
 export async function generateMetadata({ params }: PageProps<'/evenement/[slug]'>): Promise<Metadata> {

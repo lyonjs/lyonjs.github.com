@@ -69,7 +69,7 @@ Images are pushed to two registries:
 
 ### Environment variables
 
-The `DEPLOY_ENV` variable (`production` or `preview`) controls whether CSP security headers are applied in `middleware.ts`.
+The `DEPLOY_ENV` variable (`production` or `preview`) is set on the containers but is currently not read by the application: CSP and security headers are always applied from `next.config.ts`.
 
 ### Required GitHub configuration
 
