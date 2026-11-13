@@ -8,6 +8,9 @@ export const size = {
 };
 export const contentType = 'image/png';
 
+// Same params as the page so the images are generated at build time instead of on every request.
+export { generateStaticParams } from './page';
+
 export default async function Image({ params }: PageProps<'/evenements-precedents/[year]'>) {
   const { year } = await params;
   return new ImageResponse(<SimpleText text={`Nos évènements de l'année ${year}`} />, {
