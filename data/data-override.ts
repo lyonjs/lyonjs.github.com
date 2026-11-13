@@ -4,6 +4,7 @@ import {
   axopen,
   bedrock,
   CBTW,
+  EPSI,
   esker,
   fulll,
   indy,
@@ -18,6 +19,26 @@ import {
 } from './sponsors';
 
 export const dataOverride: { [key: string]: Partial<Event> } = {
+  'https://www.meetup.com/lyonjs/events/317367635/': {
+    sponsor: indy,
+    talks: [
+      {
+        title: 'La documentation, ce nouveau langage de programmation',
+        speakers: [
+          {
+            name: 'Xavier Gorse',
+            socialLink: 'https://twitter.com/xgorse',
+          },
+        ],
+      },
+    ],
+  },
+  'https://www.meetup.com/lyonjs/events/315365462/': {
+    sponsor: adaTechSchool,
+  },
+  'https://www.meetup.com/lyonjs/events/315035639/': {
+    sponsor: EPSI,
+  },
   'https://www.meetup.com/lyonjs/events/314104906/': {
     sponsor: wanadev,
     talks: [
@@ -69,6 +90,7 @@ export const dataOverride: { [key: string]: Partial<Event> } = {
     ],
   },
   'https://www.meetup.com/lyonjs/events/312539589/': {
+    sponsor: zenika,
     talks: [
       {
         title: 'CJS, ESM, WTF ??',
