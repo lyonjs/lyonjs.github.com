@@ -2,8 +2,14 @@ import styles from './Hero.module.css';
 
 type Props = {
   children?: any;
+  /**
+   * `lazy` stops React from hoisting a `<link rel="preload">` for the lion.
+   * Use it where the Hero is not the page's main content (e.g. the 404 boundary,
+   * which is part of every route's tree).
+   */
+  imageLoading?: 'eager' | 'lazy';
 };
-export const Hero: React.FC<Props> = ({ children }) => (
+export const Hero: React.FC<Props> = ({ children, imageLoading }) => (
   <section className={styles.hero}>
     <div className={styles.leftContainer}>{children}</div>
 
@@ -14,6 +20,7 @@ export const Hero: React.FC<Props> = ({ children }) => (
       width={1440}
       height={810}
       alt="Lion jaune en 3D"
+      loading={imageLoading}
     />
   </section>
 );

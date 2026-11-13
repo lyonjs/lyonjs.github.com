@@ -7,7 +7,7 @@ import React from 'react';
 export default function NotFound() {
   return (
     <main>
-      <Hero>
+      <Hero imageLoading="lazy">
         <HeroTitle title="Erreur 404" strong="Page non trouvée" />
         <p>La page que vous cherchez ne peut être trouvée.</p>
         <HeroButtonsContainer>

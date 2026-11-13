@@ -15,7 +15,9 @@ export function LogoPreview({ src, alt }: { src: string; alt: string }) {
 
   return (
     <div className={`${styles.logoPreview} ${backgrounds[backgroundIndex].className}`}>
-      <Image src={src} alt={alt} width={200} height={100} style={{ objectFit: 'contain' }} />
+      <div className={styles.logoPreviewImage}>
+        <Image src={src} alt={alt} fill sizes="(max-width: 600px) 100vw, 400px" style={{ objectFit: 'contain' }} />
+      </div>
       <div className={styles.backgroundToggleGroup}>
         {backgrounds.map((background, index) => (
           <button

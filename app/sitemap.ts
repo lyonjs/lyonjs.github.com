@@ -7,6 +7,8 @@ import { overrideEvent } from '../modules/event/overrideEvent';
 import { youtubeVideoId } from '../modules/event/youtubeUtils';
 import { SITE_URL as BASE_URL } from '../modules/seo/siteUrl';
 
+export const revalidate = 3600;
+
 function escapeXml(str: string): string {
   return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 }
