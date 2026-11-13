@@ -11,6 +11,9 @@ const description = "Quelles sont les dépenses de l'association LyonJS, comment
 export const metadata: Metadata = {
   title,
   description,
+  alternates: {
+    canonical: '/budget-et-financement',
+  },
   twitter: {
     title,
     description,

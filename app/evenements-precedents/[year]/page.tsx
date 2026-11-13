@@ -26,6 +26,9 @@ export async function generateMetadata({ params }: PageProps<'/evenements-preced
   return {
     title,
     description,
+    alternates: {
+      canonical: `/evenements-precedents/${year}`,
+    },
     twitter: {
       title,
       description,

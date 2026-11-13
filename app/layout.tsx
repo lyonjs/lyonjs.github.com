@@ -6,6 +6,7 @@ import { Footer } from '../modules/footer/Footer';
 import 'normalize.css';
 import '../styles/globals.css';
 import { ORGANISATION_MARKUP } from './org-markup';
+import { SITE_URL } from '../modules/seo/siteUrl';
 
 export default function AppLayout({ children }: LayoutProps<'/'>) {
   return (
@@ -43,7 +44,7 @@ export const viewport: Viewport = {
   themeColor: '#000000',
 };
 export const metadata: Metadata = {
-  metadataBase: new URL('https://lyonjs.org'),
+  metadataBase: new URL(SITE_URL),
   title,
   description,
   robots: 'index,follow',
@@ -70,12 +71,12 @@ export const metadata: Metadata = {
     description,
     type: 'website',
     locale: 'fr-FR',
-    images: [{ url: `https://www.lyonjs.org/lyonjs.webp`, width: 600, height: 338 }],
+    images: [{ url: `${SITE_URL}/lyonjs.webp`, width: 600, height: 338 }],
   },
   twitter: {
     card: 'summary_large_image',
     title,
     description,
-    images: [`https://www.lyonjs.org/lyonjs.webp`],
+    images: [`${SITE_URL}/lyonjs.webp`],
   },
 };

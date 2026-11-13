@@ -5,8 +5,7 @@ import { slugEventTitle } from '../modules/event/eventSlug';
 import { slugTalkTitle } from '../modules/event/talkSlug';
 import { overrideEvent } from '../modules/event/overrideEvent';
 import { youtubeVideoId } from '../modules/event/youtubeUtils';
-
-const BASE_URL = 'https://www.lyonjs.org';
+import { SITE_URL as BASE_URL } from '../modules/seo/siteUrl';
 
 function escapeXml(str: string): string {
   return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
