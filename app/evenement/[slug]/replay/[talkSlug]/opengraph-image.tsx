@@ -1,8 +1,6 @@
 import { ImageResponse } from 'next/og';
 import { SimpleText } from '../../../../../modules/og/SimpleText';
 
-export const runtime = 'edge';
-
 export const alt = 'LyonJS logo';
 export const size = {
   width: 1200,
